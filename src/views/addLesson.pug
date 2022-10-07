@@ -1,0 +1,22 @@
+extends layouts/default.pug
+
+block variables
+	- const title = "Add Class"
+
+block content
+	form.sign-form.signup(action="/class/add" method="post")
+		h1.col-span-2 Add Class
+		label(for="number") Class Numbers
+		input#number(type="text", name="number")
+		label(for="video-link") Video Link
+		input#video-link(type="text", name="videoLink")
+		label(for="video-title") Video Title
+		input#video-title(type="text", name="videoTitle")
+		label(for="slides-link") Slides Link
+		input#slides-link(type="text", name="slidesLink")
+		label(for="slides-link") Materials Link
+		input#materials-link(type="text", name="materialsLink")
+		label(for="checkin-link") Checkin Link
+		input#checkin-link(type="text", name="checkinLink")
+		div.col-span-2.text-center
+			button(type="submit") Add Class

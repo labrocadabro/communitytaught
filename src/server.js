@@ -18,6 +18,8 @@ import flash from "./middleware/flash.js";
 import mainRouter from "./routes/mainRouter.js";
 import emailRouter from "./routes/emailRouter.js";
 import oauthRouter from "./routes/oauthRouter.js";
+import lessonRouter from "./routes/lessonRouter.js";
+import hwRouter from "./routes/hwRouter.js";
 
 
 // const __filename = url.fileURLToPath(import.meta.url);
@@ -55,6 +57,8 @@ app.use(flash);
 app.use("/", mainRouter);
 app.use("/email", emailRouter);
 app.use("/oauth", oauthRouter);
+app.use("/class", lessonRouter);
+app.use("/hw", hwRouter);
 app.use((req, res, next) => {
   res.status(404).render("404");
 });

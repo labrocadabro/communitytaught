@@ -10,16 +10,16 @@ const classProgressSchema = new Schema({
 	motivation: Boolean
 });
 
-const hwProgressSchema = new Schema({
-	classNo: Number,
-	submitted: Boolean,
-	items: [hwItemProgressSchema]
-});
-
 const hwItemProgressSchema = new Schema({
 	classNo: Number,
 	hwItemNo: Number,
 	completed: Boolean
+});
+
+const hwProgressSchema = new Schema({
+	classNo: Number,
+	submitted: Boolean,
+	items: [hwItemProgressSchema]
 });
 
 const userSchema = new Schema({
@@ -31,7 +31,7 @@ const userSchema = new Schema({
 	githubId: String,
 	githubToken: String,
 	classProgress: [classProgressSchema],
-	hwProgress: [hwrogressSchema]
+	hwProgress: [hwProgressSchema]
 
 });
 

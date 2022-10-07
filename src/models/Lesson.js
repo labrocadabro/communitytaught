@@ -3,9 +3,13 @@ import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 const lessonSchema = new Schema({
-	video: {
+	videoId: {
 		type: String,
 		required: true
+	},
+	twitchVideo: {
+		type:Boolean,
+		default: false
 	},
 	title: {
 		type: String,
@@ -15,9 +19,12 @@ const lessonSchema = new Schema({
 		type: String,
 		required: true
 	},
+	date: {
+		type: Date,
+		required: true
+	},
 	classNo: {
-		type: [Number],
-		required: true	
+		type: [Number]
 	},
 	thumbnail: {
 		type: String,

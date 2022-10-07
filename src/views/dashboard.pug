@@ -6,28 +6,4 @@ block variables
 block content
 	h1 Dashboard
 
-	table
-		thead
-			tr
-				th Class
-				th Done
-				th Video
-				th Check In
-		tbody
-			each lesson in lessons
-				tr
-					td #{lesson.classNo}
-					td
-						label(for=lesson.classNo + "-watched")
-							input(type="checkbox" id=lesson.classNo + "-watched") 
-							| Watched
-						br
-						label(for=lesson.classNo + "-checkedin")
-							input(type="checkbox" id=lesson.classNo + "-checkedin")
-							| Checked In
-					td 
-						a(href=lesson.permalink)
-							img(src=lesson.thumbnail width=200)
-							| #{lesson.title}
-					td 
-						a(href=lesson.checkin) Check In
+	a(href="/class/all") Watch Classes

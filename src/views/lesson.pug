@@ -1,0 +1,30 @@
+extends layouts/default.pug
+
+block variables
+	- const title = lesson.title
+
+block content
+	h1 Class #{lesson.classNo.join(", ")}: #{lesson.title}
+	br
+	#video-container
+		#player
+		h3 #[a(href=lesson.slides target="_blank") Slides] | #[a(href=lesson.materials  target="_blank") Follow-Along Materials]
+
+
+block extra-scripts
+	script. 
+		var tag = document.createElement('script');
+		tag.src = "https://www.youtube.com/iframe_api";
+		var firstScriptTag = document.getElementsByTagName('script')[0];
+		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+		var player;
+		function onYouTubeIframeAPIReady() {
+			player = new YT.Player('player', {
+				videoId: '#{lesson.videoId}',
+			});
+			console.log(player)
+		}
+		function setCurrentTime(slideNum) {
+			var object = [ 0, 320 ];
+			player.seekTo(object[slideNum]);
+		}

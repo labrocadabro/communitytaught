@@ -1,0 +1,18 @@
+extends layouts/default.pug
+
+block variables
+	- const title = "Reset Password"
+
+block content
+	form.sign-form.reset(action="/reset" method="post")
+		input(type="hidden" name="username" value=email) 
+		input(type="hidden" name="token" value=token) 
+		h1.col-span-2 Reset Password
+		label(for="pwd") Password
+		input#pwd(type="password", name="password" placeholder="Enter password")
+		label(for="conf") Confirm
+		input#conf(type="password", name="confirm" placeholder="Reenter password")
+		div.col-span-2.text-center
+			button(type="submit") Reset Password
+	//- block extra-scripts
+	//- 	script(src="/js/login.js") 

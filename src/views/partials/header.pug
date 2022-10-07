@@ -1,0 +1,16 @@
+nav.px-14
+	ul.flex.gap-3
+		li 
+			a(href="/") Home
+		if (loggedIn)
+			li
+					a(href="/dashboard") Dashboard
+			li
+				a(href="/account") Settings
+			li
+				a(href="/logout") Logout
+		else
+			li 
+				a(href="/login") Login
+			li 
+				a(href="/register") Register

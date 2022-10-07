@@ -1,0 +1,15 @@
+extends layouts/default.pug
+
+block variables
+	- const title = "Forgot Password"
+
+block content
+	form.sign-form.forgot(action="/email/forgot" method="post")
+		h1.col-span-2 Forgot Password
+		label(for="email") Email
+		input#email(type="email", name="username" placeholder="Ex: john@smith.com")
+		div.col-span-2.text-center
+			button(type="submit") Send Reset Link
+		span.col-span-2.text-center #[a(href="/register") Create an account] | #[a(href="/login") Log In]
+	//- block extra-scripts
+	//- 	script(src="/js/login.js") 

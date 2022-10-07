@@ -1,0 +1,75 @@
+extends layouts/default.pug
+
+block variables
+	- const title = "Dashboard"
+
+block content
+	h1.mb-4 Account Settings
+
+	div#change-email.settings
+		h3 Email
+		span #{user.username} #[a(href="/change-email") Change]
+		form(method="post" action="/change-email" id="email-form" style="display:none")
+			label(for="username") New Email:
+			input(type="email" name="username" id="username")
+			button(type="submit") Change Email
+	
+	div#change-password.settings
+		h3 Password
+		if (user.hasPassword)
+			a(href="/change-password" id="change") Change password
+			form(method="post" action="/change-password" id="change-form" style="display:none")
+				div
+					label(for="oldPassword") Old Password:
+					input(type="password" name="oldPassword" id="oldPassword")
+				div
+					label(for="newPassword") New Password:
+					input(type="password" name="newPassword" id="newPassword")
+				div
+					label(for="confirm") Confirm New Password:
+					input(type="password" name="confirm" id="confirm")
+				button(type="submit") Change Password
+		else
+			p You have not set a password for your account 
+			a(href="/set-password" id="set") Set password
+			form(method="post" action="/set-password" id="set-form" style="display:none")
+				div
+					label(for="password") Password:
+					input(type="password" name="password" id="password")
+				div
+					label(for="confirm") Confirm Password:
+					input(type="password" name="confirm" id="confirm")
+				button(type="submit") Change Password
+
+	div#linked-accounts.settings
+		h3 Manage Linked Accounts
+		if user.googleId || user.githubId
+			ul
+				if user.googleId
+					li#google Google 
+						if !user.hasPassword && !user.githubId
+							span.text-red-500 In order to maintain access to your account, please set a password or add another linked account before unlinking Google. Alteratively, use the delete account option to remove your account completely, and any linked accounts will be unlinked automatically.
+						else
+							a(href="/oauth/google/revoke") Unlink
+				if user.githubId
+					li#github Github 
+						if !user.hasPassword && !user.googleId
+							span.text-red-500 In order to maintain access to your account, please set a password or add another linked account before unlinking Github. Alteratively, use the delete account option to remove your account completely, and any linked accounts will be unlinked automatically.
+						else 
+							a(href="/oauth/github/revoke") Unlink
+		else
+			span No linked accounts
+
+	div#delete-account.settings
+		h3 Delete Account
+		button#first Delete
+		form(id="delete-form" style="display:none")
+			p.text-red-500 CAUTION. Deleting your account is irreversible. Please enter your email address below to confirm you would like to delete your account:
+			p#wrong.text-red-500
+			input(type="hidden" name="username" id="delete_username" value=user.username)
+			label(for="confirm") Your email:
+			input(type="email" name="confirm" id="delete_confirm")
+			button#second(type="submit") DELETE ACCOUNT
+
+block extra-scripts
+	script(src="/js/account.js") 

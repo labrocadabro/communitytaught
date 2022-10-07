@@ -1,15 +1,16 @@
 import { notLoggedIn } from "./auth.js";
 
 import Token from "../models/Token.js";
-import User from "../models/User.js";
+import Lesson from "../models/Lesson.js";
 
 export const index = (req, res) => {
 	res.render("index");
 };
 
-export const dashboard = (req, res) => {
+export const dashboard = async (req, res) => {
 	if (!req.isAuthenticated()) notLoggedIn(req, res);
-	else res.render("dashboard");
+	const lessons = await Lesson.find();
+	res.render('dashboard', {lessons})
 };
 
 export const account = (req, res) => {

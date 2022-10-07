@@ -11,9 +11,17 @@ const lessonSchema = new Schema({
 		type: String,
 		required: true
 	},
+	permalink: {
+		type: String,
+		required: true
+	},
 	classNo: {
 		type: [Number],
 		required: true	
+	},
+	thumbnail: {
+		type: String,
+		required: true
 	},
 	slides: {
 		type: String

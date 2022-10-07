@@ -8,6 +8,8 @@ export const addLesson = async (req, res) => {
 		const lesson = {
 			video: req.body.videoLink,
 			title: req.body.videoTitle,
+			permalink: req.body.permalink,
+			thumbnail: req.body.thumbnail,
 			classNo: req.body.number.split(","),
 			slides: req.body.slidesLink,
 			materials: req.body.materialsLink,

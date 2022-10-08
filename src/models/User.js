@@ -3,25 +3,6 @@ import passportLocalMongoose from 'passport-local-mongoose';
 
 const Schema = mongoose.Schema;
 
-const classProgressSchema = new Schema({
-	classNo: Number,
-	watchted: Boolean,
-	checkedIn: Boolean,
-	motivation: Boolean
-});
-
-const hwItemProgressSchema = new Schema({
-	classNo: Number,
-	hwItemNo: Number,
-	completed: Boolean
-});
-
-const hwProgressSchema = new Schema({
-	classNo: Number,
-	submitted: Boolean,
-	items: [hwItemProgressSchema]
-});
-
 const userSchema = new Schema({
 	// username and password are handled automatically by passport local mongoose
 	verified: {type: Boolean, default: false},
@@ -30,9 +11,6 @@ const userSchema = new Schema({
 	googleToken: String,
 	githubId: String,
 	githubToken: String,
-	classProgress: [classProgressSchema],
-	hwProgress: [hwProgressSchema]
-
 });
 
 

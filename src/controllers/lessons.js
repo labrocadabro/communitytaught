@@ -1,4 +1,5 @@
 import Lesson from '../models/Lesson.js';
+import LessonProgress from '../models/LessonProgress.js';
 
 export const addLessonForm = (req, res) => {
 	res.render("addLesson");
@@ -30,8 +31,27 @@ export const allLessons =  async (req, res) => {
 }
 
 export const showLesson =  async (req, res) => {
-	console.log('showLesson')
 	const lesson = await Lesson.findOne({permalink: req.params.permalink});
 	console.log(lesson)
 	res.render('lesson', {lesson})
+}
+
+
+export const toggleWatched =  async (req, res) => {
+	try {
+		await LessonProgress.toggleWatched(req.params.id, "633fda11a7a0580712de9461");
+		res.json("toggled watched");
+	} catch (err) {
+		console.log(err)
+		res.json(err);
+	} 	
+}
+
+export const toggleCheckedIn =  async (req, res) => {
+		try {
+			res.json("toggled checked in");
+		} catch (err) {
+			console.log(err)
+			res.json(err);
+		} 
 }

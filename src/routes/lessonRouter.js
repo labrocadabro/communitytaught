@@ -10,4 +10,7 @@ router.post('/add', lessons.addLesson);
 router.get('/all', lessons.allLessons);
 router.get('/:permalink', lessons.showLesson); 
 
+router.put('/watched/:id', lessons.toggleWatched); 
+router.put('/checkedin/:id', lessons.toggleCheckedIn); 
+
 export default router;

@@ -11,9 +11,14 @@ block content
 	
 	#video-container
 		.flex
-			a.flex-1(href="/class/all") Previous Class
-			a.flex-1.text-center(href="/class/all") Class List
-			a.flex-1.text-right(href="/class/all") Next Class
+			.flex-1
+				if (prev)
+					a(href="/class/" + prev) Previous Class
+			.flex-1.text-center
+				a(href="/class/all") Class List
+			.flex-1.text-right
+				if (next)
+					a(href="/class/" + next) Next Class
 		#player
 		h3 #[a(href=lesson.slides target="_blank") Slides] | #[a(href=lesson.materials  target="_blank") Follow-Along Materials] | #[a(href=lesson.checkin target="_blank") Check In]
 		if (loggedIn)

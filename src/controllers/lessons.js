@@ -57,9 +57,13 @@ export const showLesson =  async (req, res) => {
 	try {
 		const lesson = await Lesson.findOne({permalink: req.params.permalink});
 		const lessonProgress = await LessonProgress.findOne({lesson: lesson._id});
+		let next = await Lesson.findOne({classNo: {$in: [lesson.classNo.at(-1) + 1]}});
+		next = next ? next.permalink : null;
+		let prev = await Lesson.findOne({classNo: {$in: [lesson.classNo[0] - 1]}});
+		prev = prev ? prev.permalink : null;
 		lesson.watched = lessonProgress.watched;
 		lesson.checkedIn = lessonProgress.checkedIn;
-		res.render('lesson', {lesson, watched: lessonProgress.watched, checkedin: lessonProgress.checkedIn});
+		res.render('lesson', {lesson, next, prev, watched: lessonProgress.watched, checkedin: lessonProgress.checkedIn});
 	} catch (err) {
 		console.log(err);
 	}

@@ -23,14 +23,17 @@ block content
 					td #{lesson.classNo}
 					if (loggedIn)
 						td
-							input(type="checkbox" id=lesson.classNo + "-watched") 
-							label(for=lesson.classNo + "-watched") Watched
+							input.watched(type="checkbox" id="watched-" + lesson._id autocomplete="off" checked=lesson.watched) 
+							label(id="watched-" + lesson._id) Watched
 							br
-							input(type="checkbox" id=lesson.classNo + "-checkedin")
-							label(for=lesson.classNo + "-checkedin") Checked In
+							input.checkedin(type="checkbox" id="checkedin-" + lesson._id autocomplete="off" checked=lesson.checkedin)
+							label(for="checkedin-" + lesson._id) Checked In
 					td 
 						a(href=lesson.permalink)
 							img(src=lesson.thumbnail width=200)
 							| #{lesson.title}
 					td 
 						a(href=lesson.checkin) Check In
+
+block extra-scripts
+	script(src="/js/lessonProgress.js")

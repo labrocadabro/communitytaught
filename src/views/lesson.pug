@@ -2,17 +2,28 @@ extends layouts/default.pug
 
 block variables
 	- const title = lesson.title
+	- const watched = lesson.watched ? "checked" : ""
 
 block content
+	if (!loggedIn)
+		div YOU ARE NOT CURRENTLY LOGGED IN. If you would like to track your progress, please #[a(href="/login") log in] or #[a(href="/register") register] before continuing.
 	h1 Class #{lesson.classNo.join(", ")}: #{lesson.title}
 	br
+	a(href="/class/all") Back to Class List
+	
 	#video-container
 		#player
-		h3 #[a(href=lesson.slides target="_blank") Slides] | #[a(href=lesson.materials  target="_blank") Follow-Along Materials] | #[a(href=lesson.checkin  target="_blank") Check In]
-		h3 #[input(type="checkbox" id=lesson.classNo + "-watched")] #[label(for=lesson.classNo + "-watched") Watched] #[input(type="checkbox" id=lesson.classNo + "-checkedin")] #[label(for=lesson.classNo + "-checkedin") Checked In]
+		h3 #[a(href=lesson.slides target="_blank") Slides] | #[a(href=lesson.materials  target="_blank") Follow-Along Materials] | #[a(href=lesson.checkin target="_blank") Check In]
+		if (loggedIn)
+			h3 
+				input.watched(type="checkbox" id="watched-" + lesson.id autocomplete="off" checked=lesson.watched) 
+				label(for="watched-" + lesson.id) Watched
+				input.checkedin(type="checkbox" id="checkedin-" + lesson.id autocomplete="off" checked=lesson.checkedin)
+				label(for="checkedin-" + lesson.id) Checked In
 
 
 block extra-scripts
+	script(src="/js/lessonProgress.js")
 	script. 
 		var tag = document.createElement('script');
 		tag.src = "https://www.youtube.com/iframe_api";
@@ -23,7 +34,6 @@ block extra-scripts
 			player = new YT.Player('player', {
 				videoId: '#{lesson.videoId}',
 			});
-			console.log(player)
 		}
 		function setCurrentTime(slideNum) {
 			var object = [ 0, 320 ];

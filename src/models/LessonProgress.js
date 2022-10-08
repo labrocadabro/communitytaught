@@ -28,7 +28,17 @@ lessonProgressSchema.statics.toggleWatched = async function(lessonId, userId) {
 	}
 	lessonProgress.watched = !lessonProgress.watched;
 	await lessonProgress.save();
+}
+
+
+lessonProgressSchema.statics.toggleCheckedIn = async function(lessonId, userId) {
+	let lessonProgress = await this.findOne({lesson: lessonId, user: userId});
+	if (!lessonProgress) {
+		lessonProgress = new this({lesson: lessonId, user: userId});
 	}
+	lessonProgress.checkedIn = !lessonProgress.checkedIn;
+	await lessonProgress.save();
+}
 	
 
 export default mongoose.model('LessonProgress', lessonProgressSchema);

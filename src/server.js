@@ -4,6 +4,7 @@ import cors from 'cors';
 import passport from 'passport';
 import session from 'express-session';
 import dotenv from 'dotenv';
+import morgan from 'morgan';
 import * as url from 'url';
 
 import connectDB from "./config/db.js";
@@ -26,6 +27,7 @@ import hwRouter from "./routes/hwRouter.js";
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
 dotenv.config();
+morgan(':method :url :status :res[content-length] - :response-time ms');
 
 const app = express();
 const port = process.env.PORT;

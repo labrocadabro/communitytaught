@@ -26,20 +26,50 @@ export const addLesson = async (req, res) => {
 	}
 };
 export const allLessons =  async (req, res) => {
-	const lessons = await Lesson.find();
+	let lessons;
+	if (req.isAuthenticated()) {
+		lessons = await Lesson.aggregate()
+		.lookup({ 
+			from: 'lessonprogresses', 
+			localField: '_id', 
+			foreignField: 'lesson',
+			as: 'progress' 
+		});
+		lessons = lessons.map(lesson => {
+			if(lesson.progress.length) {
+				const progress = lesson.progress.find( progress => progress.user == req.user.id);
+				lesson.watched = progress.watched;
+				lesson.checkedin = progress.checkedIn;
+			} else {
+				lesson.watched = false;
+				lesson.checkedin = false;
+			}
+			return lesson;
+		});
+
+	} else {
+		lessons = await Lesson.find();
+	}
 	res.render('allLessons', {lessons})
 }
 
 export const showLesson =  async (req, res) => {
-	const lesson = await Lesson.findOne({permalink: req.params.permalink});
-	console.log(lesson)
-	res.render('lesson', {lesson})
+	try {
+		const lesson = await Lesson.findOne({permalink: req.params.permalink});
+		const lessonProgress = await LessonProgress.findOne({lesson: lesson._id});
+		lesson.watched = lessonProgress.watched;
+		lesson.checkedin = lessonProgress.checkedin;
+		res.render('lesson', {lesson, watched: lessonProgress.watched, checkedin: lessonProgress.checkedIn});
+	} catch (err) {
+		console.log(err);
+	}
+	
 }
 
 
 export const toggleWatched =  async (req, res) => {
 	try {
-		await LessonProgress.toggleWatched(req.params.id, "633fda11a7a0580712de9461");
+		await LessonProgress.toggleWatched(req.params.id, req.user.id);
 		res.json("toggled watched");
 	} catch (err) {
 		console.log(err)
@@ -48,10 +78,11 @@ export const toggleWatched =  async (req, res) => {
 }
 
 export const toggleCheckedIn =  async (req, res) => {
-		try {
-			res.json("toggled checked in");
-		} catch (err) {
-			console.log(err)
-			res.json(err);
-		} 
+	try {
+		await LessonProgress.toggleCheckedIn(req.params.id, req.user.id);
+		res.json("toggled checked in");
+	} catch (err) {
+		console.log(err)
+		res.json(err);
+	} 
 }

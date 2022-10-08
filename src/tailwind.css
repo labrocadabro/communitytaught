@@ -57,3 +57,8 @@
 		@apply mb-5;
 	}
 }
+
+/********* temporary ************/
+#video-container {
+	width: 640px;
+}

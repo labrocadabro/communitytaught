@@ -39,10 +39,10 @@ export const allLessons =  async (req, res) => {
 			if(lesson.progress.length) {
 				const progress = lesson.progress.find( progress => progress.user == req.user.id);
 				lesson.watched = progress.watched;
-				lesson.checkedin = progress.checkedIn;
+				lesson.checkedIn = progress.checkedIn;
 			} else {
 				lesson.watched = false;
-				lesson.checkedin = false;
+				lesson.checkedIn = false;
 			}
 			return lesson;
 		});
@@ -58,7 +58,7 @@ export const showLesson =  async (req, res) => {
 		const lesson = await Lesson.findOne({permalink: req.params.permalink});
 		const lessonProgress = await LessonProgress.findOne({lesson: lesson._id});
 		lesson.watched = lessonProgress.watched;
-		lesson.checkedin = lessonProgress.checkedin;
+		lesson.checkedIn = lessonProgress.checkedIn;
 		res.render('lesson', {lesson, watched: lessonProgress.watched, checkedin: lessonProgress.checkedIn});
 	} catch (err) {
 		console.log(err);

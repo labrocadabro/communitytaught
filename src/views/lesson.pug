@@ -8,17 +8,19 @@ block content
 	if (!loggedIn)
 		div YOU ARE NOT CURRENTLY LOGGED IN. If you would like to track your progress, please #[a(href="/login") log in] or #[a(href="/register") register] before continuing.
 	h1 Class #{lesson.classNo.join(", ")}: #{lesson.title}
-	br
-	a(href="/class/all") Back to Class List
 	
 	#video-container
+		.flex
+			a.flex-1(href="/class/all") Previous Class
+			a.flex-1.text-center(href="/class/all") Class List
+			a.flex-1.text-right(href="/class/all") Next Class
 		#player
 		h3 #[a(href=lesson.slides target="_blank") Slides] | #[a(href=lesson.materials  target="_blank") Follow-Along Materials] | #[a(href=lesson.checkin target="_blank") Check In]
 		if (loggedIn)
 			h3 
 				input.watched(type="checkbox" id="watched-" + lesson.id autocomplete="off" checked=lesson.watched) 
 				label(for="watched-" + lesson.id) Watched
-				input.checkedin(type="checkbox" id="checkedin-" + lesson.id autocomplete="off" checked=lesson.checkedin)
+				input.checkedin(type="checkbox" id="checkedin-" + lesson.id autocomplete="off" checked=lesson.checkedIn)
 				label(for="checkedin-" + lesson.id) Checked In
 
 

@@ -841,11 +841,6 @@ button:hover,  a.button:hover {
   margin-bottom: 1.25rem;
 }
 
-/* 
-	#dummy {
-		@apply hidden;
-	} */
-
 .col-span-2 {
   grid-column: span 2 / span 2;
 }
@@ -866,6 +861,10 @@ button:hover,  a.button:hover {
   display: flex;
 }
 
+.table {
+  display: table;
+}
+
 .hidden {
   display: none;
 }
@@ -874,12 +873,20 @@ button:hover,  a.button:hover {
   min-height: 100vh;
 }
 
+.flex-1 {
+  flex: 1 1 0%;
+}
+
 .flex-col {
   flex-direction: column;
 }
 
 .gap-3 {
   gap: 0.75rem;
+}
+
+.border {
+  border-width: 1px;
 }
 
 .bg-gray-200 {
@@ -906,7 +913,17 @@ button:hover,  a.button:hover {
   text-align: center;
 }
 
+.text-right {
+  text-align: right;
+}
+
 .text-red-500 {
   --tw-text-opacity: 1;
   color: rgb(239 68 68 / var(--tw-text-opacity));
+}
+
+/********* temporary ************/
+
+#video-container {
+  width: 640px;
 }

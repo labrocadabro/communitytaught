@@ -23,13 +23,11 @@ block content
 					td #{lesson.classNo}
 					if (loggedIn)
 						td
-							label(for=lesson.classNo + "-watched")
-								input(type="checkbox" id=lesson.classNo + "-watched") 
-								| Watched
+							input(type="checkbox" id=lesson.classNo + "-watched") 
+							label(for=lesson.classNo + "-watched") Watched
 							br
-							label(for=lesson.classNo + "-checkedin")
-								input(type="checkbox" id=lesson.classNo + "-checkedin")
-								| Checked In
+							input(type="checkbox" id=lesson.classNo + "-checkedin")
+							label(for=lesson.classNo + "-checkedin") Checked In
 					td 
 						a(href=lesson.permalink)
 							img(src=lesson.thumbnail width=200)

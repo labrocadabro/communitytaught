@@ -8,7 +8,8 @@ block content
 	br
 	#video-container
 		#player
-		h3 #[a(href=lesson.slides target="_blank") Slides] | #[a(href=lesson.materials  target="_blank") Follow-Along Materials]
+		h3 #[a(href=lesson.slides target="_blank") Slides] | #[a(href=lesson.materials  target="_blank") Follow-Along Materials] | #[a(href=lesson.checkin  target="_blank") Check In]
+		h3 #[input(type="checkbox" id=lesson.classNo + "-watched")] #[label(for=lesson.classNo + "-watched") Watched] #[input(type="checkbox" id=lesson.classNo + "-checkedin")] #[label(for=lesson.classNo + "-checkedin") Checked In]
 
 
 block extra-scripts

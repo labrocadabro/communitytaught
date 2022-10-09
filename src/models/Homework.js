@@ -2,6 +2,12 @@ import mongoose from "mongoose";
 
 const Schema = mongoose.Schema;
 
+const homeworkItemSchema = new Schema({ 
+	description: String,
+	pushWork: Boolean,
+	required: Boolean
+});
+
 const homeworkSchema = new Schema({
 	classNo: {
 		type: [Number],
@@ -13,16 +19,7 @@ const homeworkSchema = new Schema({
 	},
 	items: {
 		type: [homeworkItemSchema]
-	},
-	pwItems: {
-		type: [homeworkItemSchema]
-	},
-});
-
-const homeworkItemSchema = new Schema({ 
-	description: String,
-	pushWork: Boolean,
-	required: Boolean
+	}
 });
 
 export default mongoose.model('Homework', homeworkSchema);

@@ -4,8 +4,7 @@ const Schema = mongoose.Schema;
 
 const lessonSchema = new Schema({
 	videoId: {
-		type: String,
-		required: true
+		type: String
 	},
 	twitchVideo: {
 		type:Boolean,
@@ -16,8 +15,7 @@ const lessonSchema = new Schema({
 		required: true
 	},
 	permalink: {
-		type: String,
-		required: true
+		type: String
 	},
 	date: {
 		type: Date,

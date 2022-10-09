@@ -6,4 +6,7 @@ block variables
 block content
 	h1 Dashboard
 
+	if(user.admin) 
+		a(href="/class/add") Add Classes
+	br
 	a(href="/class/all") Watch Classes

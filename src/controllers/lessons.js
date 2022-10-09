@@ -2,6 +2,7 @@ import Lesson from '../models/Lesson.js';
 import LessonProgress from '../models/LessonProgress.js';
 
 export const addLessonForm = (req, res) => {
+	if (!req.isAuthenticated() || !req.user.admin) return res.redirect("/");
 	res.render("addLesson");
 };
 export const addLesson = async (req, res) => {
@@ -36,8 +37,8 @@ export const allLessons =  async (req, res) => {
 			as: 'progress' 
 		});
 		lessons = lessons.map(lesson => {
-			if(lesson.progress.length) {
-				const progress = lesson.progress.find( progress => progress.user == req.user.id);
+			const progress = lesson.progress.find( progress => progress.user == req.user.id);
+			if(progress) {
 				lesson.watched = progress.watched;
 				lesson.checkedIn = progress.checkedIn;
 			} else {

@@ -9,8 +9,7 @@ export const index = (req, res) => {
 
 export const dashboard = async (req, res) => {
 	if (!req.isAuthenticated()) notLoggedIn(req, res);
-	const lessons = await Lesson.find();
-	res.render('dashboard', {lessons})
+	res.render('dashboard')
 };
 
 export const account = (req, res) => {

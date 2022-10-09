@@ -4,7 +4,7 @@ block variables
 	- const title = "Add Class"
 
 block content
-	form.sign-form.signup(action="/class/add" method="post")
+	form.sign-form(action="/class/add" method="post")
 		h1.col-span-2 Add Class
 		label(for="number") Class Numbers
 		input#number(type="text", name="number")

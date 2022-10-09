@@ -32,12 +32,23 @@ block content
 						ul
 							each item in hw.items
 								li 
-									input.done(type="checkbox" id=`item-${item._id}-${hw._id}` autocomplete="off") 
-									label(for=`item-${item._id}-${hw._id}` ) !{item.description}
+									if (loggedIn)
+										input.item(type="checkbox" id=`item-${item._id}-${hw._id}` autocomplete="off") 
+										label(for=`item-${item._id}-${hw._id}` ) !{item.description}
+									else 
+										| !{item.description}
 					td
-						ul
-							each item in hw.extras
-								li !{item.description}
+						if hw.extras.length
+							ul
+								each extra in hw.extras
+									li
+										if (loggedIn)
+											input.extra(type="checkbox" id=`extra-${extra._id}-${hw._id}` autocomplete="off") 
+											label(for=`item-${extra._id}-${hw._id}` ) !{extra.description}
+										else 
+											| !{extra.description}
+						else
+							p None
 					td 
 						if hw.submit
 							a(href=hw.submit target="_blank") Submit

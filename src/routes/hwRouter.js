@@ -7,4 +7,6 @@ const router = express.Router();
 router.get('/add', homework.addHomeworkForm);
 router.post('/add', homework.addHomework);
 
+router.get('/all', homework.showHomework);
+
 export default router;

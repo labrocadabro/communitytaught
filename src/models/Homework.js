@@ -5,7 +5,6 @@ const Schema = mongoose.Schema;
 const homeworkItemSchema = new Schema({ 
 	itemIndex: Number,
 	description: String,
-	pushWork: Boolean,
 	required: Boolean
 });
 
@@ -20,7 +19,11 @@ const homeworkSchema = new Schema({
 	},
 	items: {
 		type: [homeworkItemSchema]
-	}
+	},
+	extras: {
+		type: [homeworkItemSchema]
+	},
+	submit: String
 });
 
 export default mongoose.model('Homework', homeworkSchema);

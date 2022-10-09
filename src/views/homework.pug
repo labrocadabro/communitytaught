@@ -1,0 +1,49 @@
+extends layouts/default.pug
+
+block variables
+	- const title = "Homework"
+
+block content
+	if (!loggedIn)
+		div YOU ARE NOT CURRENTLY LOGGED IN. If you would like to track your progress, please #[a(href="/login") log in] or #[a(href="/register") register] before continuing.
+
+	h1 All Homework
+
+	table
+		thead
+			tr
+				th Class
+				th Due
+				if (loggedIn)
+					th Done
+				th Assignment
+				th Extras
+				th Submit
+		tbody
+			each hw in homework
+				tr
+					td #{hw.classNo}
+					td #{hw.dueNo}
+					if (loggedIn)
+						td
+							input.done(type="checkbox" id="done-" + hw._id autocomplete="off") 
+							//- checked=hw.watched
+					td 
+						ul
+							each item in hw.items
+								li 
+									input.done(type="checkbox" id=`item-${item._id}-${hw._id}` autocomplete="off") 
+									label(for=`item-${item._id}-${hw._id}` ) !{item.description}
+					td
+						ul
+							each item in hw.extras
+								li !{item.description}
+					td 
+						if hw.submit
+							a(href=hw.submit target="_blank") Submit
+						else
+							p Nothing to submit
+
+
+block extra-scripts
+	script(src="/js/lessonProgress.js")

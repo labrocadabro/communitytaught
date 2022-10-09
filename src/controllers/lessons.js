@@ -1,11 +1,12 @@
 import Lesson from '../models/Lesson.js';
-import LessonProgress from '../models/LessonProgress.js';
+import User from '../models/User.js';
 
 export const addLessonForm = (req, res) => {
 	if (!req.isAuthenticated() || !req.user.admin) return res.redirect("/");
 	res.render("addLesson");
 };
 export const addLesson = async (req, res) => {
+	if (!req.isAuthenticated() || !req.user.admin) return res.redirect("/");
 	try{
 		const lesson = {
 			videoId: req.body.videoId,
@@ -27,29 +28,22 @@ export const addLesson = async (req, res) => {
 	}
 };
 export const allLessons =  async (req, res) => {
-	let lessons;
+	const lessons = await Lesson.find().lean();
 	if (req.isAuthenticated()) {
-		lessons = await Lesson.aggregate()
-		.lookup({ 
-			from: 'lessonprogresses', 
-			localField: '_id', 
-			foreignField: 'lesson',
-			as: 'progress' 
-		});
-		lessons = lessons.map(lesson => {
-			const progress = lesson.progress.find( progress => progress.user == req.user.id);
-			if(progress) {
-				lesson.watched = progress.watched;
-				lesson.checkedIn = progress.checkedIn;
-			} else {
+		const user = await User.findById(req.user.id);
+		lessons.map(lesson => {
+			const progress = user.lessonProgress.find(prog => {
+				return prog.lessonId.toString() === lesson._id.toString();
+			})
+			if (!progress) {
 				lesson.watched = false;
 				lesson.checkedIn = false;
-			}
+			} else {
+				lesson.watched = progress.watched;
+				lesson.checkedIn = progress.checkedIn;
+			}	
 			return lesson;
-		});
-
-	} else {
-		lessons = await Lesson.find();
+		})
 	}
 	res.render('allLessons', {lessons})
 }
@@ -57,14 +51,23 @@ export const allLessons =  async (req, res) => {
 export const showLesson =  async (req, res) => {
 	try {
 		const lesson = await Lesson.findOne({permalink: req.params.permalink});
-		const lessonProgress = await LessonProgress.findOne({lesson: lesson._id});
+		let progress;
+		if (req.user) {
+			const user = await User.findById(req.user.id);
+			progress = user.lessonProgress.find(less => {
+				return less.lessonId.toString() === lesson._id.toString();
+			});
+			if (!progress) {
+				progress = { lessonId: lesson._id, watched: false, checkedIn: false };
+				user.lessonProgress.push(progress);
+				await user.save();
+			}
+		}
 		let next = await Lesson.findOne({classNo: {$in: [lesson.classNo.at(-1) + 1]}});
 		next = next ? next.permalink : null;
 		let prev = await Lesson.findOne({classNo: {$in: [lesson.classNo[0] - 1]}});
 		prev = prev ? prev.permalink : null;
-		lesson.watched = lessonProgress.watched;
-		lesson.checkedIn = lessonProgress.checkedIn;
-		res.render('lesson', {lesson, next, prev, watched: lessonProgress.watched, checkedin: lessonProgress.checkedIn});
+		res.render('lesson', { lesson, next, prev, progress });
 	} catch (err) {
 		console.log(err);
 	}
@@ -74,7 +77,7 @@ export const showLesson =  async (req, res) => {
 
 export const toggleWatched =  async (req, res) => {
 	try {
-		await LessonProgress.toggleWatched(req.params.id, req.user.id);
+		await User.toggleWatched(req.params.id, req.user.id);
 		res.json("toggled watched");
 	} catch (err) {
 		console.log(err)
@@ -84,7 +87,7 @@ export const toggleWatched =  async (req, res) => {
 
 export const toggleCheckedIn =  async (req, res) => {
 	try {
-		await LessonProgress.toggleCheckedIn(req.params.id, req.user.id);
+		await User.toggleCheckedIn(req.params.id, req.user.id);
 		res.json("toggled checked in");
 	} catch (err) {
 		console.log(err)

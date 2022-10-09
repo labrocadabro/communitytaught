@@ -8,7 +8,7 @@ export const index = (req, res) => {
 };
 
 export const dashboard = async (req, res) => {
-	if (!req.isAuthenticated()) notLoggedIn(req, res);
+	if (!req.isAuthenticated()) return notLoggedIn(req, res);
 	res.render('dashboard')
 };
 

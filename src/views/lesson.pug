@@ -23,9 +23,9 @@ block content
 		h3 #[a(href=lesson.slides target="_blank") Slides] | #[a(href=lesson.materials  target="_blank") Follow-Along Materials] | #[a(href=lesson.checkin target="_blank") Check In]
 		if (loggedIn)
 			h3 
-				input.watched(type="checkbox" id="watched-" + lesson.id autocomplete="off" checked=lesson.watched) 
+				input.watched(type="checkbox" id="watched-" + lesson.id autocomplete="off" checked=progress.watched) 
 				label(for="watched-" + lesson.id) Watched
-				input.checkedin(type="checkbox" id="checkedin-" + lesson.id autocomplete="off" checked=lesson.checkedIn)
+				input.checkedin(type="checkbox" id="checkedin-" + lesson.id autocomplete="off" checked=progress.checkedIn)
 				label(for="checkedin-" + lesson.id) Checked In
 
 

@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 const homeworkItemSchema = new Schema({ 
+	itemIndex: Number,
 	description: String,
 	pushWork: Boolean,
 	required: Boolean

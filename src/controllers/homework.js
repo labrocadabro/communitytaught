@@ -14,6 +14,7 @@ export const addHomework = async (req, res) => {
 		req.body.extra = req.body.extra ? [].concat(req.body.extra) : [];
 		for (let i = 0; i < req.body.desc.length; i++) {
 			hwItems.push({
+				itemIndex: i,
 				description: req.body.desc[i],
 				required: req.body.required[i] === "true" ? true : false,
 				pushWork: req.body.extra[i] === "true" ? true : false,

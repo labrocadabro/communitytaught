@@ -4,6 +4,29 @@ block variables
 	- const title = "Add Homework"
 
 block content
-	h1 Add Homework
+	form.sign-form(action="/hw/add" method="post")
+		h1.col-span-2 Add Homework
+		label(for="number") Class Numbers
+		input#number(type="text", name="number" autocomplete="off")
+		label(for="due") Class Due
+		input#due(type="text", name="due" autocomplete="off")
+		h2.col-span-2 Homework Items
+		#hw-items.col-span-2
+			.hw-item
+				label(for="desc") Description
+				textarea#desc(name="desc" autocomplete="off")
+				br
+				input#required-check(type="checkbox" autocomplete="off")
+				input#required(type="hidden", name="required" value="false")
+				label(for="required-check") Required
+				input#extra-check(type="checkbox" autocomplete="off")
+				input#extra(type="hidden", name="extra" value="false")
+				label(for="extra-check") Extra/Push Work
+		button#add-item.col-span-2 Add another item
+			
 
-	p homework
+		div.col-span-2.text-center
+			button(type="submit") Add Homework
+
+block extra-scripts
+	script(src="/js/addHomework.js")

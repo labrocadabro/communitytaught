@@ -9,4 +9,8 @@ router.post('/add', homework.addHomework);
 
 router.get('/all', homework.showHomework);
 
+router.put('/item/:itemId/:hwId', homework.toggleItem); 
+router.put('/extra/:itemId/:hwId', homework.toggleExtra); 
+
+
 export default router;

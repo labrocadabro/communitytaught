@@ -19,10 +19,11 @@ const hwProgressSchema = new Schema({
 		type : mongoose.Types.ObjectId,
 		ref: 'Homework'
 	},
-	done: {
+	submitted: {
 		type: Boolean,
 		default: false
-	}
+	},
+	items: [hwItemProgressSchema]
 });
 
 const lessonProgressSchema = new Schema({
@@ -81,6 +82,30 @@ userSchema.statics.toggleCheckedIn = async function(lessonId, userId) {
 	} else {
 		lesson = { lessonId, watched: false, checkedIn: true };
 		user.lessonProgress.push(lesson);
+	}
+	await user.save();
+}
+
+userSchema.statics.toggleItem = async function(itemId, hwId, userId) {
+	const user = await this.findById(userId);
+	console.log(user)
+	let homework = user.hwProgress.find(homework => {
+		return homework.hwId.toString() === hwId
+	});
+	
+	if (homework) {
+		let item = homework.items.find(item => {
+			return item.itemId.toString() === itemId
+		});
+		if (item) {
+			item.done = !item.done;
+		} else {
+			item = { itemId, done: true };
+			homework.items.push(item);
+		}
+	} else {
+		homework = { hwId, submitted: false, items: [{ itemId, done: true }]}
+		user.hwProgress.push(homework);
 	}
 	await user.save();
 }

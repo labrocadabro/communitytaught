@@ -14,8 +14,8 @@ block content
 			tr
 				th Class
 				th Due
-				if (loggedIn)
-					th Done
+				//- if (loggedIn)
+				//- 	th Done
 				th Assignment
 				th Extras
 				th Submit
@@ -24,26 +24,29 @@ block content
 				tr
 					td #{hw.classNo}
 					td #{hw.dueNo}
-					if (loggedIn)
-						td
-							input.done(type="checkbox" id="done-" + hw._id autocomplete="off") 
-							//- checked=hw.watched
+					//- if (loggedIn)
+					//- 	td
+					//- 		input.done(type="checkbox" id="done-" + hw._id autocomplete="off") 
 					td 
 						ul
 							each item in hw.items
 								li 
 									if (loggedIn)
-										input.item(type="checkbox" id=`item-${item._id}-${hw._id}` autocomplete="off") 
-										label(for=`item-${item._id}-${hw._id}` ) !{item.description}
+										input.item(type="checkbox" id=`item-${item._id}-${hw._id}` autocomplete="off" checked=item.done) 
+										label(for=`item-${item._id}-${hw._id}`) !{item.description} 
+										if (item.done)
+											p Done
+										else
+											p Not Done
 									else 
 										| !{item.description}
 					td
-						if hw.extras.length
+						if hw.extras
 							ul
 								each extra in hw.extras
 									li
 										if (loggedIn)
-											input.extra(type="checkbox" id=`extra-${extra._id}-${hw._id}` autocomplete="off") 
+											input.extra(type="checkbox" id=`extra-${extra._id}-${hw._id}` autocomplete="off" checked=extra.done) 
 											label(for=`item-${extra._id}-${hw._id}` ) !{extra.description}
 										else 
 											| !{extra.description}
@@ -57,4 +60,4 @@ block content
 
 
 block extra-scripts
-	script(src="/js/lessonProgress.js")
+	script(src="/js/hwProgress.js")

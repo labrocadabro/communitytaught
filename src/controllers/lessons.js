@@ -45,6 +45,7 @@ export const allLessons =  async (req, res) => {
 			return lesson;
 		})
 	}
+	console.log(lessons)
 	res.render('allLessons', {lessons})
 }
 

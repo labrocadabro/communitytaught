@@ -7,16 +7,28 @@ export const addLessonForm = (req, res) => {
 };
 export const addLesson = async (req, res) => {
 	if (!req.isAuthenticated() || !req.user.admin) return res.redirect("/");
+	const dates = req.body.date.split(',').map(date => new Date(date));
+	const slides = req.body.slides.split(',').map(slide => {
+		const data = slide.split("-");
+		return {
+			class: Number(data[0]),
+			link: data[1]
+		}
+	});
 	try{
 		const lesson = {
 			videoId: req.body.videoId,
-			title: req.body.title,
+			title: req.body.videoTitle,
+			dates: dates,
 			permalink: req.body.permalink,
 			thumbnail: req.body.thumbnail,
 			classNo: req.body.number.split(","),
-			slides: req.body.slides,
+			slides: slides,
 			materials: req.body.materials,
 			checkin: req.body.checkin,
+			motivationLink: req.body.motivationLink,
+			motivationLink: req.body.motivationTitle,
+			cohort: req.body.cohort
 		}
 		await Lesson.create(lesson);
 		req.session.flash = { type: "success", message: ['Class added']};

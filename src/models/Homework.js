@@ -4,6 +4,8 @@ const Schema = mongoose.Schema;
 
 const homeworkItemSchema = new Schema({ 
 	itemIndex: Number,
+	class: Number,
+	due: Number,
 	description: String,
 	required: Boolean
 });
@@ -23,7 +25,8 @@ const homeworkSchema = new Schema({
 	extras: {
 		type: [homeworkItemSchema]
 	},
-	submit: String
+	submit: String,
+	cohort: Number
 });
 
 export default mongoose.model('Homework', homeworkSchema);

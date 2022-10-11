@@ -4,31 +4,39 @@ block variables
 	- const title = "Add Homework"
 
 block content
-	form.sign-form(action="/hw/add" method="post")
-		h1.col-span-2 Add Homework
+	form.add-form(action="/hw/add" method="post")
+		h1.col-span-4 Add Homework
 		label(for="number") Class Numbers
 		input#number(type="text", name="number" autocomplete="off")
 		label(for="due") Class Due
 		input#due(type="text", name="due" autocomplete="off")
 		label(for="submit-link") Submit Link
 		input#submit-link(type="text", name="submit" autocomplete="off")
-		h2.col-span-2 Homework Items
-		#hw-items.col-span-2
+		label(for="number") Cohort
+		input#cohort(type="text", name="cohort" value="2")
+		#hw-items.col-span-4
+			h2.col-span-2.mb-3 Homework Items
+			button#add-item.col-span-4 Add another item
 			.hw-item
-				label(for="desc") Description
-				textarea#desc(name="desc" autocomplete="off")
-				br
-				input#required-check(type="checkbox" autocomplete="off")
-				input#required(type="hidden", name="required" value="false")
-				label(for="required-check") Required
-				input#extra-check(type="checkbox" autocomplete="off")
-				input#extra(type="hidden", name="extra" value="false")
-				label(for="extra-check") Extra/Push Work
-		button#add-item.col-span-2 Add another item
+				label(for="item-class-1") Class Assigned
+				input#item-class-1(type="text" name="itemClass" autocomplete="off")
+				label(for="item-due-1") Class Due
+				input#item-due-1(type="text" name="itemDue" autocomplete="off")
+				label(for="desc-1") Description
+				textarea#desc-1.col-span-2(name="desc" autocomplete="off")
+				div
+					input#required-1.required(type="hidden", name="required" value="false")
+					input#required-check-1.required-check(type="checkbox" autocomplete="off")
+					label.ml-2(for="required-check-1") Required
+					br
+					input#extra-1.extra(type="hidden", name="extra" value="false")
+					input#extra-check-1.extra-check(type="checkbox" autocomplete="off")
+					label.ml-2(for="extra-check-1") Extra/Push Work
+			
 			
 
-		div.col-span-2.text-center
-			button(type="submit") Add Homework
+		.col-span-4.mt-3.text-center
+			button.mx-auto(type="submit") Add Homework
 
 block extra-scripts
 	script(src="/js/addHomework.js")

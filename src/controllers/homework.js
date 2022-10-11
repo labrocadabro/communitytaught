@@ -23,7 +23,9 @@ export const addHomework = async (req, res) => {
 				});
 			} else {
 				hwItems.push({
-					itemIndex: i,
+					itemIndex: i + 1,
+					class: req.body.itemClass[i],
+					due: req.body.itemDue[i],
 					description: req.body.desc[i],
 					required: req.body.required[i] === "true" ? true : false,
 				});
@@ -34,7 +36,8 @@ export const addHomework = async (req, res) => {
 			dueNo: req.body.due,
 			items: hwItems,
 			extras: pwItems,
-			submit: req.body.submit
+			submit: req.body.submit,
+			cohort: req.body.cohort
 		}
 		await Homework.create(homework);
 		req.session.flash = { type: "success", message: ['Homework added']};

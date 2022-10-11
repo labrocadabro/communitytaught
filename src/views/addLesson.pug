@@ -4,23 +4,43 @@ block variables
 	- const title = "Add Class"
 
 block content
-	form.sign-form(action="/class/add" method="post")
-		h1.col-span-2 Add Class
+	form.add-form(action="/class/add" method="post")
+		h1.col-span-4 Add Class
 		label(for="number") Class Numbers
 		input#number(type="text", name="number")
+		label(for="date") Class Dates
+		input#date(type="text", name="date")
 		label(for="video-id") Video ID
 		input#video-id(type="text", name="videoId")
+		label(for="thumbnail") Thumbnail
+		input#thumbnail(type="text", name="thumbnail" disabled)
 		label(for="video-title") Video Title
 		input#video-title(type="text", name="videoTitle")
 		label(for="permalink") Permalink
-		input#permalink(type="text", name="permalink")
-		label(for="thumbnail") Thumbnail
-		input#thumbnail(type="text", name="thumbnail")
-		label(for="slides-link") Slides Link
+		input#permalink(type="text", name="permalink" disabled)
+		label(for="checkin-link") Motivation Link
+		input#motivation-link(type="text", name="motivationLink")
+		label(for="checkin-link") Motivation Title
+		input#motivation-title(type="text", name="motivationTitle")
+		label(for="slides-link") Slides
 		input#slides-link(type="text", name="slides")
-		label(for="slides-link") Materials Link
+		label(for="slides-link") Materials
 		input#materials-link(type="text", name="materials")
-		label(for="checkin-link") Checkin Link
+		label(for="checkin-link") Checkin
 		input#checkin-link(type="text", name="checkin")
-		div.col-span-2.text-center
-			button(type="submit") Add Class
+		label(for="number") Cohort
+		input#cohort(type="text", name="cohort" value="2")
+		#timestamps.col-span-4
+			h2.col-span-4.mb-3 Timestamps
+			button#add-timestamp.col-span-4 Add another timestamp
+			.timestamp
+				label(for="ts-time-1") Time
+				input#ts-time-1(type="number", name="tsTime")
+				label(for="ts-title-1") Title
+				input#ts-title-1(type="text", name="tsTitle")
+		.col-span-4.mt-3.text-center
+			button.mx-auto(type="submit") Add Class
+		
+
+block extra-scripts
+	script(src="/js/addLesson.js")

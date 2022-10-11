@@ -590,6 +590,12 @@ a:hover {
 }
 
 h1 {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+}
+
+h2 {
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 700;
@@ -788,6 +794,51 @@ button:hover,  a.button:hover {
   width: 100%;
 }
 
+.add-form {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.25rem;
+  display: grid;
+  max-width: 48rem;
+  align-items: center;
+  gap: 0.5rem;
+  border-width: 1px;
+  padding: 2.5rem;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.add-form label {
+  text-align: right;
+}
+
+#timestamps,  #hw-items {
+  margin-top: 0.75rem;
+  width: 100%;
+  border-width: 1px;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.timestamp,  .hw-item {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: center;
+  gap: 0.5rem;
+  border-top-width: 1px;
+  border-style: dashed;
+  --tw-border-opacity: 1;
+  border-color: rgb(55 65 81 / var(--tw-border-opacity));
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.timestamp:first-of-type,  .hw-item:first-of-type {
+  border-width: 0px;
+}
+
 .flash {
   position: relative;
   margin-bottom: 1rem;
@@ -841,12 +892,33 @@ button:hover,  a.button:hover {
   margin-bottom: 1.25rem;
 }
 
+.col-span-4 {
+  grid-column: span 4 / span 4;
+}
+
 .col-span-2 {
   grid-column: span 2 / span 2;
 }
 
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .mb-4 {
   margin-bottom: 1rem;
+}
+
+.mb-3 {
+  margin-bottom: 0.75rem;
+}
+
+.ml-2 {
+  margin-left: 0.5rem;
+}
+
+.mt-3 {
+  margin-top: 0.75rem;
 }
 
 .mt-auto {
@@ -885,10 +957,6 @@ button:hover,  a.button:hover {
   gap: 0.75rem;
 }
 
-.border {
-  border-width: 1px;
-}
-
 .bg-gray-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
@@ -920,6 +988,10 @@ button:hover,  a.button:hover {
 .text-red-500 {
   --tw-text-opacity: 1;
   color: rgb(239 68 68 / var(--tw-text-opacity));
+}
+
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 /********* temporary ************/

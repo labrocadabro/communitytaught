@@ -11,8 +11,12 @@
 		text-decoration: none;
 	}
 	h1 {
+		@apply text-3xl font-bold;
+	}
+	h2 {
 		@apply text-2xl font-bold;
 	}
+
 	h3 {
 		@apply text-xl font-bold;
 	}
@@ -35,6 +39,23 @@
 	}
 	.sign-form button, .sign-form a.button {
 		@apply w-full;
+	}
+	.add-form {
+		@apply mt-5 max-w-3xl mx-auto border grid p-10 gap-2 items-center;
+		grid-template-columns: repeat(4, 1fr);
+	}
+	.add-form label {
+		@apply text-right;
+	}
+	#timestamps, #hw-items {
+		@apply mt-3 w-full border px-5 py-3;
+	}
+	.timestamp, .hw-item {
+		@apply grid grid-cols-4 gap-2 items-center py-3 border-t border-dashed border-gray-700;
+		grid-template-columns: repeat(4, 1fr);
+	}
+	.timestamp:first-of-type, .hw-item:first-of-type {
+		@apply border-0;
 	}
 	.flash {
 		@apply w-full py-2 px-4 mb-4 border text-center font-bold relative;

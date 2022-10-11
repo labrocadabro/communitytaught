@@ -2,6 +2,16 @@ import mongoose from "mongoose";
 
 const Schema = mongoose.Schema;
 
+const TimestampSchema = new Schema({
+	time: Number,
+	title: String
+});
+
+const SlidesSchema = new Schema({
+	class: Number,
+	link: String
+});
+
 const lessonSchema = new Schema({
 	videoId: {
 		type: String
@@ -17,8 +27,8 @@ const lessonSchema = new Schema({
 	permalink: {
 		type: String
 	},
-	date: {
-		type: Date,
+	dates: {
+		type: [Date],
 		required: true
 	},
 	classNo: {
@@ -29,14 +39,22 @@ const lessonSchema = new Schema({
 		required: true
 	},
 	slides: {
-		type: String
+		type: [SlidesSchema]
 	},
 	materials: {
 		type: String
 	},
 	checkin: {
 		type: String
-	}
+	},
+	motivationLink: {
+		type: String
+	},
+	motivationTitle: {
+		type: String
+	},
+	timestamps: [TimestampSchema],
+	cohort: Number
 });
 
 export default mongoose.model('Lesson', lessonSchema);

@@ -1,21 +1,49 @@
+import mongoose from "mongoose";
+
 import Lesson from '../models/Lesson.js';
 import User from '../models/User.js';
 
-export const addLessonForm = (req, res) => {
+export const addEditLessonForm = async (req, res) => {
 	if (!req.isAuthenticated() || !req.user.admin) return res.redirect("/");
-	res.render("addLesson");
+	const edit = !!req.params.id;
+	let lesson = null;
+	if (edit) {
+		lesson = await Lesson.findById(req.params.id).lean();
+		lesson.classNo = lesson.classNo.join(',');
+		lesson.dates = lesson.dates.map(date => {
+			return date.toISOString().split('T')[0];
+		}).join(",");
+		lesson.slides = lesson.slides.map(slide => {
+			return `${slide.class}-${slide.link}`
+		}).join(",");
+	}
+	res.render("addLesson", { edit, lesson });
 };
-export const addLesson = async (req, res) => {
+
+export const addEditLesson = async (req, res) => {
 	if (!req.isAuthenticated() || !req.user.admin) return res.redirect("/");
-	const dates = req.body.date.split(',').map(date => new Date(date));
-	const slides = req.body.slides.split(',').map(slide => {
-		const data = slide.split("-");
-		return {
-			class: Number(data[0]),
-			link: data[1]
-		}
-	});
 	try{
+		let dates = [];
+		if (req.body.date) {
+			dates = req.body.date.split(',').map(date => new Date(date));
+		}
+		let slides = [];
+		if (req.body.slides) {
+			slides =  req.body.slides.split(',').map(slide => {
+				const data = slide.split("-");
+				return {
+					class: Number(data[0]),
+					link: data[1]
+				}
+			});
+		}
+		const timestamps = [];
+		for (let i = 0; i < req.body.tsTime.length; i++) {
+			timestamps.push({
+				time: Number(req.body.tsTime[i]),
+				title: req.body.tsTitle[i],
+			});
+		}
 		const lesson = {
 			videoId: req.body.videoId,
 			title: req.body.videoTitle,
@@ -27,18 +55,20 @@ export const addLesson = async (req, res) => {
 			materials: req.body.materials,
 			checkin: req.body.checkin,
 			motivationLink: req.body.motivationLink,
-			motivationLink: req.body.motivationTitle,
-			cohort: req.body.cohort
+			motivationTitle: req.body.motivationTitle,
+			cohort: req.body.cohort,
+			timestamps: timestamps
 		}
-		await Lesson.create(lesson);
-		req.session.flash = { type: "success", message: ['Class added']};
+		await Lesson.findByIdAndUpdate(req.params.id  || mongoose.Types.ObjectId(), lesson, {upsert: true});
+		req.session.flash = { type: "success", message: [`Class ${!!req.params.id ? "updated" : "added"}`]};
 	} catch (err) {
 		console.log(err);
-		req.session.flash = { type: "error", message: ['Class not added']};
+		req.session.flash = { type: "error", message: [`Class not ${!!req.params.id ? "updated" : "added"}`]};
 	} finally {
 		res.redirect("/class/add");
 	}
 };
+
 export const allLessons =  async (req, res) => {
 	const lessons = await Lesson.find().lean();
 	if (req.isAuthenticated()) {
@@ -57,9 +87,8 @@ export const allLessons =  async (req, res) => {
 			return lesson;
 		})
 	}
-	console.log(lessons)
 	res.render('allLessons', {lessons})
-}
+};
 
 export const showLesson =  async (req, res) => {
 	try {
@@ -83,10 +112,8 @@ export const showLesson =  async (req, res) => {
 		res.render('lesson', { lesson, next, prev, progress });
 	} catch (err) {
 		console.log(err);
-	}
-	
-}
-
+	}	
+};
 
 export const toggleWatched =  async (req, res) => {
 	try {
@@ -96,7 +123,7 @@ export const toggleWatched =  async (req, res) => {
 		console.log(err)
 		res.json(err);
 	} 	
-}
+};
 
 export const toggleCheckedIn =  async (req, res) => {
 	try {
@@ -106,4 +133,4 @@ export const toggleCheckedIn =  async (req, res) => {
 		console.log(err)
 		res.json(err);
 	} 
-}
+};

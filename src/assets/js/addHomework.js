@@ -1,49 +1,55 @@
 const requiredCheck = document.querySelectorAll('.required-check');
-const extradCheck = document.querySelectorAll('.extra-check');
-const addItemButton = document.getElementById('add-item');
-let itemIndex = document.querySelectorAll('.hw-item').length + 1;
+const hwButton = document.getElementById('add-hw');
+const pwButton = document.getElementById('add-pw');
+let hwIndex = document.querySelectorAll('.hw-item').length + 1;
+let pwIndex = document.querySelectorAll('.pw-item').length + 1;
 
-addItemButton.addEventListener('click', addItem);
+hwButton.addEventListener('click', addHW);
+pwButton.addEventListener('click', addPW);
 requiredCheck.forEach(check => {
 	check.addEventListener('change', updateRequired);
 });
-extradCheck.forEach(check => {
-	check.addEventListener('change', updateExtra);
-});
 
-function addItem(e) {
+function addHW(e) {
 	e.preventDefault();
 	const newItem = document.createElement('div');
 	newItem.classList.add('hw-item');
 	newItem.innerHTML = `
-		<label for="item-class-${itemIndex}">Class Assigned</label>
-		<input id="item-class-${itemIndex}" type="text" name="itemClass" autocomplete="off">
-		<label for="item-due-${itemIndex}">Class Due</label>
-		<input id="item-due-${itemIndex}" type="text" name="itemDue" autocomplete="off">
-		<label for="desc-${itemIndex}">Description</label>
-		<textarea class="col-span-2" id="desc-${itemIndex}" name="desc" autocomplete="off"></textarea>
-		<div>
-			<input id="required-${itemIndex}" class="required" type="hidden" name="required" value="false">
-			<input id="required-check-${itemIndex}" type="checkbox" autocomplete="off">
-			<label class="ml-2" for="required-check-${itemIndex}">Required</label>
-			<br>
-			<input id="extra-${itemIndex}" class="required" type="hidden" name="extra" value="false">
-			<input id="extra-check-${itemIndex}" type="checkbox" autocomplete="off">
-			<label class="ml-2" for="extra-check-${itemIndex}">Extra/Push Work</label>
+		<div></div>
+		<div class="col-span-3">
+			<input class="required" id="required-${hwIndex}" type="hidden" name="required" value="false">
+			<input class="required-check" id="required-check-${hwIndex}" type="checkbox" autocomplete="off">
+			<label class="ml-2" for="required-check-${hwIndex}">Required</label>
 		</div>
+		<label for="hw-class-${hwIndex}">Class Assigned</label>
+		<input id="hw-class-${hwIndex}" type="text" name="hwClass" autocomplete="off">
+		<label for="hw-due-${hwIndex}">Class Due</label>
+		<input id="hw-due-${hwIndex}" type="text" name="hwDue" autocomplete="off">
+		<label for="hw-desc-${hwIndex}">Description</label>
+		<textarea class="col-span-2" id="hw-desc-${hwIndex}" name="hwDesc" autocomplete="off"></textarea>
 	`;
 	document.getElementById('hw-items').append(newItem);
-	document.getElementById(`required-check-${itemIndex}`).addEventListener('change', updateRequired);
-	document.getElementById(`extra-check-${itemIndex}`).addEventListener('change', updateExtra);
-	itemIndex += 1;
+	document.getElementById(`required-check-${hwIndex}`).addEventListener('change', updateRequired);
+	hwIndex += 1;
+}
+
+function addPW(e) {
+	e.preventDefault();
+	const newItem = document.createElement('div');
+	newItem.classList.add('pw-item');
+	newItem.innerHTML = `
+		<label for="pw-class-${pwIndex}">Class Assigned</label>
+		<input id="pw-class-${pwIndex}" type="text" name="pwClass" autocomplete="off">
+		<label for="pw-due-${pwIndex}">Class Due</label>
+		<input id="pw-due-${pwIndex}" type="text" name="pwDue" autocomplete="off">
+		<label for="pw-desc-${pwIndex}">Description</label>
+		<textarea class="col-span-2" id="pw-desc-${pwIndex}" name="pwDesc" autocomplete="off"></textarea>
+	`;
+	document.getElementById('pw-items').append(newItem);
+	pwIndex += 1;
 }
 
 function updateRequired(e) {
 	const required = e.target.parentNode.querySelector('.required');
 	required.value = required.value === "false" ? "true" : "false";
-}
-
-function updateExtra(e) {
-	const extra = e.target.parentNode.querySelector('.extra')
-	extra.value = extra.value === "false" ? "true" : "false";
 }

@@ -4,8 +4,10 @@ import * as homework from '../controllers/homework.js';
 
 const router = express.Router();
 
-router.get('/add', homework.addHomeworkForm);
-router.post('/add', homework.addHomework);
+router.get('/add', homework.addEditHomeworkForm);
+router.get('/edit/:id', homework.addEditHomeworkForm);
+router.post('/add', homework.addEditHomework);
+router.post('/edit/:id', homework.addEditHomework);
 
 router.get('/all', homework.showHomework);
 

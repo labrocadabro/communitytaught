@@ -7,7 +7,10 @@ const homeworkItemSchema = new Schema({
 	class: Number,
 	due: Number,
 	description: String,
-	required: Boolean
+	required: {
+		type: Boolean,
+		default: false
+	}
 });
 
 const homeworkSchema = new Schema({
@@ -26,7 +29,8 @@ const homeworkSchema = new Schema({
 		type: [homeworkItemSchema]
 	},
 	submit: String,
-	cohort: Number
+	cohort: Number,
+	note: String
 });
 
 export default mongoose.model('Homework', homeworkSchema);

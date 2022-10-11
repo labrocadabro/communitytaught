@@ -1,9 +1,11 @@
+import mongoose from "mongoose";
+
 import Homework from '../models/Homework.js';
 import User from '../models/User.js';
 
 export const addHomeworkForm = (req, res) => {
 	if (!req.isAuthenticated() || !req.user.admin) return res.redirect("/");
-	res.render("addHomework");
+	res.render("addHomework", { edit: false });
 };
 
 export const addHomework = async (req, res) => {
@@ -44,6 +46,65 @@ export const addHomework = async (req, res) => {
 	} catch (err) {
 		console.log(err);
 		req.session.flash = { type: "error", message: ['Homework not added']};
+	} finally {
+		res.redirect("/hw/add");
+	}
+};
+
+export const addEditHomeworkForm = async (req, res) => {
+	if (!req.isAuthenticated() || !req.user.admin) return res.redirect("/");
+	const edit = !!req.params.id;
+	let homework = null;
+	if (edit) {
+		homework = await Homework.findById(req.params.id).lean();
+		homework.classNo = homework.classNo.join(',');
+	}
+	res.render("addHomework", { edit, homework });
+};
+
+export const addEditHomework = async (req, res) => {
+	if (!req.isAuthenticated() || !req.user.admin) return res.redirect("/");
+	try{
+		const hwItems = [];
+		const pwItems = [];
+		req.body.hwDesc = req.body.hwDesc ? [].concat(req.body.hwDesc) : [];
+		req.body.hwClass = req.body.hwClass ? [].concat(req.body.hwClass) : [];
+		req.body.hwDue = req.body.hwDue ? [].concat(req.body.hwDue) : [];
+		req.body.required = req.body.required ? [].concat(req.body.required) : [];
+		req.body.pwDesc = req.body.pwDesc ? [].concat(req.body.pwDesc) : [];
+		req.body.pwClass = req.body.pwClass ? [].concat(req.body.pwClass) : [];
+		req.body.pwDue = req.body.pwDue ? [].concat(req.body.pwDue) : [];
+		for (let i = 0; i < req.body.hwDesc.length; i++) {
+			hwItems.push({
+				itemIndex: i + 1,
+				class: req.body.hwClass[i],
+				due: req.body.hwDue[i],
+				description: req.body.hwDesc[i],
+				required: req.body.required[i] === "true" ? true : false,
+			});
+		}
+		for (let i = 0; i < req.body.pwDesc.length; i++) {
+			pwItems.push({
+				itemIndex: i + 1,
+				class: req.body.pwClass[i],
+				due: req.body.pwDue[i],
+				description: req.body.pwDesc[i]
+			});
+		}
+		const homework = {
+			classNo: req.body.number.split(","),
+			dueNo: req.body.due,
+			items: hwItems,
+			extras: pwItems,
+			submit: req.body.submit,
+			cohort: req.body.cohort,
+			note: req.body.note
+		}
+		await Homework.findByIdAndUpdate(req.params.id  || mongoose.Types.ObjectId(), homework, {upsert: true});
+		req.session.flash = { type: "success", message: [`Homework ${!!req.params.id ? "updated" : "added"}`]};
+	} catch (err) {
+		console.log(err);
+		req.session.flash = { type: "error", message: [`Homework not ${!!req.params.id ? "updated" : "added"}`]};
 	} finally {
 		res.redirect("/hw/add");
 	}
@@ -96,8 +157,6 @@ export const showHomework =  async (req, res) => {
 			return hw;
 		})
 	}
-
-
 	res.render('homework', { homework });
 };
 

@@ -88,7 +88,6 @@ userSchema.statics.toggleCheckedIn = async function(lessonId, userId) {
 
 userSchema.statics.toggleItem = async function(itemId, hwId, userId) {
 	const user = await this.findById(userId);
-	console.log(user)
 	let homework = user.hwProgress.find(homework => {
 		return homework.hwId.toString() === hwId
 	});

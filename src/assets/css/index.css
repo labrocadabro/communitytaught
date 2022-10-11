@@ -811,7 +811,7 @@ button:hover,  a.button:hover {
   text-align: right;
 }
 
-#timestamps,  #hw-items {
+#timestamps,  #hw-items,  #pw-items {
   margin-top: 0.75rem;
   width: 100%;
   border-width: 1px;
@@ -821,7 +821,7 @@ button:hover,  a.button:hover {
   padding-bottom: 0.75rem;
 }
 
-.timestamp,  .hw-item {
+.timestamp,  .hw-item,  .pw-item {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   align-items: center;
@@ -835,7 +835,7 @@ button:hover,  a.button:hover {
   grid-template-columns: repeat(4, 1fr);
 }
 
-.timestamp:first-of-type,  .hw-item:first-of-type {
+.timestamp:first-of-type,  .hw-item:first-of-type,  .pw-item:first-of-type {
   border-width: 0px;
 }
 
@@ -900,6 +900,10 @@ button:hover,  a.button:hover {
   grid-column: span 2 / span 2;
 }
 
+.col-span-3 {
+  grid-column: span 3 / span 3;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -951,6 +955,10 @@ button:hover,  a.button:hover {
 
 .flex-col {
   flex-direction: column;
+}
+
+.justify-center {
+  justify-content: center;
 }
 
 .gap-3 {

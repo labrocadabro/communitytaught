@@ -2,7 +2,7 @@ const title = document.getElementById('video-title');
 const videoId = document.getElementById('video-id');
 const classNo = document.getElementById('number');
 const addTsButton = document.getElementById('add-timestamp');
-let tsIndex = document.querySelectorAll('.timestamp').length + 1;
+let tsIndex = document.querySelectorAll('.timestamp').length;
 
 title.addEventListener("change", addPermalink);
 videoId.addEventListener("change", addThumbnail);

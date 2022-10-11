@@ -17,6 +17,8 @@ block content
 					th Done
 				th Video
 				th Check In
+				if (loggedIn && user.admin)
+					th Edit
 		tbody
 			each lesson in lessons
 				tr
@@ -34,6 +36,10 @@ block content
 							| #{lesson.title}
 					td 
 						a(href=lesson.checkin) Check In
+					td
+						if (loggedIn && user.admin)
+							a.ml-2(href=`/class/edit/${lesson._id}`)
+								i.fa.fa-pencil
 
 block extra-scripts
 	script(src="/js/lessonProgress.js")

@@ -19,6 +19,8 @@ block content
 				th Assignment
 				th Extras
 				th Submit
+				if (loggedIn && user.admin)
+					th Edit
 		tbody
 			each hw in homework
 				tr
@@ -57,6 +59,10 @@ block content
 							a(href=hw.submit target="_blank") Submit
 						else
 							p Nothing to submit
+					td
+						if (loggedIn && user.admin)
+							a.ml-2(href=`/hw/edit/${hw._id}`)
+								i.fa.fa-pencil
 
 
 block extra-scripts

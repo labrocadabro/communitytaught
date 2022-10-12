@@ -16,6 +16,7 @@ block content
 				if (loggedIn)
 					th Done
 				th Video
+				th Motivation
 				th Check In
 				if (loggedIn && user.admin)
 					th Edit
@@ -35,7 +36,9 @@ block content
 							img(src=lesson.thumbnail width=200)
 							| #{lesson.title}
 					td 
-						a(href=lesson.checkin) Check In
+						a(href=lesson.motivationLink target="_blank") #{lesson.motivationTitle}
+					td 
+						a(href=lesson.checkin target="_blank") Check In
 					td
 						if (loggedIn && user.admin)
 							a.ml-2(href=`/class/edit/${lesson._id}`)

@@ -10,11 +10,10 @@ export const addEditLessonForm = async (req, res) => {
 	if (edit) {
 		lesson = await Lesson.findById(req.params.id).lean();
 		lesson.classNo = lesson.classNo.join(',');
+		lesson.checkin = lesson.checkin.join(',');
+		lesson.slides = lesson.slides.join(',');
 		lesson.dates = lesson.dates.map(date => {
 			return date.toISOString().split('T')[0];
-		}).join(",");
-		lesson.slides = lesson.slides.map(slide => {
-			return `${slide.class}-${slide.link}`
 		}).join(",");
 	}
 	res.render("addLesson", { edit, lesson });
@@ -28,15 +27,6 @@ export const addEditLesson = async (req, res) => {
 			dates = req.body.date.split(',').map(date => new Date(date));
 		}
 		let slides = [];
-		if (req.body.slides) {
-			slides =  req.body.slides.split(',').map(slide => {
-				const data = slide.split("-");
-				return {
-					class: Number(data[0]),
-					link: data[1]
-				}
-			});
-		}
 		const timestamps = [];
 		for (let i = 0; i < req.body.tsTime.length; i++) {
 			timestamps.push({
@@ -51,12 +41,13 @@ export const addEditLesson = async (req, res) => {
 			permalink: req.body.permalink,
 			thumbnail: req.body.thumbnail,
 			classNo: req.body.number.split(","),
-			slides: slides,
+			slides: req.body.slides.split(","),
 			materials: req.body.materials,
 			checkin: req.body.checkin.split(","),
 			motivationLink: req.body.motivationLink,
 			motivationTitle: req.body.motivationTitle,
 			cohort: req.body.cohort,
+			note: req.body.note,
 			timestamps: timestamps
 		}
 		await Lesson.findByIdAndUpdate(req.params.id  || mongoose.Types.ObjectId(), lesson, {upsert: true});
@@ -71,6 +62,7 @@ export const addEditLesson = async (req, res) => {
 
 export const allLessons =  async (req, res) => {
 	const lessons = await Lesson.find().lean();
+	lessons.forEach(lesson => lesson.classNo = lesson.classNo.join(", "));
 	if (req.isAuthenticated()) {
 		const user = await User.findById(req.user.id);
 		lessons.map(lesson => {
@@ -105,10 +97,10 @@ export const showLesson =  async (req, res) => {
 				await user.save();
 			}
 		}
-		let next = await Lesson.findOne({classNo: {$in: [lesson.classNo.at(-1) + 1]}});
-		next = next ? next.permalink : null;
-		let prev = await Lesson.findOne({classNo: {$in: [lesson.classNo[0] - 1]}});
-		prev = prev ? prev.permalink : null;
+		let next = await Lesson.find({_id: {$gt: lesson._id}}).sort({_id: 1}).limit(1);
+		next = next.length ? next[0].permalink : null;
+		let prev = await Lesson.find({_id: {$lt: lesson._id}}).sort({_id: -1}).limit(1);
+		prev = prev.length ? prev[0].permalink : null;
 		res.render('lesson', { lesson, next, prev, progress });
 	} catch (err) {
 		console.log(err);

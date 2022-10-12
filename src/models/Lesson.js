@@ -7,11 +7,6 @@ const TimestampSchema = new Schema({
 	title: String
 });
 
-const SlidesSchema = new Schema({
-	class: Number,
-	link: String
-});
-
 const lessonSchema = new Schema({
 	videoId: {
 		type: String
@@ -39,7 +34,7 @@ const lessonSchema = new Schema({
 		required: true
 	},
 	slides: {
-		type: [SlidesSchema]
+		type: [String]
 	},
 	materials: {
 		type: String
@@ -54,7 +49,8 @@ const lessonSchema = new Schema({
 		type: String
 	},
 	timestamps: [TimestampSchema],
-	cohort: Number
+	cohort: Number,
+	note: String
 });
 
 export default mongoose.model('Lesson', lessonSchema);

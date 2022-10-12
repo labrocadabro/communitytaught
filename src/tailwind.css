@@ -79,6 +79,23 @@
 	}
 }
 
+/***** all lessons *****/
+#all-lessons {
+	@apply text-center border;
+}
+#all-lessons tr {
+	@apply border-b;
+}
+#all-lessons td, th {
+	@apply p-4 border-r;
+}
+#all-lessons td:first-of-type {
+	@apply p-2;
+}
+.thumbnail, .motivation {
+	max-width: 300px;
+}
+
 /********* temporary ************/
 #video-container {
 	width: 640px;

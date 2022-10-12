@@ -7,11 +7,11 @@ block content
 	if (!loggedIn)
 		div YOU ARE NOT CURRENTLY LOGGED IN. If you would like to track your progress, please #[a(href="/login") log in] or #[a(href="/register") register] before continuing.
 
-	h1 All Classes
+	h1.mb-4 All Classes
 
-	table
+	table#all-lessons
 		thead
-			tr
+			tr.text-2xl
 				th Class
 				if (loggedIn)
 					th Done
@@ -23,24 +23,34 @@ block content
 		tbody
 			each lesson in lessons
 				tr
-					td #{lesson.classNo}
+					td.font-bold #{lesson.classNo.length ? lesson.classNo : "Super Review"}
 					if (loggedIn)
-						td
-							input.watched(type="checkbox" id="watched-" + lesson._id autocomplete="off" checked=lesson.watched) 
+						td.text-left
+							input.watched.mr-2(type="checkbox" id="watched-" + lesson._id autocomplete="off" checked=lesson.watched) 
 							label(id="watched-" + lesson._id) Watched
 							br
-							input.checkedin(type="checkbox" id="checkedin-" + lesson._id autocomplete="off" checked=lesson.checkedIn)
-							label(for="checkedin-" + lesson._id) Checked In
-					td 
+							if (lesson.checkin.length)
+								input.checkedin.mr-2(type="checkbox" id="checkedin-" + lesson._id autocomplete="off" checked=lesson.checkedIn)
+								label(for="checkedin-" + lesson._id) Checked In
+							else 
+								input.checkedin.hidden(type="checkbox" id="checkedin-" + lesson._id autocomplete="off" checked)
+					td.thumbnail
 						a(href=lesson.permalink)
-							img(src=lesson.thumbnail width=200)
+							img.mx-auto(src=lesson.thumbnail w-full)
 							| #{lesson.title}
-					td 
+					td.motivation 
 						a(href=lesson.motivationLink target="_blank") #{lesson.motivationTitle}
 					td 
-						a(href=lesson.checkin target="_blank") Check In
-					td
-						if (loggedIn && user.admin)
+						if (lesson.checkin.length === 1)
+							a(href=lesson.checkin[0] target="_blank") Check In
+						else if (!lesson.checkin.length)
+							| No Check-in		
+						else
+							each check, index in lesson.checkin
+								a(href=lesson.checkin[index] target="_blank") Check In #{index + 1}
+								br
+					if (loggedIn && user.admin)
+						td
 							a.ml-2(href=`/class/edit/${lesson._id}`)
 								i.fa.fa-pencil
 

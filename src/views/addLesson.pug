@@ -31,6 +31,8 @@ block content
 		input#checkin-link(type="text", name="checkin" value=edit? lesson.checkin : "")
 		label(for="number") Cohort
 		input#cohort(type="text", name="cohort" value="2")
+		label(for="number") Note
+		textarea#note.col-span-3(type="text", name="note") #{edit? lesson.note : ""}
 		#timestamps.col-span-4
 			h2.col-span-4.mb-3 Timestamps
 			button#add-timestamp.col-span-4 Add another timestamp

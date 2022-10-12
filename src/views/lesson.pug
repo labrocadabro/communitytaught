@@ -7,44 +7,72 @@ block variables
 block content
 	if (!loggedIn)
 		div YOU ARE NOT CURRENTLY LOGGED IN. If you would like to track your progress, please #[a(href="/login") log in] or #[a(href="/register") register] before continuing.
-	h1 Class #{lesson.classNo.join(", ")}: #{lesson.title} 
-		if (user.admin) 
+	h1.mb-4.text-center #{lesson.classNo[0] ? `Class ${lesson.classNo.join(', ')}` : "Super Review" }: #{lesson.title} 
+		if (loggedIn && user.admin) 
 			a(href=`/class/edit/${lesson._id}`)
 				i.fa.fa-pencil
-	#video-container
+	h3.mb-4.text-center.border-b.pb-4 #{`${lesson.dates.map(date => date.toLocaleDateString('en-US', {day: "numeric", month: "short", year: "numeric"})).join(' / ')}`}
+	#video-container.text-center.mx-auto
+		if (loggedIn)
+			h3 
+				if (lesson.videoId.length)
+					input.watched.mr-2(type="checkbox" id="watched-" + lesson.id autocomplete="off" checked=progress.watched) 
+					label.mr-4(for="watched-" + lesson.id) Watched
+				if (lesson.checkin.length && lesson.checkin[0].length)
+					input.checkedin.mr-2(type="checkbox" id="checkedin-" + lesson.id autocomplete="off" checked=progress.checkedIn)
+					label(for="checkedin-" + lesson.id) Checked In
+		h3.mb-3
+			if (lesson.slides.length)
+				if (lesson.slides.length > 1) 
+					each slide, index in lesson.slides
+						| #[a(href=slide target="_blank") Slides #{index + 1}] | 
+				else if (lesson.slides[0].length)
+					| #[a(href=lesson.slides[0] target="_blank") Slides] | 				
+			if (lesson.materials)
+				| #[a(href=lesson.materials  target="_blank") Follow-Along Materials] |
+			if (lesson.checkin.length)
+				if (lesson.checkin.length > 1) 
+					each checkin, index in lesson.checkin
+						| &nbsp; #[a(href=checkin target="_blank") Check In #{index + 1}] &nbsp;
+						if (index < lesson.checkin.length - 1) 
+							| |
+				else if (lesson.checkin[0].length)
+					| #[a(href=lesson.checkin[0] target="_blank") Check In]
+			if lesson.note 
+				h3.mb-3 #{lesson.note}
+		#player
+			if (!lesson.videoId)
+				img(src="/img/thumbnails/no-stream-lg.png")
 		.flex
 			.flex-1
 				if (prev)
-					a(href="/class/" + prev) Previous Class
+					h2.text-left
+						a(href="/class/" + prev) Previous Class
 			.flex-1.text-center
-				a(href="/class/all") Class List
+				h2
+					a(href="/class/all") Class List
 			.flex-1.text-right
 				if (next)
-					a(href="/class/" + next) Next Class
-		#player
-		h3 #[a(href=lesson.slides target="_blank") Slides] | #[a(href=lesson.materials  target="_blank") Follow-Along Materials] | #[a(href=lesson.checkin target="_blank") Check In]
-		if (loggedIn)
-			h3 
-				input.watched(type="checkbox" id="watched-" + lesson.id autocomplete="off" checked=progress.watched) 
-				label(for="watched-" + lesson.id) Watched
-				input.checkedin(type="checkbox" id="checkedin-" + lesson.id autocomplete="off" checked=progress.checkedIn)
-				label(for="checkedin-" + lesson.id) Checked In
+					h2
+						a(href="/class/" + next) Next Class
 
 
 block extra-scripts
 	script(src="/js/lessonProgress.js")
-	script. 
-		var tag = document.createElement('script');
-		tag.src = "https://www.youtube.com/iframe_api";
-		var firstScriptTag = document.getElementsByTagName('script')[0];
-		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-		var player;
-		function onYouTubeIframeAPIReady() {
-			player = new YT.Player('player', {
-				videoId: '#{lesson.videoId}',
-			});
-		}
-		function setCurrentTime(slideNum) {
-			var object = [ 0, 320 ];
-			player.seekTo(object[slideNum]);
-		}
+	if (lesson.videoId)
+		script. 
+			var tag = document.createElement('script');
+			tag.src = "https://www.youtube.com/iframe_api";
+			var firstScriptTag = document.getElementsByTagName('script')[0];
+			firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+			var player;
+			function onYouTubeIframeAPIReady() {
+				player = new YT.Player('player', {
+					videoId: '#{lesson.videoId}',
+				});
+			}
+			function setCurrentTime(slideNum) {
+				var object = [ 0, 320 ];
+				player.seekTo(object[slideNum]);
+			}
+		

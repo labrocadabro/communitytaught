@@ -53,7 +53,7 @@ export const addEditLesson = async (req, res) => {
 			classNo: req.body.number.split(","),
 			slides: slides,
 			materials: req.body.materials,
-			checkin: req.body.checkin,
+			checkin: req.body.checkin.split(","),
 			motivationLink: req.body.motivationLink,
 			motivationTitle: req.body.motivationTitle,
 			cohort: req.body.cohort,

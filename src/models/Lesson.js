@@ -45,7 +45,7 @@ const lessonSchema = new Schema({
 		type: String
 	},
 	checkin: {
-		type: String
+		type: [String]
 	},
 	motivationLink: {
 		type: String

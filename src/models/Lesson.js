@@ -20,7 +20,8 @@ const lessonSchema = new Schema({
 		required: true
 	},
 	permalink: {
-		type: String
+		type: String,
+		unique: true
 	},
 	dates: {
 		type: [Date],

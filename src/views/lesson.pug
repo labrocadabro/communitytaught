@@ -16,11 +16,11 @@ block content
 		if (loggedIn)
 			h3 
 				if (lesson.videoId.length)
-					input.watched.mr-2(type="checkbox" id="watched-" + lesson.id autocomplete="off" checked=progress.watched) 
-					label.mr-4(for="watched-" + lesson.id) Watched
+					input.watched.mr-2(type="checkbox" id="watched-" + lesson._id autocomplete="off" checked=lesson.watched) 
+					label.mr-4(for="watched-" + lesson._id) Watched
 				if (lesson.checkin.length && lesson.checkin[0].length)
-					input.checkedin.mr-2(type="checkbox" id="checkedin-" + lesson.id autocomplete="off" checked=progress.checkedIn)
-					label(for="checkedin-" + lesson.id) Checked In
+					input.checkedin.mr-2(type="checkbox" id="checkedin-" + lesson._id autocomplete="off" checked=lesson.checkedIn)
+					label(for="checkedin-" + lesson._id) Checked In
 		h3.mb-3
 			if (lesson.slides.length)
 				if (lesson.slides.length > 1) 

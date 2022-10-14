@@ -37,10 +37,6 @@ block content
 										if (loggedIn)
 											input.item(type="checkbox" id=`item-${item._id}-${hw._id}` autocomplete="off" checked=item.done) 
 											label(for=`item-${item._id}-${hw._id}`) !{item.description} 
-											if (item.done)
-												p Done
-											else
-												p Not Done
 										else 
 											| !{item.description}
 							else

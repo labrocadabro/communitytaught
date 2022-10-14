@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 
 import Lesson from '../models/Lesson.js';
+import LessonProgress from '../models/LessonProgress.js';
 import User from '../models/User.js';
 
 export const addEditLessonForm = async (req, res) => {
@@ -64,19 +65,11 @@ export const allLessons =  async (req, res) => {
 	const lessons = await Lesson.find().lean();
 	lessons.forEach(lesson => lesson.classNo = lesson.classNo.join(", "));
 	if (req.isAuthenticated()) {
-		const user = await User.findById(req.user.id);
-		lessons.map(lesson => {
-			const progress = user.lessonProgress.find(prog => {
-				return prog.lessonId.toString() === lesson._id.toString();
-			})
-			if (!progress) {
-				lesson.watched = false;
-				lesson.checkedIn = false;
-			} else {
-				lesson.watched = progress.watched;
-				lesson.checkedIn = progress.checkedIn;
-			}	
-			return lesson;
+		const progress = await LessonProgress.find({ user: req.user.id });
+		lessons.forEach(lesson => {
+			const prog = progress.find(p =>  p.lesson.toString() === lesson._id.toString())
+			lesson.watched = prog ? prog.watched : false;
+			lesson.checkedIn = prog ? prog.checkedIn : false;
 		})
 	}
 	res.render('allLessons', {lessons})
@@ -84,24 +77,17 @@ export const allLessons =  async (req, res) => {
 
 export const showLesson =  async (req, res) => {
 	try {
-		const lesson = await Lesson.findOne({permalink: req.params.permalink});
-		let progress;
-		if (req.user) {
-			const user = await User.findById(req.user.id);
-			progress = user.lessonProgress.find(less => {
-				return less.lessonId.toString() === lesson._id.toString();
-			});
-			if (!progress) {
-				progress = { lessonId: lesson._id, watched: false, checkedIn: false };
-				user.lessonProgress.push(progress);
-				await user.save();
-			}
+		const lesson = await Lesson.findOne({permalink: req.params.permalink}).lean();
+		if (req.isAuthenticated()) {
+			const progress = await LessonProgress.findOne({ user: req.user.id, lesson: lesson._id });
+			lesson.watched = progress ? progress.watched : false;
+			lesson.checkedIn = progress ? progress.checkedIn : false;
 		}
 		let next = await Lesson.find({_id: {$gt: lesson._id}}).sort({_id: 1}).limit(1);
 		next = next.length ? next[0].permalink : null;
 		let prev = await Lesson.find({_id: {$lt: lesson._id}}).sort({_id: -1}).limit(1);
 		prev = prev.length ? prev[0].permalink : null;
-		res.render('lesson', { lesson, next, prev, progress });
+		res.render('lesson', { lesson, next, prev });
 	} catch (err) {
 		console.log(err);
 	}	
@@ -109,7 +95,7 @@ export const showLesson =  async (req, res) => {
 
 export const toggleWatched =  async (req, res) => {
 	try {
-		await User.toggleWatched(req.params.id, req.user.id);
+		await LessonProgress.toggleWatched(req.params.id, req.user.id);
 		res.json("toggled watched");
 	} catch (err) {
 		console.log(err)
@@ -119,7 +105,7 @@ export const toggleWatched =  async (req, res) => {
 
 export const toggleCheckedIn =  async (req, res) => {
 	try {
-		await User.toggleCheckedIn(req.params.id, req.user.id);
+		await LessonProgress.toggleCheckedIn(req.params.id, req.user.id);
 		res.json("toggled checked in");
 	} catch (err) {
 		console.log(err)

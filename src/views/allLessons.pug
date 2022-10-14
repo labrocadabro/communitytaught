@@ -26,8 +26,9 @@ block content
 					td.font-bold #{lesson.classNo.length ? lesson.classNo : "Super Review"}
 					if (loggedIn)
 						td.text-left
-							input.watched.mr-2(type="checkbox" id="watched-" + lesson._id autocomplete="off" checked=lesson.watched) 
-							label(id="watched-" + lesson._id) Watched
+							if (lesson.videoId.length)
+								input.watched.mr-2(type="checkbox" id="watched-" + lesson._id autocomplete="off" checked=lesson.watched) 
+								label(id="watched-" + lesson._id) Watched
 							br
 							if (lesson.checkin.length)
 								input.checkedin.mr-2(type="checkbox" id="checkedin-" + lesson._id autocomplete="off" checked=lesson.checkedIn)

@@ -71,38 +71,50 @@ export const addEditHomework = async (req, res) => {
 };
 
 export const showHomework =  async (req, res) => { 
-	try {
-		let homework;
-		if (!req.isAuthenticated()) {
-		homework = await Homework.find().lean().sort({_id: 1});
+		const homework = await Homework.find().lean().sort({_id: 1});
 		const items = await HomeworkItem
 			.aggregate()
-			.group({ _id: "$homework", items: { $push: { item: "$_id", itemIndex: "$itemIndex", class: "$class", due: "$due", description: "$description", required: "$required" } } })
+			.group({ _id: "$homework", items: { $push: { _id: "$_id", itemIndex: "$itemIndex", class: "$class", due: "$due", description: "$description", required: "$required" } } })
 			.sort({_id: 1});
 		const extras = await HomeworkExtra
 			.aggregate()
-			.group({ _id: "$homework", extras: { $push: { extra: "$_id", description: "$description" } } })
+			.group({ _id: "$homework", extras: { $push: { _id: "$_id", description: "$description" } } })
 			.sort({_id: 1});
 		for (let i = 0; i < homework.length; i ++) {
 			homework[i].items = items[i].items;
 			homework[i].extras = extras[i].extras[0].description.length ? extras[i].extras : null;
 		}
-	} else {
-		homework = await HomeworkProgress.find({ user: req.user.id }).populate(['homework', 'itemProgress.item', 'extraProgress.extra']).lean();
-		console.log(homework)
+	if (req.isAuthenticated()) {
+		// combine homework data with user progress for display
+		const progress = await HomeworkProgress.find({ user: req.user.id });
+		homework.forEach(hw => {
+			// check if there is any existing progress for this homework
+			const prog = progress.find(p => p.homework.toString() === hw._id.toString())
+			hw.submitted = prog ? prog.submitted : false;
+			if (prog) {
+				// if yes, get item progress
+				hw.items.forEach(item => {
+					const itemProg = prog.itemProgress?.find(p => p.item.toString() === item._id.toString());
+					console.log(itemProg)
+					item.done = itemProg ? itemProg.done : false;
+				})
+				// if yes and there are extras, get extra progress
+				if (hw.extras) {
+					hw.extras.forEach(extra => {
+						const extraProg = prog.extraProgress?.find(p => p.extra.toString() === extra._id.toString());
+						extra.done = extraProg ? extraProg.done : false;
+					})
+				}
+			}
+		})
 	}
 	res.render('homework', { homework });
-	} catch(err) {
-		console.log(err)
-		req.session.flash = { type: "error", message: [ err || "Could not display homework."]}
-		res.redirect("/profile");
-	}
 };
 
 export const toggleItem =  async (req, res) => { 
 	try {
-		await User.toggleItem(req.params.itemId, req.params.hwId, req.user.id);
-		res.json("toggled watched");
+		await HomeworkProgress.toggleItem(req.params.itemId, req.params.hwId, req.user.id);
+		res.json("toggled hw item");
 	} catch (err) {
 		console.log(err)
 		res.json(err);
@@ -111,8 +123,8 @@ export const toggleItem =  async (req, res) => {
 
 export const toggleExtra =  async (req, res) => { 
 		try {
-		await User.toggleExtra(req.params.itemId, req.params.hwId, req.user.id);
-		res.json("toggled watched");
+		await HomeworkProgress.toggleExtra(req.params.itemId, req.params.hwId, req.user.id);
+		res.json("toggled hw extra");
 	} catch (err) {
 		console.log(err)
 		res.json(err);

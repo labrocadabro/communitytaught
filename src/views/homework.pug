@@ -31,17 +31,20 @@ block content
 					//- 		input.done(type="checkbox" id="done-" + hw._id autocomplete="off") 
 					td 
 						ul
-							each item in hw.items
-								li 
-									if (loggedIn)
-										input.item(type="checkbox" id=`item-${item._id}-${hw._id}` autocomplete="off" checked=item.done) 
-										label(for=`item-${item._id}-${hw._id}`) !{item.description} 
-										if (item.done)
-											p Done
-										else
-											p Not Done
-									else 
-										| !{item.description}
+							if hw.items
+								each item in hw.items
+									li 
+										if (loggedIn)
+											input.item(type="checkbox" id=`item-${item._id}-${hw._id}` autocomplete="off" checked=item.done) 
+											label(for=`item-${item._id}-${hw._id}`) !{item.description} 
+											if (item.done)
+												p Done
+											else
+												p Not Done
+										else 
+											| !{item.description}
+							else
+								| None
 					td
 						if hw.extras
 							ul

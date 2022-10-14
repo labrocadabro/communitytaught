@@ -13,7 +13,7 @@ const homeworkExtraProgressSchema = new Schema({
 });
 
 const homeworkProgressSchema = new Schema({
-	homework: { type: mongoose.Types.ObjectId, ref: 'Lesson' },
+	homework: { type: mongoose.Types.ObjectId, ref: 'Homework' },
 	user: { type: mongoose.Types.ObjectId, ref: 'User' },
 	itemProgress: [homeworkItemProgressSchema],
 	extraProgress: [homeworkExtraProgressSchema],

@@ -1,5 +1,6 @@
 import passport from 'passport';
 import validator from 'validator';
+import mongoose from "mongoose";
 
 import User from '../models/User.js';
 import Token from '../models/Token.js';
@@ -32,17 +33,18 @@ export const register = async (req, res) => {
 		// }
 		const homework = await Homework.find().sort({_id: 1});
 		const items = await HomeworkItem.aggregate().group({ _id: "$homework", items: { $push: { item: "$_id" } } }).sort({_id: 1});
-		const extras = await HomeworkExtra.aggregate().group({ _id: "$homework", extras: { $push: { extra: "$_id" } } }).sort({_id: 1});
+		const extras = await HomeworkExtra.aggregate().group({ _id: "$homework", extras: { $push: { extra: "$_id", description: "$description" } } }).sort({_id: 1});
+		extras.forEach(extra => console.log(extra))
 		for (let i = 0; i < homework.length; i ++) {
 			const progress = new HomeworkProgress({user: user._id, homework: homework[i]._id});
 			for (let j = 0; j < items[i].items.length; j++) {
 				const item =  items[i].items[j];
-				progress.itemProgress.push({ item: item._id })
+				progress.itemProgress.push({ _id: mongoose.Types.ObjectId(), item: item.item })
 			} 
 			for (let k = 0; k < extras[i].extras.length; k++) {
 				const extra =  extras[i].extras[k];
-				if (extra.description?.length) {
-					progress.extraProgress.push({ extra: extra._id });
+				if (extra.description.length) {
+					progress.extraProgress.push({ _id: mongoose.Types.ObjectId(), extra: extra.extra });
 				}	
 			} 		
 			await progress.save();

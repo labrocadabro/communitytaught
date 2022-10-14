@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import Homework from '../models/Homework.js';
 import HomeworkItem from '../models/HomeworkItem.js';
 import HomeworkExtra from '../models/HomeworkExtra.js';
+import HomeworkProgress from '../models/HomeworkProgress.js';
 import User from '../models/User.js';
 
 export const addEditHomeworkForm = async (req, res) => {
@@ -72,28 +73,27 @@ export const addEditHomework = async (req, res) => {
 export const showHomework =  async (req, res) => { 
 	try {
 		let homework;
-		let items;
-		let extras;
 		if (!req.isAuthenticated()) {
 		homework = await Homework.find().lean().sort({_id: 1});
-		items = await HomeworkItem
+		const items = await HomeworkItem
 			.aggregate()
 			.group({ _id: "$homework", items: { $push: { item: "$_id", itemIndex: "$itemIndex", class: "$class", due: "$due", description: "$description", required: "$required" } } })
 			.sort({_id: 1});
-		extras = await HomeworkExtra
+		const extras = await HomeworkExtra
 			.aggregate()
 			.group({ _id: "$homework", extras: { $push: { extra: "$_id", description: "$description" } } })
 			.sort({_id: 1});
-			console.log(items, extras)
-		homework.forEach( hw => {
-
-		});
-		homework
+		for (let i = 0; i < homework.length; i ++) {
+			homework[i].items = items[i].items;
+			homework[i].extras = extras[i].extras[0].description.length ? extras[i].extras : null;
+		}
 	} else {
-		homework = await Homework.find().lean();
+		homework = await HomeworkProgress.find({ user: req.user.id }).populate(['homework', 'itemProgress.item', 'extraProgress.extra']).lean();
+		console.log(homework)
 	}
-	res.render('homework', { homework, items, extras });
+	res.render('homework', { homework });
 	} catch(err) {
+		console.log(err)
 		req.session.flash = { type: "error", message: [ err || "Could not display homework."]}
 		res.redirect("/profile");
 	}

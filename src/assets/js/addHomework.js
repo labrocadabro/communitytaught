@@ -38,12 +38,8 @@ function addPW(e) {
 	const newItem = document.createElement('div');
 	newItem.classList.add('pw-item');
 	newItem.innerHTML = `
-		<label for="pw-class-${pwIndex}">Class Assigned</label>
-		<input id="pw-class-${pwIndex}" type="text" name="pwClass" autocomplete="off">
-		<label for="pw-due-${pwIndex}">Class Due</label>
-		<input id="pw-due-${pwIndex}" type="text" name="pwDue" autocomplete="off">
 		<label for="pw-desc-${pwIndex}">Description</label>
-		<textarea class="col-span-2" id="pw-desc-${pwIndex}" name="pwDesc" autocomplete="off"></textarea>
+		<textarea class="col-span-3" id="pw-desc-${pwIndex}" name="pwDesc" autocomplete="off"></textarea>
 	`;
 	document.getElementById('pw-items').append(newItem);
 	pwIndex += 1;

@@ -3,54 +3,6 @@ import mongoose from "mongoose";
 import Homework from '../models/Homework.js';
 import User from '../models/User.js';
 
-export const addHomeworkForm = (req, res) => {
-	if (!req.isAuthenticated() || !req.user.admin) return res.redirect("/");
-	res.render("addHomework", { edit: false });
-};
-
-export const addHomework = async (req, res) => {
-	if (!req.isAuthenticated() || !req.user.admin) return res.redirect("/");
-	try{
-		const hwItems = [];
-		const pwItems = [];
-		req.body.desc = req.body.desc ? [].concat(req.body.desc) : [];
-		req.body.required = req.body.required ? [].concat(req.body.required) : [];
-		req.body.extra = req.body.extra ? [].concat(req.body.extra) : [];
-		for (let i = 0; i < req.body.desc.length; i++) {
-			if (req.body.extra[i] === "true") {
-				pwItems.push({
-					itemIndex: i,
-					description: req.body.desc[i],
-					required: req.body.required[i] === "true" ? true : false,
-				});
-			} else {
-				hwItems.push({
-					itemIndex: i + 1,
-					class: req.body.itemClass[i],
-					due: req.body.itemDue[i],
-					description: req.body.desc[i],
-					required: req.body.required[i] === "true" ? true : false,
-				});
-			}
-		}
-		const homework = {
-			classNo: req.body.number.split(","),
-			dueNo: req.body.due,
-			items: hwItems,
-			extras: pwItems,
-			submit: req.body.submit,
-			cohort: req.body.cohort
-		}
-		await Homework.create(homework);
-		req.session.flash = { type: "success", message: ['Homework added']};
-	} catch (err) {
-		console.log(err);
-		req.session.flash = { type: "error", message: ['Homework not added']};
-	} finally {
-		res.redirect("/hw/add");
-	}
-};
-
 export const addEditHomeworkForm = async (req, res) => {
 	if (!req.isAuthenticated() || !req.user.admin) return res.redirect("/");
 	const edit = !!req.params.id;

@@ -30,7 +30,7 @@ block content
 								input.watched.mr-2(type="checkbox" id="watched-" + lesson._id autocomplete="off" checked=lesson.watched) 
 								label(id="watched-" + lesson._id) Watched
 							br
-							if (lesson.checkin.length)
+							if (lesson.checkin.length && lesson.checkin[0].length)
 								input.checkedin.mr-2(type="checkbox" id="checkedin-" + lesson._id autocomplete="off" checked=lesson.checkedIn)
 								label(for="checkedin-" + lesson._id) Checked In
 							else 
@@ -42,14 +42,15 @@ block content
 					td.motivation 
 						a(href=lesson.motivationLink target="_blank") #{lesson.motivationTitle}
 					td 
-						if (lesson.checkin.length === 1)
-							a(href=lesson.checkin[0] target="_blank") Check In
-						else if (!lesson.checkin.length)
-							| No Check-in		
-						else
+						if (lesson.checkin.length > 1)
 							each check, index in lesson.checkin
 								a(href=lesson.checkin[index] target="_blank") Check In #{index + 1}
 								br
+						else if (!lesson.checkin.length || !lesson.checkin[0].length)
+							| No Check-in						
+						else
+							a(href=lesson.checkin[0] target="_blank") Check In
+							
 					if (loggedIn && user.admin)
 						td
 							a.ml-2(href=`/class/edit/${lesson._id}`)

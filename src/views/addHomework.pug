@@ -25,27 +25,23 @@ block content
 				if (edit && homework.items.length)
 					each item, index in homework.items
 						- const hwIndex = index + 1
-						div
-						.col-span-3
+						input(type="hidden", name="hwId" value=item._id id=`hwId-${hwIndex}`)
+						label(for=`hw-class-${hwIndex}`) Class Assigned
+						input(type="text" name="hwClass" autocomplete="off" id=`hw-class-${hwIndex}` value=item.class)
+						.col-span-2
 							input.required(type="hidden", name="required" value=item.required? "true" : "false" id=`required-${hwIndex}`)
 							input.required-check(type="checkbox" autocomplete="off" id=`required-check-${hwIndex}` checked=item.required)
 							label.ml-2(for=`required-check-${hwIndex}`) Required
-						label(for=`hw-class-${hwIndex}`) Class Assigned
-						input(type="text" name="hwClass" autocomplete="off" id=`hw-class-${hwIndex}` value=item.class)
-						label(for=`hw-due-${hwIndex}`) Class Due
-						input(type="text" name="hwDue" autocomplete="off" id=`hw-due-${hwIndex}` value=item.due)
 						label(for=`hw-desc-${hwIndex}`) Description
 						textarea.col-span-3(name="hwDesc" autocomplete="off" id=`hw-desc-${hwIndex}`) #{item.description}
 				else
-					div
-					.col-span-3
+					input(type="hidden", name="hwId" value="null" id="hwId-1")
+					label(for="hw-class-1") Class Assigned
+					input#hw-class-1(type="text" name="hwClass" autocomplete="off")
+					.col-span-2
 						input#required-1.required(type="hidden", name="required" value="false")
 						input#required-check-1.required-check(type="checkbox" autocomplete="off")
 						label.ml-2(for="required-check-1") Required
-					label(for="hw-class-1") Class Assigned
-					input#hw-class-1(type="text" name="hwClass" autocomplete="off")
-					label(for="hw-due-1") Class Due
-					input#hw-due-1(type="text" name="hwDue" autocomplete="off")
 					label(for="hw-desc-1") Description
 					textarea#hw-desc-1.col-span-3(name="hwDesc" autocomplete="off")
 
@@ -56,13 +52,11 @@ block content
 				if (edit && homework.extras.length)
 					each extra, index in homework.extras
 						- const pwIndex = index + 1
-						label(for=`pw-class-${pwIndex}`) Class Assigned
-						input(type="text" name="pwClass" autocomplete="off" id=`pw-class-${pwIndex}` value=extra.class)
-						label(for=`pw-due-${pwIndex}`) Class Due
-						input(type="text" name="pwDue" autocomplete="off" id=`pw-due-${pwIndex}` value=extra.due)
+						input(type="hidden", name="pwId" value=extra._id id=`pwId-${pwIndex}`)
 						label(for=`pw-desc-${pwIndex}`) Description
 						textarea.col-span-3(name="pwDesc" autocomplete="off" id=`pw-desc-${pwIndex}`) #{extra.description}
 				else
+					input(type="hidden", name="pwId" value="null" id="pwId-1")
 					label(for="pw-desc-1") Description
 					textarea#pw-desc-1.col-span-3(name="pwDesc" autocomplete="off")
 		.col-span-4.mt-3.text-center

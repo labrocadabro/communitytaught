@@ -929,24 +929,16 @@ button:hover,  a.button:hover {
   margin-right: 0.5rem;
 }
 
-.mt-auto {
-  margin-top: auto;
-}
-
-.ml-4 {
-  margin-left: 1rem;
-}
-
-.ml-8 {
-  margin-left: 2rem;
-}
-
-.mb-6 {
-  margin-bottom: 1.5rem;
+.mt-2 {
+  margin-top: 0.5rem;
 }
 
 .mr-4 {
   margin-right: 1rem;
+}
+
+.mt-auto {
+  margin-top: auto;
 }
 
 .block {
@@ -979,10 +971,6 @@ button:hover,  a.button:hover {
 
 .flex-col {
   flex-direction: column;
-}
-
-.items-baseline {
-  align-items: baseline;
 }
 
 .gap-3 {
@@ -1034,8 +1022,17 @@ button:hover,  a.button:hover {
   line-height: 2rem;
 }
 
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
 .font-bold {
   font-weight: 700;
+}
+
+.italic {
+  font-style: italic;
 }
 
 .text-red-500 {
@@ -1047,18 +1044,18 @@ button:hover,  a.button:hover {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
-/***** all lessons *****/
+/***** all lessons, all homework *****/
 
-#all-lessons {
+table {
   border-width: 1px;
   text-align: center;
 }
 
-#all-lessons tr {
+table tr {
   border-bottom-width: 1px;
 }
 
-#all-lessons td,  th {
+table td,  table th {
   border-right-width: 1px;
   padding: 1rem;
 }
@@ -1067,8 +1064,51 @@ button:hover,  a.button:hover {
   padding: 0.5rem;
 }
 
-.thumbnail, .motivation {
+.hw-items,  .hw-extras {
+  text-align: left;
+}
+
+.thumbnail, .motivation, .hw-submit {
   max-width: 300px;
+}
+
+#all-homework .hw-items li {
+  position: relative;
+  margin-left: 1rem;
+}
+
+#all-homework li.required::before {
+  position: absolute;
+  left: -1rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  --tw-text-opacity: 1;
+  color: rgb(153 27 27 / var(--tw-text-opacity));
+  content: '*';
+}
+
+#all-homework .item,  #all-homework .extra {
+  margin-right: 0.375rem;
+}
+
+#all-homework .done {
+  opacity: 0.5;
+}
+
+.submit-button {
+  margin-bottom: 0.5rem;
+  display: block;
+  border-radius: 0.5rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(157 23 77 / var(--tw-bg-opacity));
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
 }
 
 /********* temporary ************/

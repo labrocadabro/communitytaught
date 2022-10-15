@@ -4,7 +4,6 @@ const Schema = mongoose.Schema;
 
 const homeworkExtraSchema = new Schema({
 	homework: { type: mongoose.Types.ObjectId, ref: 'Homework' }, 
-	extraIndex: Number,
 	description: String
 });
 

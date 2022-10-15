@@ -79,21 +79,40 @@
 	}
 }
 
-/***** all lessons *****/
-#all-lessons {
+/***** all lessons, all homework *****/
+table {
 	@apply text-center border;
 }
-#all-lessons tr {
+table tr {
 	@apply border-b;
 }
-#all-lessons td, th {
+table td, table th {
 	@apply p-4 border-r;
 }
 #all-lessons td:first-of-type {
 	@apply p-2;
 }
-.thumbnail, .motivation {
+.hw-items, .hw-extras {
+	@apply text-left;
+}
+.thumbnail, .motivation, .hw-submit {
 	max-width: 300px;
+}
+#all-homework .hw-items li {
+	@apply relative ml-4;
+}
+#all-homework li.required::before {
+	@apply absolute -left-4 text-red-800 text-2xl;
+	content: '*';
+}
+#all-homework .item, #all-homework .extra {
+	@apply mr-1.5;
+}
+#all-homework .done {
+	opacity: 0.5;
+}
+.submit-button {
+	@apply block mb-2 bg-pink-800 text-white rounded-lg uppercase py-2 no-underline font-bold;
 }
 
 /********* temporary ************/

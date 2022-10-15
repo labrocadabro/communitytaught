@@ -4,7 +4,6 @@ import Homework from '../models/Homework.js';
 import HomeworkItem from '../models/HomeworkItem.js';
 import HomeworkExtra from '../models/HomeworkExtra.js';
 import HomeworkProgress from '../models/HomeworkProgress.js';
-import User from '../models/User.js';
 
 export const addEditHomeworkForm = async (req, res) => {
 	if (!req.isAuthenticated() || !req.user.admin) return res.redirect("/");
@@ -12,7 +11,19 @@ export const addEditHomeworkForm = async (req, res) => {
 	let homework = null;
 	if (edit) {
 		homework = await Homework.findById(req.params.id).lean();
+		const items = await HomeworkItem
+			.aggregate()
+			.match({ homework: mongoose.Types.ObjectId(req.params.id) })
+			.group({ _id: "$homework", items: { $push: { _id: "$_id", class: "$class", description: "$description", required: "$required" } } })
+			.sort({_id: 1});
+		const extras = await HomeworkExtra
+			.aggregate()
+			.match({ homework: mongoose.Types.ObjectId(req.params.id) })
+			.group({ _id: "$homework", extras: { $push: { _id: "$_id", description: "$description" } } })
+			.sort({_id: 1});
 		homework.classNo = homework.classNo.join(',');
+		homework.items = items[0].items;
+		homework.extras = extras.length ? extras[0].extras : [];
 	}
 	res.render("addHomework", { edit, homework });
 };
@@ -30,36 +41,27 @@ export const addEditHomework = async (req, res) => {
 		const homework = await Homework.findByIdAndUpdate(req.params.id  || mongoose.Types.ObjectId(), hwData, {upsert: true, new: true});
 		const hwDesc = req.body.hwDesc ? [].concat(req.body.hwDesc) : [];
 		const hwClass = req.body.hwClass ? [].concat(req.body.hwClass) : [];
-		const hwDue = req.body.hwDue ? [].concat(req.body.hwDue) : [];
 		const hwRequired = req.body.required ? [].concat(req.body.required) : [];
+		let hwId = req.body.hwId ? [].concat(req.body.hwId) : [];
+		hwId = hwId.map(id => id === "null" ? null : id);
 		const pwDesc = req.body.pwDesc ? [].concat(req.body.pwDesc) : [];
+		let pwId = req.body.pwId ? [].concat(req.body.pwId) : [];
+		pwId = pwId.map(id => id === "null" ? null : id);
 		for (let i = 0; i < hwDesc.length; i++) {
-			const item = new HomeworkItem({
+			const item = {
 				homework: homework._id,
-				itemIndex: i + 1,
 				class: hwClass[i],
-				due: hwDue[i],
 				description: hwDesc[i],
 				required: hwRequired[i] === "true" ? true : false,
-			});
-			await item.save();
+			};
+			await HomeworkItem.findByIdAndUpdate(hwId[i] || mongoose.Types.ObjectId(), item, {upsert: true});
 		}
-		if (pwDesc.length) {
-			for (let i = 0; i < pwDesc.length; i++) {
-				const extra = new HomeworkExtra({
-					homework: homework._id,
-					extraIndex: i + 1,
-					description: pwDesc[i]
-				});
-				await extra.save();
-			}
-		} else {
-			const extra = new HomeworkExtra({
+		for (let i = 0; i < pwId.length; i++) {
+			const extra = {
 				homework: homework._id,
-				extraIndex: 1,
-				description: ""
-			});
-			await extra.save();
+				description: pwDesc[i] || ""
+			};
+			await HomeworkExtra.findByIdAndUpdate(pwId[i] || mongoose.Types.ObjectId(), extra, {upsert: true});
 		}
 		req.session.flash = { type: "success", message: [`Homework ${!!req.params.id ? "updated" : "added"}`]};
 	} catch (err) {
@@ -74,15 +76,15 @@ export const showHomework =  async (req, res) => {
 		const homework = await Homework.find().lean().sort({_id: 1});
 		const items = await HomeworkItem
 			.aggregate()
-			.group({ _id: "$homework", items: { $push: { _id: "$_id", itemIndex: "$itemIndex", class: "$class", due: "$due", description: "$description", required: "$required" } } })
+			.group({ _id: "$homework", items: { $push: { _id: "$_id", class: "$class", due: "$due", description: "$description", required: "$required" } } })
 			.sort({_id: 1});
 		const extras = await HomeworkExtra
 			.aggregate()
 			.group({ _id: "$homework", extras: { $push: { _id: "$_id", description: "$description" } } })
 			.sort({_id: 1});
 		for (let i = 0; i < homework.length; i ++) {
-			homework[i].items = items[i].items;
-			homework[i].extras = extras[i].extras[0].description.length ? extras[i].extras : null;
+			homework[i].items = items.length ? items[i].items : null;
+			homework[i].extras = extras.length && extras[i].extras[0].description.length ? extras[i].extras : null;
 		}
 	if (req.isAuthenticated()) {
 		// combine homework data with user progress for display
@@ -95,7 +97,6 @@ export const showHomework =  async (req, res) => {
 				// if yes, get item progress
 				hw.items.forEach(item => {
 					const itemProg = prog.itemProgress?.find(p => p.item.toString() === item._id.toString());
-					console.log(itemProg)
 					item.done = itemProg ? itemProg.done : false;
 				})
 				// if yes and there are extras, get extra progress

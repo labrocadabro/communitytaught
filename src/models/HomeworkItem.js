@@ -4,7 +4,6 @@ const Schema = mongoose.Schema;
 
 const homeworkItemSchema = new Schema({ 
 	homework: { type: mongoose.Types.ObjectId, ref: 'Homework' },
-	itemIndex: Number,
 	class: Number,
 	due: Number,
 	description: String,

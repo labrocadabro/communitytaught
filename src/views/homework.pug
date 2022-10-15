@@ -64,14 +64,15 @@ block content
 					td.hw-submit 
 						if hw.submit
 							a.submit-button(href=hw.submit target="_blank") Submit
-							input.extra(type="checkbox" id=`submit-${hw._id}` autocomplete="off" checked=hw.submitted)
-							label(for=`submit-${hw._id}` ) Submitted
+							if (loggedIn)
+								input.extra(type="checkbox" id=`submit-${hw._id}` autocomplete="off" checked=hw.submitted)
+								label(for=`submit-${hw._id}` ) Submitted
 						else
 							p Nothing to submit
 						if (hw.note)
 								p.italic.text-sm.mt-2 !{hw.note} 
-					td
-						if (loggedIn && user.admin)
+					if (loggedIn && user.admin)
+						td
 							a.ml-2(href=`/hw/edit/${hw._id}`)
 								i.fa.fa-pencil
 

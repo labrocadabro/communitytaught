@@ -14,7 +14,7 @@ let transport;
 		// production server using smtp
 			host: process.env.SMTP_SERVER,
 			port: process.env.SMTP_PORT,
-			secure: true,
+			secure: false,
 			auth: {
 				user: process.env.SMTP_USER,
 				pass: process.env.SMTP_PASS,
@@ -29,20 +29,26 @@ let transport;
 // }
 
 export const verify = async (req, res) => {
-	const email = req.user.username;
-	if (!req.user.verified) {
-		const token = crypto.randomBytes(32).toString('hex');
-		await new Token({token, email}).save();
-		const url = `${process.env.DOMAIN}/verify?token=${token}`;
-		await transport.sendMail({
-			from: process.env.FROM_EMAIL,
-			to: email,
-			subject: "Please verify your account",
-			text: `To verify your account, please copy and paste this link into your browser: ${url}`,
-			html: `<h3>Verify your account</h3><p>Please click <a href="${url}">this link</a> to verify your account</p>` 
-		})
+	try {
+		const email = req.user.username;
+		if (!req.user.verified) {
+			const token = crypto.randomBytes(32).toString('hex');
+			await new Token({token, email}).save();
+			const url = `${process.env.DOMAIN}/verify?token=${token}`;
+			await transport.sendMail({
+				from: process.env.FROM_EMAIL,
+				to: email,
+				subject: "Please verify your account",
+				text: `To verify your account, please copy and paste this link into your browser: ${url}`,
+				html: `<h3>Verify your account</h3><p>Please click <a href="${url}">this link</a> to verify your account</p>` 
+			})
+		}
+	} catch(err) {
+		console.log(err)
+	} finally {
+		res.redirect(req.session.returnTo || '/dashboard');
 	}
-	res.redirect(req.session.returnTo || '/dashboard');
+	
 };
 
 export const forgot = async (req, res) => {

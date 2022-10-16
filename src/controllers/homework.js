@@ -1,9 +1,12 @@
 import mongoose from "mongoose";
 
+import { notLoggedIn } from "./auth.js";
 import Homework from '../models/Homework.js';
 import HomeworkItem from '../models/HomeworkItem.js';
 import HomeworkExtra from '../models/HomeworkExtra.js';
 import HomeworkProgress from '../models/HomeworkProgress.js';
+import LessonProgress from '../models/LessonProgress.js';
+import { hwData, lessonData } from "../config/importData.js";
 
 export const addEditHomeworkForm = async (req, res) => {
 	if (!req.isAuthenticated() || !req.user.admin) return res.redirect("/");
@@ -110,6 +113,42 @@ export const showHomework =  async (req, res) => {
 		})
 	}
 	res.render('homework', { homework });
+};
+
+export const importData = async (req, res) => { 
+	if (!req.isAuthenticated()) return notLoggedIn(req, res);;
+	try {
+		const data = JSON.parse(JSON.parse(req.body.import).CBState);
+		for (let i = 0; i < Object.keys(data).length; i++) {
+			const hw = Object.keys(data)[i];
+			if (!data[hw] || !(hw in hwData)) continue;
+			if (hwData[hw].submit) {
+				await HomeworkProgress.findOneAndUpdate({user: req.user.id, homework: hwData[hw].hw }, { submitted: true }, { upsert: true })
+			} else if (hwData[hw].extra) {
+				await HomeworkProgress.findOneAndUpdate({user: req.user.id, homework: hwData[hw].hw }, {$push: { extraProgress:{extra: hwData[hw].item, done: true } } }, { upsert: true });
+			} else {
+				await HomeworkProgress.findOneAndUpdate({user: req.user.id, homework: hwData[hw].hw }, {$push: { itemProgress: {item: hwData[hw].item, done: true }} }, { upsert: true });
+			}
+		}
+		if (req.body.classesWatched || req.body.classesCheckedin) {
+			const classes = new Set();
+			Object.keys(data).forEach(key => classes.add(Number(key.split("-")[0].slice(2))));
+			const lastClass = Math.max(...classes);
+			for (let i = 0; i <= lastClass; i++) {
+				if (!(i in lessonData)) continue;
+				const progress = {};
+				if (req.body.classesWatched) progress.watched = true;
+				if (req.body.classesCheckedin) progress.checkedIn = true;
+				await LessonProgress.findOneAndUpdate({user: req.user.id, lesson: lessonData[i] }, progress, { upsert: true });
+			}
+		}
+		req.session.flash = { type: "success", message: ["Data imported successfully"] };
+	} catch (err) {
+		console.log(err);
+		req.session.flash = { type: "error", message: ["Error importing data"] };
+	} finally {
+		res.redirect('/account');
+	}
 };
 
 export const toggleItem =  async (req, res) => { 

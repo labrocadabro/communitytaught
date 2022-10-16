@@ -6,7 +6,21 @@ block variables
 block content
 	h1.mb-4 Account Settings
 
-	div#change-email.settings
+	#import
+		h3 Import Data from #[a(href="https://labrocadabro.github.io/100devs-hw-tracker/") Old Tracker]
+		form(method="post" action="/hw/import")
+			label(for="importData") Import Data
+			br
+			textarea#importData(placeholder="Please paste the data you exported from the old tracker" name="import")
+			p If you select the following options, the importer will determine the most recent class you've completed a homework item for, and will mark that class and all previous classes as watched/checked in.
+			input(type="checkbox" id="classesWatched" name="classesWatched") 
+			label(for="classesWatched") Mark Classes Watched
+			br
+			input(type="checkbox" id="classesCheckedin" name="classesCheckedin") 
+			label(for="classesCheckedin") Mark Classes Checked In
+			button(type="submit") Import
+
+	#change-email.settings
 		h3 Email
 		span #{user.username} #[a(href="/change-email") Change]
 		form(method="post" action="/change-email" id="email-form" style="display:none")
@@ -14,7 +28,7 @@ block content
 			input(type="email" name="username" id="username")
 			button(type="submit") Change Email
 	
-	div#change-password.settings
+	#change-password.settings
 		h3 Password
 		if (user.hasPassword)
 			a(href="/change-password" id="change") Change password
@@ -41,7 +55,7 @@ block content
 					input(type="password" name="confirm" id="confirm")
 				button(type="submit") Change Password
 
-	div#linked-accounts.settings
+	#linked-accounts.settings
 		h3 Manage Linked Accounts
 		if user.googleId || user.githubId
 			ul
@@ -60,7 +74,7 @@ block content
 		else
 			span No linked accounts
 
-	div#delete-account.settings
+	#delete-account.settings
 		h3 Delete Account
 		button#first Delete
 		form(id="delete-form" style="display:none")

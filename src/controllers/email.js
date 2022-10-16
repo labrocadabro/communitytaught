@@ -8,18 +8,25 @@ import Token from '../models/Token.js';
 
 dotenv.config();
 
-const transport = nodemailer.createTransport({
-	// test server using Mailhog
-	host: "0.0.0.0",
-	port: 1025
-	// host: process.env.SMTP_SERVER,
-  // port: process.env.SMTP_PORT,
-  // secure: true,
-  // auth: {
-  //   user: process.env.SMTP_USER,
-  //   pass: process.env.SMTP_PASS,
-	// }
-});
+let transport;
+// if (process.env.MODE === "prod") {
+	transport = nodemailer.createTransport({
+		// production server using smtp
+			host: process.env.SMTP_SERVER,
+			port: process.env.SMTP_PORT,
+			secure: true,
+			auth: {
+				user: process.env.SMTP_USER,
+				pass: process.env.SMTP_PASS,
+			}
+	});
+// } else {
+// 	transport = nodemailer.createTransport({
+// 		// test server using Mailhog
+// 			host: "0.0.0.0",
+// 			port: 1025
+// 	});
+// }
 
 export const verify = async (req, res) => {
 	const email = req.user.username;

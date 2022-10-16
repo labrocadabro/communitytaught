@@ -9,7 +9,7 @@ import Token from '../models/Token.js';
 dotenv.config();
 
 let transport;
-// if (process.env.MODE === "prod") {
+if (process.env.MODE === "prod") {
 	transport = nodemailer.createTransport({
 		// production server using smtp
 			host: process.env.SMTP_SERVER,
@@ -20,13 +20,13 @@ let transport;
 				pass: process.env.SMTP_PASS,
 			}
 	});
-// } else {
-// 	transport = nodemailer.createTransport({
-// 		// test server using Mailhog
-// 			host: "0.0.0.0",
-// 			port: 1025
-// 	});
-// }
+} else {
+	transport = nodemailer.createTransport({
+		// test server using Mailhog
+			host: "0.0.0.0",
+			port: 1025
+	});
+}
 
 export const verify = async (req, res) => {
 	try {

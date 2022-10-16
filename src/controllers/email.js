@@ -8,6 +8,8 @@ import Token from '../models/Token.js';
 
 dotenv.config();
 
+const from = `${process.env.FROM_NAME} <${process.env.FROM_EMAIL}>`;
+
 let transport;
 if (process.env.MODE === "prod") {
 	transport = nodemailer.createTransport({
@@ -36,9 +38,9 @@ export const verify = async (req, res) => {
 			await new Token({token, email}).save();
 			const url = `${process.env.DOMAIN}/verify?token=${token}`;
 			await transport.sendMail({
-				from: process.env.FROM_EMAIL,
+				from: from,
 				to: email,
-				subject: "Please verify your account",
+				subject: "Please verify your CommunityTaught.org account",
 				text: `To verify your account, please copy and paste this link into your browser: ${url}`,
 				html: `<h3>Verify your account</h3><p>Please click <a href="${url}">this link</a> to verify your account</p>` 
 			})
@@ -67,17 +69,17 @@ export const forgot = async (req, res) => {
 	if (token) {
 		const url = `${process.env.DOMAIN}/reset?token=${token}`;
 		await transport.sendMail({
-			from: process.env.FROM_EMAIL,
+			from: from,
 			to: email,
-			subject: "Reset Password",
+			subject: "Reset CommunityTaught.org Password",
 			text: `To reset your password, please copy and paste this link into your browser: ${url}`,
 			html: `<h3>Reset Password</h3><p>Please click <a href="${url}">this link</a> to reset your password</p>` 
 		})
 	} else {
 		await transport.sendMail({
-			from: process.env.FROM_EMAIL,
+			from: from,
 			to: email,
-			subject: "No Account Found",
+			subject: "No Account Found on CommunityTaught.org",
 			text: "We recently received a request to reset the password for an account using this email address. However, no such account exists.",
 			html: `<h3>No Account Found</h3><p>We recently received a request to reset the password for an account using this email address. However, no such account exists.</p>` 
 		})

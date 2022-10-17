@@ -65,7 +65,7 @@ block content
 						if hw.submit
 							a.submit-button(href=hw.submit target="_blank") Submit
 							if (loggedIn)
-								input.extra(type="checkbox" id=`submit-${hw._id}` autocomplete="off" checked=hw.submitted)
+								input.submitted(type="checkbox" id=`submit-${hw._id}` autocomplete="off" checked=hw.submitted)
 								label(for=`submit-${hw._id}`) Submitted
 						else
 							p Nothing to submit

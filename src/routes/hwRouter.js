@@ -18,6 +18,6 @@ router.get('/all', homework.showHomework);
 
 router.put('/item/:id', homework.toggleItem); 
 router.put('/extra/:id', homework.toggleExtra); 
-
+router.put('/submit/:id', homework.toggleSubmitted); 
 
 export default router;

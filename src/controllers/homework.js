@@ -90,13 +90,15 @@ export const addEditHomework = async (req, res) => {
 export const showHomework =  async (req, res) => { 
 	const homework = await Homework.find().lean().sort({_id: 1}).populate(['items', 'extras']);
 	if (req.isAuthenticated()) {
-		// homework = await Homework.aggregrate().lookup({ 
-		// 	from: 'homeworkprogresses', 
-		// 	localField: 'homework', 
-		// 	foreignField: '_id', 
-		// 	pipeline: [{ $match: { user: mongoose.Types.ObjectId(req.user.id) } }],
-		// 	as: 'progress' 
-		// });
+		const test = await Homework.aggregate().lookup({ 
+			from: 'homeworkprogresses', 
+			localField: 'homework', 
+			foreignField: '_id', 
+			pipeline: [{ $match: { user: mongoose.Types.ObjectId(req.user.id) } }],
+			as: 'progress' 
+		});
+		console.log(test)
+
 		// combine homework data with user progress for display
 		const progress = await HomeworkProgress.find({ user: req.user.id });
 		homework.forEach(hw => {
@@ -118,7 +120,6 @@ export const showHomework =  async (req, res) => {
 				}
 			}
 		})
-		console.log(homework)
 	}
 	res.render('homework', { homework });
 };
@@ -202,6 +203,16 @@ export const toggleItem =  async (req, res) => {
 export const toggleExtra =  async (req, res) => { 
 		try {
 		await ExtraProgress.toggleExtra(req.params.id, req.user.id);
+		res.json("toggled hw extra");
+	} catch (err) {
+		console.log(err)
+		res.json(err);
+	} 
+};
+
+export const toggleSubmitted =  async (req, res) => { 
+		try {
+		await HomeworkProgress.toggleSubmitted(req.params.id, req.user.id);
 		res.json("toggled hw extra");
 	} catch (err) {
 		console.log(err)

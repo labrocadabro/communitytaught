@@ -908,10 +908,6 @@ button:hover,  a.button:hover {
   margin: 0.5rem;
 }
 
-.m-auto {
-  margin: auto;
-}
-
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -993,24 +989,12 @@ button:hover,  a.button:hover {
   width: 80%;
 }
 
-.w-3\/5 {
-  width: 60%;
-}
-
 .max-w-lg {
   max-width: 32rem;
 }
 
 .flex-1 {
   flex: 1 1 0%;
-}
-
-.grid-cols-2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.grid-cols-3 {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .grid-cols-4 {
@@ -1029,12 +1013,12 @@ button:hover,  a.button:hover {
   align-items: center;
 }
 
-.gap-3 {
-  gap: 0.75rem;
-}
-
 .gap-2 {
   gap: 0.5rem;
+}
+
+.gap-3 {
+  gap: 0.75rem;
 }
 
 .border {
@@ -1156,7 +1140,7 @@ table td,  table th {
   content: '*';
 }
 
-#all-homework .item,  #all-homework .extra {
+#all-homework .item,  #all-homework .extra,  #all-homework .submitted {
   margin-right: 0.375rem;
 }
 

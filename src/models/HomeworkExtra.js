@@ -3,7 +3,8 @@ import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 const homeworkExtraSchema = new Schema({
-	homework: { type: mongoose.Types.ObjectId, ref: 'Homework' }, 
+	class: Number,
+	due: Number,
 	description: String
 });
 

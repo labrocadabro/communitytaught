@@ -13,7 +13,9 @@ const homeworkSchema = new Schema({
 	},
 	submit: String,
 	cohort: Number,
-	note: String
+	note: String,
+	items: { type: [mongoose.Types.ObjectId], ref: 'HomeworkItem' },
+	extras:  { type: [mongoose.Types.ObjectId], ref: 'HomeworkExtra' }
 });
 
 export default mongoose.model('Homework', homeworkSchema);

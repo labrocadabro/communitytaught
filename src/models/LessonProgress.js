@@ -6,7 +6,8 @@ const lessonProgressSchema = new Schema({
 	lesson: {type: mongoose.Types.ObjectId, ref: 'Lesson' },
 	user: {type: mongoose.Types.ObjectId, ref: 'User' },
 	watched: { type: Boolean, default: false },
-	checkedIn: { type: Boolean, default: false }
+	checkedIn: { type: Boolean, default: false },
+	notes: String
 });
 
 lessonProgressSchema.statics.toggleWatched = async function(lessonId, userId) {

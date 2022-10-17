@@ -90,36 +90,25 @@ export const addEditHomework = async (req, res) => {
 export const showHomework =  async (req, res) => { 
 	const homework = await Homework.find().lean().sort({_id: 1}).populate(['items', 'extras']);
 	if (req.isAuthenticated()) {
-		const test = await Homework.aggregate().lookup({ 
-			from: 'homeworkprogresses', 
-			localField: 'homework', 
-			foreignField: '_id', 
-			pipeline: [{ $match: { user: mongoose.Types.ObjectId(req.user.id) } }],
-			as: 'progress' 
-		});
-		console.log(test)
-
-		// combine homework data with user progress for display
-		const progress = await HomeworkProgress.find({ user: req.user.id });
+		const hwProgress = await HomeworkProgress.find({ user: req.user.id });
+		const itemProgress = await ItemProgress.find({ user: req.user.id });
+		const extraProgress = await ExtraProgress.find({ user: req.user.id });
 		homework.forEach(hw => {
-			// check if there is any existing progress for this homework
-			const prog = progress.find(p => p.homework.toString() === hw._id.toString())
-			hw.submitted = prog ? prog.submitted : false;
-			if (prog) {
-				// if yes, get item progress
+			const progress = hwProgress.find(p => p.homework.toString() === hw._id.toString());
+			hw.submitted = progress ? progress.submitted : false;
+			if (progress) {
 				hw.items.forEach(item => {
-					const itemProg = prog.itemProgress?.find(p => p.item.toString() === item._id.toString());
+					const itemProg = itemProgress?.find(p => p.item.toString() === item._id.toString());
 					item.done = itemProg ? itemProg.done : false;
-				})
-				// if yes and there are extras, get extra progress
+				});
 				if (hw.extras) {
 					hw.extras.forEach(extra => {
-						const extraProg = prog.extraProgress?.find(p => p.extra.toString() === extra._id.toString());
+						const extraProg = extraProgress?.find(p => p.extra.toString() === extra._id.toString());
 						extra.done = extraProg ? extraProg.done : false;
-					})
+					});
 				}
 			}
-		})
+		});
 	}
 	res.render('homework', { homework });
 };

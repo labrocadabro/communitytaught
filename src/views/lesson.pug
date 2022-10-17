@@ -55,7 +55,14 @@ block content
 				if (next)
 					h2
 						a(href="/class/" + next) Next Class
-
+	if links.hwAssigned
+		h3 Homework Assgined this Class
+		each hw in links.hwAssigned
+			p #{hw.classNo}
+	if links.hwDue
+		h3 Homework Due this Class
+		each hw in links.hwDue
+			p #{hw.classNo}
 
 block extra-scripts
 	script(src="/js/lessonProgress.js")

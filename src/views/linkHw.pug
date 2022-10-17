@@ -1,0 +1,48 @@
+extends layouts/default.pug
+
+block variables
+	- const title = "Link Classes and Homework"
+
+block content
+	h1 Link Classes and Homework
+
+	form(method="post" action="/hw/link")
+		div(class="grid grid-cols-4 w-4/5 mx-auto gap-2 items-center")
+			label.text-right(for="lesson") Class
+			select#lesson.col-span-3(name="lesson")
+				option(value = "") --- Chose one ---
+				each lesson in lessons
+					if lesson.classNo[0] && lesson.videoId
+						option(value=lesson._id) #{lesson.classNo}: #{lesson.title}
+			label.text-right(for="hwAssigned") Homework Assigned
+			select#hwAssigned.col-span-3(name="hwAssigned")
+				option(value = "") --- Chose one ---
+				each hw in homework
+					option(value=hw._id) Assigned: #{hw.classNo}; Due: #{hw.dueNo}
+			label.text-right(for="hwDue") Homework Due
+			select#hwDue.col-span-3(name="hwDue")
+				option(value = "") --- Chose one ---
+				each hw in homework
+					option(value=hw._id) Assigned: #{hw.classNo}; Due: #{hw.dueNo}
+		button.mx-auto.mt-3 Add
+
+	table.mx-auto
+		thead
+			tr
+				th Class
+				th Homework Assigned
+				th Homework Due
+		tbody
+			each link in links
+				tr
+				td #{link.lesson.classNo}: #{link.lesson.title} 
+				td
+					if link.hwAssigned
+						|	#{link.hwAssigned.map(hw => hw.classNo).join(", ")} 
+					else
+						| Nothing Assigned
+				td
+					if link.hwDue
+						|	#{link.hwDue.map(hw => hw.classNo).join(", ")}
+					else
+						| Nothing Due

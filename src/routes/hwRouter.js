@@ -9,6 +9,9 @@ router.get('/edit/:id', homework.addEditHomeworkForm);
 router.post('/add', homework.addEditHomework);
 router.post('/edit/:id', homework.addEditHomework);
 
+router.get('/link', homework.linkHwForm);
+router.post('/link', homework.linkHw);
+
 router.post('/import', homework.importData);
 
 router.get('/all', homework.showHomework);

@@ -2,10 +2,13 @@ import mongoose from "mongoose";
 
 import { notLoggedIn } from "./auth.js";
 import Homework from '../models/Homework.js';
-import HomeworkItem from '../models/HomeworkItem.js';
-import HomeworkExtra from '../models/HomeworkExtra.js';
+import HomeworkItem from '../models/ItemProgress.js';
+import HomeworkExtra from '../models/ExtraProgress.js';
 import HomeworkProgress from '../models/HomeworkProgress.js';
+import Lesson from '../models/Lesson.js';
 import LessonProgress from '../models/LessonProgress.js';
+import LessonHwLink from '../models/LessonHwLink.js';
+
 import { hwData, lessonData } from "../config/importData.js";
 
 export const addEditHomeworkForm = async (req, res) => {
@@ -148,6 +151,36 @@ export const importData = async (req, res) => {
 		req.session.flash = { type: "error", message: ["Error importing data"] };
 	} finally {
 		res.redirect('/account');
+	}
+};
+export const linkHwForm =  async (req, res) => { 
+	if (!req.isAuthenticated() || !req.user.admin) return res.redirect("/");
+	try {
+		const lessons = await Lesson.find().lean().sort({ _id: 1 });
+		const homework = await Homework.find().lean().sort({ _id: 1 });
+		const links = await LessonHwLink.find().lean().sort({ _id: -1 }).populate(['lesson', 'hwAssigned', 'hwDue']);
+		res.render('linkHw', { lessons, homework, links });
+	} catch (err) {
+		console.log(err)
+		res.redirect("/");
+	} 
+};
+
+export const linkHw =  async (req, res) => { 
+	if (!req.isAuthenticated() || !req.user.admin) return res.redirect("/");
+	try {
+		const link = new LessonHwLink({
+			lesson: req.body.lesson,
+			hwAssigned: req.body.hwAssigned.length ? req.body.hwAssigned : null,
+			hwDue: req.body.hwDue.length ? req.body.hwDue : null
+		})
+		await link.save();
+		req.session.flash = { type: "success", message: ["Class and homework linked successfully."]};
+	} catch (err) {
+		console.log(err)
+		req.session.flash = { type: "error", message: ["Class and homework not linked."]};
+	} finally {
+		res.redirect("/hw/link");
 	}
 };
 

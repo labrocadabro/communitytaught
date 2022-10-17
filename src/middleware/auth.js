@@ -1,7 +1,12 @@
+import dotenv from 'dotenv';
+
 import Token from "../models/Token.js";
+
+dotenv.config();
 
 export default async function auth(req, res, next) {
 	res.locals.loggedIn = req.isAuthenticated();
+	res.locals.mode = process.env.MODE;
 	if (res.locals.loggedIn) {
 		const { username, verified, hasPassword, googleId, githubId, admin } = req.user; 
 		res.locals.user = { username, verified, hasPassword, googleId, githubId, admin };

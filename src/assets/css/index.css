@@ -904,6 +904,10 @@ button:hover,  a.button:hover {
   grid-column: span 2 / span 2;
 }
 
+.m-2 {
+  margin: 0.5rem;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -933,6 +937,10 @@ button:hover,  a.button:hover {
   margin-top: 0.5rem;
 }
 
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
 .mr-4 {
   margin-right: 1rem;
 }
@@ -941,8 +949,8 @@ button:hover,  a.button:hover {
   margin-top: auto;
 }
 
-.mb-2 {
-  margin-bottom: 0.5rem;
+.mb-5 {
+  margin-bottom: 1.25rem;
 }
 
 .block {
@@ -961,12 +969,20 @@ button:hover,  a.button:hover {
   display: none;
 }
 
+.h-auto {
+  height: auto;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
 
 .w-full {
   width: 100%;
+}
+
+.max-w-lg {
+  max-width: 32rem;
 }
 
 .flex-1 {
@@ -977,12 +993,25 @@ button:hover,  a.button:hover {
   flex-direction: column;
 }
 
+.flex-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
 .gap-3 {
   gap: 0.75rem;
 }
 
+.border {
+  border-width: 1px;
+}
+
 .border-b {
   border-bottom-width: 1px;
+}
+
+.border-gray-700 {
+  --tw-border-opacity: 1;
+  border-color: rgb(55 65 81 / var(--tw-border-opacity));
 }
 
 .bg-gray-200 {

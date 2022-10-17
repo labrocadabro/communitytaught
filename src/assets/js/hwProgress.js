@@ -8,8 +8,7 @@ hwExtras.forEach(el => el.addEventListener('change', toggleExtra));
 async function toggleItem() {
 	try {
 		const itemId = this.id.split("-")[1];
-		const hwId = this.id.split("-")[2];
-		const res = await fetch(`/hw/item/${itemId}/${hwId}`, {
+		const res = await fetch(`/hw/item/${itemId}`, {
 			method: "put",
 		}); 
 	} catch (err) {
@@ -20,8 +19,7 @@ async function toggleItem() {
 async function toggleExtra() {
 	try {
 		const itemId = this.id.split("-")[1];
-		const hwId = this.id.split("-")[2];
-		const res = await fetch(`/hw/extra/${itemId}/${hwId}`, {
+		const res = await fetch(`/hw/extra/${itemId}`, {
 			method: "put",
 		}); 
 	} catch (err) {

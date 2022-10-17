@@ -15,17 +15,14 @@ function addHW(e) {
 	const newItem = document.createElement('div');
 	newItem.classList.add('hw-item');
 	newItem.innerHTML = `
-		<div></div>
 		<input type="hidden" name="hwId" value="null" id="hwId-${hwIndex}">
-		<div class="col-span-3">
+		<label for="hw-class-${hwIndex}">Class Assigned</label>
+		<input id="hw-class-${hwIndex}" type="text" name="hwClass" autocomplete="off">
+		<div class="col-span-2">
 			<input class="required" id="required-${hwIndex}" type="hidden" name="required" value="false">
 			<input class="required-check" id="required-check-${hwIndex}" type="checkbox" autocomplete="off">
 			<label class="ml-2" for="required-check-${hwIndex}">Required</label>
 		</div>
-		<label for="hw-class-${hwIndex}">Class Assigned</label>
-		<input id="hw-class-${hwIndex}" type="text" name="hwClass" autocomplete="off">
-		<label for="hw-due-${hwIndex}">Class Due</label>
-		<input id="hw-due-${hwIndex}" type="text" name="hwDue" autocomplete="off">
 		<label for="hw-desc-${hwIndex}">Description</label>
 		<textarea class="col-span-3" id="hw-desc-${hwIndex}" name="hwDesc" autocomplete="off"></textarea>
 	`;
@@ -40,6 +37,9 @@ function addPW(e) {
 	newItem.classList.add('pw-item');
 	newItem.innerHTML = `
 		<input type="hidden" name="pwId" value="null" id="pwId-${pwIndex}">
+		<label for="pw-class-${pwIndex}">Class Assigned</label>
+		<input id="pw-class-${pwIndex}" type="text" name="pwClass" autocomplete="off">
+		<div class="col-span-2"></div>
 		<label for="pw-desc-${pwIndex}">Description</label>
 		<textarea class="col-span-3" id="pw-desc-${pwIndex}" name="pwDesc" autocomplete="off"></textarea>
 	`;

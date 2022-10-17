@@ -2,9 +2,11 @@ import mongoose from "mongoose";
 
 import { notLoggedIn } from "./auth.js";
 import Homework from '../models/Homework.js';
-import HomeworkItem from '../models/ItemProgress.js';
-import HomeworkExtra from '../models/ExtraProgress.js';
+import HomeworkItem from '../models/HomeworkItem.js';
+import HomeworkExtra from '../models/HomeworkExtra.js';
 import HomeworkProgress from '../models/HomeworkProgress.js';
+import ItemProgress from '../models/ItemProgress.js';
+import ExtraProgress from '../models/ExtraProgress.js';
 import Lesson from '../models/Lesson.js';
 import LessonProgress from '../models/LessonProgress.js';
 import LessonHwLink from '../models/LessonHwLink.js';
@@ -16,20 +18,8 @@ export const addEditHomeworkForm = async (req, res) => {
 	const edit = !!req.params.id;
 	let homework = null;
 	if (edit) {
-		homework = await Homework.findById(req.params.id).lean();
-		const items = await HomeworkItem
-			.aggregate()
-			.match({ homework: mongoose.Types.ObjectId(req.params.id) })
-			.group({ _id: "$homework", items: { $push: { _id: "$_id", class: "$class", description: "$description", required: "$required" } } })
-			.sort({_id: 1});
-		const extras = await HomeworkExtra
-			.aggregate()
-			.match({ homework: mongoose.Types.ObjectId(req.params.id) })
-			.group({ _id: "$homework", extras: { $push: { _id: "$_id", description: "$description" } } })
-			.sort({_id: 1});
+		homework = await Homework.findById(req.params.id).lean().populate(["items", "extras"]);
 		homework.classNo = homework.classNo.join(',');
-		homework.items = items[0].items;
-		homework.extras = extras.length ? extras[0].extras : [];
 	}
 	res.render("addHomework", { edit, homework });
 };
@@ -37,38 +27,57 @@ export const addEditHomeworkForm = async (req, res) => {
 export const addEditHomework = async (req, res) => {
 	if (!req.isAuthenticated() || !req.user.admin) return res.redirect("/");
 	try{
-		const hwData = {
-			classNo: req.body.number.split(","),
-			dueNo: req.body.due,
-			submit: req.body.submit,
-			cohort: req.body.cohort,
-			note: req.body.note
-		}
-		const homework = await Homework.findByIdAndUpdate(req.params.id  || mongoose.Types.ObjectId(), hwData, {upsert: true, new: true});
+		// prepare homework data to be processed
 		const hwDesc = req.body.hwDesc ? [].concat(req.body.hwDesc) : [];
 		const hwClass = req.body.hwClass ? [].concat(req.body.hwClass) : [];
 		const hwRequired = req.body.required ? [].concat(req.body.required) : [];
 		let hwId = req.body.hwId ? [].concat(req.body.hwId) : [];
 		hwId = hwId.map(id => id === "null" ? null : id);
-		const pwDesc = req.body.pwDesc ? [].concat(req.body.pwDesc) : [];
-		let pwId = req.body.pwId ? [].concat(req.body.pwId) : [];
-		pwId = pwId.map(id => id === "null" ? null : id);
+
+		// create/update hw items and store ids
+		const items = [];
 		for (let i = 0; i < hwDesc.length; i++) {
 			const item = {
-				homework: homework._id,
 				class: hwClass[i],
+				due: req.body.due,
 				description: hwDesc[i],
 				required: hwRequired[i] === "true" ? true : false,
 			};
-			await HomeworkItem.findByIdAndUpdate(hwId[i] || mongoose.Types.ObjectId(), item, {upsert: true});
+			const hwItem = await HomeworkItem.findByIdAndUpdate(hwId[i] || mongoose.Types.ObjectId(), item, {upsert: true, new: true});
+			console.log(hwItem)
+			items.push(hwItem._id);
 		}
-		for (let i = 0; i < pwId.length; i++) {
+
+		// prepare pushwork data to be processed
+		const pwDesc = req.body.pwDesc ? [].concat(req.body.pwDesc) : [];
+		const pwClass = req.body.pwClass ? [].concat(req.body.pwClass) : [];
+		let pwId = req.body.pwId ? [].concat(req.body.pwId) : [];
+		pwId = pwId.map(id => id === "null" ? null : id);
+
+		// create/update hw extras and store ids
+		const extras = [];
+		for (let i = 0; i < pwDesc.length; i++) {
 			const extra = {
-				homework: homework._id,
+				class: pwClass[i],
+				due: req.body.due,
 				description: pwDesc[i] || ""
 			};
-			await HomeworkExtra.findByIdAndUpdate(pwId[i] || mongoose.Types.ObjectId(), extra, {upsert: true});
+			const pwItem = await HomeworkExtra.findByIdAndUpdate(pwId[i] || mongoose.Types.ObjectId(), extra, {upsert: true, new: true});
+			extras.push(pwItem._id);
 		}
+
+		// create/update homework including items and extras
+		const hwData = {
+			classNo: req.body.number.split(","),
+			dueNo: req.body.due,
+			submit: req.body.submit,
+			cohort: req.body.cohort,
+			note: req.body.note,
+			items: items,
+			extras: extras
+		}
+		await Homework.findByIdAndUpdate(req.params.id  || mongoose.Types.ObjectId(), hwData, { upsert: true });
+
 		req.session.flash = { type: "success", message: [`Homework ${!!req.params.id ? "updated" : "added"}`]};
 	} catch (err) {
 		console.log(err);
@@ -79,20 +88,15 @@ export const addEditHomework = async (req, res) => {
 };
 
 export const showHomework =  async (req, res) => { 
-		const homework = await Homework.find().lean().sort({_id: 1});
-		const items = await HomeworkItem
-			.aggregate()
-			.group({ _id: "$homework", items: { $push: { _id: "$_id", class: "$class", due: "$due", description: "$description", required: "$required" } } })
-			.sort({_id: 1});
-		const extras = await HomeworkExtra
-			.aggregate()
-			.group({ _id: "$homework", extras: { $push: { _id: "$_id", description: "$description" } } })
-			.sort({_id: 1});
-		for (let i = 0; i < homework.length; i ++) {
-			homework[i].items = items.length ? items[i].items : null;
-			homework[i].extras = extras.length && extras[i].extras[0].description.length ? extras[i].extras : null;
-		}
+	const homework = await Homework.find().lean().sort({_id: 1}).populate(['items', 'extras']);
 	if (req.isAuthenticated()) {
+		// homework = await Homework.aggregrate().lookup({ 
+		// 	from: 'homeworkprogresses', 
+		// 	localField: 'homework', 
+		// 	foreignField: '_id', 
+		// 	pipeline: [{ $match: { user: mongoose.Types.ObjectId(req.user.id) } }],
+		// 	as: 'progress' 
+		// });
 		// combine homework data with user progress for display
 		const progress = await HomeworkProgress.find({ user: req.user.id });
 		homework.forEach(hw => {
@@ -114,6 +118,7 @@ export const showHomework =  async (req, res) => {
 				}
 			}
 		})
+		console.log(homework)
 	}
 	res.render('homework', { homework });
 };
@@ -186,7 +191,7 @@ export const linkHw =  async (req, res) => {
 
 export const toggleItem =  async (req, res) => { 
 	try {
-		await HomeworkProgress.toggleItem(req.params.itemId, req.params.hwId, req.user.id);
+		await ItemProgress.toggleItem(req.params.id, req.user.id);
 		res.json("toggled hw item");
 	} catch (err) {
 		console.log(err)
@@ -196,7 +201,7 @@ export const toggleItem =  async (req, res) => {
 
 export const toggleExtra =  async (req, res) => { 
 		try {
-		await HomeworkProgress.toggleExtra(req.params.itemId, req.params.hwId, req.user.id);
+		await ExtraProgress.toggleExtra(req.params.id, req.user.id);
 		res.json("toggled hw extra");
 	} catch (err) {
 		console.log(err)

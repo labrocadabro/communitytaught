@@ -43,8 +43,8 @@ block content
 								each item in hw.items
 									li(class=item.required ? "required" : "")
 										if (loggedIn)
-											input.item(type="checkbox" id=`item-${item._id}-${hw._id}` autocomplete="off" checked=item.done) 
-											label(for=`item-${item._id}-${hw._id}`) #{item.class !== hw.classNo[0] ? `(Class ${item.class})` : ""} !{item.description} 
+											input.item(type="checkbox" id=`item-${item._id}` autocomplete="off" checked=item.done) 
+											label(for=`item-${item._id}`) #{item.class !== hw.classNo[0] ? `(Class ${item.class})` : ""} !{item.description} 
 										else 
 											| !{item.description}
 							else
@@ -55,8 +55,8 @@ block content
 								each extra in hw.extras
 									li
 										if (loggedIn)
-											input.extra(type="checkbox" id=`extra-${extra._id}-${hw._id}` autocomplete="off" checked=extra.done) 
-											label(for=`item-${extra._id}-${hw._id}` ) !{extra.description}
+											input.extra(type="checkbox" id=`extra-${extra._id}` autocomplete="off" checked=extra.done) 
+											label(for=`item-${extra._id}` ) !{extra.description}
 										else 
 											| !{extra.description}
 						else
@@ -66,7 +66,7 @@ block content
 							a.submit-button(href=hw.submit target="_blank") Submit
 							if (loggedIn)
 								input.extra(type="checkbox" id=`submit-${hw._id}` autocomplete="off" checked=hw.submitted)
-								label(for=`submit-${hw._id}` ) Submitted
+								label(for=`submit-${hw._id}`) Submitted
 						else
 							p Nothing to submit
 						if (hw.note)

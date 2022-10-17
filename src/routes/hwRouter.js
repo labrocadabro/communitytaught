@@ -16,8 +16,8 @@ router.post('/import', homework.importData);
 
 router.get('/all', homework.showHomework);
 
-router.put('/item/:itemId/:hwId', homework.toggleItem); 
-router.put('/extra/:itemId/:hwId', homework.toggleExtra); 
+router.put('/item/:id', homework.toggleItem); 
+router.put('/extra/:id', homework.toggleExtra); 
 
 
 export default router;

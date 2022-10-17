@@ -87,29 +87,27 @@ export const addEditHomework = async (req, res) => {
 	}
 };
 
-export const showHomework =  async (req, res) => { 
-	const homework = await Homework.find().lean().sort({_id: 1}).populate(['items', 'extras']);
-	if (req.isAuthenticated()) {
-		const hwProgress = await HomeworkProgress.find({ user: req.user.id });
-		const itemProgress = await ItemProgress.find({ user: req.user.id });
-		const extraProgress = await ExtraProgress.find({ user: req.user.id });
+export const getHwProgress = async (userId, homework) => {
+		const hwProgress = await HomeworkProgress.find({ user: userId }).lean();
+		const hwObj = {};
+		hwProgress.forEach(hw => hwObj[hw.homework] = hw.submitted);
+		const itemProgress = await ItemProgress.find({ user: userId }).lean();
+		const itemObj = {};
+		itemProgress.forEach(item => itemObj[item.item] = item.done);
+		const extraProgress = await ExtraProgress.find({ user: userId }).lean();
+		const extraObj = {};
+		extraProgress.forEach(extra => extraObj[extra.extra] = extra.done);
 		homework.forEach(hw => {
-			const progress = hwProgress.find(p => p.homework.toString() === hw._id.toString());
-			hw.submitted = progress ? progress.submitted : false;
-			if (progress) {
-				hw.items.forEach(item => {
-					const itemProg = itemProgress?.find(p => p.item.toString() === item._id.toString());
-					item.done = itemProg ? itemProg.done : false;
-				});
-				if (hw.extras) {
-					hw.extras.forEach(extra => {
-						const extraProg = extraProgress?.find(p => p.extra.toString() === extra._id.toString());
-						extra.done = extraProg ? extraProg.done : false;
-					});
-				}
-			}
+			hw.submitted = !!hwObj[hw._id];
+			hw.items.forEach(item => item.done = !!itemObj[item._id]);
+			hw.extras?.forEach(extra => extra.done = !!extraObj[extra._id]);
 		});
-	}
+		return homework;
+}
+
+export const showHomework =  async (req, res) => { 
+	let homework = await Homework.find().lean().sort({_id: 1}).populate(['items', 'extras']);
+	if (req.isAuthenticated()) homework = await getHwProgress(req.user.id, homework);
 	res.render('homework', { homework });
 };
 

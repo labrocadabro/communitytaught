@@ -161,7 +161,7 @@ export const importData = async (req, res) => {
 			Object.keys(data).forEach(key => classes.add(Number(key.split("-")[0].slice(2))));
 			const lastClass = Math.max(...classes);
 
-			// once we know which class is the highest, we loop through all the classes and build the data for bulkwrite
+			// once we know which class is the highest, we loop through all the classes up to that one and build the data for bulkwrite
 			const classData = [];
 			for (let i = 0; i <= lastClass; i++) {
 				if (!(i in lessonData)) continue;

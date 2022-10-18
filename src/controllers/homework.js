@@ -112,28 +112,71 @@ export const importData = async (req, res) => {
 	if (!req.isAuthenticated()) return notLoggedIn(req, res);;
 	try {
 		const data = JSON.parse(JSON.parse(req.body.import).CBState);
+		const submitData = [];
+		const itemData = [];
+		const extraData = [];
 		for (let i = 0; i < Object.keys(data).length; i++) {
+			// get each progress item
 			const hw = Object.keys(data)[i];
 			if (!data[hw] || !(hw in hwData)) continue;
+			// if it's submit data
 			if (hwData[hw].submit) {
-				await HomeworkProgress.findOneAndUpdate({user: req.user.id, homework: hwData[hw].hw }, { submitted: true }, { upsert: true })
+				// get the homework object id and add it to the list
+				submitData.push({homework: hwData[hw].hw, user: req.user.id});
+			// if it's pushwork data
 			} else if (hwData[hw].extra) {
-				await HomeworkProgress.findOneAndUpdate({user: req.user.id, homework: hwData[hw].hw }, {$push: { extraProgress:{extra: hwData[hw].item, done: true } } }, { upsert: true });
+				// get the extra object id and add it to the list
+				extraData.push({extra: hwData[hw].item, user: req.user.id});
+			// if it's item data
 			} else {
-				await HomeworkProgress.findOneAndUpdate({user: req.user.id, homework: hwData[hw].hw }, {$push: { itemProgress: {item: hwData[hw].item, done: true }} }, { upsert: true });
+				itemData.push({item: hwData[hw].item, user: req.user.id});
 			}
 		}
+		HomeworkProgress.bulkWrite(submitData.map(hw => ({ 
+			updateOne: {
+				filter: hw,
+				update: { submitted: true },
+				upsert: true
+			} 
+		})));
+		ItemProgress.bulkWrite(itemData.map(item => ({ 
+			updateOne: {
+				filter: item,
+				update: { done: true },
+				upsert: true
+			} 
+		})));
+		ExtraProgress.bulkWrite(extraData.map(extra => ({ 
+			updateOne: {
+				filter: extra,
+				update: { done: true },
+				upsert: true
+			} 
+		})));
+
 		if (req.body.classesWatched || req.body.classesCheckedin) {
+			// the object keys from the imported data have the format "hw00-0" and "hw00-s" where 00 is the class number
+			// here we extract out the class numbers and figure out which one is the highest
 			const classes = new Set();
 			Object.keys(data).forEach(key => classes.add(Number(key.split("-")[0].slice(2))));
 			const lastClass = Math.max(...classes);
+
+			// once we know which class is the highest, we loop through all the classes and build the data for bulkwrite
+			const classData = [];
 			for (let i = 0; i <= lastClass; i++) {
 				if (!(i in lessonData)) continue;
 				const progress = {};
 				if (req.body.classesWatched) progress.watched = true;
 				if (req.body.classesCheckedin) progress.checkedIn = true;
-				await LessonProgress.findOneAndUpdate({user: req.user.id, lesson: lessonData[i] }, progress, { upsert: true });
+				classData.push({lesson: lessonData[i], update: progress})
 			}
+			LessonProgress.bulkWrite(classData.map(lesson => ({ 
+				updateOne: {
+					filter: {lesson: lesson.lesson, user: req.user.id},
+					update: lesson.update,
+					upsert: true
+				} 
+			})));
 		}
 		req.session.flash = { type: "success", message: ["Data imported successfully"] };
 	} catch (err) {

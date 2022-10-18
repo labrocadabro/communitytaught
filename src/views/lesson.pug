@@ -37,7 +37,7 @@ block content
 						if (index < lesson.checkin.length - 1) 
 							| |
 				else if (lesson.checkin[0].length)
-					| #[a(href=lesson.checkin[0] target="_blank") Check In]
+					| &nbsp; #[a(href=lesson.checkin[0] target="_blank") Check In]
 			if lesson.note 
 				h3.mb-3 #{lesson.note}
 		#player
@@ -55,14 +55,14 @@ block content
 				if (next)
 					h2
 						a(href="/class/" + next) Next Class
-	if links.hwAssigned
-		h3 Homework Assgined this Class
-		each hw in links.hwAssigned
-			p #{hw.classNo}
-	if links.hwDue
-		h3 Homework Due this Class
-		each hw in links.hwDue
-			p #{hw.classNo}
+	if assigned.length
+		h3.text-center.mb-3.mt-6.text-3xl Homework Assigned
+		include ./partials/mixins.pug
+		+hwtable(assigned)
+	if due.length
+		h3.text-center.mb-3.mt-6.text-3xl Homework Due
+		include ./partials/mixins.pug
+		+hwtable(due)
 
 block extra-scripts
 	script(src="/js/lessonProgress.js")

@@ -8,74 +8,8 @@ block content
 		.flash.flash-error YOU ARE NOT CURRENTLY LOGGED IN. If you would like to track your progress, please #[a(href="/login") log in] or #[a(href="/register") register] before continuing.
 
 	h1.mb-4 All Homework
-
-	table#all-homework
-		thead
-			tr.text-2xl
-				th Class
-				th Due
-				//- if (loggedIn)
-				//- 	th Done
-				th Assignment
-				th Extras
-				th Submit
-				if (loggedIn && user.admin)
-					th Edit
-		tbody
-			each hw in homework
-				- const multiClass = hw.items.some(item => item.class !== hw.classNo[0])
-
-				tr(class=(hw.submitted || !hw.submit.length) && hw.items.every(item => item.done) ? "done" : "")
-					td
-						if (hw.classNo.length === 1)
-							|	#{hw.classNo[0]}
-						else if (hw.classNo.length === 2)
-							| #{hw.classNo[0]} &amp; #{hw.classNo[1]}
-						else
-							| #{hw.classNo[0]} - #{hw.classNo.at(-1)}
-					td #{hw.dueNo}
-					//- if (loggedIn)
-					//- 	td
-					//- 		input.done(type="checkbox" id="done-" + hw._id autocomplete="off") 
-					td.hw-items 
-						ul
-							if hw.items
-								each item in hw.items
-									li(class=item.required ? "required" : "")
-										if (loggedIn)
-											input.item(type="checkbox" id=`item-${item._id}` autocomplete="off" checked=item.done) 
-											label(for=`item-${item._id}`) #{item.class !== hw.classNo[0] ? `(Class ${item.class})` : ""} !{item.description} 
-										else 
-											| !{item.description}
-							else
-								| None
-					td.hw-extras
-						if hw.extras
-							ul
-								each extra in hw.extras
-									li
-										if (loggedIn)
-											input.extra(type="checkbox" id=`extra-${extra._id}` autocomplete="off" checked=extra.done) 
-											label(for=`item-${extra._id}` ) !{extra.description}
-										else 
-											| !{extra.description}
-						else
-							p None
-					td.hw-submit 
-						if hw.submit
-							a.submit-button(href=hw.submit target="_blank") Submit
-							if (loggedIn)
-								input.submitted(type="checkbox" id=`submit-${hw._id}` autocomplete="off" checked=hw.submitted)
-								label(for=`submit-${hw._id}`) Submitted
-						else
-							p Nothing to submit
-						if (hw.note)
-								p.italic.text-sm.mt-2 !{hw.note} 
-					if (loggedIn && user.admin)
-						td
-							a.ml-2(href=`/hw/edit/${hw._id}`)
-								i.fa.fa-pencil
-
+	include ./partials/mixins.pug
+	+hwtable(homework)
 
 block extra-scripts
 	script(src="/js/hwProgress.js")

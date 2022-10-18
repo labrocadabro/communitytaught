@@ -2,9 +2,9 @@ import mongoose from "mongoose";
 
 import Lesson from '../models/Lesson.js';
 import LessonProgress from '../models/LessonProgress.js';
-import LessonHwLink from '../models/LessonHwLink.js';
-import HomeworkItem from '../models/ItemProgress.js';
-import HomeworkExtra from '../models/ExtraProgress.js';
+import Homework from '../models/Homework.js';
+
+import { getHwProgress } from "./homework.js";
 
 export const addEditLessonForm = async (req, res) => {
 	if (!req.isAuthenticated() || !req.user.admin) return res.redirect("/");
@@ -80,37 +80,21 @@ export const allLessons =  async (req, res) => {
 export const showLesson =  async (req, res) => {
 	try {
 		const lesson = await Lesson.findOne({permalink: req.params.permalink}).lean();
-		if (req.isAuthenticated()) {
-			const progress = await LessonProgress.findOne({ user: req.user.id, lesson: lesson._id });
-			lesson.watched = progress ? progress.watched : false;
-			lesson.checkedIn = progress ? progress.checkedIn : false;
-		}
 		let next = await Lesson.find({_id: {$gt: lesson._id}}).sort({_id: 1}).limit(1);
 		next = next.length ? next[0].permalink : null;
 		let prev = await Lesson.find({_id: {$lt: lesson._id}}).sort({_id: -1}).limit(1);
 		prev = prev.length ? prev[0].permalink : null
-		const links = await LessonHwLink.findOne({lesson: lesson._id}).lean().populate(['hwAssigned', 'hwDue']);
-		let hwIds = [];
-		if (links.hwAssigned) hwIds = hwIds.concat(links.hwAssigned.map(hw => hw._id));
-		if (links.hwDue) hwIds = hwIds.concat(links.hwDue.map(hw => hw._id));
-		const items = await HomeworkItem
-			.aggregate()
-			.match({ homework: { $in: hwIds } })
-			.group({ _id: "$homework", items: { $push: { _id: "$_id", class: "$class", due: "$due", description: "$description", required: "$required" } } })
-			.sort({_id: 1});
-		const extras = await HomeworkExtra
-			.aggregate()
-			.match({ homework: { $in: hwIds } })
-			.group({ _id: "$homework", extras: { $push: { _id: "$_id", description: "$description" } } })
-			.sort({_id: 1});
-		for (let i = 0; i < links.hwAssigned.length; i ++) {
-			const assignedItems = items.find(item => item._id.toString() === links.hwAssigned[i]._id.toString());
-			links.hwAssigned[i].items = assignedItems.items;
-			const assignedExtras = extras.find(extra => extra._id.toString() === links.hwAssigned[i]._id.toString())[extras];
-			// links.hwAssigned[i].extras = assignedExtras.length && assignedExtras[0].description.length ? assignedExtras : null;
+		let assigned = await Homework.find({classNo: {$in: lesson.classNo}}).lean().sort({_id: 1}).populate(['items', 'extras']);
+		let due = await Homework.find({dueNo: {$in: lesson.classNo}}).lean().sort({_id: 1}).populate(['items', 'extras']);
+
+		if (req.isAuthenticated()) {
+			const progress = await LessonProgress.findOne({ user: req.user.id, lesson: lesson._id });
+			lesson.watched = progress ? progress.watched : false;
+			lesson.checkedIn = progress ? progress.checkedIn : false;
+			if (assigned.length) assigned = await getHwProgress(req.user.id, assigned);
+			if (due.length) due = await getHwProgress(req.user.id, due);
 		}
-		console.log(links.hwAssigned[0])
-		res.render('lesson', { lesson, next, prev, links });
+		res.render('lesson', { lesson, next, prev, assigned, due });
 	} catch (err) {
 		console.log(err);
 		res.redirect("/class/all")

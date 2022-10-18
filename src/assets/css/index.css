@@ -949,6 +949,10 @@ button:hover,  a.button:hover {
   margin-right: 1rem;
 }
 
+.mt-6 {
+  margin-top: 1.5rem;
+}
+
 .mt-auto {
   margin-top: auto;
 }
@@ -1075,6 +1079,11 @@ button:hover,  a.button:hover {
   line-height: 2rem;
 }
 
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -1125,12 +1134,12 @@ table td,  table th {
   max-width: 300px;
 }
 
-#all-homework .hw-items li {
+.homework .hw-items li {
   position: relative;
   margin-left: 1rem;
 }
 
-#all-homework li.required::before {
+.homework li.required::before {
   position: absolute;
   left: -1rem;
   font-size: 1.5rem;
@@ -1140,11 +1149,11 @@ table td,  table th {
   content: '*';
 }
 
-#all-homework .item,  #all-homework .extra,  #all-homework .submitted {
+.homework .item,  .homework .extra,  .homework .submitted {
   margin-right: 0.375rem;
 }
 
-#all-homework .done {
+.homework .done {
   opacity: 0.5;
 }
 

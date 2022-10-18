@@ -98,17 +98,17 @@ table td, table th {
 .thumbnail, .motivation, .hw-submit {
 	max-width: 300px;
 }
-#all-homework .hw-items li {
+.homework .hw-items li {
 	@apply relative ml-4;
 }
-#all-homework li.required::before {
+.homework li.required::before {
 	@apply absolute -left-4 text-red-800 text-2xl;
 	content: '*';
 }
-#all-homework .item, #all-homework .extra, #all-homework .submitted {
+.homework .item, .homework .extra, .homework .submitted {
 	@apply mr-1.5;
 }
-#all-homework .done {
+.homework .done {
 	opacity: 0.5;
 }
 .submit-button {

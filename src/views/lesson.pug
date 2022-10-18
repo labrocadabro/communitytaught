@@ -65,7 +65,8 @@ block content
 		+hwtable(due)
 
 block extra-scripts
-	script(src="/js/lessonProgress.js")
+	if loggedIn
+		script(src="/js/lessonProgress.js")
 	if (lesson.videoId)
 		script. 
 			var tag = document.createElement('script');

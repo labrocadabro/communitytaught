@@ -12,4 +12,6 @@ block content
 	+lessontable(lessons)
 
 block extra-scripts
-	script(src="/js/lessonProgress.js")
+	if loggedIn
+		script(src="/js/lessonProgress.js")
+		script(src="/js/lessonDone.js")

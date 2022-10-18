@@ -12,4 +12,6 @@ block content
 	+hwtable(homework)
 
 block extra-scripts
-	script(src="/js/hwProgress.js")
+	if loggedIn
+		script(src="/js/hwProgress.js")
+		script(src="/js/hwDone.js")

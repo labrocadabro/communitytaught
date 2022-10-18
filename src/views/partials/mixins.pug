@@ -15,7 +15,7 @@ mixin hwtable(homework)
 			each hw in homework
 				- const multiClass = hw.items.some(item => item.class !== hw.classNo[0])
 
-				tr(class=(hw.submitted || !hw.submit.length) && hw.items.every(item => item.done) ? "done" : "")
+				tr(class=(hw.submitted || !hw.submit.length) && hw.items.every(item => item.done) ? "done" : "" id=hw._id)
 					td
 						if (hw.classNo.length === 1)
 							|	#{hw.classNo[0]}
@@ -33,7 +33,7 @@ mixin hwtable(homework)
 								each item in hw.items
 									li(class=item.required ? "required" : "")
 										if (loggedIn)
-											input.item(type="checkbox" id=`item-${item._id}` autocomplete="off" checked=item.done) 
+											input.item(type="checkbox" id=`item-${item._id}` autocomplete="off" checked=item.done data-hw=hw._id) 
 											label(for=`item-${item._id}`) #{item.class !== hw.classNo[0] ? `(Class ${item.class})` : ""} !{item.description} 
 										else 
 											| !{item.description}
@@ -55,7 +55,7 @@ mixin hwtable(homework)
 						if hw.submit
 							a.submit-button(href=hw.submit target="_blank") Submit
 							if (loggedIn)
-								input.submitted(type="checkbox" id=`submit-${hw._id}` autocomplete="off" checked=hw.submitted)
+								input.submitted(type="checkbox" id=`submit-${hw._id}` autocomplete="off" checked=hw.submitted data-hw=hw._id)
 								label(for=`submit-${hw._id}`) Submitted
 						else
 							p Nothing to submit
@@ -80,16 +80,16 @@ mixin lessontable(lessons)
 					th Edit
 		tbody
 			each lesson in lessons
-				tr
+				tr(class=(lesson.watched && lesson.checkedIn) || !lesson.videoId ? "done" : "" id=lesson._id)
 					td.font-bold #{lesson.classNo.length ? lesson.classNo : "Super Review"}
 					if (loggedIn)
 						td.text-left
 							if (lesson.videoId.length)
-								input.watched.mr-2(type="checkbox" id="watched-" + lesson._id autocomplete="off" checked=lesson.watched) 
+								input.watched.mr-2(type="checkbox" id="watched-" + lesson._id autocomplete="off" checked=lesson.watched data-lesson=lesson._id) 
 								label(id="watched-" + lesson._id) Watched
 							br
 							if (lesson.checkin.length && lesson.checkin[0].length)
-								input.checkedin.mr-2(type="checkbox" id="checkedin-" + lesson._id autocomplete="off" checked=lesson.checkedIn)
+								input.checkedin.mr-2(type="checkbox" id="checkedin-" + lesson._id autocomplete="off" checked=lesson.checkedIn data-lesson=lesson._id)
 								label(for="checkedin-" + lesson._id) Checked In
 							else 
 								input.checkedin.hidden(type="checkbox" id="checkedin-" + lesson._id autocomplete="off" checked)

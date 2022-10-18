@@ -945,6 +945,10 @@ button:hover,  a.button:hover {
   margin-bottom: 1rem;
 }
 
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
 .mr-4 {
   margin-right: 1rem;
 }
@@ -957,10 +961,6 @@ button:hover,  a.button:hover {
   margin-top: auto;
 }
 
-.mb-6 {
-  margin-bottom: 1.5rem;
-}
-
 .block {
   display: block;
 }
@@ -971,10 +971,6 @@ button:hover,  a.button:hover {
 
 .table {
   display: table;
-}
-
-.grid {
-  display: grid;
 }
 
 .hidden {
@@ -993,10 +989,6 @@ button:hover,  a.button:hover {
   width: 100%;
 }
 
-.w-4\/5 {
-  width: 80%;
-}
-
 .max-w-lg {
   max-width: 32rem;
 }
@@ -1005,24 +997,12 @@ button:hover,  a.button:hover {
   flex: 1 1 0%;
 }
 
-.grid-cols-4 {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
 .flex-col {
   flex-direction: column;
 }
 
 .flex-wrap-reverse {
   flex-wrap: wrap-reverse;
-}
-
-.items-center {
-  align-items: center;
-}
-
-.gap-2 {
-  gap: 0.5rem;
 }
 
 .gap-3 {
@@ -1078,14 +1058,14 @@ button:hover,  a.button:hover {
   text-align: right;
 }
 
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 .text-sm {
@@ -1126,7 +1106,7 @@ table td,  table th {
   padding: 1rem;
 }
 
-#all-lessons td:first-of-type {
+.lessons td:first-of-type {
   padding: 0.5rem;
 }
 
@@ -1157,7 +1137,7 @@ table td,  table th {
   margin-right: 0.375rem;
 }
 
-.homework .done {
+.homework .done, .lessons .done {
   opacity: 0.5;
 }
 

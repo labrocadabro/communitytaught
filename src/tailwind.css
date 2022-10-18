@@ -89,7 +89,7 @@ table tr {
 table td, table th {
 	@apply p-4 border-r;
 }
-#all-lessons td:first-of-type {
+.lessons td:first-of-type {
 	@apply p-2;
 }
 .hw-items, .hw-extras {
@@ -108,7 +108,7 @@ table td, table th {
 .homework .item, .homework .extra, .homework .submitted {
 	@apply mr-1.5;
 }
-.homework .done {
+.homework .done, .lessons .done {
 	opacity: 0.5;
 }
 .submit-button {

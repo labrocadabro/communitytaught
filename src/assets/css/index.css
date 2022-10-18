@@ -1162,3 +1162,8 @@ table td,  table th {
 #video-container {
   width: 640px;
 }
+
+#player {
+  width: 640px;
+  height: 360px;
+}

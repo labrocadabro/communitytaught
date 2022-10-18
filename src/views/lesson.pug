@@ -67,7 +67,7 @@ block content
 block extra-scripts
 	if loggedIn
 		script(src="/js/lessonProgress.js")
-	if (lesson.videoId)
+	if lesson.videoId && !lesson.twitchVideo
 		script. 
 			var tag = document.createElement('script');
 			tag.src = "https://www.youtube.com/iframe_api";
@@ -83,4 +83,12 @@ block extra-scripts
 				var object = [ 0, 320 ];
 				player.seekTo(object[slideNum]);
 			}
+	else if lesson.twitchVideo
+		script(src="https://player.twitch.tv/js/embed/v1.js")
+		script.
+			new Twitch.Player("player", {
+				video: '#{lesson.videoId}',
+				width: "100%",
+				height: "100%"
+			});
 		

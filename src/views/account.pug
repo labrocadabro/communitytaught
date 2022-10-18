@@ -6,22 +6,22 @@ block variables
 block content
 	h1.mb-5 Account Settings
 
-	#import
-		h3.mb-2 Import Data from #[a(href="https://labrocadabro.github.io/100devs-hw-tracker/" target="_blank") Old Tracker]
-		.flex.flex-wrap-reverse
-			form(method="post" action="/hw/import")
-				label(for="importData") Please paste the data you exported from the old tracker
-				br
-				textarea#importData.w-full.max-w-lg(name="import")
-				p.italic.m-2.w-full.max-w-lg If you select the following options, the importer will determine the most recent class you've completed a homework item for, and will mark that class and all previous classes as watched/checked in.
-				input.mr-2(type="checkbox" id="classesWatched" name="classesWatched") 
-				label(for="classesWatched") Mark Classes Watched
-				br
-				input.mr-2(type="checkbox" id="classesCheckedin" name="classesCheckedin") 
-				label(for="classesCheckedin") Mark Classes Checked In
-				button.mt-2(type="submit") Import
-			#export-image.w-full.h-auto.max-w-lg
-				img.border.border-gray-700(src="/img/export.png")
+	//- #import
+	//- 	h3.mb-2 Import Data from #[a(href="https://labrocadabro.github.io/100devs-hw-tracker/" target="_blank") Old Tracker]
+	//- 	.flex.flex-wrap-reverse
+	//- 		form(method="post" action="/hw/import")
+	//- 			label(for="importData") Please paste the data you exported from the old tracker
+	//- 			br
+	//- 			textarea#importData.w-full.max-w-lg(name="import")
+	//- 			p.italic.m-2.w-full.max-w-lg If you select the following options, the importer will determine the most recent class you've completed a homework item for, and will mark that class and all previous classes as watched/checked in.
+	//- 			input.mr-2(type="checkbox" id="classesWatched" name="classesWatched") 
+	//- 			label(for="classesWatched") Mark Classes Watched
+	//- 			br
+	//- 			input.mr-2(type="checkbox" id="classesCheckedin" name="classesCheckedin") 
+	//- 			label(for="classesCheckedin") Mark Classes Checked In
+	//- 			button.mt-2(type="submit") Import
+	//- 		#export-image.w-full.h-auto.max-w-lg
+	//- 			img.border.border-gray-700(src="/img/export.png")
 
 	#change-email.settings
 		h3 Email

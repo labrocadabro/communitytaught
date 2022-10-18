@@ -4,8 +4,17 @@ block variables
 	- const title = "Dashboard"
 
 block content
-	h1 Dashboard
-
 	if(user.admin) 
-		p #[a(href="/class/add") Add Classes] | #[a(href="/hw/add") Add Homework] | #[a(href="/hw/link") Link Classes and Homework]
-	p #[a(href="/class/all") Watch Classes] | #[a(href="/hw/all") Check Homework]
+		h3.mb-6 #[a(href="/class/add") Add Classes] | #[a(href="/hw/add") Add Homework]
+
+	h1.mb-6 Your Progress
+
+	h2.mb-3 Next Class
+	if lesson.length
+		include ./partials/mixins.pug
+		+lessontable(lesson)
+	else
+		p You've watched all the classes!
+
+block extra-scripts
+	script(src="/js/lessonProgress.js")

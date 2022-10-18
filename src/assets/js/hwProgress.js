@@ -31,7 +31,6 @@ async function toggleExtra() {
 async function toggleSubmitted() {
 	try {
 		const itemId = this.id.split("-")[1];
-		console.log(itemId)
 		const res = await fetch(`/hw/submit/${itemId}`, {
 			method: "put",
 		}); 

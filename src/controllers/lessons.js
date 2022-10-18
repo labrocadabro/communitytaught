@@ -63,23 +63,42 @@ export const addEditLesson = async (req, res) => {
 	}
 };
 
+export const getAllLessonsProgress = async (userId, lessons) => {
+	const lessonProgress = await LessonProgress.find({ user: userId }).lean();
+	const lessonsObj = {};
+	lessonProgress.forEach(p => {
+		lessonsObj[p.lesson] = {
+			watched: p.watched,
+			checkedIn: p.checkedIn
+		}
+	});
+	lessons.forEach(lesson => {
+		const prog = lessonsObj[lesson._id];
+		lesson.watched = prog ? !!prog.watched : false;
+		lesson.checkedIn = prog ? !!prog.checkedIn : false;
+	})
+	return lessons;
+}
+
 export const allLessons =  async (req, res) => {
-	const lessons = await Lesson.find().lean().sort({_id: 1});
+	let lessons = await Lesson.find().lean().sort({_id: 1});
 	lessons.forEach(lesson => lesson.classNo = lesson.classNo.join(", "));
 	if (req.isAuthenticated()) {
-		const progress = await LessonProgress.find({ user: req.user.id });
-		lessons.forEach(lesson => {
-			const prog = progress.find(p =>  p.lesson.toString() === lesson._id.toString())
-			lesson.watched = prog ? prog.watched : false;
-			lesson.checkedIn = prog ? prog.checkedIn : false;
-		})
+		lessons = await getAllLessonsProgress(req.user.id, lessons);
 	}
 	res.render('allLessons', {lessons})
 };
 
+export const getLessonProgress = async (userId, lesson) => {
+	const progress = await LessonProgress.findOne({ user: userId, lesson: lesson._id });
+	lesson.watched = progress ? progress.watched : false;
+	lesson.checkedIn = progress ? progress.checkedIn : false;
+	return lesson;
+}
+
 export const showLesson =  async (req, res) => {
 	try {
-		const lesson = await Lesson.findOne({permalink: req.params.permalink}).lean();
+		let lesson = await Lesson.findOne({permalink: req.params.permalink}).lean();
 		let next = await Lesson.find({_id: {$gt: lesson._id}}).sort({_id: 1}).limit(1);
 		next = next.length ? next[0].permalink : null;
 		let prev = await Lesson.find({_id: {$lt: lesson._id}}).sort({_id: -1}).limit(1);
@@ -88,9 +107,7 @@ export const showLesson =  async (req, res) => {
 		let due = await Homework.find({dueNo: {$in: lesson.classNo}}).lean().sort({_id: 1}).populate(['items', 'extras']);
 
 		if (req.isAuthenticated()) {
-			const progress = await LessonProgress.findOne({ user: req.user.id, lesson: lesson._id });
-			lesson.watched = progress ? progress.watched : false;
-			lesson.checkedIn = progress ? progress.checkedIn : false;
+			lesson = await getLessonProgress(req.user.id, lesson);
 			if (assigned.length) assigned = await getHwProgress(req.user.id, assigned);
 			if (due.length) due = await getHwProgress(req.user.id, due);
 		}

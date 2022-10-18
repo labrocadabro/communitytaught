@@ -1,7 +1,12 @@
 import { notLoggedIn } from "./auth.js";
 
 import Token from "../models/Token.js";
+import LessonProgress from "../models/LessonProgress.js";
 import Lesson from "../models/Lesson.js";
+import Homework from "../models/Homework.js";
+
+import { getHwProgress } from "../controllers/homework.js";
+import { getLessonProgress } from "../controllers/lessons.js";
 
 export const index = (req, res) => {
 	res.render("index");
@@ -9,7 +14,13 @@ export const index = (req, res) => {
 
 export const dashboard = async (req, res) => {
 	if (!req.isAuthenticated()) return notLoggedIn(req, res);
-	res.render('dashboard')
+	let lesson = [];
+	if (req.user.currentClass) {
+		let currentLesson = await Lesson.findById(req.user.currentClass);
+		currentLesson = await getLessonProgress(req.user.id, currentLesson);
+		lesson.push(currentLesson);
+	}
+	res.render('dashboard', { lesson })
 };
 
 export const account = (req, res) => {

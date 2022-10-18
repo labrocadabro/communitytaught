@@ -12,6 +12,11 @@ const userSchema = new Schema({
 	googleToken: String,
 	githubId: String,
 	githubToken: String,
+	currentClass: { 
+		type: mongoose.Types.ObjectId, 
+		ref: 'Lesson', 
+		default: mongoose.Types.ObjectId("634615b97755d907aa66bd97")
+	}
 });
 
 userSchema.plugin(passportLocalMongoose);

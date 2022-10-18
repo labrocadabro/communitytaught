@@ -65,3 +65,51 @@ mixin hwtable(homework)
 						td
 							a.ml-2(href=`/hw/edit/${hw._id}`)
 								i.fa.fa-pencil
+
+mixin lessontable(lessons)
+	table.lessons
+		thead
+			tr.text-2xl
+				th Class
+				if (loggedIn)
+					th Done
+				th Video
+				th Motivation
+				th Check In
+				if (loggedIn && user.admin)
+					th Edit
+		tbody
+			each lesson in lessons
+				tr
+					td.font-bold #{lesson.classNo.length ? lesson.classNo : "Super Review"}
+					if (loggedIn)
+						td.text-left
+							if (lesson.videoId.length)
+								input.watched.mr-2(type="checkbox" id="watched-" + lesson._id autocomplete="off" checked=lesson.watched) 
+								label(id="watched-" + lesson._id) Watched
+							br
+							if (lesson.checkin.length && lesson.checkin[0].length)
+								input.checkedin.mr-2(type="checkbox" id="checkedin-" + lesson._id autocomplete="off" checked=lesson.checkedIn)
+								label(for="checkedin-" + lesson._id) Checked In
+							else 
+								input.checkedin.hidden(type="checkbox" id="checkedin-" + lesson._id autocomplete="off" checked)
+					td.thumbnail
+						a(href=lesson.permalink)
+							img.mx-auto(src=lesson.thumbnail w-full)
+							| #{lesson.title}
+					td.motivation 
+						a(href=lesson.motivationLink target="_blank") #{lesson.motivationTitle}
+					td 
+						if (lesson.checkin.length > 1)
+							each check, index in lesson.checkin
+								a(href=lesson.checkin[index] target="_blank") Check In #{index + 1}
+								br
+						else if (!lesson.checkin.length || !lesson.checkin[0].length)
+							| No Check-in						
+						else
+							a(href=lesson.checkin[0] target="_blank") Check In
+							
+					if (loggedIn && user.admin)
+						td
+							a.ml-2(href=`/class/edit/${lesson._id}`)
+								i.fa.fa-pencil

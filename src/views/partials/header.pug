@@ -1,20 +1,21 @@
-nav.px-14.flex
-	h3.mr-auto 
-		a.text-twilight-800.no-underline(href="/") #communitytaught
-	ul.flex.gap-3
-		li 
-			a(href="/class/all") Classes
-		li 
-			a(href="/hw/all") Homework
-		if (loggedIn)
+nav.px-14.flex.items-center
+	h3.mr-auto#logo 
+		a.text-twilight-800.no-underline.text-2xl(href="/") #communitytaught
+	ul.flex
+		if loggedIn
 			li
-					a(href="/dashboard") Dashboard
+					a(href="/dashboard" class = active === "Dashboard" ? "active" : "") Dashboard
+		li 
+			a(href="/class/all" class = active === "Classes" ? "active" : "") Classes
+		li 
+			a(href="/hw/all" class = active === "Homework" ? "active" : "") Homework
+		if loggedIn
 			li
-				a(href="/account") Settings
+				a(href="/account" class = active === "Settings" ? "active" : "") Settings
 			li
 				a(href="/logout") Logout
 		else
 			li 
-				a(href="/login") Login
+				a(href="/login" class = active === "Login" ? "active" : "") Login
 			li 
-				a(href="/register") Register
+				a(href="/register" class = active === "Register" ? "active" : "") Register

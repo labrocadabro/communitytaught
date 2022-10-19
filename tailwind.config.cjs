@@ -38,7 +38,14 @@ module.exports = {
 					800: '#',
 					900: '#',
 				},
-			},	
+			},
+			textUnderlineOffset: {
+        6: '6px',
+      },
+			textDecorationThickness: {
+        3: '3px',
+      },
+
 		},
   },
   plugins: [require('@tailwindcss/forms'),],

@@ -3,25 +3,38 @@
 @tailwind utilities;
 
 @layer base {
+	body {
+		@apply text-lg;
+		font-family: Merriweather;
+	}
 	a {
 		@apply underline;
 		color: #c92918;
 	}
 	a:hover {
-		text-decoration: none;
+		@apply no-underline;
 	}
+	nav a {
+		@apply font-bold no-underline text-xl block rounded-md px-3 py-2;
+		font-family: Kufam;
+	}
+	.active {
+		@apply decoration-pink-800 underline decoration-3 underline-offset-6 hover:underline;
+	}
+
 	h1, h2, h3, h4, h5, h6 {
 		@apply font-bold text-pink-800;
+		font-family: "Kufam";
 	}
 	h1 {
-		@apply text-3xl font-bold;
+		@apply text-4xl font-bold;
 	}
 	h2 {
-		@apply text-2xl font-bold;
+		@apply text-3xl font-bold;
 	}
 
 	h3 {
-		@apply text-xl font-bold;
+		@apply text-2xl font-bold;
 	}
 
 	button, a.button {
@@ -84,7 +97,7 @@
 
 /***** all lessons, all homework *****/
 table {
-	@apply text-center border bg-white;
+	@apply text-center border bg-white w-full;
 }
 table tr {
 	@apply border-b;
@@ -126,3 +139,27 @@ table td, table th {
 	width: 640px;
 	height: 360px;
 }
+
+nav h3#logo a {
+	font-family: Orienta;
+}
+
+
+
+/* 
+"Anek Latin"
+"Fanwood Text"
+Grandstander
+Gudea
+Kodchasan
+Orienta
+Salsa
+Strait 
+
+Sintony
+Kufam
+Istok Web
+Stick No Bills
+Offside
+Acme
+*/

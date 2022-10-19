@@ -4,11 +4,14 @@
 
 @layer base {
 	a {
-		@apply text-pink-800;
-		text-decoration: underline;
+		@apply underline;
+		color: #c92918;
 	}
 	a:hover {
 		text-decoration: none;
+	}
+	h1, h2, h3, h4, h5, h6 {
+		@apply font-bold text-pink-800;
 	}
 	h1 {
 		@apply text-3xl font-bold;
@@ -81,7 +84,7 @@
 
 /***** all lessons, all homework *****/
 table {
-	@apply text-center border;
+	@apply text-center border bg-white;
 }
 table tr {
 	@apply border-b;

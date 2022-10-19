@@ -580,13 +580,19 @@ select {
 }
 
 a {
-  --tw-text-opacity: 1;
-  color: rgb(157 23 77 / var(--tw-text-opacity));
-  text-decoration: underline;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+  color: #c92918;
 }
 
 a:hover {
   text-decoration: none;
+}
+
+h1,  h2,  h3,  h4,  h5,  h6 {
+  font-weight: 700;
+  --tw-text-opacity: 1;
+  color: rgb(157 23 77 / var(--tw-text-opacity));
 }
 
 h1 {
@@ -961,6 +967,10 @@ button:hover,  a.button:hover {
   margin-top: auto;
 }
 
+.mr-auto {
+  margin-right: auto;
+}
+
 .block {
   display: block;
 }
@@ -1017,14 +1027,33 @@ button:hover,  a.button:hover {
   border-bottom-width: 1px;
 }
 
+.border-t {
+  border-top-width: 1px;
+}
+
 .border-gray-700 {
   --tw-border-opacity: 1;
   border-color: rgb(55 65 81 / var(--tw-border-opacity));
 }
 
-.bg-gray-200 {
+.border-twilight-200 {
+  --tw-border-opacity: 1;
+  border-color: rgb(191 224 238 / var(--tw-border-opacity));
+}
+
+.bg-white {
   --tw-bg-opacity: 1;
-  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-stone-50 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(250 250 249 / var(--tw-bg-opacity));
+}
+
+.bg-twilight-50 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(232 243 247 / var(--tw-bg-opacity));
 }
 
 .py-5 {
@@ -1086,6 +1115,21 @@ button:hover,  a.button:hover {
   color: rgb(239 68 68 / var(--tw-text-opacity));
 }
 
+.text-twilight-900 {
+  --tw-text-opacity: 1;
+  color: rgb(21 63 81 / var(--tw-text-opacity));
+}
+
+.text-twilight-800 {
+  --tw-text-opacity: 1;
+  color: rgb(34 101 129 / var(--tw-text-opacity));
+}
+
+.no-underline {
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
+}
+
 .filter {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
@@ -1094,6 +1138,8 @@ button:hover,  a.button:hover {
 
 table {
   border-width: 1px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   text-align: center;
 }
 

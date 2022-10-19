@@ -11,18 +11,18 @@ html
 		link(rel="stylesheet" href="/css/index.css")
 		script(src="https://kit.fontawesome.com/57fb3a03b8.js" crossorigin="anonymous")
 		title= title
-	body.flex.flex-col.min-h-screen
-		if mode === "dev"
-			.flash.flash-error DEVELOPMENT SERVER
+	body.flex.flex-col.min-h-screen.text-twilight-900.bg-stone-50
+		//- if mode === "dev"
+		//- 	.flash.flash-error DEVELOPMENT SERVER
 
-		header.py-5.bg-gray-200
+		header.py-5.bg-twilight-50.border-b.border-twilight-200
 			include ../partials/header.pug
 
 		main.px-14.py-8
 			include ../partials/flash.pug
 			block content
 
-		footer.mt-auto.py-5.bg-gray-200
+		footer.mt-auto.py-5.bg-twilight-50.border-t.border-pacific-200
 			include ../partials/footer.pug
 
 		script(src="/js/main.js") 

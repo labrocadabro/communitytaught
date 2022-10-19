@@ -1190,7 +1190,7 @@ table td,  table th {
   padding: 1rem;
 }
 
-.lessons td:first-of-type {
+table td:first-of-type {
   padding: 0.5rem;
 }
 

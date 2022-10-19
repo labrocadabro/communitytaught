@@ -3,6 +3,11 @@ module.exports = {
   content: ["./src/views/**/*.pug", "./src/assets/js/*.js"],
   theme: {
 		extend: {
+			fontFamily: {
+        'logo': ['Orienta', 'serif'],
+				'header':  ['Kufam', 'sans-serif'],
+				'body':  ['Merriweather', 'serif'],
+      },
 			colors: {
 				'twilight': {
 					50: '#E8F3F7',

@@ -10,8 +10,8 @@ module.exports = {
       },
 			colors: {
 				'twilight': {
-					50: '#E8F3F7',
-					100: '#dfeff6',
+					50: '#f1f8fa',
+					100: '#E8F3F7',
 					200: '#bfe0ee',
 					300: '#9ed0e5',
 					400: '#7ec0dd',

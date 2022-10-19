@@ -98,6 +98,9 @@ table {
 table tr {
 	@apply border-b;
 }
+table tr:nth-child(even) {
+	@apply bg-twilight-50;
+}
 table thead {
 	@apply sticky top-0 z-10;
 }

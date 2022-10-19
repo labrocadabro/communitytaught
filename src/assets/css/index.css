@@ -1090,7 +1090,7 @@ button:hover,  a.button:hover {
   background-color: rgb(250 250 249 / var(--tw-bg-opacity));
 }
 
-.bg-twilight-50 {
+.bg-twilight-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(232 243 247 / var(--tw-bg-opacity));
 }
@@ -1198,6 +1198,11 @@ table {
 
 table tr {
   border-bottom-width: 1px;
+}
+
+table tr:nth-child(even) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(241 248 250 / var(--tw-bg-opacity));
 }
 
 table thead {

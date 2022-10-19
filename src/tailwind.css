@@ -3,10 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-	body {
-		@apply text-lg;
-		font-family: Merriweather;
-	}
 	a {
 		@apply underline;
 		color: #c92918;
@@ -15,16 +11,14 @@
 		@apply no-underline;
 	}
 	nav a {
-		@apply font-bold no-underline text-xl block rounded-md px-3 py-2;
-		font-family: Kufam;
+		@apply font-bold no-underline text-xl block rounded-md px-3 py-2 font-header;
 	}
 	.active {
 		@apply decoration-pink-800 underline decoration-3 underline-offset-6 hover:underline;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		@apply font-bold text-pink-800;
-		font-family: "Kufam";
+		@apply font-bold text-pink-800 font-header;
 	}
 	h1 {
 		@apply text-4xl font-bold;
@@ -102,7 +96,13 @@ table {
 table tr {
 	@apply border-b;
 }
-table td, table th {
+table thead {
+	@apply sticky top-0 z-10;
+}
+table th {
+	@apply bg-twilight-800 text-stone-50 p-4 font-logo uppercase;
+}
+table td {
 	@apply p-4 border-r;
 }
 table td:first-of-type {
@@ -138,10 +138,6 @@ table td:first-of-type {
 #player {
 	width: 640px;
 	height: 360px;
-}
-
-nav h3#logo a {
-	font-family: Orienta;
 }
 
 

@@ -579,12 +579,6 @@ select {
   outline: 1px auto -webkit-focus-ring-color;
 }
 
-body {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-  font-family: Merriweather;
-}
-
 a {
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
@@ -603,12 +597,12 @@ nav a {
   padding-right: 0.75rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+  font-family: Kufam, sans-serif;
   font-size: 1.25rem;
   line-height: 1.75rem;
   font-weight: 700;
   -webkit-text-decoration-line: none;
           text-decoration-line: none;
-  font-family: Kufam;
 }
 
 .active {
@@ -626,10 +620,10 @@ nav a {
 }
 
 h1,  h2,  h3,  h4,  h5,  h6 {
+  font-family: Kufam, sans-serif;
   font-weight: 700;
   --tw-text-opacity: 1;
   color: rgb(157 23 77 / var(--tw-text-opacity));
-  font-family: "Kufam";
 }
 
 h1 {
@@ -1008,6 +1002,18 @@ button:hover,  a.button:hover {
   margin-right: auto;
 }
 
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
+}
+
+.mt-10 {
+  margin-top: 2.5rem;
+}
+
 .block {
   display: block;
 }
@@ -1124,9 +1130,22 @@ button:hover,  a.button:hover {
   text-align: right;
 }
 
+.font-body {
+  font-family: Merriweather, serif;
+}
+
+.font-logo {
+  font-family: Orienta, serif;
+}
+
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 
 .text-2xl {
@@ -1185,7 +1204,24 @@ table tr {
   border-bottom-width: 1px;
 }
 
-table td,  table th {
+table thead {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  z-index: 10;
+}
+
+table th {
+  --tw-bg-opacity: 1;
+  background-color: rgb(34 101 129 / var(--tw-bg-opacity));
+  padding: 1rem;
+  font-family: Orienta, serif;
+  text-transform: uppercase;
+  --tw-text-opacity: 1;
+  color: rgb(250 250 249 / var(--tw-text-opacity));
+}
+
+table td {
   border-right-width: 1px;
   padding: 1rem;
 }
@@ -1250,10 +1286,6 @@ table td:first-of-type {
 #player {
   width: 640px;
   height: 360px;
-}
-
-nav h3#logo a {
-  font-family: Orienta;
 }
 
 /* 

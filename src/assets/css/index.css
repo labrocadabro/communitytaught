@@ -605,7 +605,7 @@ nav a {
           text-decoration-line: none;
 }
 
-.active {
+nav a.active {
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
   -webkit-text-decoration-color: #9d174d;
@@ -614,9 +614,13 @@ nav a {
   text-underline-offset: 6px;
 }
 
-.active:hover {
+nav a.active:hover {
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
+}
+
+p {
+  margin-bottom: 1rem;
 }
 
 h1,  h2,  h3,  h4,  h5,  h6 {
@@ -929,6 +933,10 @@ button:hover,  a.button:hover {
   margin-bottom: 1.25rem;
 }
 
+.relative {
+  position: relative;
+}
+
 .col-span-4 {
   grid-column: span 4 / span 4;
 }
@@ -990,8 +998,8 @@ button:hover,  a.button:hover {
   margin-right: 1rem;
 }
 
-.mt-6 {
-  margin-top: 1.5rem;
+.mt-10 {
+  margin-top: 2.5rem;
 }
 
 .mt-auto {
@@ -1000,18 +1008,6 @@ button:hover,  a.button:hover {
 
 .mr-auto {
   margin-right: auto;
-}
-
-.mb-8 {
-  margin-bottom: 2rem;
-}
-
-.mt-8 {
-  margin-top: 2rem;
-}
-
-.mt-10 {
-  margin-top: 2.5rem;
 }
 
 .block {
@@ -1171,14 +1167,14 @@ button:hover,  a.button:hover {
   color: rgb(239 68 68 / var(--tw-text-opacity));
 }
 
-.text-twilight-900 {
-  --tw-text-opacity: 1;
-  color: rgb(21 63 81 / var(--tw-text-opacity));
-}
-
 .text-twilight-800 {
   --tw-text-opacity: 1;
   color: rgb(34 101 129 / var(--tw-text-opacity));
+}
+
+.text-twilight-900 {
+  --tw-text-opacity: 1;
+  color: rgb(21 63 81 / var(--tw-text-opacity));
 }
 
 .no-underline {
@@ -1240,17 +1236,18 @@ table td:first-of-type {
 
 .homework .hw-items li {
   position: relative;
-  margin-left: 1rem;
+  margin-left: 0.75rem;
 }
 
-.homework li.required::before {
+.homework .required {
   position: absolute;
-  left: -1rem;
+  left: -1.25rem;
+  top: 0.25rem;
+  cursor: default;
   font-size: 1.5rem;
   line-height: 2rem;
   --tw-text-opacity: 1;
   color: rgb(153 27 27 / var(--tw-text-opacity));
-  content: '*';
 }
 
 .homework .item,  .homework .extra,  .homework .submitted {
@@ -1287,21 +1284,3 @@ table td:first-of-type {
   width: 640px;
   height: 360px;
 }
-
-/* 
-"Anek Latin"
-"Fanwood Text"
-Grandstander
-Gudea
-Kodchasan
-Orienta
-Salsa
-Strait 
-
-Sintony
-Kufam
-Istok Web
-Stick No Bills
-Offside
-Acme
-*/

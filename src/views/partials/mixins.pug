@@ -31,7 +31,9 @@ mixin hwtable(homework)
 						ul
 							if hw.items
 								each item in hw.items
-									li(class=item.required ? "required" : "")
+									li.relative
+										if item.required
+											span.required(title="Must submit") *
 										if (loggedIn)
 											input.item(type="checkbox" id=`item-${item._id}` autocomplete="off" checked=item.done data-hw=hw._id) 
 											label(for=`item-${item._id}`) #{item.class !== hw.classNo[0] ? `(Class ${item.class})` : ""} !{item.description} 
@@ -40,7 +42,7 @@ mixin hwtable(homework)
 							else
 								| None
 					td.hw-extras
-						if hw.extras
+						if hw.extras.length
 							ul
 								each extra in hw.extras
 									li
@@ -81,7 +83,13 @@ mixin lessontable(lessons)
 		tbody
 			each lesson in lessons
 				tr(class=(lesson.watched && lesson.checkedIn) || !lesson.videoId ? "done" : "" id=lesson._id)
-					td.font-bold #{lesson.classNo.length ? lesson.classNo : "Super Review"}
+					td.font-bold
+						if (lesson.classNo.length === 1)
+							|	#{lesson.classNo[0]}
+						else if (lesson.classNo.length === 2)
+							| #{lesson.classNo[0]} &amp; #{lesson.classNo[1]}
+						else
+							| #{lesson.classNo[0]} - #{lesson.classNo.at(-1)}
 					if (loggedIn)
 						td.text-left
 							if (lesson.videoId.length)
@@ -97,8 +105,11 @@ mixin lessontable(lessons)
 						a(href=lesson.permalink)
 							img.mx-auto(src=lesson.thumbnail w-full)
 							| #{lesson.title}
-					td.motivation 
-						a(href=lesson.motivationLink target="_blank") #{lesson.motivationTitle}
+					td.motivation
+						if lesson.motivationLink
+							a(href=lesson.motivationLink target="_blank") #{lesson.motivationTitle}
+						else 
+							| None
 					td 
 						if (lesson.checkin.length > 1)
 							each check, index in lesson.checkin

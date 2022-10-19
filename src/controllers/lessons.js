@@ -82,7 +82,6 @@ export const getAllLessonsProgress = async (userId, lessons) => {
 
 export const allLessons =  async (req, res) => {
 	let lessons = await Lesson.find().lean().sort({_id: 1});
-	lessons.forEach(lesson => lesson.classNo = lesson.classNo.join(", "));
 	if (req.isAuthenticated()) {
 		lessons = await getAllLessonsProgress(req.user.id, lessons);
 	}

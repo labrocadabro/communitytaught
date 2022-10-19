@@ -13,10 +13,12 @@
 	nav a {
 		@apply font-bold no-underline text-xl block rounded-md px-3 py-2 font-header;
 	}
-	.active {
+	nav a.active {
 		@apply decoration-pink-800 underline decoration-3 underline-offset-6 hover:underline;
 	}
-
+	p {
+		@apply mb-4;
+	}
 	h1, h2, h3, h4, h5, h6 {
 		@apply font-bold text-pink-800 font-header;
 	}
@@ -115,11 +117,10 @@ table td:first-of-type {
 	max-width: 300px;
 }
 .homework .hw-items li {
-	@apply relative ml-4;
+	@apply relative ml-3;
 }
-.homework li.required::before {
-	@apply absolute -left-4 text-red-800 text-2xl;
-	content: '*';
+.homework .required {
+	@apply absolute -left-5 top-1 text-red-800 text-2xl cursor-default;
 }
 .homework .item, .homework .extra, .homework .submitted {
 	@apply mr-1.5;
@@ -139,23 +140,3 @@ table td:first-of-type {
 	width: 640px;
 	height: 360px;
 }
-
-
-
-/* 
-"Anek Latin"
-"Fanwood Text"
-Grandstander
-Gudea
-Kodchasan
-Orienta
-Salsa
-Strait 
-
-Sintony
-Kufam
-Istok Web
-Stick No Bills
-Offside
-Acme
-*/

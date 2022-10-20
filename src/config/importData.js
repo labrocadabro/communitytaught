@@ -709,17 +709,17 @@ export const hwData = {
 		extra: false,
 		item: "634e791765133f8616875f31",
 	},
-		"hw61-2": {
+	"hw61-2": {
 		submit: false,
 		extra: false,
 		item: "634e791765133f8616875f33",
 	},
-		"hw61-3": {
+	"hw61-3": {
 		submit: false,
 		extra: false,
 		item: "634e791765133f8616875f35",
 	},
-		"hw61-4": {
+	"hw61-4": {
 		submit: false,
 		extra: false,
 		item: "634e791765133f8616875f37",

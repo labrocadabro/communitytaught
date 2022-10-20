@@ -57,4 +57,12 @@ export const reset = async (req, res) => {
 		req.session.flash = { type: "error", message: ["Verification error."]}
 		res.redirect('/forgot');
 	}
-}
+};
+
+export const resources = (req, res) => {
+	res.render('resources');	
+};
+
+export const resourcePage = (req, res) => {
+	res.render(`resources/${req.params.page}`);	
+};

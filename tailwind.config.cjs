@@ -7,6 +7,7 @@ module.exports = {
         'logo': ['Orienta', 'serif'],
 				'header':  ['Kufam', 'sans-serif'],
 				'body':  ['Merriweather', 'serif'],
+				'awesome': ['"Font Awesome 6 Free"']
       },
 			colors: {
 				'twilight': {

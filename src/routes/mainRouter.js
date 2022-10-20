@@ -25,4 +25,7 @@ router.get('/logout', auth.logout);
 
 router.get('/verify', auth.verify);
 
+router.get('/resources', pages.resources);
+router.get('/resources/:page', pages.resourcePage);
+
 export default router;

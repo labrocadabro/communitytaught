@@ -4,8 +4,7 @@
 
 @layer base {
 	a {
-		@apply underline;
-		color: #c92918;
+		@apply underline text-vermillion-600;
 	}
 	a:hover {
 		@apply no-underline;
@@ -23,7 +22,7 @@
 		@apply font-bold text-pink-800 font-header;
 	}
 	h1 {
-		@apply text-4xl font-bold;
+		@apply text-4xl font-bold mb-8;
 	}
 	h2 {
 		@apply text-3xl font-bold;
@@ -142,4 +141,52 @@ table td:first-of-type {
 #player {
 	width: 640px;
 	height: 360px;
+}
+
+/**** accordion ***/
+dl {
+	@apply bg-white py-4 px-5 border border-stone-200;
+}
+dt {
+	@apply bg-twilight-50 cursor-pointer pt-4 pb-3 px-6 w-full outline-0 transition border border-twilight-300 flex items-center;
+}
+dt h3 {
+	@apply text-vermillion-600 mr-auto;
+}
+dt:last-of-type {
+	@apply mb-0;
+}
+
+dt.opened, dt:hover {
+    @apply bg-twilight-100;
+}
+
+dt:after {
+	@apply text-2xl font-bold font-awesome text-twilight-800;
+  content: '\2b'; /* plus sign */
+}
+
+dt.opened:after {
+  content: "\f068"; /* minus sign */
+}
+
+dd {
+	@apply px-6 bg-stone-50 max-h-0 overflow-hidden opacity-0 mb-2 border border-stone-200;
+	transition: 0.4s ease-in-out;
+}
+dd > *:last-child {
+	@apply mb-0;
+}
+
+dd.opened {
+	@apply opacity-100 py-6 mt-1;
+	max-height: 2500px;
+}
+
+dd ul {
+	@apply list-disc ml-6;
+}
+
+dd ol {
+	@apply mt-3 ml-8 list-decimal;
 }

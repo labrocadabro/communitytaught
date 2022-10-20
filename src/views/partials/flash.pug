@@ -2,7 +2,7 @@ if (flash)
 	div(open role="alert" class="flash flash-" + flash.type)
 		span.flash-close &times;
 		each message in flash.message  
-			p #{message}
+			span.block #{message}
 if (user && !user.verified)
 	if (token) 
 		div(role="alert" class="flash flash-info")

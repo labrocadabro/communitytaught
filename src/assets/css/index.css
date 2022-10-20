@@ -580,9 +580,10 @@ select {
 }
 
 a {
+  --tw-text-opacity: 1;
+  color: rgb(201 41 24 / var(--tw-text-opacity));
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
-  color: #c92918;
 }
 
 a:hover {
@@ -631,6 +632,7 @@ h1,  h2,  h3,  h4,  h5,  h6 {
 }
 
 h1 {
+  margin-bottom: 2rem;
   font-size: 2.25rem;
   line-height: 2.5rem;
   font-weight: 700;
@@ -1288,4 +1290,109 @@ table td:first-of-type {
 #player {
   width: 640px;
   height: 360px;
+}
+
+/**** accordion ***/
+
+dl {
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(231 229 228 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+dt {
+  display: flex;
+  width: 100%;
+  cursor: pointer;
+  align-items: center;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(158 208 229 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(241 248 250 / var(--tw-bg-opacity));
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 1rem;
+  padding-bottom: 0.75rem;
+  outline-width: 0px;
+  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+dt h3 {
+  margin-right: auto;
+  --tw-text-opacity: 1;
+  color: rgb(201 41 24 / var(--tw-text-opacity));
+}
+
+dt:last-of-type {
+  margin-bottom: 0px;
+}
+
+dt.opened,  dt:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(232 243 247 / var(--tw-bg-opacity));
+}
+
+dt:after {
+  font-family: "Font Awesome 6 Free";
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  --tw-text-opacity: 1;
+  color: rgb(34 101 129 / var(--tw-text-opacity));
+  content: '\2b';
+  /* plus sign */
+}
+
+dt.opened:after {
+  content: "\f068";
+  /* minus sign */
+}
+
+dd {
+  margin-bottom: 0.5rem;
+  max-height: 0px;
+  overflow: hidden;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(231 229 228 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(250 250 249 / var(--tw-bg-opacity));
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  opacity: 0;
+  transition: 0.4s ease-in-out;
+}
+
+dd > *:last-child {
+  margin-bottom: 0px;
+}
+
+dd.opened {
+  margin-top: 0.25rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  opacity: 1;
+  max-height: 2500px;
+}
+
+dd ul {
+  margin-left: 1.5rem;
+  list-style-type: disc;
+}
+
+dd ol {
+  margin-top: 0.75rem;
+  margin-left: 2rem;
+  list-style-type: decimal;
 }

@@ -15,8 +15,8 @@ html
 		link(href="https://fonts.googleapis.com/css2?family=Merriweather&family=Acme&family=Orienta&family=Kufam&display=swap" rel="stylesheet")
 		title= title
 	body.flex.flex-col.min-h-screen.text-twilight-900.bg-stone-50.text-lg.font-body
-		//- if mode === "dev"
-		//- 	.flash.flash-error DEVELOPMENT SERVER
+		if mode === "dev"
+			.flash.flash-error DEVELOPMENT SERVER
 
 		header.py-5.bg-twilight-100.border-b.border-twilight-200
 			include ../partials/header.pug

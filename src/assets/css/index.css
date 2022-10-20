@@ -1060,6 +1060,10 @@ button:hover,  a.button:hover {
   align-items: center;
 }
 
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
+
 .border {
   border-width: 1px;
 }
@@ -1237,8 +1241,12 @@ table td:first-of-type {
   text-align: left;
 }
 
-.thumbnail, .motivation, .hw-submit {
+.thumbnail, .motivation {
   max-width: 300px;
+}
+
+.hw-submit {
+  width: 160px;
 }
 
 .homework .hw-items li {
@@ -1269,16 +1277,43 @@ table td:first-of-type {
   margin-bottom: 0.5rem;
   display: block;
   border-radius: 0.5rem;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(131 24 67 / var(--tw-border-opacity));
   --tw-bg-opacity: 1;
   background-color: rgb(157 23 77 / var(--tw-bg-opacity));
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+  font-family: Orienta, serif;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
   font-weight: 700;
   text-transform: uppercase;
+  letter-spacing: 0.05em;
   --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
+  color: rgb(250 250 249 / var(--tw-text-opacity));
   -webkit-text-decoration-line: none;
           text-decoration-line: none;
+  --tw-shadow-color: #831843;
+  --tw-shadow: var(--tw-shadow-colored);
+  --tw-drop-shadow: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.submit-button:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(190 24 93 / var(--tw-bg-opacity));
+}
+
+#to-top {
+  position: fixed;
+  bottom: 1rem;
+  right: 0.25rem;
+  cursor: pointer;
+  font-size: 3.75rem;
+  line-height: 1;
+  --tw-text-opacity: 1;
+  color: rgb(157 23 77 / var(--tw-text-opacity));
 }
 
 /********* temporary ************/

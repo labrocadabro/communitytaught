@@ -12,7 +12,11 @@ block content
 	include ./partials/mixins.pug
 	+lessontable(lessons)
 
+	#to-top
+		i.fa-regular.fa-square-caret-up(title="Back to top")
+
 block extra-scripts
+	script(src="/js/toTop.js")
 	if loggedIn
 		script(src="/js/lessonProgress.js")
 		script(src="/js/lessonDone.js")

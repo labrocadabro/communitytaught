@@ -115,8 +115,11 @@ table td:first-of-type {
 .hw-items, .hw-extras {
 	@apply text-left;
 }
-.thumbnail, .motivation, .hw-submit {
+.thumbnail, .motivation {
 	max-width: 300px;
+}
+.hw-submit {
+	width: 160px;
 }
 .homework .hw-items li {
 	@apply relative ml-3;
@@ -131,7 +134,11 @@ table td:first-of-type {
 	opacity: 0.5;
 }
 .submit-button {
-	@apply block mb-2 bg-pink-800 text-white rounded-lg uppercase py-2 no-underline font-bold;
+	@apply block mb-2 bg-pink-800 hover:bg-pink-700 font-logo text-stone-50 rounded-lg uppercase py-2 no-underline font-bold border border-pink-900 tracking-wider text-xl drop-shadow-md shadow-pink-900;
+}
+
+#to-top {
+	@apply fixed bottom-4 right-1 text-pink-800 text-6xl cursor-pointer; 
 }
 
 /********* temporary ************/

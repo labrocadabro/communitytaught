@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 
 import { notLoggedIn } from "./auth.js";
 import Homework from '../models/Homework.js';
+import User from '../models/User.js';
 import HomeworkItem from '../models/HomeworkItem.js';
 import HomeworkExtra from '../models/HomeworkExtra.js';
 import HomeworkProgress from '../models/HomeworkProgress.js';
@@ -73,7 +74,10 @@ export const addEditHomework = async (req, res) => {
 			items: items,
 			extras: extras
 		}
-		await Homework.findByIdAndUpdate(req.params.id  || mongoose.Types.ObjectId(), hwData, { upsert: true });
+		await Homework.findByIdAndUpdate(req.params.id  || mongoose.Types.ObjectId(), hwData, { upsert: true});
+
+		
+
 
 		req.session.flash = { type: "success", message: [`Homework ${!!req.params.id ? "updated" : "added"}`]};
 	} catch (err) {
@@ -177,6 +181,13 @@ export const importData = async (req, res) => {
 					upsert: true
 				} 
 			})));
+			if (req.body.classesWatched) {
+				// and we also set the user's current class to be the one after their highest watched
+				let currentClass = lastClass + 1;
+				const user = await User.findByIdAndUpdate(req.user.id, {
+					currentClass: lessonData[currentClass] ? lessonData[currentClass] : null
+				});
+			}
 		}
 		req.session.flash = { type: "success", message: ["Data imported successfully"] };
 	} catch (err) {

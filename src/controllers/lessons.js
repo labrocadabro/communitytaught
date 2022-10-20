@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 
 import Lesson from '../models/Lesson.js';
+import User from '../models/User.js';
 import LessonProgress from '../models/LessonProgress.js';
 import Homework from '../models/Homework.js';
 
@@ -37,7 +38,7 @@ export const addEditLesson = async (req, res) => {
 				title: req.body.tsTitle[i],
 			});
 		}
-		const lesson = {
+		const lessonData = {
 			videoId: req.body.videoId,
 			title: req.body.videoTitle,
 			dates: dates,
@@ -53,7 +54,12 @@ export const addEditLesson = async (req, res) => {
 			note: req.body.note,
 			timestamps: timestamps
 		}
-		await Lesson.findByIdAndUpdate(req.params.id  || mongoose.Types.ObjectId(), lesson, {upsert: true});
+		const lesson = await Lesson.findByIdAndUpdate(req.params.id  || mongoose.Types.ObjectId(), lessonData, {upsert: true, new: true});
+
+			// if this is a new class, update all users with current class = null so this is now their current class
+		if (!req.params.id) {
+			await User.updateMany({currentClass: null}, {currentClass: lesson._id})
+		}
 		req.session.flash = { type: "success", message: [`Class ${!!req.params.id ? "updated" : "added"}`]};
 	} catch (err) {
 		console.log(err);

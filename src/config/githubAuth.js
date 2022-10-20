@@ -9,6 +9,7 @@ const github = new GithubStrategy({
     clientID: process.env.GITHUB_ID,
     clientSecret: process.env.GITHUB_SECRET,
     callbackURL: `${process.env.DOMAIN}/oauth/github/callback`,
+		scope: ['user:email']
   },
 	async function(accessToken, refreshToken, profile, cb) {
 		let user = await User.findOne( { githubId: profile.id });

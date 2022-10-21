@@ -102,7 +102,7 @@ mixin lessontable(lessons)
 							else 
 								input.checkedin.hidden(type="checkbox" id="checkedin-" + lesson._id autocomplete="off" checked)
 					td.thumbnail
-						a(href=lesson.permalink)
+						a(href=`/class/${lesson.permalink}`)
 							img.mx-auto(src=lesson.thumbnail w-full)
 							| #{lesson.title}
 					td.motivation

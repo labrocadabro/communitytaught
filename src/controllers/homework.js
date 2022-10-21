@@ -199,31 +199,40 @@ export const importData = async (req, res) => {
 };
 
 export const toggleItem =  async (req, res) => { 
+	if (!req.user) return res.status(401).json({msg: "not logged in"});
 	try {
-		await ItemProgress.toggleItem(req.params.id, req.user.id);
-		res.json("toggled hw item");
+		const userId = req.user.id;
+		const itemId = req.params.id;
+		await ItemProgress.toggleItem(itemId, userId);
+		res.json({msg: "toggled hw item"});
 	} catch (err) {
 		console.log(err)
-		res.json(err);
+		res.status(err.status || 500).json({error: err.message});
 	} 
 };
 
 export const toggleExtra =  async (req, res) => { 
-		try {
-		await ExtraProgress.toggleExtra(req.params.id, req.user.id);
-		res.json("toggled hw extra");
+	if (!req.user) return res.status(401).json({msg: "not logged in"});
+	try {
+		const userId = req.user.id;
+		const extraId = req.params.id;
+		await ExtraProgress.toggleExtra(extraId, userId);
+		res.json({msg: "toggled hw extra"});
 	} catch (err) {
-		console.log(err)
-		res.json(err);
+		console.log(err);
+		res.status(err.status || 500).json({error: err.message});
 	} 
 };
 
 export const toggleSubmitted =  async (req, res) => { 
-		try {
-		await HomeworkProgress.toggleSubmitted(req.params.id, req.user.id);
-		res.json("toggled hw extra");
+	if (!req.user) return res.status(401).json({msg: "not logged in"});
+	try {
+		const userId = req.user.id;
+		const hwId = req.params.id;
+		await HomeworkProgress.toggleSubmitted(hwId, userId);
+		res.json({msg: "toggled hw submitted"});
 	} catch (err) {
-		console.log(err)
-		res.json(err);
+		console.log(err);
+		res.status(err.status || 500).json({error: err.message});
 	} 
 };

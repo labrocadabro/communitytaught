@@ -1,15 +1,8 @@
 import passport from 'passport';
 import validator from 'validator';
-import mongoose from "mongoose";
 
 import User from '../models/User.js';
 import Token from '../models/Token.js';
-import Lesson from '../models/Lesson.js';
-import LessonProgress from '../models/LessonProgress.js';
-import Homework from '../models/Homework.js';
-import HomeworkItem from '../models/HomeworkItem.js';
-import HomeworkExtra from '../models/HomeworkExtra.js';
-import HomeworkProgress from '../models/HomeworkProgress.js';
 
 import { unlinkGithub, unlinkGoogle } from '../routes/oauthRouter.js';
 

@@ -12,8 +12,11 @@ async function toggleItem() {
 		const res = await fetch(`/hw/item/${itemId}`, {
 			method: "put",
 		}); 
+		if (res.status !== 200) return location.reload();
+		const data = await res.json();
+		console.log(data.msg);
 	} catch (err) {
-		console.log(err)
+		console.log(err);
 	}
 }
 
@@ -23,8 +26,11 @@ async function toggleExtra() {
 		const res = await fetch(`/hw/extra/${itemId}`, {
 			method: "put",
 		}); 
+		if (res.status !== 200) return location.reload();
+		const data = await res.json();
+		console.log(data.msg);
 	} catch (err) {
-		console.log(err)
+		console.log(err);
 	}
 }
 
@@ -34,7 +40,10 @@ async function toggleSubmitted() {
 		const res = await fetch(`/hw/submit/${itemId}`, {
 			method: "put",
 		}); 
+		if (res.status !== 200) return location.reload();
+		const data = await res.json();
+		console.log(data.msg);
 	} catch (err) {
-		console.log(err)
+		console.log(err);
 	}
 }

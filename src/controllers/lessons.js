@@ -124,25 +124,27 @@ export const showLesson =  async (req, res) => {
 };
 
 export const toggleWatched =  async (req, res) => {
+	if (!req.user) return res.status(401).json({msg: "not logged in"});
 	try {
 		const userId = req.user.id;
 		const lessonId = req.params.id;
 		await LessonProgress.toggleWatched(lessonId, userId);
-		res.json("toggled watched");
+		res.json({msg: "toggled lesson watched"});
 	} catch (err) {
-		console.log(err)
-		res.json(err);
+		console.log(err);
+		res.status(err.status || 500).json({error: err.message});
 	} 	
 };
 
 export const toggleCheckedIn =  async (req, res) => {
+	if (!req.user) return res.status(401).json({msg: "not logged in"});
 	try {
 		const userId = req.user.id;
 		const lessonId = req.params.id;
-		await LessonProgress.toggleCheckedIn(lessonId, userId);
-		res.json("toggled checked in");
+		await LessonProgress.toggleCheckedIn(lessonId, req.user.id);
+		res.json({msg: "toggled lesson checked in"});
 	} catch (err) {
-		console.log(err)
-		res.json(err);
+		console.log(err);
+		res.status(err.status || 500).json({error: err.message});
 	} 
 };

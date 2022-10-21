@@ -12,11 +12,11 @@ function openMenu() {
 	const closed = desktopMenu.classList.contains('hidden');
 	console.log(closed)
 	if (closed) {
-		desktopMenu.classList.add('opened');
+		desktopMenu.classList.add('menu-opened');
 		desktopMenu.classList.remove('hidden');
 		document.querySelector('main').style.display = "none";
 	} else {
-		desktopMenu.classList.remove('opened');
+		desktopMenu.classList.remove('menu-opened');
 		desktopMenu.classList.add('hidden');
 		document.querySelector('main').style.display = "block";
 	}

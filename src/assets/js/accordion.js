@@ -6,8 +6,8 @@ titles.forEach(title => title.addEventListener('click', expandPanel));
 function expandPanel() {
 	const title = this;
 	const panel = this.nextSibling;
-	if (title.classList.contains('opened')) title.classList.remove('opened')
-	else title.classList.add('opened');
-	if (panel.classList.contains('opened')) panel.classList.remove('opened')
-	else panel.classList.add('opened');
+	if (title.classList.contains('acc-opened')) title.classList.remove('acc-opened')
+	else title.classList.add('acc-opened');
+	if (panel.classList.contains('acc-opened')) panel.classList.remove('acc-opened')
+	else panel.classList.add('acc-opened');
 }

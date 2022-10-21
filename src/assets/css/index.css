@@ -1419,7 +1419,7 @@ dt:last-of-type {
   margin-bottom: 0px;
 }
 
-dt.opened,  dt:hover {
+dt.acc-opened,  dt:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(232 243 247 / var(--tw-bg-opacity));
 }
@@ -1435,7 +1435,7 @@ dt:after {
   /* plus sign */
 }
 
-dt.opened:after {
+dt.acc-opened:after {
   content: "\f068";
   /* minus sign */
 }
@@ -1459,7 +1459,7 @@ dd > *:last-child {
   margin-bottom: 0px;
 }
 
-dd.opened {
+dd.acc-opened {
   margin-top: 0.25rem;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
@@ -1480,7 +1480,7 @@ dd ol {
 
 /*** menu ***/
 
-.opened {
+.menu-opened {
   position: absolute;
   top: 100%;
   left: 0px;
@@ -1492,7 +1492,7 @@ dd ol {
   padding-top: 5rem;
 }
 
-.opened li {
+.menu-opened li {
   text-align: center;
 }
 

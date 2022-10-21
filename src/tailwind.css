@@ -167,7 +167,7 @@ dt:last-of-type {
 	@apply mb-0;
 }
 
-dt.opened, dt:hover {
+dt.acc-opened, dt:hover {
     @apply bg-twilight-100;
 }
 
@@ -176,7 +176,7 @@ dt:after {
   content: '\2b'; /* plus sign */
 }
 
-dt.opened:after {
+dt.acc-opened:after {
   content: "\f068"; /* minus sign */
 }
 
@@ -188,7 +188,7 @@ dd > *:last-child {
 	@apply mb-0;
 }
 
-dd.opened {
+dd.acc-opened {
 	@apply opacity-100 py-6 mt-1;
 	max-height: 2500px;
 }
@@ -204,9 +204,9 @@ dd ol {
 
 /*** menu ***/
 
-.opened {
+.menu-opened {
 	@apply pt-20 block absolute top-full w-full h-screen bg-white left-0;
 }
-.opened li {
+.menu-opened li {
 	@apply text-center;
 }

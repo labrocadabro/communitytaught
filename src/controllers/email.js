@@ -32,7 +32,8 @@ if (process.env.MODE === "prod") {
 
 export const verify = async (req, res) => {
 	try {
-		const email = req.user.username;
+		const email = req.user?.username;
+		if (!email) return res.redirect("/dashboard");
 		if (!req.user.verified) {
 			const token = crypto.randomBytes(32).toString('hex');
 			await new Token({token, email}).save();

@@ -52,7 +52,6 @@ lessonProgressSchema.statics.toggleWatched = async function(lessonId, userId) {
 			// if there are previous lessons, find the first unwatched lesson. If no previous unwatched lessons are found, use the current lesson id
 			prevLessons = await getAllLessonsProgress(userId, prevLessons);
 			const unwatchedLesson = prevLessons.find(lesson => !lesson.watched);
-			console.log(unwatchedLesson)
 			nextLessonId = unwatchedLesson ? unwatchedLesson._id : lessonId;
 		} else {
 			// if there are no previous lessons, set lesson id to current lesson

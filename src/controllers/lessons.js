@@ -125,7 +125,9 @@ export const showLesson =  async (req, res) => {
 
 export const toggleWatched =  async (req, res) => {
 	try {
-		await LessonProgress.toggleWatched(req.params.id, req.user.id);
+		const userId = req.user.id;
+		const lessonId = req.params.id;
+		await LessonProgress.toggleWatched(lessonId, userId);
 		res.json("toggled watched");
 	} catch (err) {
 		console.log(err)
@@ -135,7 +137,9 @@ export const toggleWatched =  async (req, res) => {
 
 export const toggleCheckedIn =  async (req, res) => {
 	try {
-		await LessonProgress.toggleCheckedIn(req.params.id, req.user.id);
+		const userId = req.user.id;
+		const lessonId = req.params.id;
+		await LessonProgress.toggleCheckedIn(lessonId, userId);
 		res.json("toggled checked in");
 	} catch (err) {
 		console.log(err)

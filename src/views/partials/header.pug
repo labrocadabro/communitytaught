@@ -1,7 +1,10 @@
-nav.px-14.flex.items-center
+nav.flex.items-center
 	h3.mr-auto
-		a.text-twilight-800.no-underline.text-3xl.font-logo(href="/") #communitytaught
-	ul.flex
+		a(class="p-0 m-0 text-twilight-800 no-underline text-2xl lg:text-3xl font-logo" href="/") #communitytaught
+	ul#mobile-menu(class="sm:hidden text-3xl text-pink-800")
+		li
+			i.fa.fa-bars
+	ul#desktop-menu(class="hidden sm:flex")
 		if loggedIn
 			li
 					a(href="/dashboard" class = active === "Dashboard" ? "active" : "") Dashboard

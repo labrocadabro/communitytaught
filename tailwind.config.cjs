@@ -2,6 +2,14 @@
 module.exports = {
   content: ["./src/views/**/*.pug", "./src/assets/js/*.js"],
   theme: {
+		screens: {
+			'xs': '640px',
+      'sm': '768px',
+      'md': '896px',
+      'lg': '1024px',
+			'xl': '1280px',
+			'2xl': '1536px',
+    },
 		extend: {
 			fontFamily: {
         'logo': ['Orienta', 'serif'],

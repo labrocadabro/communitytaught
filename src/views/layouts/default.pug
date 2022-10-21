@@ -26,17 +26,17 @@ html.scroll-smooth
 		link(href="https://fonts.googleapis.com/css2?family=Merriweather&family=Acme&family=Orienta&family=Kufam&display=swap" rel="stylesheet")
 		title= title
 	body.flex.flex-col.min-h-screen.text-twilight-900.bg-stone-50.text-lg.font-body
-		if mode === "dev"
-			.flash.flash-error DEVELOPMENT SERVER
+		//- if mode === "dev"
+		//- 	.flash.flash-error DEVELOPMENT SERVER
 
-		header.py-5.bg-twilight-100.border-b.border-twilight-200
+		header(class="px-5 sm:px-8 lg:px-14 py-3 sm:py-5 bg-twilight-100 border-b border-twilight-200 relative")
 			include ../partials/header.pug
 
-		main.px-14.py-8
+		main(class="px-5 sm:px-8 lg:px-14 py-4 sm:py-8")
 			include ../partials/flash.pug
 			block content
 
-		footer.mt-auto.py-5.bg-twilight-100.border-t.border-twilight-200.text-center.px-14
+		footer(class="px-5 sm:px-8 lg:px-14 py-3 sm:py-5 mt-auto bg-twilight-100 border-t border-twilight-200 text-center")
 			include ../partials/footer.pug
 
 		script(src="/js/main.js") 

@@ -817,11 +817,23 @@ button:hover,  a.button:hover {
   margin-left: auto;
   margin-right: auto;
   margin-top: 1.25rem;
-  display: grid;
+  width: 100%;
   max-width: 28rem;
   gap: 0.5rem;
   border-width: 1px;
-  padding: 2.5rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  padding: 1rem;
+}
+
+@media (min-width: 640px) {
+  .sign-form {
+    display: grid;
+    padding: 2.5rem;
+  }
+}
+
+.sign-form {
   grid-template-columns: auto 1fr;
 }
 
@@ -829,11 +841,23 @@ button:hover,  a.button:hover {
   text-align: right;
 }
 
+.sign-form input {
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .sign-form input {
+    margin-bottom: 0px;
+  }
+}
+
 .sign-form div {
   margin-top: 0.5rem;
 }
 
 .sign-form button,  .sign-form a.button {
+  box-sizing: border-box;
   width: 100%;
 }
 
@@ -953,6 +977,10 @@ button:hover,  a.button:hover {
 
 .m-2 {
   margin: 0.5rem;
+}
+
+.m-0 {
+  margin: 0px;
 }
 
 .mx-auto {
@@ -1101,19 +1129,23 @@ button:hover,  a.button:hover {
   background-color: rgb(232 243 247 / var(--tw-bg-opacity));
 }
 
-.py-5 {
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
+.p-0 {
+  padding: 0px;
 }
 
-.px-14 {
-  padding-left: 3.5rem;
-  padding-right: 3.5rem;
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
 }
 
-.py-8 {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .pb-4 {
@@ -1181,6 +1213,11 @@ button:hover,  a.button:hover {
 .text-twilight-900 {
   --tw-text-opacity: 1;
   color: rgb(21 63 81 / var(--tw-text-opacity));
+}
+
+.text-pink-800 {
+  --tw-text-opacity: 1;
+  color: rgb(157 23 77 / var(--tw-text-opacity));
 }
 
 .no-underline {
@@ -1335,10 +1372,19 @@ dl {
   border-color: rgb(231 229 228 / var(--tw-border-opacity));
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  dl {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
 }
 
 dt {
@@ -1430,4 +1476,59 @@ dd ol {
   margin-top: 0.75rem;
   margin-left: 2rem;
   list-style-type: decimal;
+}
+
+/*** menu ***/
+
+.opened {
+  position: absolute;
+  top: 100%;
+  left: 0px;
+  display: block;
+  height: 100vh;
+  width: 100%;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  padding-top: 5rem;
+}
+
+.opened li {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .sm\:flex {
+    display: flex;
+  }
+
+  .sm\:hidden {
+    display: none;
+  }
+
+  .sm\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .sm\:py-5 {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+
+  .sm\:py-8 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:px-14 {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+  }
+
+  .lg\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
 }

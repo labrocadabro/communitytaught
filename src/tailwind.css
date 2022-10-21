@@ -39,17 +39,20 @@
 }
 @layer components {
 	.sign-form {
-		@apply mt-5 max-w-md mx-auto border grid p-10 gap-2;
+		@apply mt-5 max-w-md w-full mx-auto border xs:grid p-4 xs:p-10 gap-2 bg-white;
 		grid-template-columns: auto 1fr;
 	}
 	.sign-form label {
 		@apply text-right;
 	}
+	.sign-form input {
+		@apply w-full mb-4 xs:mb-0;
+	}
 	.sign-form div {
 		@apply mt-2;
 	}
 	.sign-form button, .sign-form a.button {
-		@apply w-full;
+		@apply w-full box-border;
 	}
 	.add-form {
 		@apply mt-5 max-w-3xl mx-auto border grid p-10 gap-2 items-center;
@@ -152,7 +155,7 @@ table td:first-of-type {
 
 /**** accordion ***/
 dl {
-	@apply bg-white py-4 px-5 border border-stone-200;
+	@apply bg-white py-2 xs:py-4 px-2 xs:px-5 border border-stone-200;
 }
 dt {
 	@apply bg-twilight-50 cursor-pointer pt-4 pb-3 px-6 w-full outline-0 transition border border-twilight-300 flex items-center;
@@ -196,4 +199,14 @@ dd ul {
 
 dd ol {
 	@apply mt-3 ml-8 list-decimal;
+}
+
+
+/*** menu ***/
+
+.opened {
+	@apply pt-20 block absolute top-full w-full h-screen bg-white left-0;
+}
+.opened li {
+	@apply text-center;
 }

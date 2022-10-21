@@ -67,6 +67,10 @@ export const notLoggedIn = (req, res) => {
 }
 
 export const verify = async (req, res) => {
+	if (!req.user) {
+		req.session.flash = { type: "error", message: ["Please login and try again."]}
+		return res.redirect('/login');
+	}
 	try {
 		if (!req.query.token) return res.redirect('/dashboard');
 		const token = await Token.findOne({ token: req.query.token });
@@ -75,7 +79,7 @@ export const verify = async (req, res) => {
 			return res.redirect('/dashboard');
 		}
 		const user = await User.findOne({ username: token.email });
-		if (!user || !user.username || user.username !== req.user.username) {
+		if (!user || user.username !== req.user.username) {
 			req.session.flash = { type: "error", message: ["Invalid or expired link."]}
 			return res.redirect('/dashboard');
 		}

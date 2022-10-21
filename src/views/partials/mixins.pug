@@ -84,7 +84,9 @@ mixin lessontable(lessons)
 			each lesson in lessons
 				tr(class=(lesson.watched && lesson.checkedIn) || !lesson.videoId ? "done" : "" id=lesson._id)
 					td.font-bold
-						if (lesson.classNo.length === 1)
+						if (!lesson.classNo[0])
+							| Super Review
+						else if (lesson.classNo.length === 1)
 							|	#{lesson.classNo[0]}
 						else if (lesson.classNo.length === 2)
 							| #{lesson.classNo[0]} &amp; #{lesson.classNo[1]}

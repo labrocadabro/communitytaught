@@ -1196,6 +1196,10 @@ button:hover,  a.button:hover {
   font-weight: 700;
 }
 
+.font-normal {
+  font-weight: 400;
+}
+
 .italic {
   font-style: italic;
 }
@@ -1218,6 +1222,15 @@ button:hover,  a.button:hover {
 .text-pink-800 {
   --tw-text-opacity: 1;
   color: rgb(157 23 77 / var(--tw-text-opacity));
+}
+
+.text-vermillion-800 {
+  color: #;
+}
+
+.text-vermillion-600 {
+  --tw-text-opacity: 1;
+  color: rgb(201 41 24 / var(--tw-text-opacity));
 }
 
 .no-underline {

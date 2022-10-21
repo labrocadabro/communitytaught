@@ -40,7 +40,7 @@ block content
 				else if (lesson.checkin[0].length)
 					| &nbsp; #[a(href=lesson.checkin[0] target="_blank") Check In]
 			if lesson.note 
-				h3.mb-3 #{lesson.note}
+				p.mb-3.text-2xl !{lesson.note}
 		#player
 			if (!lesson.videoId)
 				img(src="/img/thumbnails/no-stream-lg.png")

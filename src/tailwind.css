@@ -193,8 +193,14 @@ td:first-of-type {
 	.hw-submit {
 		@apply w-auto text-center;
 	}
+	.hw-submit:before, .thumbnail:before {
+		@apply text-left;
+	}
 	.thumbnail, .motivation {
 		@apply max-w-full;
+	}
+	.thumbnail {
+		@apply text-center;
 	}
 	.submit-button {
 		@apply mx-6;

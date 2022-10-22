@@ -1430,8 +1430,16 @@ td:first-of-type {
     text-align: center;
   }
 
+  .hw-submit:before,  .thumbnail:before {
+    text-align: left;
+  }
+
   .thumbnail,  .motivation {
     max-width: 100%;
+  }
+
+  .thumbnail {
+    text-align: center;
   }
 
   .submit-button {

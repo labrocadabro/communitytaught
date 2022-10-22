@@ -93,27 +93,30 @@
 	}
 }
 
-/***** all lessons, all homework *****/
+/***** tables *****/
 table {
 	@apply text-center border bg-white w-full;
 }
-table tr {
+table input {
+	@apply mr-1;
+}
+tr {
 	@apply border-b;
 }
-table tr:nth-child(even) {
+tr:nth-child(even) {
 	@apply bg-twilight-50;
 }
-table thead {
+thead {
 	@apply sticky top-0 z-10;
 }
-table th {
+th {
 	@apply bg-twilight-800 text-stone-50 p-4 font-logo uppercase;
 }
-table td {
+td {
 	@apply p-4 border-r;
 }
-table td:first-of-type {
-	@apply p-2;
+td:first-of-type {
+	@apply p-2 font-bold;
 }
 .hw-items, .hw-extras {
 	@apply text-left;
@@ -130,9 +133,9 @@ table td:first-of-type {
 .homework .required {
 	@apply absolute -left-5 top-1 text-red-800 text-2xl cursor-default;
 }
-.homework .item, .homework .extra, .homework .submitted {
+/* .homework .item, .homework .extra, .homework .submitted {
 	@apply mr-1.5;
-}
+} */
 .homework .done, .lessons .done {
 	opacity: 0.5;
 }
@@ -142,15 +145,89 @@ table td:first-of-type {
 
 #to-top {
 	@apply fixed bottom-4 right-1 text-pink-800 text-6xl cursor-pointer; 
+} 
+
+/***** mobile tables *****/
+
+@media screen and (max-width: 768px) {
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr { 
+		@apply block text-left;
+	}
+	
+	/* Hide table headers (but not display: none;, for accessibility) */
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	tr { 
+		@apply border border-stone-300; 
+	}
+	
+	td, td:first-of-type { 
+		@apply border-0 border-b border-stone-200 w-full relative;
+		padding-left: 35%; 
+
+	}
+
+	td:before { 
+		@apply font-bold absolute pr-2 text-pink-800 font-logo uppercase text-base;
+		/* Top/left values mimic padding */
+		top: 15px;
+		left: 8px;
+		width: 30%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+	}
+
+	.homework td {
+		padding-left: 25%;
+	}
+
+	.homework td:before {
+		width: 20%;
+	}
+
+	.hw-submit {
+		@apply w-auto text-center;
+	}
+	.thumbnail, .motivation {
+		@apply max-w-full;
+	}
+	.submit-button {
+		@apply mx-6;
+	}
+
+	td ul {
+		@apply m-0 p-0;
+	}
+	
+	/*
+	Label the data
+	*/
+	.lessons td:nth-of-type(1):before { content: "Class"; }
+	.lessons td:nth-of-type(2):before { content: "Done"; }
+	.lessons td:nth-of-type(3):before { content: "Video"; }
+	.lessons td:nth-of-type(4):before { content: "Motivation"; }
+	.lessons td:nth-of-type(5):before { content: "Check In"; }
+
+	.homework td:nth-of-type(1):before { content: "Class"; }
+	.homework td:nth-of-type(2):before { content: "Due"; }
+	.homework td:nth-of-type(3):before { content: "Work"; }
+	.homework td:nth-of-type(4):before { content: "Extras"; }
+	.homework td:nth-of-type(5):before { content: "Submit"; }
 }
+
+
 
 /********* temporary ************/
 #video-container {
-	width: 640px;
+	max-width: 640px;
 }
 #player {
-	width: 640px;
-	height: 360px;
+	@apply w-full aspect-video;
 }
 
 /**** accordion ***/

@@ -1236,7 +1236,7 @@ button:hover,  a.button:hover {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
-/***** all lessons, all homework *****/
+/***** tables *****/
 
 table {
   width: 100%;
@@ -1246,23 +1246,27 @@ table {
   text-align: center;
 }
 
-table tr {
+table input {
+  margin-right: 0.25rem;
+}
+
+tr {
   border-bottom-width: 1px;
 }
 
-table tr:nth-child(even) {
+tr:nth-child(even) {
   --tw-bg-opacity: 1;
   background-color: rgb(241 248 250 / var(--tw-bg-opacity));
 }
 
-table thead {
+thead {
   position: -webkit-sticky;
   position: sticky;
   top: 0px;
   z-index: 10;
 }
 
-table th {
+th {
   --tw-bg-opacity: 1;
   background-color: rgb(34 101 129 / var(--tw-bg-opacity));
   padding: 1rem;
@@ -1272,13 +1276,14 @@ table th {
   color: rgb(250 250 249 / var(--tw-text-opacity));
 }
 
-table td {
+td {
   border-right-width: 1px;
   padding: 1rem;
 }
 
-table td:first-of-type {
+td:first-of-type {
   padding: 0.5rem;
+  font-weight: 700;
 }
 
 .hw-items,  .hw-extras {
@@ -1309,9 +1314,9 @@ table td:first-of-type {
   color: rgb(153 27 27 / var(--tw-text-opacity));
 }
 
-.homework .item,  .homework .extra,  .homework .submitted {
-  margin-right: 0.375rem;
-}
+/* .homework .item, .homework .extra, .homework .submitted {
+	@apply mr-1.5;
+} */
 
 .homework .done, .lessons .done {
   opacity: 0.5;
@@ -1360,15 +1365,139 @@ table td:first-of-type {
   color: rgb(157 23 77 / var(--tw-text-opacity));
 }
 
+/***** mobile tables *****/
+
+@media screen and (max-width: 768px) {
+  /* Force table to not be like tables anymore */
+
+  table,  thead,  tbody,  th,  td,  tr {
+    display: block;
+    text-align: left;
+  }
+
+  /* Hide table headers (but not display: none;, for accessibility) */
+
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  tr {
+    border-width: 1px;
+    --tw-border-opacity: 1;
+    border-color: rgb(214 211 209 / var(--tw-border-opacity));
+  }
+
+  td,  td:first-of-type {
+    position: relative;
+    width: 100%;
+    border-width: 0px;
+    border-bottom-width: 1px;
+    --tw-border-opacity: 1;
+    border-color: rgb(231 229 228 / var(--tw-border-opacity));
+    padding-left: 35%;
+  }
+
+  td:before {
+    position: absolute;
+    padding-right: 0.5rem;
+    font-family: Orienta, serif;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    --tw-text-opacity: 1;
+    color: rgb(157 23 77 / var(--tw-text-opacity));
+    /* Top/left values mimic padding */
+    top: 15px;
+    left: 8px;
+    width: 30%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+
+  .homework td {
+    padding-left: 25%;
+  }
+
+  .homework td:before {
+    width: 20%;
+  }
+
+  .hw-submit {
+    width: auto;
+    text-align: center;
+  }
+
+  .thumbnail,  .motivation {
+    max-width: 100%;
+  }
+
+  .submit-button {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+
+  td ul {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  /*
+	Label the data
+	*/
+
+  .lessons td:nth-of-type(1):before {
+    content: "Class";
+  }
+
+  .lessons td:nth-of-type(2):before {
+    content: "Done";
+  }
+
+  .lessons td:nth-of-type(3):before {
+    content: "Video";
+  }
+
+  .lessons td:nth-of-type(4):before {
+    content: "Motivation";
+  }
+
+  .lessons td:nth-of-type(5):before {
+    content: "Check In";
+  }
+
+  .homework td:nth-of-type(1):before {
+    content: "Class";
+  }
+
+  .homework td:nth-of-type(2):before {
+    content: "Due";
+  }
+
+  .homework td:nth-of-type(3):before {
+    content: "Work";
+  }
+
+  .homework td:nth-of-type(4):before {
+    content: "Extras";
+  }
+
+  .homework td:nth-of-type(5):before {
+    content: "Submit";
+  }
+}
+
 /********* temporary ************/
 
 #video-container {
-  width: 640px;
+  max-width: 640px;
 }
 
 #player {
-  width: 640px;
-  height: 360px;
+  aspect-ratio: 16 / 9;
+  width: 100%;
 }
 
 /**** accordion ***/
@@ -1525,20 +1654,6 @@ dd ol {
   .sm\:py-8 {
     padding-top: 2rem;
     padding-bottom: 2rem;
-  }
-}
-
-@media (min-width: 896px) {
-  .md\:flex {
-    display: flex;
-  }
-
-  .md\:hidden {
-    display: none;
-  }
-
-  .md\:gap-4 {
-    gap: 1rem;
   }
 }
 

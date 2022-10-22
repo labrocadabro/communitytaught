@@ -10,7 +10,7 @@
 		@apply no-underline;
 	}
 	nav a {
-		@apply font-bold no-underline text-xl block rounded-md px-3 py-2 font-header;
+		@apply font-bold no-underline lg:text-xl block rounded-md py-2 font-header;
 	}
 	nav a.active {
 		@apply decoration-pink-800 underline decoration-3 underline-offset-6 hover:underline;

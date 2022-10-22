@@ -594,16 +594,19 @@ a:hover {
 nav a {
   display: block;
   border-radius: 0.375rem;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   font-family: Kufam, sans-serif;
-  font-size: 1.25rem;
-  line-height: 1.75rem;
   font-weight: 700;
   -webkit-text-decoration-line: none;
           text-decoration-line: none;
+}
+
+@media (min-width: 1024px) {
+  nav a {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
 }
 
 nav a.active {
@@ -1088,6 +1091,10 @@ button:hover,  a.button:hover {
   align-items: center;
 }
 
+.gap-2 {
+  gap: 0.5rem;
+}
+
 .scroll-smooth {
   scroll-behavior: smooth;
 }
@@ -1172,6 +1179,11 @@ button:hover,  a.button:hover {
   font-family: Orienta, serif;
 }
 
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
@@ -1182,11 +1194,6 @@ button:hover,  a.button:hover {
   line-height: 1.75rem;
 }
 
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -1194,10 +1201,6 @@ button:hover,  a.button:hover {
 
 .font-bold {
   font-weight: 700;
-}
-
-.font-normal {
-  font-weight: 400;
 }
 
 .italic {
@@ -1222,15 +1225,6 @@ button:hover,  a.button:hover {
 .text-pink-800 {
   --tw-text-opacity: 1;
   color: rgb(157 23 77 / var(--tw-text-opacity));
-}
-
-.text-vermillion-800 {
-  color: #;
-}
-
-.text-vermillion-600 {
-  --tw-text-opacity: 1;
-  color: rgb(201 41 24 / var(--tw-text-opacity));
 }
 
 .no-underline {
@@ -1534,7 +1528,25 @@ dd ol {
   }
 }
 
+@media (min-width: 896px) {
+  .md\:flex {
+    display: flex;
+  }
+
+  .md\:hidden {
+    display: none;
+  }
+
+  .md\:gap-4 {
+    gap: 1rem;
+  }
+}
+
 @media (min-width: 1024px) {
+  .lg\:gap-4 {
+    gap: 1rem;
+  }
+
   .lg\:px-14 {
     padding-left: 3.5rem;
     padding-right: 3.5rem;

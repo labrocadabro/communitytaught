@@ -38,8 +38,10 @@ export const addEditLesson = async (req, res) => {
 				title: req.body.tsTitle[i],
 			});
 		}
+		console.log(req.body)
 		const lessonData = {
 			videoId: req.body.videoId,
+			twitchVideo: !!(req.body.twitch)? true: false,
 			title: req.body.videoTitle,
 			dates: dates,
 			permalink: req.body.permalink,

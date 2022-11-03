@@ -7,6 +7,10 @@ block variables
 block content
 	form.add-form(action=edit? `/class/edit/${lesson._id}` : "/class/add" method="post")
 		h1.col-span-4 #{action} Class
+		.col-span-1
+		.col-span-3
+			input#twitch.mr-2(type="checkbox" name="twitch" checked=edit? lesson.twitchVideo : false)
+			label(for="twitch") Twitch Video
 		label(for="number") Class Numbers
 		input#number(type="text", name="number" value=edit? lesson.classNo : "")
 		label(for="date") Class Dates

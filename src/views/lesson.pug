@@ -67,6 +67,8 @@ block content
 
 block extra-scripts
 	if loggedIn
+		script(src="/js/hwDone.js")
+		script(src="/js/hwProgress.js")
 		script(src="/js/lessonProgress.js")
 	if lesson.videoId && !lesson.twitchVideo
 		script. 

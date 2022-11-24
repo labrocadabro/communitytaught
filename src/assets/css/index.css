@@ -627,7 +627,12 @@ p {
   margin-bottom: 1rem;
 }
 
-h1,  h2,  h3,  h4,  h5,  h6 {
+h1, 
+  h2, 
+  h3, 
+  h4, 
+  h5, 
+  h6 {
   font-family: Kufam, sans-serif;
   font-weight: 700;
   --tw-text-opacity: 1;
@@ -653,7 +658,8 @@ h3 {
   font-weight: 700;
 }
 
-button,  a.button {
+button, 
+  a.button {
   margin-bottom: 0.75rem;
   display: block;
   border-radius: 0.25rem;
@@ -670,7 +676,8 @@ button,  a.button {
           text-decoration-line: none;
 }
 
-button:hover,  a.button:hover {
+button:hover, 
+  a.button:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
@@ -859,7 +866,8 @@ button:hover,  a.button:hover {
   margin-top: 0.5rem;
 }
 
-.sign-form button,  .sign-form a.button {
+.sign-form button, 
+  .sign-form a.button {
   box-sizing: border-box;
   width: 100%;
 }
@@ -881,7 +889,9 @@ button:hover,  a.button:hover {
   text-align: right;
 }
 
-#timestamps,  #hw-items,  #pw-items {
+#timestamps, 
+  #hw-items, 
+  #pw-items {
   margin-top: 0.75rem;
   width: 100%;
   border-width: 1px;
@@ -891,7 +901,9 @@ button:hover,  a.button:hover {
   padding-bottom: 0.75rem;
 }
 
-.timestamp,  .hw-item,  .pw-item {
+.timestamp, 
+  .hw-item, 
+  .pw-item {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   align-items: center;
@@ -905,7 +917,9 @@ button:hover,  a.button:hover {
   grid-template-columns: repeat(4, 1fr);
 }
 
-.timestamp:first-of-type,  .hw-item:first-of-type,  .pw-item:first-of-type {
+.timestamp:first-of-type, 
+  .hw-item:first-of-type, 
+  .pw-item:first-of-type {
   border-width: 0px;
 }
 
@@ -962,8 +976,24 @@ button:hover,  a.button:hover {
   margin-bottom: 1.25rem;
 }
 
+.absolute {
+  position: absolute;
+}
+
 .relative {
   position: relative;
+}
+
+.top-12 {
+  top: 3rem;
+}
+
+.-right-5 {
+  right: -1.25rem;
+}
+
+.z-10 {
+  z-index: 10;
 }
 
 .col-span-4 {
@@ -976,6 +1006,10 @@ button:hover,  a.button:hover {
 
 .col-span-2 {
   grid-column: span 2 / span 2;
+}
+
+.col-span-1 {
+  grid-column: span 1 / span 1;
 }
 
 .m-2 {
@@ -1079,6 +1113,14 @@ button:hover,  a.button:hover {
   flex: 1 1 0%;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.cursor-default {
+  cursor: default;
+}
+
 .flex-col {
   flex-direction: column;
 }
@@ -1095,12 +1137,21 @@ button:hover,  a.button:hover {
   gap: 0.5rem;
 }
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
 .scroll-smooth {
   scroll-behavior: smooth;
 }
 
 .border {
   border-width: 1px;
+}
+
+.border-y {
+  border-top-width: 1px;
+  border-bottom-width: 1px;
 }
 
 .border-b {
@@ -1121,6 +1172,11 @@ button:hover,  a.button:hover {
   border-color: rgb(191 224 238 / var(--tw-border-opacity));
 }
 
+.border-twilight-700 {
+  --tw-border-opacity: 1;
+  border-color: rgb(46 134 171 / var(--tw-border-opacity));
+}
+
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -1136,8 +1192,17 @@ button:hover,  a.button:hover {
   background-color: rgb(232 243 247 / var(--tw-bg-opacity));
 }
 
+.bg-gray-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+}
+
 .p-0 {
   padding: 0px;
+}
+
+.p-6 {
+  padding: 1.5rem;
 }
 
 .px-5 {
@@ -1157,6 +1222,18 @@ button:hover,  a.button:hover {
 
 .pb-4 {
   padding-bottom: 1rem;
+}
+
+.pt-4 {
+  padding-top: 1rem;
+}
+
+.pb-2 {
+  padding-bottom: 0.5rem;
+}
+
+.pt-2 {
+  padding-top: 0.5rem;
 }
 
 .text-left {
@@ -1227,6 +1304,11 @@ button:hover,  a.button:hover {
   color: rgb(157 23 77 / var(--tw-text-opacity));
 }
 
+.text-vermillion-600 {
+  --tw-text-opacity: 1;
+  color: rgb(201 41 24 / var(--tw-text-opacity));
+}
+
 .no-underline {
   -webkit-text-decoration-line: none;
           text-decoration-line: none;
@@ -1286,11 +1368,13 @@ td:first-of-type {
   font-weight: 700;
 }
 
-.hw-items,  .hw-extras {
+.hw-items, 
+.hw-extras {
   text-align: left;
 }
 
-.thumbnail, .motivation {
+.thumbnail,
+.motivation {
   max-width: 300px;
 }
 
@@ -1318,7 +1402,8 @@ td:first-of-type {
 	@apply mr-1.5;
 } */
 
-.homework .done, .lessons .done {
+.homework .done,
+.lessons .done {
   opacity: 0.5;
 }
 
@@ -1370,7 +1455,12 @@ td:first-of-type {
 @media screen and (max-width: 768px) {
   /* Force table to not be like tables anymore */
 
-  table,  thead,  tbody,  th,  td,  tr {
+  table, 
+  thead, 
+  tbody, 
+  th, 
+  td, 
+  tr {
     display: block;
     text-align: left;
   }
@@ -1389,7 +1479,8 @@ td:first-of-type {
     border-color: rgb(214 211 209 / var(--tw-border-opacity));
   }
 
-  td,  td:first-of-type {
+  td, 
+  td:first-of-type {
     position: relative;
     width: 100%;
     border-width: 0px;
@@ -1430,11 +1521,13 @@ td:first-of-type {
     text-align: center;
   }
 
-  .hw-submit:before,  .thumbnail:before {
+  .hw-submit:before, 
+  .thumbnail:before {
     text-align: left;
   }
 
-  .thumbnail,  .motivation {
+  .thumbnail, 
+  .motivation {
     max-width: 100%;
   }
 
@@ -1563,7 +1656,8 @@ dt:last-of-type {
   margin-bottom: 0px;
 }
 
-dt.acc-opened,  dt:hover {
+dt.acc-opened, 
+dt:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(232 243 247 / var(--tw-bg-opacity));
 }
@@ -1575,7 +1669,7 @@ dt:after {
   font-weight: 700;
   --tw-text-opacity: 1;
   color: rgb(34 101 129 / var(--tw-text-opacity));
-  content: '\2b';
+  content: "\2b";
   /* plus sign */
 }
 
@@ -1640,6 +1734,25 @@ dd ol {
   text-align: center;
 }
 
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
 @media (min-width: 768px) {
   .sm\:flex {
     display: flex;
@@ -1679,4 +1792,26 @@ dd ol {
     font-size: 1.875rem;
     line-height: 2.25rem;
   }
+}
+
+.\[\&\>li\]\:my-4>li {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.\[\&\>li\]\:flex>li {
+  display: flex;
+}
+
+.\[\&\>li\]\:items-center>li {
+  align-items: center;
+}
+
+.\[\&\>li\]\:justify-center>li {
+  justify-content: center;
+}
+
+.\[\&\>li\]\:px-6>li {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }

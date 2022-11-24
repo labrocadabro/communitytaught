@@ -4,7 +4,7 @@ nav.flex.items-center
 	ul#mobile-menu(class="sm:hidden text-3xl text-pink-800")
 		li
 			i.fa.fa-bars
-	ul#desktop-menu(class="hidden sm:flex gap-2 lg:gap-4")
+	ul#desktop-menu(class="hidden sm:flex gap-2 lg:gap-4 [&>li]:flex [&>li]:justify-center [&>li]:items-center")
 		if loggedIn
 			li
 					a(href="/dashboard" class = active === "Dashboard" ? "active" : "") Dashboard
@@ -13,12 +13,17 @@ nav.flex.items-center
 		li 
 			a(href="/hw/all" class = active === "Homework" ? "active" : "") Homework
 		li 
-			a(href="/resources/faq" class = active === "FAQ" ? "active" : "") FAQ
+			a(href="/resources/" class = active === "FAQ" ? "active" : "") Resources
 		if loggedIn
-			li
-				a(href="/account" class = active === "Settings" ? "active" : "") Settings
-			li
-				a(href="/logout") Logout
+			li#account-menu.relative
+				span.no-mobile
+					i.fa-regular.fa-user-circle.text-3xl.text-pink-800.cursor-pointer
+				ul#account-dropdown(class="hidden absolute z-10 bg-white top-12 -right-5 border border-twilight-200 [&>li]:px-6 text-center")
+					li.no-mobile.cursor-default.pt-4.pb-2.bg-gray-100.border-y.border-twilight-200 #{user.username}
+					li.pt-2
+						a(href="/account" class = active === "Settings" ? "active" : "") Settings
+					li.pb-4
+						a(href="/logout") Logout
 		else
 			li 
 				a(href="/login" class = active === "Login" ? "active" : "") Login

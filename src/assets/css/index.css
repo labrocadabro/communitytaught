@@ -1012,6 +1012,10 @@ button:hover,
   grid-column: span 1 / span 1;
 }
 
+.float-right {
+  float: right;
+}
+
 .m-2 {
   margin: 0.5rem;
 }
@@ -1125,12 +1129,24 @@ button:hover,
   flex-direction: column;
 }
 
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
 .flex-wrap-reverse {
   flex-wrap: wrap-reverse;
 }
 
 .items-center {
   align-items: center;
+}
+
+.items-baseline {
+  align-items: baseline;
+}
+
+.justify-center {
+  justify-content: center;
 }
 
 .gap-2 {
@@ -1276,6 +1292,11 @@ button:hover,
   line-height: 1.25rem;
 }
 
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -1307,6 +1328,10 @@ button:hover,
 .text-vermillion-600 {
   --tw-text-opacity: 1;
   color: rgb(201 41 24 / var(--tw-text-opacity));
+}
+
+.text-vermillion-800 {
+  color: #;
 }
 
 .no-underline {
@@ -1753,7 +1778,25 @@ dd ol {
   display: block;
 }
 
+@media (min-width: 640px) {
+  .xs\:float-right {
+    float: right;
+  }
+
+  .xs\:mb-0 {
+    margin-bottom: 0px;
+  }
+}
+
 @media (min-width: 768px) {
+  .sm\:float-right {
+    float: right;
+  }
+
+  .sm\:mb-0 {
+    margin-bottom: 0px;
+  }
+
   .sm\:flex {
     display: flex;
   }

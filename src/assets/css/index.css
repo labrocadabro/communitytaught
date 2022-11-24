@@ -1012,10 +1012,6 @@ button:hover,
   grid-column: span 1 / span 1;
 }
 
-.float-right {
-  float: right;
-}
-
 .m-2 {
   margin: 0.5rem;
 }
@@ -1065,6 +1061,10 @@ button:hover,
   margin-bottom: 1.5rem;
 }
 
+.mr-auto {
+  margin-right: auto;
+}
+
 .mr-4 {
   margin-right: 1rem;
 }
@@ -1075,10 +1075,6 @@ button:hover,
 
 .mt-auto {
   margin-top: auto;
-}
-
-.mr-auto {
-  margin-right: auto;
 }
 
 .block {
@@ -1153,10 +1149,6 @@ button:hover,
   gap: 0.5rem;
 }
 
-.overflow-hidden {
-  overflow: hidden;
-}
-
 .scroll-smooth {
   scroll-behavior: smooth;
 }
@@ -1188,11 +1180,6 @@ button:hover,
   border-color: rgb(191 224 238 / var(--tw-border-opacity));
 }
 
-.border-twilight-700 {
-  --tw-border-opacity: 1;
-  border-color: rgb(46 134 171 / var(--tw-border-opacity));
-}
-
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -1215,10 +1202,6 @@ button:hover,
 
 .p-0 {
   padding: 0px;
-}
-
-.p-6 {
-  padding: 1.5rem;
 }
 
 .px-5 {
@@ -1272,6 +1255,11 @@ button:hover,
   font-family: Orienta, serif;
 }
 
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -1292,11 +1280,6 @@ button:hover,
   line-height: 1.25rem;
 }
 
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-}
-
 .font-bold {
   font-weight: 700;
 }
@@ -1308,6 +1291,11 @@ button:hover,
 .text-red-500 {
   --tw-text-opacity: 1;
   color: rgb(239 68 68 / var(--tw-text-opacity));
+}
+
+.text-vermillion-600 {
+  --tw-text-opacity: 1;
+  color: rgb(201 41 24 / var(--tw-text-opacity));
 }
 
 .text-twilight-800 {
@@ -1323,15 +1311,6 @@ button:hover,
 .text-pink-800 {
   --tw-text-opacity: 1;
   color: rgb(157 23 77 / var(--tw-text-opacity));
-}
-
-.text-vermillion-600 {
-  --tw-text-opacity: 1;
-  color: rgb(201 41 24 / var(--tw-text-opacity));
-}
-
-.text-vermillion-800 {
-  color: #;
 }
 
 .no-underline {
@@ -1778,25 +1757,85 @@ dd ol {
   display: block;
 }
 
-@media (min-width: 640px) {
-  .xs\:float-right {
-    float: right;
-  }
+/*** cards on resouces page **/
 
-  .xs\:mb-0 {
-    margin-bottom: 0px;
+#card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+@media (min-width: 896px) {
+  #card-container {
+    gap: 1.25rem;
   }
 }
 
+.card {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(191 224 238 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  --tw-drop-shadow: drop-shadow(0 0 7px rgba(34,101,129,0.1));
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.card:hover {
+  --tw-drop-shadow: drop-shadow(0 0 7px rgba(34,101,129,0.25));
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+@media (min-width: 640px) {
+  .card {
+    width: 300px;
+  }
+}
+
+@media (min-width: 896px) {
+  .card {
+    width: 350px;
+  }
+}
+
+.card:hover {
+}
+
+.card a {
+  display: block;
+  height: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  text-align: center;
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
+}
+
+@media (min-width: 640px) {
+  .card h2 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+@media (min-width: 896px) {
+  .card h2 {
+    font-size: 1.75rem;
+  }
+}
+
+.card span {
+  --tw-text-opacity: 1;
+  color: rgb(21 63 81 / var(--tw-text-opacity));
+}
+
 @media (min-width: 768px) {
-  .sm\:float-right {
-    float: right;
-  }
-
-  .sm\:mb-0 {
-    margin-bottom: 0px;
-  }
-
   .sm\:flex {
     display: flex;
   }
@@ -1835,11 +1874,6 @@ dd ol {
     font-size: 1.875rem;
     line-height: 2.25rem;
   }
-}
-
-.\[\&\>li\]\:my-4>li {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
 }
 
 .\[\&\>li\]\:flex>li {

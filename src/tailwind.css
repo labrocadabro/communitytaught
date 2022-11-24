@@ -352,3 +352,23 @@ dd ol {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+/*** cards on resouces page **/
+
+#card-container {
+  @apply flex flex-wrap gap-3 md:gap-5 justify-center;
+}
+.card {
+  @apply border border-twilight-200 bg-white w-full xs:w-[300px] md:w-[350px] flex flex-col drop-shadow-[0_0_7px_rgba(34,101,129,0.1)] hover:drop-shadow-[0_0_7px_rgba(34,101,129,0.25)];
+}
+.card:hover {
+}
+.card a {
+  @apply block h-full px-8 py-10 no-underline text-center;
+}
+.card h2 {
+  @apply xs:text-2xl md:text-[1.75rem];
+}
+.card span {
+  @apply text-twilight-900;
+}

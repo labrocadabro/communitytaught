@@ -1077,6 +1077,14 @@ button:hover,
   margin-top: auto;
 }
 
+.ml-10 {
+  margin-left: 2.5rem;
+}
+
+.ml-7 {
+  margin-left: 1.75rem;
+}
+
 .block {
   display: block;
 }
@@ -1119,6 +1127,10 @@ button:hover,
 
 .cursor-default {
   cursor: default;
+}
+
+.list-disc {
+  list-style-type: disc;
 }
 
 .flex-col {

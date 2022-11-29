@@ -359,7 +359,7 @@ dd ol {
 	@apply flex flex-wrap gap-3 md:gap-5 justify-center;
 }
 .card {
-	@apply border border-twilight-200 bg-white w-full xs:w-[300px] md:w-[350px] flex flex-col drop-shadow-[0_0_7px_rgba(34,101,129,0.1)] hover:drop-shadow-[0_0_7px_rgba(34,101,129,0.25)] overflow-hidden;
+	@apply border border-twilight-200 bg-white w-full max-w-[400px] xs:w-[300px] md:w-[350px] flex flex-col drop-shadow-[0_0_7px_rgba(34,101,129,0.1)] hover:drop-shadow-[0_0_7px_rgba(34,101,129,0.25)] overflow-hidden;
 }
 .card:hover {
 }

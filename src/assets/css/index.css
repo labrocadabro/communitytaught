@@ -1775,6 +1775,7 @@ dd ol {
 .card {
   display: flex;
   width: 100%;
+  max-width: 400px;
   flex-direction: column;
   overflow: hidden;
   border-width: 1px;

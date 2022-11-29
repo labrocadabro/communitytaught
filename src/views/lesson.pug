@@ -56,6 +56,9 @@ block content
 				if (next)
 					h3
 						a(href="/class/" + next) Next Class
+		if !lesson.twitchVideo
+			h3.mt-4 Feed the algorithm and spread the word! 
+			p #[a(href=`https://www.youtube.com/watch?v=${lesson.videoId}` target="_blank") Like, comment and subscribe on Youtube]
 	if assigned.length
 		h2.text-center.text-3xl.mt-10.mb-3 Homework Assigned
 		include ./partials/mixins.pug

@@ -628,11 +628,11 @@ p {
 }
 
 h1, 
-  h2, 
-  h3, 
-  h4, 
-  h5, 
-  h6 {
+	h2, 
+	h3, 
+	h4, 
+	h5, 
+	h6 {
   font-family: Kufam, sans-serif;
   font-weight: 700;
   --tw-text-opacity: 1;
@@ -659,7 +659,7 @@ h3 {
 }
 
 button, 
-  a.button {
+	a.button {
   margin-bottom: 0.75rem;
   display: block;
   border-radius: 0.25rem;
@@ -677,7 +677,7 @@ button,
 }
 
 button:hover, 
-  a.button:hover {
+	a.button:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
@@ -867,7 +867,7 @@ button:hover,
 }
 
 .sign-form button, 
-  .sign-form a.button {
+	.sign-form a.button {
   box-sizing: border-box;
   width: 100%;
 }
@@ -890,8 +890,8 @@ button:hover,
 }
 
 #timestamps, 
-  #hw-items, 
-  #pw-items {
+	#hw-items, 
+	#pw-items {
   margin-top: 0.75rem;
   width: 100%;
   border-width: 1px;
@@ -902,8 +902,8 @@ button:hover,
 }
 
 .timestamp, 
-  .hw-item, 
-  .pw-item {
+	.hw-item, 
+	.pw-item {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   align-items: center;
@@ -918,8 +918,8 @@ button:hover,
 }
 
 .timestamp:first-of-type, 
-  .hw-item:first-of-type, 
-  .pw-item:first-of-type {
+	.hw-item:first-of-type, 
+	.pw-item:first-of-type {
   border-width: 0px;
 }
 
@@ -1460,11 +1460,11 @@ td:first-of-type {
   /* Force table to not be like tables anymore */
 
   table, 
-  thead, 
-  tbody, 
-  th, 
-  td, 
-  tr {
+	thead, 
+	tbody, 
+	th, 
+	td, 
+	tr {
     display: block;
     text-align: left;
   }
@@ -1484,7 +1484,7 @@ td:first-of-type {
   }
 
   td, 
-  td:first-of-type {
+	td:first-of-type {
     position: relative;
     width: 100%;
     border-width: 0px;
@@ -1526,12 +1526,12 @@ td:first-of-type {
   }
 
   .hw-submit:before, 
-  .thumbnail:before {
+	.thumbnail:before {
     text-align: left;
   }
 
   .thumbnail, 
-  .motivation {
+	.motivation {
     max-width: 100%;
   }
 
@@ -1776,6 +1776,7 @@ dd ol {
   display: flex;
   width: 100%;
   flex-direction: column;
+  overflow: hidden;
   border-width: 1px;
   --tw-border-opacity: 1;
   border-color: rgb(191 224 238 / var(--tw-border-opacity));
@@ -1808,13 +1809,15 @@ dd ol {
 .card a {
   display: block;
   height: 100%;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
   text-align: center;
   -webkit-text-decoration-line: none;
           text-decoration-line: none;
+}
+
+.card h2 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 2.5rem;
 }
 
 @media (min-width: 640px) {
@@ -1831,8 +1834,18 @@ dd ol {
 }
 
 .card span {
+  display: block;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 2.5rem;
   --tw-text-opacity: 1;
   color: rgb(21 63 81 / var(--tw-text-opacity));
+}
+
+.card img {
+  --tw-shadow: 0 2px 10px 0 rgba(0,0,0,0.1);
+  --tw-shadow-colored: 0 2px 10px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 @media (min-width: 768px) {

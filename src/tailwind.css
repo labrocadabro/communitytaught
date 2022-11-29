@@ -3,372 +3,375 @@
 @tailwind utilities;
 
 @layer base {
-  a {
-    @apply underline text-vermillion-600;
-  }
-  a:hover {
-    @apply no-underline;
-  }
-  nav a {
-    @apply font-bold no-underline lg:text-xl block rounded-md py-2 font-header;
-  }
-  nav a.active {
-    @apply decoration-pink-800 underline decoration-3 underline-offset-6 hover:underline;
-  }
-  p {
-    @apply mb-4;
-  }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply font-bold text-pink-800 font-header;
-  }
-  h1 {
-    @apply text-4xl font-bold mb-8;
-  }
-  h2 {
-    @apply text-3xl font-bold;
-  }
+	a {
+		@apply underline text-vermillion-600;
+	}
+	a:hover {
+		@apply no-underline;
+	}
+	nav a {
+		@apply font-bold no-underline lg:text-xl block rounded-md py-2 font-header;
+	}
+	nav a.active {
+		@apply decoration-pink-800 underline decoration-3 underline-offset-6 hover:underline;
+	}
+	p {
+		@apply mb-4;
+	}
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@apply font-bold text-pink-800 font-header;
+	}
+	h1 {
+		@apply text-4xl font-bold mb-8;
+	}
+	h2 {
+		@apply text-3xl font-bold;
+	}
 
-  h3 {
-    @apply text-2xl font-bold;
-  }
+	h3 {
+		@apply text-2xl font-bold;
+	}
 
-  button,
-  a.button {
-    @apply py-2 px-5 border border-gray-700 rounded block mb-3 text-black no-underline hover:bg-gray-100;
-  }
+	button,
+	a.button {
+		@apply py-2 px-5 border border-gray-700 rounded block mb-3 text-black no-underline hover:bg-gray-100;
+	}
 }
 @layer components {
-  .sign-form {
-    @apply mt-5 max-w-md w-full mx-auto border xs:grid p-4 xs:p-10 gap-2 bg-white;
-    grid-template-columns: auto 1fr;
-  }
-  .sign-form label {
-    @apply text-right;
-  }
-  .sign-form input {
-    @apply w-full mb-4 xs:mb-0;
-  }
-  .sign-form div {
-    @apply mt-2;
-  }
-  .sign-form button,
-  .sign-form a.button {
-    @apply w-full box-border;
-  }
-  .add-form {
-    @apply mt-5 max-w-3xl mx-auto border grid p-10 gap-2 items-center;
-    grid-template-columns: repeat(4, 1fr);
-  }
-  .add-form label {
-    @apply text-right;
-  }
-  #timestamps,
-  #hw-items,
-  #pw-items {
-    @apply mt-3 w-full border px-5 py-3;
-  }
-  .timestamp,
-  .hw-item,
-  .pw-item {
-    @apply grid grid-cols-4 gap-2 items-center py-3 border-t border-dashed border-gray-700;
-    grid-template-columns: repeat(4, 1fr);
-  }
-  .timestamp:first-of-type,
-  .hw-item:first-of-type,
-  .pw-item:first-of-type {
-    @apply border-0;
-  }
-  .flash {
-    @apply w-full py-2 px-4 mb-4 border text-center font-bold relative;
-  }
-  .flash-close {
-    @apply absolute right-3 cursor-pointer text-3xl;
-    top: 0;
-  }
-  .flash-success {
-    @apply bg-green-100 text-green-700 border-green-700;
-  }
-  .flash-error {
-    @apply bg-red-100 text-red-700 border-red-700;
-  }
-  .flash-info {
-    @apply bg-blue-100 text-blue-700 border-blue-700;
-  }
+	.sign-form {
+		@apply mt-5 max-w-md w-full mx-auto border xs:grid p-4 xs:p-10 gap-2 bg-white;
+		grid-template-columns: auto 1fr;
+	}
+	.sign-form label {
+		@apply text-right;
+	}
+	.sign-form input {
+		@apply w-full mb-4 xs:mb-0;
+	}
+	.sign-form div {
+		@apply mt-2;
+	}
+	.sign-form button,
+	.sign-form a.button {
+		@apply w-full box-border;
+	}
+	.add-form {
+		@apply mt-5 max-w-3xl mx-auto border grid p-10 gap-2 items-center;
+		grid-template-columns: repeat(4, 1fr);
+	}
+	.add-form label {
+		@apply text-right;
+	}
+	#timestamps,
+	#hw-items,
+	#pw-items {
+		@apply mt-3 w-full border px-5 py-3;
+	}
+	.timestamp,
+	.hw-item,
+	.pw-item {
+		@apply grid grid-cols-4 gap-2 items-center py-3 border-t border-dashed border-gray-700;
+		grid-template-columns: repeat(4, 1fr);
+	}
+	.timestamp:first-of-type,
+	.hw-item:first-of-type,
+	.pw-item:first-of-type {
+		@apply border-0;
+	}
+	.flash {
+		@apply w-full py-2 px-4 mb-4 border text-center font-bold relative;
+	}
+	.flash-close {
+		@apply absolute right-3 cursor-pointer text-3xl;
+		top: 0;
+	}
+	.flash-success {
+		@apply bg-green-100 text-green-700 border-green-700;
+	}
+	.flash-error {
+		@apply bg-red-100 text-red-700 border-red-700;
+	}
+	.flash-info {
+		@apply bg-blue-100 text-blue-700 border-blue-700;
+	}
 
-  .settings {
-    @apply mb-5;
-  }
+	.settings {
+		@apply mb-5;
+	}
 }
 
 /***** tables *****/
 table {
-  @apply text-center border bg-white w-full;
+	@apply text-center border bg-white w-full;
 }
 table input {
-  @apply mr-1;
+	@apply mr-1;
 }
 tr {
-  @apply border-b;
+	@apply border-b;
 }
 tr:nth-child(even) {
-  @apply bg-twilight-50;
+	@apply bg-twilight-50;
 }
 thead {
-  @apply sticky top-0 z-10;
+	@apply sticky top-0 z-10;
 }
 th {
-  @apply bg-twilight-800 text-stone-50 p-4 font-logo uppercase;
+	@apply bg-twilight-800 text-stone-50 p-4 font-logo uppercase;
 }
 td {
-  @apply p-4 border-r;
+	@apply p-4 border-r;
 }
 td:first-of-type {
-  @apply p-2 font-bold;
+	@apply p-2 font-bold;
 }
 .hw-items,
 .hw-extras {
-  @apply text-left;
+	@apply text-left;
 }
 .thumbnail,
 .motivation {
-  max-width: 300px;
+	max-width: 300px;
 }
 .hw-submit {
-  width: 160px;
+	width: 160px;
 }
 .homework .hw-items li {
-  @apply relative ml-3;
+	@apply relative ml-3;
 }
 .homework .required {
-  @apply absolute -left-5 top-1 text-red-800 text-2xl cursor-default;
+	@apply absolute -left-5 top-1 text-red-800 text-2xl cursor-default;
 }
 /* .homework .item, .homework .extra, .homework .submitted {
 	@apply mr-1.5;
 } */
 .homework .done,
 .lessons .done {
-  opacity: 0.5;
+	opacity: 0.5;
 }
 .submit-button {
-  @apply block mb-2 bg-pink-800 hover:bg-pink-700 font-logo text-stone-50 rounded-lg uppercase py-2 no-underline font-bold border border-pink-900 tracking-wider text-xl drop-shadow-md shadow-pink-900;
+	@apply block mb-2 bg-pink-800 hover:bg-pink-700 font-logo text-stone-50 rounded-lg uppercase py-2 no-underline font-bold border border-pink-900 tracking-wider text-xl drop-shadow-md shadow-pink-900;
 }
 
 #to-top {
-  @apply fixed bottom-4 right-1 text-pink-800 text-6xl cursor-pointer;
+	@apply fixed bottom-4 right-1 text-pink-800 text-6xl cursor-pointer;
 }
 
 /***** mobile tables *****/
 
 @media screen and (max-width: 768px) {
-  /* Force table to not be like tables anymore */
-  table,
-  thead,
-  tbody,
-  th,
-  td,
-  tr {
-    @apply block text-left;
-  }
+	/* Force table to not be like tables anymore */
+	table,
+	thead,
+	tbody,
+	th,
+	td,
+	tr {
+		@apply block text-left;
+	}
 
-  /* Hide table headers (but not display: none;, for accessibility) */
-  thead tr {
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
-  }
+	/* Hide table headers (but not display: none;, for accessibility) */
+	thead tr {
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
 
-  tr {
-    @apply border border-stone-300;
-  }
+	tr {
+		@apply border border-stone-300;
+	}
 
-  td,
-  td:first-of-type {
-    @apply border-0 border-b border-stone-200 w-full relative;
-    padding-left: 35%;
-  }
+	td,
+	td:first-of-type {
+		@apply border-0 border-b border-stone-200 w-full relative;
+		padding-left: 35%;
+	}
 
-  td:before {
-    @apply font-bold absolute pr-2 text-pink-800 font-logo uppercase text-base;
-    /* Top/left values mimic padding */
-    top: 15px;
-    left: 8px;
-    width: 30%;
-    padding-right: 10px;
-    white-space: nowrap;
-  }
+	td:before {
+		@apply font-bold absolute pr-2 text-pink-800 font-logo uppercase text-base;
+		/* Top/left values mimic padding */
+		top: 15px;
+		left: 8px;
+		width: 30%;
+		padding-right: 10px;
+		white-space: nowrap;
+	}
 
-  .homework td {
-    padding-left: 25%;
-  }
+	.homework td {
+		padding-left: 25%;
+	}
 
-  .homework td:before {
-    width: 20%;
-  }
+	.homework td:before {
+		width: 20%;
+	}
 
-  .hw-submit {
-    @apply w-auto text-center;
-  }
-  .hw-submit:before,
-  .thumbnail:before {
-    @apply text-left;
-  }
-  .thumbnail,
-  .motivation {
-    @apply max-w-full;
-  }
-  .thumbnail {
-    @apply text-center;
-  }
-  .submit-button {
-    @apply mx-6;
-  }
+	.hw-submit {
+		@apply w-auto text-center;
+	}
+	.hw-submit:before,
+	.thumbnail:before {
+		@apply text-left;
+	}
+	.thumbnail,
+	.motivation {
+		@apply max-w-full;
+	}
+	.thumbnail {
+		@apply text-center;
+	}
+	.submit-button {
+		@apply mx-6;
+	}
 
-  td ul {
-    @apply m-0 p-0;
-  }
+	td ul {
+		@apply m-0 p-0;
+	}
 
-  /*
+	/*
 	Label the data
 	*/
-  .lessons td:nth-of-type(1):before {
-    content: "Class";
-  }
-  .lessons td:nth-of-type(2):before {
-    content: "Done";
-  }
-  .lessons td:nth-of-type(3):before {
-    content: "Video";
-  }
-  .lessons td:nth-of-type(4):before {
-    content: "Motivation";
-  }
-  .lessons td:nth-of-type(5):before {
-    content: "Check In";
-  }
+	.lessons td:nth-of-type(1):before {
+		content: "Class";
+	}
+	.lessons td:nth-of-type(2):before {
+		content: "Done";
+	}
+	.lessons td:nth-of-type(3):before {
+		content: "Video";
+	}
+	.lessons td:nth-of-type(4):before {
+		content: "Motivation";
+	}
+	.lessons td:nth-of-type(5):before {
+		content: "Check In";
+	}
 
-  .homework td:nth-of-type(1):before {
-    content: "Class";
-  }
-  .homework td:nth-of-type(2):before {
-    content: "Due";
-  }
-  .homework td:nth-of-type(3):before {
-    content: "Work";
-  }
-  .homework td:nth-of-type(4):before {
-    content: "Extras";
-  }
-  .homework td:nth-of-type(5):before {
-    content: "Submit";
-  }
+	.homework td:nth-of-type(1):before {
+		content: "Class";
+	}
+	.homework td:nth-of-type(2):before {
+		content: "Due";
+	}
+	.homework td:nth-of-type(3):before {
+		content: "Work";
+	}
+	.homework td:nth-of-type(4):before {
+		content: "Extras";
+	}
+	.homework td:nth-of-type(5):before {
+		content: "Submit";
+	}
 }
 
 /********* temporary ************/
 #video-container {
-  max-width: 640px;
+	max-width: 640px;
 }
 #player {
-  @apply w-full aspect-video;
+	@apply w-full aspect-video;
 }
 
 /**** accordion ***/
 dl {
-  @apply bg-white py-2 xs:py-4 px-2 xs:px-5 border border-stone-200;
+	@apply bg-white py-2 xs:py-4 px-2 xs:px-5 border border-stone-200;
 }
 dt {
-  @apply bg-twilight-50 cursor-pointer pt-4 pb-3 px-6 w-full outline-0 transition border border-twilight-300 flex items-center;
+	@apply bg-twilight-50 cursor-pointer pt-4 pb-3 px-6 w-full outline-0 transition border border-twilight-300 flex items-center;
 }
 dt h3 {
-  @apply text-vermillion-600 mr-auto;
+	@apply text-vermillion-600 mr-auto;
 }
 dt:last-of-type {
-  @apply mb-0;
+	@apply mb-0;
 }
 
 dt.acc-opened,
 dt:hover {
-  @apply bg-twilight-100;
+	@apply bg-twilight-100;
 }
 
 dt:after {
-  @apply text-2xl font-bold font-awesome text-twilight-800;
-  content: "\2b"; /* plus sign */
+	@apply text-2xl font-bold font-awesome text-twilight-800;
+	content: "\2b"; /* plus sign */
 }
 
 dt.acc-opened:after {
-  content: "\f068"; /* minus sign */
+	content: "\f068"; /* minus sign */
 }
 
 dd {
-  @apply px-6 bg-stone-50 max-h-0 overflow-hidden opacity-0 mb-2 border border-stone-200;
-  transition: 0.4s ease-in-out;
+	@apply px-6 bg-stone-50 max-h-0 overflow-hidden opacity-0 mb-2 border border-stone-200;
+	transition: 0.4s ease-in-out;
 }
 dd > *:last-child {
-  @apply mb-0;
+	@apply mb-0;
 }
 
 dd.acc-opened {
-  @apply opacity-100 py-6 mt-1;
-  max-height: 2500px;
+	@apply opacity-100 py-6 mt-1;
+	max-height: 2500px;
 }
 
 dd ul {
-  @apply list-disc ml-6;
+	@apply list-disc ml-6;
 }
 
 dd ol {
-  @apply mt-3 ml-8 list-decimal;
+	@apply mt-3 ml-8 list-decimal;
 }
 
 /*** menu ***/
 
 .menu-opened {
-  @apply pt-20 block absolute top-full w-full h-screen bg-white left-0;
+	@apply pt-20 block absolute top-full w-full h-screen bg-white left-0;
 }
 .menu-opened li {
-  @apply text-center;
+	@apply text-center;
 }
 
 .dropdown {
-  position: relative;
-  display: inline-block;
+	position: relative;
+	display: inline-block;
 }
 
 .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  padding: 12px 16px;
-  z-index: 1;
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	padding: 12px 16px;
+	z-index: 1;
 }
 
 .dropdown:hover .dropdown-content {
-  display: block;
+	display: block;
 }
 
 /*** cards on resouces page **/
 
 #card-container {
-  @apply flex flex-wrap gap-3 md:gap-5 justify-center;
+	@apply flex flex-wrap gap-3 md:gap-5 justify-center;
 }
 .card {
-  @apply border border-twilight-200 bg-white w-full xs:w-[300px] md:w-[350px] flex flex-col drop-shadow-[0_0_7px_rgba(34,101,129,0.1)] hover:drop-shadow-[0_0_7px_rgba(34,101,129,0.25)];
+	@apply border border-twilight-200 bg-white w-full xs:w-[300px] md:w-[350px] flex flex-col drop-shadow-[0_0_7px_rgba(34,101,129,0.1)] hover:drop-shadow-[0_0_7px_rgba(34,101,129,0.25)] overflow-hidden;
 }
 .card:hover {
 }
 .card a {
-  @apply block h-full px-8 py-10 no-underline text-center;
+	@apply block h-full no-underline text-center;
 }
 .card h2 {
-  @apply xs:text-2xl md:text-[1.75rem];
+	@apply xs:text-2xl md:text-[1.75rem] px-8 pt-10;
 }
 .card span {
-  @apply text-twilight-900;
+	@apply text-twilight-900 px-8 pb-10 block;
+}
+.card img {
+	@apply shadow-[0_2px_10px_0_rgba(0,0,0,0.1)];
 }

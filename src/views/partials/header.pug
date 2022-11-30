@@ -13,16 +13,16 @@ nav.flex.items-center
 		li 
 			a(href="/hw/all" class = active === "Homework" ? "active" : "") Homework
 		li 
-			a(href="/resources/" class = active === "FAQ" ? "active" : "") Resources
+			a(href="/resources/" class = active === "Resources" ? "active" : "") Resources
 		if loggedIn
 			li#account-menu.relative
 				span.no-mobile
 					i.fa-regular.fa-user-circle.text-3xl.text-pink-800.cursor-pointer
 				ul#account-dropdown(class="hidden absolute z-10 bg-white top-12 -right-5 border border-twilight-200 [&>li]:px-6 text-center")
 					li.no-mobile.cursor-default.pt-4.pb-2.bg-gray-100.border-y.border-twilight-200 #{user.username}
-					li.pt-2
+					li#account-first.pt-2
 						a(href="/account" class = active === "Settings" ? "active" : "") Settings
-					li.pb-4
+					li#account-last.pb-4
 						a(href="/logout") Logout
 		else
 			li 

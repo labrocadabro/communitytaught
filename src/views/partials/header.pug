@@ -1,10 +1,12 @@
-nav.flex.items-center
+nav.flex
 	h3.mr-auto
-		a(class="p-0 m-0 text-twilight-800 no-underline text-2xl lg:text-3xl font-logo" href="/") #communitytaught
+		a(class="p-0 m-0 text-twilight-900 no-underline text-3xl lg:text-3xl font-logo" href="/") #communitytaught
 	ul#mobile-menu(class="sm:hidden text-3xl text-pink-800")
 		li
 			i.fa.fa-bars
-	ul#desktop-menu(class="hidden sm:flex gap-2 lg:gap-4 [&>li]:flex [&>li]:justify-center [&>li]:items-center")
+	ul#desktop-menu(class="hidden sm:flex gap-2 lg:gap-4 text-xl font-medium")
+		li
+			a(href="/" class = active === "Home" ? "active" : "") Home
 		if loggedIn
 			li
 					a(href="/dashboard" class = active === "Dashboard" ? "active" : "") Dashboard
@@ -16,12 +18,14 @@ nav.flex.items-center
 			a(href="/resources/" class = active === "Resources" ? "active" : "") Resources
 		if loggedIn
 			li#account-menu.relative
-				span.no-mobile
-					i.fa-regular.fa-user-circle.text-3xl.text-pink-800.cursor-pointer
-				ul#account-dropdown(class="hidden absolute z-20 bg-white top-12 -right-5 border border-twilight-200 [&>li]:px-6 text-center")
-					li.no-mobile.cursor-default.pt-4.pb-2.bg-gray-100.border-y.border-twilight-200 #{user.username}
+				.no-mobile.mt-1
+					i(class="text-pink-800/80").fa-solid.fa-user.text-2xl.cursor-pointer
+				ul#account-dropdown(class="hidden absolute z-20 bg-white top-12 -right-5 [&>li]:px-6 text-center shadow-[0_0_25px_-5px_rgba(0,0,0,.3)]")
+					li.no-mobile.cursor-default.py-3.bg-twilight-50 #{user.username}
+					//- li#account-first.pt-2
+					//- 	a(href="/settings" class = active === "Settings" ? "active" : "") Settings
 					li#account-first.pt-2
-						a(href="/account" class = active === "Settings" ? "active" : "") Settings
+						a(href="/account" class = active === "Account" ? "active" : "") Account
 					li#account-last.pb-4
 						a(href="/logout") Logout
 		else

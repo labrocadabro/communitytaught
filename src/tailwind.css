@@ -4,16 +4,11 @@
 
 @layer base {
 	a {
-		@apply underline text-vermillion-600;
+		@apply text-twilight-800;
+		/* color: #2e1e0f; */
 	}
 	a:hover {
-		@apply no-underline;
-	}
-	nav a {
-		@apply font-bold no-underline lg:text-xl block rounded-md py-2 font-main;
-	}
-	nav a.active {
-		@apply decoration-pink-800 underline decoration-3 underline-offset-6 hover:underline;
+		@apply underline underline-offset-4;
 	}
 	p {
 		@apply mb-4;
@@ -24,17 +19,17 @@
 	h4,
 	h5,
 	h6 {
-		@apply font-bold text-pink-800 font-main;
+		@apply text-pink-800;
 	}
 	h1 {
-		@apply text-4xl font-bold mb-8;
+		@apply text-4xl mb-8 font-bold;
 	}
 	h2 {
-		@apply text-3xl font-bold;
+		@apply text-3xl font-semibold;
 	}
 
 	h3 {
-		@apply text-2xl font-bold;
+		@apply text-2xl font-medium;
 	}
 
 	button,
@@ -107,7 +102,7 @@
 
 /***** tables *****/
 table {
-	@apply text-center border bg-white w-full;
+	@apply text-center bg-white w-full border-[#a6c9d9] border border-separate border-spacing-0;
 }
 table input {
 	@apply mr-1;
@@ -116,19 +111,30 @@ tr {
 	@apply border-b;
 }
 tr:nth-child(even) {
-	@apply bg-twilight-50;
+	@apply bg-twilight-50/50;
 }
 thead {
 	@apply sticky top-0 z-10;
 }
+thead tr {
+	@apply border-b border-[#a6c9d9];
+}
 th {
-	@apply bg-twilight-800 text-stone-50 p-4 font-logo uppercase;
+	@apply bg-twilight-100 text-twilight-900 p-3 uppercase border-transparent border;
+	border-bottom: 1px solid #a6c9d9;
+	border-right: 1px dotted #a6c9d9;
+}
+th:last-of-type {
+	border-right: 1px solid transparent;
 }
 td {
-	@apply p-4 border-r;
+	@apply p-4 border-r border-b;
 }
 td:first-of-type {
 	@apply p-2 font-bold;
+}
+td:last-of-type {
+	@apply border-r-transparent;
 }
 .hw-items,
 .hw-extras {
@@ -147,15 +153,12 @@ td:first-of-type {
 .homework .required {
 	@apply absolute -left-5 top-1 text-red-800 text-2xl cursor-default;
 }
-/* .homework .item, .homework .extra, .homework .submitted {
-	@apply mr-1.5;
-} */
 .homework .done,
 .lessons .done {
-	opacity: 0.5;
+	@apply opacity-25;
 }
 .submit-button {
-	@apply block mb-2 bg-pink-800 hover:bg-pink-700 font-logo text-stone-50 rounded-lg uppercase py-2 no-underline font-bold border border-pink-900 tracking-wider text-xl drop-shadow-md shadow-pink-900;
+	@apply block mb-2 bg-pink-800 hover:bg-pink-700 text-stone-50 rounded-lg uppercase py-2 hover:no-underline font-bold border border-pink-900 tracking-wider text-xl drop-shadow-md shadow-pink-900;
 }
 
 #to-top {
@@ -193,7 +196,7 @@ td:first-of-type {
 	}
 
 	td:before {
-		@apply font-bold absolute pr-2 text-pink-800 font-logo uppercase text-base;
+		@apply font-bold absolute pr-2 text-pink-800 uppercase text-base;
 		/* Top/left values mimic padding */
 		top: 15px;
 		left: 8px;
@@ -269,8 +272,8 @@ td:first-of-type {
 }
 
 /********* temporary ************/
-#video-container {
-	max-width: 640px;
+#video {
+	max-width: 960px;
 }
 #player {
 	@apply w-full aspect-video;
@@ -284,7 +287,7 @@ dt {
 	@apply bg-twilight-50 cursor-pointer pt-4 pb-3 px-6 w-full outline-0 transition border border-twilight-300 flex items-center;
 }
 dt h3 {
-	@apply text-vermillion-600 mr-auto;
+	@apply text-twilight-900 mr-auto;
 }
 dt:last-of-type {
 	@apply mb-0;
@@ -296,7 +299,7 @@ dt:hover {
 }
 
 dt:after {
-	@apply text-2xl font-bold font-awesome text-twilight-800;
+	@apply text-2xl font-bold font-awesome text-pink-800;
 	content: "\2b"; /* plus sign */
 }
 
@@ -327,6 +330,13 @@ dd ol {
 
 /*** menu ***/
 
+nav a {
+	@apply hover:no-underline lg:text-xl block rounded-md py-2 text-pink-800;
+}
+nav a.active {
+	@apply decoration-twilight-700 underline decoration-4 underline-offset-6 hover:underline;
+}
+
 .menu-opened {
 	@apply pt-20 block absolute top-full w-full h-screen bg-white left-0;
 }
@@ -344,7 +354,7 @@ dd ol {
 	position: absolute;
 	background-color: #f9f9f9;
 	min-width: 160px;
-	  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 	padding: 12px 16px;
 	z-index: 1;
 }

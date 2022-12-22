@@ -2,7 +2,7 @@ extends layouts/default.pug
 
 block variables
 	- const title = "Dashboard"
-	- active = "Settings"
+	- active = "Account"
 
 block content
 	h1.mb-5 Account Settings
@@ -15,10 +15,10 @@ block content
 				br
 				textarea#importData.w-full.max-w-lg(name="import")
 				p.italic.m-2.w-full.max-w-lg If you select the following options, the importer will determine the most recent class you've completed a homework item for, and will mark that class and all previous classes as watched/checked in.
-				input.mr-2(type="checkbox" id="classesWatched" name="classesWatched") 
+				input.mr-2(type="checkbox" id="classesWatched" name="classesWatched")
 				label(for="classesWatched") Mark Classes Watched
 				br
-				input.mr-2(type="checkbox" id="classesCheckedin" name="classesCheckedin") 
+				input.mr-2(type="checkbox" id="classesCheckedin" name="classesCheckedin")
 				label(for="classesCheckedin") Mark Classes Checked In
 				button.mt-2(type="submit") Import
 			#export-image.w-full.h-auto.max-w-lg
@@ -31,7 +31,7 @@ block content
 			label(for="username") New Email:
 			input(type="email" name="username" id="username")
 			button(type="submit") Change Email
-	
+
 	#change-password.settings
 		h3 Password
 		if (user.hasPassword)
@@ -48,7 +48,7 @@ block content
 					input(type="password" name="confirm" id="confirm")
 				button(type="submit") Change Password
 		else
-			p You have not set a password for your account 
+			p You have not set a password for your account
 			a(href="/set-password" id="set") Set password
 			form(method="post" action="/set-password" id="set-form" style="display:none")
 				div
@@ -64,16 +64,16 @@ block content
 		if user.googleId || user.githubId
 			ul
 				if user.googleId
-					li#google Google 
+					li#google Google
 						if !user.hasPassword && !user.githubId
 							span.text-red-500 In order to maintain access to your account, please set a password or add another linked account before unlinking Google. Alteratively, use the delete account option to remove your account completely, and any linked accounts will be unlinked automatically.
 						else
 							a(href="/oauth/google/revoke") Unlink
 				if user.githubId
-					li#github Github 
+					li#github Github
 						if !user.hasPassword && !user.googleId
 							span.text-red-500 In order to maintain access to your account, please set a password or add another linked account before unlinking Github. Alteratively, use the delete account option to remove your account completely, and any linked accounts will be unlinked automatically.
-						else 
+						else
 							a(href="/oauth/github/revoke") Unlink
 		else
 			span No linked accounts
@@ -90,4 +90,4 @@ block content
 			button#second(type="submit") DELETE ACCOUNT
 
 block extra-scripts
-	script(src="/js/account.js") 
+	script(src="/js/account.js")

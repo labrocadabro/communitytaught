@@ -23,20 +23,20 @@ html.scroll-smooth
 		script(src="https://kit.fontawesome.com/57fb3a03b8.js" crossorigin="anonymous")
 		link(rel="preconnect" href="https://fonts.googleapis.com")
 		link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
-		link(href="https://fonts.googleapis.com/css2?family=Merriweather&family=Acme&family=Orienta&family=Kufam&display=swap" rel="stylesheet")
+		link(href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Orienta&display=swap" rel="stylesheet")
 		title= title
-	body.flex.flex-col.min-h-screen.text-twilight-900.bg-stone-50.text-lg.font-main
+	body.flex.flex-col.min-h-screen.text-stone-800.text-lg.font-main
 		if mode === "dev"
 			.flash.flash-error DEVELOPMENT SERVER
 
-		header(class="px-5 sm:px-8 lg:px-14 py-3 sm:py-5 bg-twilight-100 border-b border-twilight-200 relative")
+		header(class="px-5 sm:px-8 lg:px-14 py-3 sm:py-5 bg-stone-50 border-b border-stone-200 relative shadow-[3px_3px_15px_-12px_rgba(0,0,0,.3)]")
 			include ../partials/header.pug
 
 		main(class="px-5 sm:px-8 lg:px-14 py-4 sm:py-8")
 			include ../partials/flash.pug
 			block content
 
-		footer(class="px-5 sm:px-8 lg:px-14 py-3 sm:py-5 mt-auto bg-twilight-100 border-t border-twilight-200 text-center")
+		footer(class="px-5 sm:px-8 lg:px-14 py-3 sm:py-5 mt-auto bg-stone-50 border-t border-stone-200 text-center shadow-[-3px_-3px_15px_-12px_rgba(0,0,0,.3)]")
 			include ../partials/footer.pug
 
 		script(src="/js/main.js")

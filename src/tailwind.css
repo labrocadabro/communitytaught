@@ -10,7 +10,7 @@
 		@apply no-underline;
 	}
 	nav a {
-		@apply font-bold no-underline lg:text-xl block rounded-md py-2 font-header;
+		@apply font-bold no-underline lg:text-xl block rounded-md py-2 font-main;
 	}
 	nav a.active {
 		@apply decoration-pink-800 underline decoration-3 underline-offset-6 hover:underline;
@@ -24,7 +24,7 @@
 	h4,
 	h5,
 	h6 {
-		@apply font-bold text-pink-800 font-header;
+		@apply font-bold text-pink-800 font-main;
 	}
 	h1 {
 		@apply text-4xl font-bold mb-8;
@@ -375,3 +375,25 @@ dd ol {
 .card img {
 	@apply shadow-[0_2px_10px_0_rgba(0,0,0,0.1)];
 }
+
+/* lesson page tabs */
+
+/* .lesson-tab {
+	@apply fixed right-0 border border-twilight-800 p-2 pl-4 border-r-0 text-twilight-800 cursor-pointer;
+	box-shadow: 0 0 5px rgba(34, 101, 129, 0.5);
+}
+.lesson-tab.notes {
+	@apply top-40;
+}
+.lesson-tab.timestamps {
+	@apply top-56;
+}
+.side-panel {
+	position: fixed;
+	height: 100vh;
+	top: 0;
+	right: calc(-50% + 30px);
+	border-left: 1px solid red;
+	width: 50%;
+	background: white;
+} */

@@ -8,8 +8,8 @@ block variables
 block content
 	if (!loggedIn)
 		.flash.flash-error YOU ARE NOT CURRENTLY LOGGED IN. If you would like to track your progress, please #[a(href="/login") log in] or #[a(href="/register") register] before continuing.
-	h1.mb-4.text-center #{lesson.classNo[0] ? `Class ${lesson.classNo.join(', ')}` : "Super Review" }: #{lesson.title} 
-		if (loggedIn && user.admin) 
+	h1.mb-4.text-center #{lesson.classNo[0] ? `Class ${lesson.classNo.join(', ')}` : "Super Review" }: #{lesson.title}
+		if (loggedIn && user.admin)
 			a(href=`/class/edit/${lesson._id}`)
 				i.fa.fa-pencil
 	h3.mb-4.text-center.border-b.pb-4.text-twilight-800  #{`${lesson.dates.map(date => date.toLocaleDateString('en-US', {day: "numeric", month: "short", year: "numeric"})).join(' / ')}`}
@@ -17,29 +17,29 @@ block content
 		if (loggedIn)
 			h3
 				if (lesson.videoId.length)
-					input.watched.mr-2(type="checkbox" id="watched-" + lesson._id autocomplete="off" checked=lesson.watched) 
+					input.watched.mr-2(type="checkbox" id="watched-" + lesson._id autocomplete="off" checked=lesson.watched)
 					label.mr-4(for="watched-" + lesson._id) Watched
 				if (lesson.checkin.length && lesson.checkin[0].length)
 					input.checkedin.mr-2(type="checkbox" id="checkedin-" + lesson._id autocomplete="off" checked=lesson.checkedIn)
 					label(for="checkedin-" + lesson._id) Checked In
 		.mb-3
 			if (lesson.slides.length)
-				if (lesson.slides.length > 1) 
+				if (lesson.slides.length > 1)
 					each slide, index in lesson.slides
-						| #[a(href=slide target="_blank") Slides #{index + 1}] | 
+						| #[a(href=slide target="_blank") Slides #{index + 1}] |
 				else if (lesson.slides[0].length)
-					| #[a(href=lesson.slides[0] target="_blank") Slides] | 				
+					| #[a(href=lesson.slides[0] target="_blank") Slides] |
 			if (lesson.materials)
 				| #[a(href=lesson.materials  target="_blank") Follow-Along Materials] |
 			if (lesson.checkin.length)
-				if (lesson.checkin.length > 1) 
+				if (lesson.checkin.length > 1)
 					each checkin, index in lesson.checkin
 						| &nbsp; #[a(href=checkin target="_blank") Check In #{index + 1}] &nbsp;
-						if (index < lesson.checkin.length - 1) 
+						if (index < lesson.checkin.length - 1)
 							| |
 				else if (lesson.checkin[0].length)
 					| &nbsp; #[a(href=lesson.checkin[0] target="_blank") Check In]
-			if lesson.note 
+			if lesson.note
 				p.mb-3.text-2xl !{lesson.note}
 		#player
 			if (!lesson.videoId)
@@ -57,7 +57,7 @@ block content
 					h3
 						a(href="/class/" + next) Next Class
 		if !lesson.twitchVideo
-			h3.mt-4 Feed the algorithm and spread the word! 
+			h3.mt-4 Feed the algorithm and spread the word!
 			p #[a(href=`https://www.youtube.com/watch?v=${lesson.videoId}` target="_blank") Like, comment and subscribe on Youtube]
 	if assigned.length
 		h2.text-center.text-3xl.mt-10.mb-3 Homework Assigned
@@ -67,6 +67,11 @@ block content
 		h2.text-center.mt-10.mb-3.text-3xl Homework Due
 		include ./partials/mixins.pug
 		+hwtable(due)
+	//- .lesson-tab.notes(title="Take notes")
+	//- 	i.fa.fa-pencil
+	//- .lesson-tab.timestamps(title="Timestamps")
+	//- 	i.fa.fa-clock
+	//- .side-panel Test Content
 
 block extra-scripts
 	if loggedIn
@@ -74,7 +79,7 @@ block extra-scripts
 		script(src="/js/hwProgress.js")
 		script(src="/js/lessonProgress.js")
 	if lesson.videoId && !lesson.twitchVideo
-		script. 
+		script.
 			var tag = document.createElement('script');
 			tag.src = "https://www.youtube.com/iframe_api";
 			var firstScriptTag = document.getElementsByTagName('script')[0];
@@ -97,4 +102,3 @@ block extra-scripts
 				width: "100%",
 				height: "100%"
 			});
-		

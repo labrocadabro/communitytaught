@@ -15,7 +15,7 @@ block content
 					i.fa.fa-pencil
 		h3(class="mb-4 text-center sm:text-left text-twilight-800 whitespace-nowrap")   #{`${lesson.dates.map(date => date.toLocaleDateString('en-US', {day: "numeric", month: "short", year: "numeric"})).join(' / ')}`}
 	if lesson.note
-		p(class="mb-3 text-2xl text-center sm:text-left") !{lesson.note}
+		p(class="mb-3 text-center sm:text-left") !{lesson.note}
 
 	#video-container(class="block text-center sm:text-left mx-auto sm:grid grid-cols-3 gap-10 items-center")
 		#video.col-span-2
@@ -36,15 +36,17 @@ block content
 							a(href="/class/" + next) Next Class
 		#info
 			if (loggedIn)
-				h3.text-stone-
+				h3.flex.flex-wrap
 					if (lesson.videoId.length)
 
-					label.mr-4(for="watched-" + lesson._id) Watched
+					label.mr-4(for="watched-" + lesson._id)
 						input.watched.mr-2(type="checkbox" id="watched-" + lesson._id autocomplete="off" checked=lesson.watched)
+						| Watched
 
 					if (lesson.checkin.length && lesson.checkin[0].length)
-						input.checkedin.mr-2(type="checkbox" id="checkedin-" + lesson._id autocomplete="off" checked=lesson.checkedIn)
-						label(for="checkedin-" + lesson._id) Checked In
+						label(for="checkedin-" + lesson._id)
+							input.checkedin.mr-2(type="checkbox" id="checkedin-" + lesson._id autocomplete="off" checked=lesson.checkedIn)
+							| Checked In
 			.mb-3(class="mt-3")
 				if (lesson.checkin.length)
 					if (lesson.checkin.length > 1)
@@ -70,11 +72,11 @@ block content
 		h3.mt-8 Feed the algorithm and spread the word!
 		p #[a(href=`https://www.youtube.com/watch?v=${lesson.videoId}` target="_blank") Like, comment and subscribe on Youtube]
 	if assigned.length
-		h2.text-3xl.mt-10.mb-3 Homework Assigned
+		h2.mt-10.mb-3 Homework Assigned
 		include ./partials/mixins.pug
 		+hwtable(assigned)
 	if due.length
-		h2.mt-10.mb-3.text-3xl Homework Due
+		h2.mt-10.mb-3 Homework Due
 		include ./partials/mixins.pug
 		+hwtable(due)
 	//- .lesson-tab.notes(title="Take notes")

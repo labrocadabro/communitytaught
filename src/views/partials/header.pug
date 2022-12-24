@@ -3,7 +3,7 @@ nav.flex.items-baseline.justify-between
 		a(class="p-0 m-0 text-twilight-900 no-underline text-3xl sm:text-2xl lg:text-3xl font-logo" href="/") #communitytaught
 	ul#mobile-menu(class="sm:hidden text-3xl text-pink-800")
 		li
-			i.fa.fa-bars
+			i.fas.fa-bars
 	ul#desktop-menu(class="hidden sm:flex gap-2 lg:gap-4 text-xl font-medium")
 		li
 			a(href="/" class = active === "Home" ? "active" : "") Home
@@ -19,7 +19,7 @@ nav.flex.items-baseline.justify-between
 		if loggedIn
 			li#account-menu.relative
 				.no-mobile.mt-1
-					i(class="text-pink-800/80").fa-solid.fa-user.text-2xl.cursor-pointer
+					i(class="text-pink-800/80").fas.fa-user.text-2xl.cursor-pointer
 				ul#account-dropdown(class="hidden absolute z-20 bg-white top-12 -right-5 [&>li]:px-6 text-center shadow-[0_0_25px_-5px_rgba(0,0,0,.3)]")
 					li.no-mobile.cursor-default.py-3.bg-twilight-50 #{user.username}
 					//- li#account-first.pt-2

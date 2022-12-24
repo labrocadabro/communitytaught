@@ -12,7 +12,7 @@ block content
 		h1(class="mb-2 sm:mb-4 text-center sm:text-left") #{lesson.classNo[0] ? `Class ${lesson.classNo.join(', ')}` : "Super Review" }: #{lesson.title}
 			if (loggedIn && user.admin)
 				a(href=`/class/edit/${lesson._id}`)
-					i.fa.fa-pencil
+					i.fas.fa-pencil
 		h3(class="mb-4 text-center sm:text-left text-twilight-800 whitespace-nowrap")   #{`${lesson.dates.map(date => date.toLocaleDateString('en-US', {day: "numeric", month: "short", year: "numeric"})).join(' / ')}`}
 	if lesson.note
 		p(class="mb-3 text-center sm:text-left") !{lesson.note}

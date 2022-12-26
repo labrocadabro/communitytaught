@@ -949,6 +949,11 @@ button:hover,
   margin-right: auto;
 }
 
+.my-10 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
 .mb-6 {
   margin-bottom: 1.5rem;
 }
@@ -1013,6 +1018,14 @@ button:hover,
   margin-left: 1.75rem;
 }
 
+.mb-20 {
+  margin-bottom: 5rem;
+}
+
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
+
 .block {
   display: block;
 }
@@ -1075,6 +1088,10 @@ button:hover,
 
 .flex-col {
   flex-direction: column;
+}
+
+.flex-col-reverse {
+  flex-direction: column-reverse;
 }
 
 .flex-wrap {
@@ -2028,6 +2045,11 @@ nav a.active:hover {
 }
 
 @media (min-width: 768px) {
+  .sm\:my-10 {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+
   .sm\:mb-4 {
     margin-bottom: 1rem;
   }
@@ -2042,6 +2064,10 @@ nav a.active:hover {
 
   .sm\:hidden {
     display: none;
+  }
+
+  .sm\:flex-row {
+    flex-direction: row;
   }
 
   .sm\:px-8 {
@@ -2069,7 +2095,21 @@ nav a.active:hover {
   }
 }
 
+@media (min-width: 926px) {
+  .md\:flex-row {
+    flex-direction: row;
+  }
+}
+
 @media (min-width: 1024px) {
+  .lg\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lg\:flex-row {
+    flex-direction: row;
+  }
+
   .lg\:gap-4 {
     gap: 1rem;
   }

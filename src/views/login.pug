@@ -1,22 +1,22 @@
 extends layouts/default.pug
 
 block variables
-	- const title = "Log In"
+	- const title = "Sign In"
 	- active = "Login"
 
 block content
 	form.sign-form.signin.bg-white(action="/login" method="post")
-		h1.col-span-2 Log In
+		h1.col-span-2 Sign In
 		label(for="email") Email
 		input#email(type="email", name="username" placeholder="Ex: john@smith.com")
 		label(for="pwd") Password
 		input#pwd(type="password", name="password" placeholder="Enter password")
 		div.col-span-2.text-center
-			button(type="submit") Log In
-			a.button(href="/oauth/google") Log In with Google
-			a.button(href="/oauth/github") Log In with Github
-			
+			button(type="submit") Sign In
+			a.button(href="/oauth/google") Sign In with Google
+			a.button(href="/oauth/github") Sign In with Github
+
 		div.col-span-2.text-center #[a(href="/register") Create an account] | #[a(href="/forgot") Forgot password]
 
 	//- block extra-scripts
-	//- 	script(src="/js/login.js") 
+	//- 	script(src="/js/login.js")

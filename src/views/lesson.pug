@@ -7,7 +7,7 @@ block variables
 
 block content
 	if (!loggedIn)
-		.flash.flash-error YOU ARE NOT CURRENTLY LOGGED IN. If you would like to track your progress, please #[a(href="/login") log in] or #[a(href="/register") register] before continuing.
+		include ./partials/flash-nologin.pug
 	div(class="sm:flex block justify-between items-baseline")
 		h1(class="mb-2 sm:mb-4 text-center sm:text-left") #{lesson.classNo[0] ? `Class ${lesson.classNo.join(', ')}` : "Super Review" }: #{lesson.title}
 			if (loggedIn && user.admin)

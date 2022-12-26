@@ -6,9 +6,10 @@ block variables
 
 block content
 	if (!loggedIn)
-		.flash.flash-error YOU ARE NOT CURRENTLY LOGGED IN.If you would like to track your progress, please #[a(href="/login") log in] or #[a(href="/register") register] before continuing.
+		include ./partials/flash-nologin.pug
 
 	h1.mb-4 All Classes
+
 	include ./partials/mixins.pug
 	+lessontable(lessons)
 

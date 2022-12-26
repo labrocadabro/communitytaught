@@ -276,6 +276,11 @@ td:last-of-type {
 	@apply w-full aspect-video;
 }
 
+#lessons {
+	@apply grid gap-6;
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
 /**** accordion ***/
 dl {
 	@apply bg-white py-2 xs:py-4 px-2 xs:px-5 border border-stone-200;

@@ -278,9 +278,15 @@ td:last-of-type {
 
 #lessons {
 	@apply grid gap-6;
-	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
 }
 
+.card-main-content a:hover img {
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.card-main-content a:hover h2 {
+	@apply text-pink-900;
+}
 /**** accordion ***/
 dl {
 	@apply bg-white py-2 xs:py-4 px-2 xs:px-5 border border-stone-200;

@@ -10,8 +10,40 @@ block content
 
 	h1.mb-4 All Classes
 
-	include ./partials/mixins.pug
-	+lessontable(lessons)
+#lessons
+		each lesson in lessons
+			.lesson-card.border.relative
+				.card-top-banner.bg-twilight-50.px-3.py-2
+					h3.text-twilight-900.text-2xl
+						if (!lesson.classNo[0])
+							| Super Review
+						else if (lesson.classNo.length === 1)
+							|	CLASS #{lesson.classNo[0]}
+						else if (lesson.classNo.length === 2)
+							| CLASSES #{lesson.classNo[0]} &amp; #{lesson.classNo[1]}
+						else
+							| CLASSES #{lesson.classNo[0]} - #{lesson.classNo.at(-1)}
+					if loggedIn
+						.lesson-checks.flex.flex-wrap
+							.lesson-watched.mr-6
+								if (lesson.videoId.length)
+									input.watched.mr-2(type="checkbox" id="watched-" + lesson._id autocomplete="off" checked=lesson.watched data-lesson=lesson._id)
+									label(id="watched-" + lesson._id) Watched
+								else
+									| No stream
+							.lesson-checkedin
+								if (lesson.checkin.length && lesson.checkin[0].length)
+									input.checkedin.mr-2(type="checkbox" id="checkedin-" + lesson._id autocomplete="off" checked=lesson.checkedIn data-lesson=lesson._id)
+									label(for="checkedin-" + lesson._id) Checked In
+								else
+									input.checkedin.hidden(type="checkbox" id="checkedin-" + lesson._id autocomplete="off" checked)
+									| No Check In
+				.card-main-content.py-4.px-6.mb-12
+					a(href=`/class/${lesson.permalink}` class="hover:no-underline")
+						img.w-full.mb-2(src=lesson.thumbnail)
+						h2 #{lesson.title}
+					a.absolute.bottom-3(href=`/class/${lesson.permalink}`) More Info
+					a.absolute.bottom-3.right-6.text-right(href="") Youtube
 
 	#to-top
 		i.far.fa-square-caret-up(title="Back to top")

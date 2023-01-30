@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Angra974/communitytaught.git"
+    "url": "git+https://github.com/labrocadabro/communitytaught.git"
   },
   "author": "Laura Abro",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/labrocadabro/node-mongo-boilerplate/issues"
+    "url": "https://github.com/labrocadabro/communitytaught/issues"
   },
-  "homepage": "https://github.com/labrocadabro/node-mongo-boilerplate#readme",
+  "homepage": "https://github.com/labrocadabro/communitytaught#readme",
   "dependencies": {
     "@octokit/auth-oauth-user": "^2.0.3",
     "@octokit/core": "^4.0.5",

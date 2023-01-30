@@ -7,7 +7,7 @@ const user = process.env.DB_USER;
 const pass = process.env.DB_PASS;
 const cluster = process.env.DB_CLUSTER;
 const dbName = process.env.DB_NAME;
-const url = `mongodb+srv://${user}:${pass}@${cluster}.58qh2.mongodb.net/${dbName}?retryWrites=true&w=majority`;
+const url = `mongodb+srv://${user}:${pass}@${cluster}.mongodb.net/${dbName}?retryWrites=true&w=majority`;
 
 const connectDB = async () => {
     try {

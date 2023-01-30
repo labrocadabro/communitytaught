@@ -17,8 +17,10 @@ export const dashboard = async (req, res) => {
   let lesson = [];
   if (req.user.currentClass) {
     let currentLesson = await Lesson.findById(req.user.currentClass);
+    if(currentLesson) {
     currentLesson = await getLessonProgress(req.user.id, currentLesson);
     lesson.push(currentLesson);
+    }
   }
   res.render("dashboard", { lesson });
 };

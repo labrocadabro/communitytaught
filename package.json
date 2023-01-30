@@ -1,7 +1,7 @@
 {
-  "name": "node-mongo-boilerplate",
+  "name": "CommunityTaught.org",
   "version": "1.0.0",
-  "description": "MVC boilerplate for Node/MongoDB projects with Tailwind and Pug, with authentication via Passport.",
+  "description": "A comprehensive tracker for 100Devs classes and homework.",
   "main": "src/server.js",
   "type": "module",
   "scripts": {
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/labrocadabro/node-mongo-boilerplate.git"
+    "url": "git+https://github.com/Angra974/communitytaught.git"
   },
   "author": "Laura Abro",
   "license": "MIT",

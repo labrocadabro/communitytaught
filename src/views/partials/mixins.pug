@@ -7,7 +7,6 @@ mixin hwtable(homework)
 				//- if (loggedIn)
 				//- 	th Done
 				th Assignment
-				th Extras
 				th.hw-submit Submit
 				if (loggedIn && user.admin)
 					th Edit
@@ -28,8 +27,8 @@ mixin hwtable(homework)
 					//- 	td
 					//- 		input.done(type="checkbox" id="done-" + hw._id autocomplete="off")
 					td.hw-items
-						ul
-							if hw.items
+						if hw.items.length
+							ul
 								each item in hw.items
 									li.relative
 										if item.required
@@ -39,20 +38,16 @@ mixin hwtable(homework)
 											label(for=`item-${item._id}`) #{item.class !== hw.classNo[0] ? `(Class ${item.class}) ` : ""}!{item.description}
 										else
 											| !{item.description}
-							else
-								| None
-					td.hw-extras
-						if hw.extras.length
-							ul
-								each extra in hw.extras
-									li
-										if (loggedIn)
-											input.extra(type="checkbox" id=`extra-${extra._id}` autocomplete="off" checked=extra.done)
-											label(for=`item-${extra._id}` ) !{extra.description}
-										else
-											| !{extra.description}
-						else
-							p None
+							if hw.extras.length
+								h3 Extras
+								ul
+									each extra in hw.extras
+										li
+											if (loggedIn)
+												input.extra(type="checkbox" id=`extra-${extra._id}` autocomplete="off" checked=extra.done)
+												label(for=`item-${extra._id}` ) !{extra.description}
+											else
+												| !{extra.description}
 					td.hw-submit
 						if hw.submit
 							a.submit-button(href=hw.submit target="_blank") Submit

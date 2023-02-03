@@ -45,7 +45,7 @@
 
 	/* border-gray-700 text-black  hover:bg-gray-100 */
 	.add-form {
-		@apply mt-5 max-w-3xl mx-auto border grid p-10 gap-2 items-center;
+		@apply mt-5 max-w-5xl mx-auto border grid p-10 gap-2 items-center;
 		grid-template-columns: repeat(4, 1fr);
 	}
 	.add-form label {

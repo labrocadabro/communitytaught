@@ -125,10 +125,10 @@ th:last-of-type {
 	border-right: 1px solid transparent;
 }
 td {
-	@apply p-4 border-r border-b;
+	@apply px-8 py-6 border-r border-b;
 }
 td:first-of-type {
-	@apply p-2 font-bold;
+	@apply font-bold w-40;
 }
 td:last-of-type {
 	@apply border-r-transparent;
@@ -142,7 +142,11 @@ td:last-of-type {
 	max-width: 300px;
 }
 .hw-submit {
+	width: 250px;
+}
+.submit-button {
 	width: 160px;
+	margin: 0 auto;
 }
 .homework .hw-items li {
 	@apply relative ml-3;
@@ -255,15 +259,9 @@ td:last-of-type {
 		content: "Class";
 	}
 	.homework td:nth-of-type(2):before {
-		content: "Due";
-	}
-	.homework td:nth-of-type(3):before {
 		content: "Work";
 	}
-	.homework td:nth-of-type(4):before {
-		content: "Extras";
-	}
-	.homework td:nth-of-type(5):before {
+	.homework td:nth-of-type(3):before {
 		content: "Submit";
 	}
 }
@@ -277,7 +275,7 @@ td:last-of-type {
 }
 
 #lessons {
-	@apply grid gap-6;
+	@apply grid gap-y-24 gap-x-16;
 	grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
 }
 

@@ -1046,6 +1046,10 @@ button:hover,
   display: table;
 }
 
+.grid {
+  display: grid;
+}
+
 .hidden {
   display: none;
 }
@@ -1060,6 +1064,10 @@ button:hover,
 
 .w-full {
   width: 100%;
+}
+
+.w-36 {
+  width: 9rem;
 }
 
 .max-w-lg {
@@ -1084,6 +1092,14 @@ button:hover,
 
 .grid-cols-3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-cols-\[200px_1fr_300px\] {
+  grid-template-columns: 200px 1fr 300px;
+}
+
+.grid-cols-\[200px_1fr_200px\] {
+  grid-template-columns: 200px 1fr 200px;
 }
 
 .flex-col {
@@ -1118,8 +1134,8 @@ button:hover,
   justify-content: space-between;
 }
 
-.gap-60 {
-  gap: 15rem;
+.gap-8 {
+  gap: 2rem;
 }
 
 .gap-6 {
@@ -1132,10 +1148,6 @@ button:hover,
 
 .gap-2 {
   gap: 0.5rem;
-}
-
-.gap-8 {
-  gap: 2rem;
 }
 
 .scroll-smooth {
@@ -1279,6 +1291,11 @@ button:hover,
   line-height: 1.75rem;
 }
 
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -1287,11 +1304,6 @@ button:hover,
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
-}
-
-.text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
 }
 
 .font-bold {
@@ -1320,6 +1332,11 @@ button:hover,
   color: rgb(21 63 81 / var(--tw-text-opacity));
 }
 
+.text-twilight-800 {
+  --tw-text-opacity: 1;
+  color: rgb(34 101 129 / var(--tw-text-opacity));
+}
+
 .text-stone-500 {
   --tw-text-opacity: 1;
   color: rgb(120 113 108 / var(--tw-text-opacity));
@@ -1333,11 +1350,6 @@ button:hover,
 .text-pink-800 {
   --tw-text-opacity: 1;
   color: rgb(157 23 77 / var(--tw-text-opacity));
-}
-
-.text-twilight-800 {
-  --tw-text-opacity: 1;
-  color: rgb(34 101 129 / var(--tw-text-opacity));
 }
 
 .text-stone-800 {
@@ -1435,11 +1447,14 @@ th:last-of-type {
 td {
   border-right-width: 1px;
   border-bottom-width: 1px;
-  padding: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
 td:first-of-type {
-  padding: 0.5rem;
+  width: 10rem;
   font-weight: 700;
 }
 
@@ -1458,7 +1473,12 @@ td:last-of-type {
 }
 
 .hw-submit {
+  width: 250px;
+}
+
+.submit-button {
   width: 160px;
+  margin: 0 auto;
 }
 
 .homework .hw-items li {
@@ -1646,18 +1666,10 @@ td:last-of-type {
   }
 
   .homework td:nth-of-type(2):before {
-    content: "Due";
-  }
-
-  .homework td:nth-of-type(3):before {
     content: "Work";
   }
 
-  .homework td:nth-of-type(4):before {
-    content: "Extras";
-  }
-
-  .homework td:nth-of-type(5):before {
+  .homework td:nth-of-type(3):before {
     content: "Submit";
   }
 }
@@ -1675,7 +1687,9 @@ td:last-of-type {
 
 #lessons {
   display: grid;
-  gap: 1.5rem;
+  row-gap: 6rem;
+  -moz-column-gap: 4rem;
+       column-gap: 4rem;
   grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
 }
 

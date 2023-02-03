@@ -3,7 +3,6 @@ mixin hwtable(homework)
 		thead
 			tr.text-2xl
 				th Class
-				th Due
 				//- if (loggedIn)
 				//- 	th Done
 				th Assignment
@@ -22,7 +21,6 @@ mixin hwtable(homework)
 							| #{hw.classNo[0]} &amp; #{hw.classNo[1]}
 						else
 							| #{hw.classNo[0]} - #{hw.classNo.at(-1)}
-					td #{hw.dueNo}
 					//- if (loggedIn)
 					//- 	td
 					//- 		input.done(type="checkbox" id="done-" + hw._id autocomplete="off")
@@ -49,13 +47,14 @@ mixin hwtable(homework)
 											else
 												| !{extra.description}
 					td.hw-submit
+						h2.mb-4.text-twilight-800 Due Class #{hw.dueNo}
 						if hw.submit
 							a.submit-button(href=hw.submit target="_blank") Submit
 							if (loggedIn)
-								input.submitted(type="checkbox" id=`submit-${hw._id}` autocomplete="off" checked=hw.submitted data-hw=hw._id)
-								label(for=`submit-${hw._id}`) Submitted
-						else
-							p Nothing to submit
+									input.submitted(type="checkbox" id=`submit-${hw._id}` autocomplete="off" checked=hw.submitted data-hw=hw._id)
+									label(for=`submit-${hw._id}`) Submitted
+
+
 						if (hw.note)
 								p.italic.text-sm.mt-2 !{hw.note}
 					if (loggedIn && user.admin)

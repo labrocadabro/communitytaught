@@ -5,18 +5,19 @@ block variables
 	- active = "Login"
 
 block content
-	form.sign-form.signin.bg-white(action="/login" method="post")
+	form.auth-form(action="/login" method="post")
+
 		h1.col-span-2 Log In
+
 		label(for="email") Email
 		input#email(type="email", name="username" placeholder="Ex: john@smith.com")
+
 		label(for="pwd") Password
 		input#pwd(type="password", name="password" placeholder="Enter password")
+
 		div.col-span-2.text-center
-			button(type="submit") Log In
-			a.button(href="/oauth/google") Log In with Google
-			a.button(href="/oauth/github") Log In with Github
+			button.btn.primary(type="submit") Log In
+			a.btn.secondary(href="/oauth/google") Log In with Google
+			a.btn.secondary(href="/oauth/github") Log In with Github
 
 		div.col-span-2.text-center #[a(href="/register") Create an account] | #[a(href="/forgot") Forgot password]
-
-	//- block extra-scripts
-	//- 	script(src="/js/login.js")

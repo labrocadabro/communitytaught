@@ -10,14 +10,14 @@ block content
 
 	h1.mb-4 All Homework
 	each hw in homework
-		div(class="grid grid-cols-[200px_1fr_200px]" class=(hw.submitted || !hw.submit.length) && hw.items.every(item => item.done) ? "done" : "" id=hw._id)
+		div(class="grid grid-cols-[220px_1fr_200px] mb-12" class=(hw.submitted || !hw.submit.length) && hw.items.every(item => item.done) ? "done" : "" id=hw._id)
 			.hw-classNo
 				if (hw.classNo.length === 1)
-					|	Class #{hw.classNo[0]}
+					h2 Class #{hw.classNo[0]}
 				else if (hw.classNo.length === 2)
-					| Classes #{hw.classNo[0]} &amp; #{hw.classNo[1]}
+					h2 Classes #{hw.classNo[0]} &amp; #{hw.classNo[1]}
 				else
-					| Classes #{hw.classNo[0]} - #{hw.classNo.at(-1)}
+					h2 Classes #{hw.classNo[0]} - #{hw.classNo.at(-1)}
 				if (loggedIn && user.admin)
 					a.ml-2(href=`/hw/edit/${hw._id}`)
 						i.fas.fa-pencil
@@ -25,11 +25,11 @@ block content
 				if hw.items.length
 					ul
 						each item in hw.items
-							li.relative
+							li.relative.ml-3
 								if item.required
-									span.required(title="Must submit") *
+									span.required(title="Must submit" class="absolute -left-5 top-1 text-red-800 text-2xl cursor-default") *
 								if (loggedIn)
-									input.item(type="checkbox" id=`item-${item._id}` autocomplete="off" checked=item.done data-hw=hw._id)
+									input.item.mr-3(type="checkbox" id=`item-${item._id}` autocomplete="off" checked=item.done data-hw=hw._id)
 									label(for=`item-${item._id}`) #{item.class !== hw.classNo[0] ? `(Class ${item.class}) ` : ""}!{item.description}
 								else
 									| !{item.description}
@@ -37,18 +37,18 @@ block content
 						h3 Extras
 						ul
 							each extra in hw.extras
-								li
+								li.ml-3
 									if (loggedIn)
-										input.extra(type="checkbox" id=`extra-${extra._id}` autocomplete="off" checked=extra.done)
+										input.extra.mr-3(type="checkbox" id=`extra-${extra._id}` autocomplete="off" checked=extra.done)
 										label(for=`item-${extra._id}` ) !{extra.description}
 									else
 										| !{extra.description}
 			.hw-due
 				h2.mb-4.text-twilight-800 Due Class #{hw.dueNo}
 				if hw.submit
-					a.submit-button(href=hw.submit target="_blank") Submit
+					a.submit-button.text-center(href=hw.submit target="_blank") Submit
 					if (loggedIn)
-							input.submitted(type="checkbox" id=`submit-${hw._id}` autocomplete="off" checked=hw.submitted data-hw=hw._id)
+							input.submitted.mr-3(type="checkbox" id=`submit-${hw._id}` autocomplete="off" checked=hw.submitted data-hw=hw._id)
 							label(for=`submit-${hw._id}`) Submitted
 
 

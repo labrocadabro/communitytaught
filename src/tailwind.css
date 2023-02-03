@@ -5,7 +5,6 @@
 @layer base {
 	a {
 		@apply text-twilight-800;
-		/* color: #2e1e0f; */
 	}
 	a:hover {
 		@apply underline underline-offset-4;
@@ -28,30 +27,23 @@
 	h3 {
 		@apply text-xl font-medium;
 	}
-
-	button,
-	a.button {
-		@apply py-2 px-5 border border-gray-700 rounded block mb-3 text-black no-underline hover:bg-gray-100;
-	}
 }
 @layer components {
-	.sign-form {
-		@apply mt-5 max-w-md w-full mx-auto border xs:grid p-4 xs:p-10 gap-2 bg-white;
-		grid-template-columns: auto 1fr;
+	.btn {
+		@apply py-2 px-5 rounded block no-underline mb-2 hover:no-underline w-full;
 	}
-	.sign-form label {
-		@apply text-right;
+	.btn.secondary {
+		@apply border border-pink-800 hover:bg-pink-700 text-pink-800 hover:text-stone-50;
 	}
-	.sign-form input {
-		@apply w-full mb-4 xs:mb-0;
+	.btn.primary {
+		@apply border border-pink-800 bg-pink-800 hover:bg-pink-700 hover:border-pink-700 text-stone-50;
 	}
-	.sign-form div {
-		@apply mt-2;
+
+	.auth-form {
+		@apply mt-5 max-w-lg w-full mx-auto border xs:grid p-4 xs:p-10 gap-2 bg-white grid-cols-[auto_1fr] [&>label]:text-right [&>input]:w-full [&>input]:mb-4 [&>input]:xs:mb-0 [&>div]:mt-2;
 	}
-	.sign-form button,
-	.sign-form a.button {
-		@apply w-full box-border;
-	}
+
+	/* border-gray-700 text-black  hover:bg-gray-100 */
 	.add-form {
 		@apply mt-5 max-w-3xl mx-auto border grid p-10 gap-2 items-center;
 		grid-template-columns: repeat(4, 1fr);
@@ -143,10 +135,6 @@ td:last-of-type {
 }
 .hw-submit {
 	width: 250px;
-}
-.submit-button {
-	width: 160px;
-	margin: 0 auto;
 }
 .homework .hw-items li {
 	@apply relative ml-3;
@@ -337,11 +325,11 @@ dd ol {
 /*** menu ***/
 
 nav a {
-	@apply hover:no-underline text-xl sm:text-base md:text-lg  lg:text-xl block rounded-md py-2 text-pink-800;
+	@apply hover:no-underline text-xl sm:text-base md:text-lg  lg:text-xl block rounded-md py-2 text-[#ffffff];
 }
-nav a.active {
+/* nav a.active {
 	@apply decoration-twilight-700 underline decoration-4 underline-offset-6 hover:underline;
-}
+} */
 
 .menu-opened {
 	@apply pt-20 block absolute top-full w-full h-screen bg-white left-0;

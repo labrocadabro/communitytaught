@@ -5,19 +5,22 @@ block variables
 	- active = "Register"
 
 block content
-	form.sign-form.signup(action="/register" method="post")
+	form.auth-form(action="/register" method="post")
+
 		h1.col-span-2 Sign Up
+
 		label(for="email") Email
 		input#email(type="email", name="username" placeholder="Ex: john@smith.com")
+
 		label(for="pwd") Password
 		input#pwd(type="password", name="password" placeholder="Enter password")
+
 		label(for="conf") Confirm
 		input#conf(type="password", name="confirm" placeholder="Reenter password")
-		div.col-span-2.text-center
-			button(type="submit") Sign Up
-			a.button(href="/oauth/google") Sign Up with Google
-			a.button(href="/oauth/github") Sign Up with Github
-		div.col-span-2.text-center #[a(href="/login") Log in] | #[a(href="/forgot") Forgot password]
 
-	//- block extra-scripts
-	//- 	script(src="/js/register.js")
+		div.col-span-2.text-center
+			button.btn.primary(type="submit") Sign Up
+			a.btn.secondary(href="/oauth/google") Sign Up with Google
+			a.btn.secondary(href="/oauth/github") Sign Up with Github
+
+		div.col-span-2.text-center #[a(href="/login") Log in] | #[a(href="/forgot") Forgot password]

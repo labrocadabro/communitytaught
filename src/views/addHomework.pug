@@ -22,7 +22,7 @@ block content
 			h2.col-span-2.mb-3 Homework Items
 			button#add-hw.col-span-4 Add another item
 			.hw-item
-				if (edit && homework.items.length)
+				if edit && homework.items.length
 					each item, index in homework.items
 						- const hwIndex = index + 1
 						input(type="hidden", name="hwId" value=item._id id=`hwId-${hwIndex}`)
@@ -49,7 +49,7 @@ block content
 			h2.col-span-2.mb-3 Pushwork Items
 			button#add-pw.col-span-4 Add another item
 			.pw-item
-				if (edit && homework.extras.length)
+				if edit && homework.extras.length
 					each extra, index in homework.extras
 						- const pwIndex = index + 1
 						input(type="hidden", name="pwId" value=extra._id id=`pwId-${pwIndex}`)
@@ -68,5 +68,5 @@ block content
 		.col-span-4.mt-3.text-center
 			button(class="btn primary max-w-1/3 mx-auto" type="submit") #{action} Homework
 
-block extra-scripts
+append scripts
 	script(src="/js/addHomework.js")

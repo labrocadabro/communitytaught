@@ -2,7 +2,10 @@ extends layouts/default.pug
 
 block variables
 	- const action = edit ? "Edit" : "Add"
-	- const title = `${action} Class`
+	- title = `${action} Class`
+
+append css
+	link(rel="stylesheet" href="/css/admin.css")
 
 block content
 	form.add-form(action=edit? `/class/edit/${lesson._id}` : "/class/add" method="post")
@@ -40,7 +43,7 @@ block content
 		#timestamps.col-span-4
 			h2.col-span-4.mb-3 Timestamps
 			button#add-timestamp.col-span-4 Add another timestamp
-			if (edit && lesson.timestamps.length)
+			if edit && lesson.timestamps.length
 				each timestamp, index in lesson.timestamps
 					.timestamp
 						label(for=`ts-time-${index}`) Time
@@ -57,5 +60,5 @@ block content
 			button(class="btn primary max-w-1/3 mx-auto" type="submit") #{action} Class
 
 
-block extra-scripts
+append scripts
 	script(src="/js/addLesson.js")

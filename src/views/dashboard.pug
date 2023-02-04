@@ -1,8 +1,19 @@
 extends layouts/default.pug
+include ./mixins/lessonCard.pug
 
 block variables
-	- const title = "Dashboard"
-	- active = "Dashboard"
+	- title = "Dashboard"
+	-app.use( function ( req, res, next ) {
+
+    // rest of your code ...
+
+    res.locals.current_url = req.path;
+
+    // rest of your code ...
+
+	  next();
+
+} ); active = "Dashboard"
 
 block content
 	if(user.admin)
@@ -11,11 +22,12 @@ block content
 		h1.mb-6.mr-auto Your Progress
 		h3.mb-6.text-xl.text-twilight-900.font-medium #{user.username}
 	h2.mb-3 Next Class
-	if lesson.length
-		include ./partials/mixins.pug
-		+lessontable(lesson)
-	else
-		p You've watched all the classes!
+	#next-lesson.w-full.max-w-80
+		if lesson
+			+lessonCard(lesson)
+		else
+			|You've watched all the classes!
 
-block extra-scripts
+
+append scripts
 	script(src="/js/lessonProgress.js")

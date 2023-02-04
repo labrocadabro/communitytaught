@@ -1,7 +1,7 @@
 extends layouts/default.pug
 
 block variables
-	- const title = "Dashboard"
+	- title = "Dashboard"
 	- active = "Account"
 
 block content
@@ -20,7 +20,7 @@ block content
 				br
 				input.mr-2(type="checkbox" id="classesCheckedin" name="classesCheckedin")
 				label(for="classesCheckedin") Mark Classes Checked In
-				button.mt-2(type="submit") Import
+				button.btn.primary.mt-2(type="submit") Import
 			#export-image.w-full.h-auto.max-w-lg
 				img.border.border-gray-700(src="/img/export.png")
 
@@ -34,7 +34,7 @@ block content
 
 	#change-password.settings
 		h3 Password
-		if (user.hasPassword)
+		if user.hasPassword
 			a(href="/change-password" id="change") Change password
 			form(method="post" action="/change-password" id="change-form" style="display:none")
 				div
@@ -80,14 +80,14 @@ block content
 
 	#delete-account.settings
 		h3 Delete Account
-		button#first Delete
+		button#first.btn.secondary.w-40 Delete
 		form(id="delete-form" style="display:none")
 			p.text-red-500 CAUTION. Deleting your account is irreversible. Please enter your email address below to confirm you would like to delete your account:
 			p#wrong.text-red-500
 			input(type="hidden" name="username" id="delete_username" value=user.username)
 			label(for="confirm") Your email:
 			input(type="email" name="confirm" id="delete_confirm")
-			button#second(type="submit") DELETE ACCOUNT
+			button#second.btn.primary.w-60.mt-4(type="submit") DELETE ACCOUNT
 
-block extra-scripts
+append scripts
 	script(src="/js/account.js")

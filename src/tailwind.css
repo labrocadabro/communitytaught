@@ -27,26 +27,62 @@
 	h3 {
 		@apply text-xl font-medium;
 	}
+
+
 }
 @layer components {
+
+	/* BUTTONS */
 	.btn {
-		@apply py-2 px-5 rounded block no-underline mb-2 hover:no-underline w-full;
-	}
+		@apply py-2 px-5 rounded block no-underline mb-2 hover:no-underline w-full text-center;
+	}if (
 	.btn.secondary {
-		@apply border border-pink-800 hover:bg-pink-700 text-pink-800 hover:text-stone-50;
+		@apply border border-pink-800 hover:bg-pink-700 text-pink-800 hover:text-white;
 	}
 	.btn.primary {
-		@apply border border-pink-800 bg-pink-800 hover:bg-pink-700 hover:border-pink-700 text-stone-50;
+		@apply border border-pink-800 bg-pink-800 hover:bg-pink-700 hover:border-pink-700 text-white;
 	}
 
+	/*** HEADER LINKS ***/
+	.nav-link,
+	.account-link {
+		@apply hover:no-underline text-xl sm:text-base md:text-lg  lg:text-xl block rounded-md py-2 text-pink-800;
+	}
+	.nav-link.active,
+	.account-link.active {
+		@apply decoration-twilight-700 underline decoration-4 underline-offset-6 hover:underline;
+	}
+
+	/***  MOBILE MENU  ***/
+	.mobile-menu {
+		@apply pt-20 block absolute top-full w-full h-screen bg-white left-0;
+	}
+	.mobile-menu li {
+		@apply text-center;
+	}
+
+	/* COMPLETED LESSONS/HOMEWORK */
+	.done {
+		@apply opacity-25;
+	}
+
+	/* AUTH FORMS */
 	.auth-form {
-		@apply mt-5 max-w-lg w-full mx-auto border xs:grid p-4 xs:p-10 gap-2 bg-white grid-cols-[auto_1fr] [&>label]:text-right [&>input]:w-full [&>input]:mb-4 [&>input]:xs:mb-0 [&>div]:mt-2;
+		@apply mt-5 max-w-lg w-full mx-auto border xs:grid p-4 xs:p-10 gap-2 bg-white grid-cols-[auto_1fr];
+	}
+	.auth-form label {
+		@apply text-right;
+	}
+	.auth-form input {
+		@apply w-full mb-4 xs:mb-0;
+	}
+	.auth-form div {
+		@apply mt-2;
 	}
 
-	/* border-gray-700 text-black  hover:bg-gray-100 */
+	/* ADD/EDIT FORMS (ADMIN ONLY) */
 	.add-form {
-		@apply mt-5 max-w-5xl mx-auto border grid p-10 gap-2 items-center;
-		grid-template-columns: repeat(4, 1fr);
+		@apply mt-5 max-w-5xl mx-auto border grid p-10 gap-2 items-center grid-cols-[repeat(4,_1fr)];
 	}
 	.add-form label {
 		@apply text-right;
@@ -67,12 +103,10 @@
 	.pw-item:first-of-type {
 		@apply border-0;
 	}
+
+	/* FLASH MESSAGES */
 	.flash {
 		@apply w-full py-2 px-4 mb-4 border text-center font-bold relative;
-	}
-	.flash-close {
-		@apply absolute right-3 cursor-pointer text-3xl;
-		top: 0;
 	}
 	.flash-success {
 		@apply bg-green-100 text-green-700 border-green-700;
@@ -83,81 +117,14 @@
 	.flash-info {
 		@apply bg-blue-100 text-blue-700 border-blue-700;
 	}
-
-	.settings {
-		@apply mb-5;
+	.flash-close {
+		@apply absolute right-3 cursor-pointer text-3xl;
+		top: 0;
 	}
-}
 
-/***** tables *****/
-table {
-	@apply text-center bg-white w-full border-[#a6c9d9] border border-separate border-spacing-0;
-}
-table input {
-	@apply mr-1;
-}
-tr {
-	@apply border-b;
-}
-tr:nth-child(even) {
-	@apply bg-twilight-50/50;
-}
-thead {
-	@apply sticky top-0 z-10;
-}
-thead tr {
-	@apply border-b border-[#a6c9d9];
-}
-th {
-	@apply bg-twilight-100 text-twilight-900 p-3 uppercase border-transparent border;
-	border-bottom: 1px solid #a6c9d9;
-	border-right: 1px dotted #a6c9d9;
-}
-th:last-of-type {
-	border-right: 1px solid transparent;
-}
-td {
-	@apply px-8 py-6 border-r border-b;
-}
-td:first-of-type {
-	@apply font-bold w-40;
-}
-td:last-of-type {
-	@apply border-r-transparent;
-}
-.hw-items,
-.hw-extras {
-	@apply text-left;
-}
-.thumbnail,
-.motivation {
-	max-width: 300px;
-}
-.hw-submit {
-	width: 250px;
-}
-.homework .hw-items li {
-	@apply relative ml-3;
-}
-.homework .required {
-	@apply absolute -left-5 top-1 text-red-800 text-2xl cursor-default;
-}
-.homework .done,
-.lessons .done {
-	@apply opacity-25;
-}
-.submit-button {
-	@apply block mb-2 bg-pink-800 hover:bg-pink-700 text-stone-50 rounded-lg uppercase py-2 hover:no-underline font-bold border border-pink-900 tracking-wider text-xl drop-shadow-md shadow-pink-900;
-}
+	/***** mobile tables *****/
 
-#to-top {
-	@apply fixed bottom-4 right-1 text-pink-800 text-6xl cursor-pointer;
-}
-
-/***** mobile tables *****/
-
-@media screen and (max-width: 768px) {
-	/* Force table to not be like tables anymore */
+	/* @media screen and (max-width: 768px) {
 	table,
 	thead,
 	tbody,
@@ -166,8 +133,6 @@ td:last-of-type {
 	tr {
 		@apply block text-left;
 	}
-
-	/* Hide table headers (but not display: none;, for accessibility) */
 	thead tr {
 		position: absolute;
 		top: -9999px;
@@ -186,7 +151,6 @@ td:last-of-type {
 
 	td:before {
 		@apply font-bold absolute pr-2 text-pink-800 uppercase text-base;
-		/* Top/left values mimic padding */
 		top: 15px;
 		left: 8px;
 		width: 30%;
@@ -224,9 +188,6 @@ td:last-of-type {
 		@apply m-0 p-0;
 	}
 
-	/*
-	Label the data
-	*/
 	.lessons td:nth-of-type(1):before {
 		content: "Class";
 	}
@@ -252,152 +213,91 @@ td:last-of-type {
 	.homework td:nth-of-type(3):before {
 		content: "Submit";
 	}
-}
+}  */
 
-/********* temporary ************/
-#video {
-	max-width: 960px;
-}
-#player {
-	@apply w-full aspect-video;
-}
+	/*** FAQ ACCORDION ***/
+	dl {
+		@apply bg-white py-2 xs:py-4 px-2 xs:px-5 border border-stone-200;
+	}
+	dt {
+		@apply bg-twilight-50 cursor-pointer pt-4 pb-3 px-6 w-full outline-0 transition border border-twilight-300 flex items-center;
+	}
+	dt h3 {
+		@apply text-twilight-900 mr-auto;
+	}
+	dt:last-of-type {
+		@apply mb-0;
+	}
 
-#lessons {
-	@apply grid gap-y-24 gap-x-16;
-	grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
-}
+	dt.acc-opened,
+	dt:hover {
+		@apply bg-twilight-100;
+	}
 
-.card-main-content a:hover img {
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-.card-main-content a:hover h2 {
-	@apply text-pink-900;
-}
-/**** accordion ***/
-dl {
-	@apply bg-white py-2 xs:py-4 px-2 xs:px-5 border border-stone-200;
-}
-dt {
-	@apply bg-twilight-50 cursor-pointer pt-4 pb-3 px-6 w-full outline-0 transition border border-twilight-300 flex items-center;
-}
-dt h3 {
-	@apply text-twilight-900 mr-auto;
-}
-dt:last-of-type {
-	@apply mb-0;
-}
+	dt:after {
+		@apply text-2xl font-bold font-awesome text-pink-800;
+		content: "\2b"; /* plus sign */
+	}
 
-dt.acc-opened,
-dt:hover {
-	@apply bg-twilight-100;
-}
+	dt.acc-opened:after {
+		content: "\f068"; /* minus sign */
+	}
 
-dt:after {
-	@apply text-2xl font-bold font-awesome text-pink-800;
-	content: "\2b"; /* plus sign */
-}
+	dd {
+		@apply px-6 bg-stone-50 max-h-0 overflow-hidden opacity-0 mb-2 border border-stone-200;
+		transition: 0.4s ease-in-out;
+	}
+	dd > *:last-child {
+		@apply mb-0;
+	}
 
-dt.acc-opened:after {
-	content: "\f068"; /* minus sign */
-}
+	dd.acc-opened {
+		@apply opacity-100 py-6 mt-1;
+		max-height: 2500px;
+	}
 
-dd {
-	@apply px-6 bg-stone-50 max-h-0 overflow-hidden opacity-0 mb-2 border border-stone-200;
-	transition: 0.4s ease-in-out;
-}
-dd > *:last-child {
-	@apply mb-0;
-}
+	dd ul {
+		@apply list-disc ml-6;
+	}
 
-dd.acc-opened {
-	@apply opacity-100 py-6 mt-1;
-	max-height: 2500px;
-}
+	dd ol {
+		@apply mt-3 ml-8 list-decimal;
+	}
 
-dd ul {
-	@apply list-disc ml-6;
-}
+	/*** RESOURCE PAGE CARDS ***/
 
-dd ol {
-	@apply mt-3 ml-8 list-decimal;
-}
+	#card-container {
+		@apply flex flex-wrap gap-3 md:gap-5 justify-center;
+	}
+	.card {
+		@apply border border-twilight-200 bg-white w-full max-w-[400px] xs:w-[300px] md:w-[350px] flex flex-col drop-shadow-[0_0_7px_rgba(34,101,129,0.1)] hover:drop-shadow-[0_0_7px_rgba(34,101,129,0.25)] overflow-hidden;
+	}
+	.card:hover {
+	}
+	.card a {
+		@apply block h-full no-underline text-center;
+	}
+	.card h2 {
+		@apply xs:text-xl md:text-[1.75rem] px-8 pt-10;
+	}
+	.card span {
+		@apply text-twilight-900 px-8 pb-10 block;
+	}
+	.card img {
+		@apply shadow-[0_2px_10px_0_rgba(0,0,0,0.1)];
+	}
 
-/*** menu ***/
-
-nav a {
-	@apply hover:no-underline text-xl sm:text-base md:text-lg  lg:text-xl block rounded-md py-2 text-[#ffffff];
+	/********* temporary ************/
+	#video {
+		max-width: 960px;
+	}
+	#player {
+		@apply w-full aspect-video;
+	}
+	.card-main-content a:hover img {
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	}
+	.card-main-content a:hover h2 {
+		@apply text-pink-900;
+	}
 }
-/* nav a.active {
-	@apply decoration-twilight-700 underline decoration-4 underline-offset-6 hover:underline;
-} */
-
-.menu-opened {
-	@apply pt-20 block absolute top-full w-full h-screen bg-white left-0;
-}
-.menu-opened li {
-	@apply text-center;
-}
-
-.dropdown {
-	position: relative;
-	display: inline-block;
-}
-
-.dropdown-content {
-	display: none;
-	position: absolute;
-	background-color: #f9f9f9;
-	min-width: 160px;
-	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-	padding: 12px 16px;
-	z-index: 1;
-}
-
-.dropdown:hover .dropdown-content {
-	display: block;
-}
-
-/*** cards on resouces page **/
-
-#card-container {
-	@apply flex flex-wrap gap-3 md:gap-5 justify-center;
-}
-.card {
-	@apply border border-twilight-200 bg-white w-full max-w-[400px] xs:w-[300px] md:w-[350px] flex flex-col drop-shadow-[0_0_7px_rgba(34,101,129,0.1)] hover:drop-shadow-[0_0_7px_rgba(34,101,129,0.25)] overflow-hidden;
-}
-.card:hover {
-}
-.card a {
-	@apply block h-full no-underline text-center;
-}
-.card h2 {
-	@apply xs:text-xl md:text-[1.75rem] px-8 pt-10;
-}
-.card span {
-	@apply text-twilight-900 px-8 pb-10 block;
-}
-.card img {
-	@apply shadow-[0_2px_10px_0_rgba(0,0,0,0.1)];
-}
-
-/* lesson page tabs */
-
-/* .lesson-tab {
-	@apply fixed right-0 border border-twilight-800 p-2 pl-4 border-r-0 text-twilight-800 cursor-pointer;
-	box-shadow: 0 0 5px rgba(34, 101, 129, 0.5);
-}
-.lesson-tab.notes {
-	@apply top-40;
-}
-.lesson-tab.timestamps {
-	@apply top-56;
-}
-.side-panel {
-	position: fixed;
-	height: 100vh;
-	top: 0;
-	right: calc(-50% + 30px);
-	border-left: 1px solid red;
-	width: 50%;
-	background: white;
-} */

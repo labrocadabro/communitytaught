@@ -1,0 +1,43 @@
+include ./classNo.pug
+
+mixin homeworkList(homework)
+	each hw in homework
+		div(id=hw._id class="grid grid-cols-[220px_1fr_200px] mb-12" class=(hw.submitted || !hw.submit.length) && hw.items.every(item => item.done) ? "done" : "")
+			.hw-classNo
+				h2
+					+classNo(hw.classNo)
+
+				if loggedIn && user.admin
+					a.ml-2(href=`/hw/edit/${hw._id}`)
+						i.fas.fa-pencil
+			.hw-items
+				if hw.items.length
+					ul
+						each item in hw.items
+							li.relative.ml-3
+								if item.required
+									span.required(title="Must submit" class="absolute -left-5 top-1 text-red-800 text-2xl cursor-default") *
+								if loggedIn
+									input.item.mr-3(type="checkbox" id=`item-${item._id}` autocomplete="off" checked=item.done data-hw=hw._id)
+								label(for=`item-${item._id}`) #{item.class !== hw.classNo[0] ? `(Class ${item.class}) ` : ""}!{item.description}
+					if hw.extras.length
+						h3 Extras
+						ul
+							each extra in hw.extras
+								li.ml-3
+									if loggedIn
+										input.extra.mr-3(type="checkbox" id=`extra-${extra._id}` autocomplete="off" checked=extra.done)
+										label(for=`item-${extra._id}` ) !{extra.description}
+									else
+										| !{extra.description}
+			.hw-due
+				h2.mb-4.text-twilight-800 Due Class #{hw.dueNo}
+				if hw.submit
+					a.btn.primary.uppercase.tracking-wider.font-bold.text-xl(href=hw.submit target="_blank") Submit
+					if loggedIn
+							input.submitted.mr-3(type="checkbox" id=`submit-${hw._id}` autocomplete="off" checked=hw.submitted data-hw=hw._id)
+							label(for=`submit-${hw._id}`) Submitted
+
+
+				if hw.note
+						p.italic.text-sm.mt-2 !{hw.note}

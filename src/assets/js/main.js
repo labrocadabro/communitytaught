@@ -22,7 +22,7 @@ accountDropdown &&
 function openMobileMenu() {
 	const closed = desktopMenu.classList.contains("hidden");
 	if (closed) {
-		desktopMenu.classList.add("menu-opened");
+		desktopMenu.classList.add("mobile-menu");
 		desktopMenu.classList.remove("hidden");
 		if (accountDropdown) {
 			accountDropdown.classList.remove("hidden", "absolute", "border");
@@ -33,7 +33,7 @@ function openMobileMenu() {
 		document.querySelector("main").style.display = "none";
 		document.body.classList.add("fixed");
 	} else {
-		desktopMenu.classList.remove("menu-opened");
+		desktopMenu.classList.remove("mobile-menu");
 		desktopMenu.classList.add("hidden");
 		if (accountDropdown) {
 			accountDropdown.classList.add("hidden", "absolute", "border");

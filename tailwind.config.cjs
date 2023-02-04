@@ -38,6 +38,7 @@ module.exports = {
 			},
 			maxWidth: {
 				"1/3": "33%",
+				80: "20rem",
 			},
 		},
 	},

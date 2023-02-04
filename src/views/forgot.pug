@@ -1,7 +1,7 @@
 extends layouts/default.pug
 
 block variables
-	- const title = "Forgot Password"
+	- title = "Forgot Password"
 
 block content
 	form.auth-form.forgot(action="/email/forgot" method="post")

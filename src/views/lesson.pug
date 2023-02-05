@@ -69,12 +69,14 @@ block content
 	if assigned.length
 		h2.mt-10.mb-3 Homework Assigned
 		each homework in assigned
-			+homework(homework)
+			.mb-6(class="shadow-[0_2px_10px_0_rgba(0,0,0,0.1)]")
+				+homework(homework)
 
 	if due.length
 		h2.mt-10.mb-3 Homework Due
-		each homework in assigned
-			+homework(homework)
+		each homework in due
+			.mb-6(class="shadow-[0_2px_10px_0_rgba(0,0,0,0.1)]")
+				+homework(homework)
 
 append scripts
 	if loggedIn

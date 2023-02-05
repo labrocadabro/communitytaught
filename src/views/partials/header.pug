@@ -1,11 +1,11 @@
-header(class="px-5 sm:px-8 lg:px-14 py-3 sm:py-5 bg-stone-50 border-b border-stone-200 relative shadow-[3px_3px_15px_-12px_rgba(0,0,0,.3)]")
+header.sticky.top-0.z-10.px-5.py-3.bg-stone-50.border-b.border-stone-200(class="sm:px-8 lg:px-14 sm:py-5 shadow-[3px_3px_15px_-12px_rgba(0,0,0,.3)]")
 	nav.flex.items-baseline.justify-between
 		h3.m-0
 			a(class="p-0 m-0 text-twilight-900 no-underline text-3xl sm:text-2xl lg:text-3xl font-logo" href="/") #communitytaught
 		ul#mobile-menu(class="sm:hidden text-3xl text-pink-800")
 			li
 				i.fas.fa-bars
-		ul#desktop-menu(class="hidden sm:flex gap-2 lg:gap-4 text-xl font-medium")
+		ul#desktop-menu(class="hidden sm:flex gap-2 md:gap-4 lg:gap-6 text-xl font-medium")
 			li
 				a.nav-link(href="/" class = active === "Home" ? "active" : "") Home
 			if loggedIn

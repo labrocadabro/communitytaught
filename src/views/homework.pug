@@ -13,6 +13,7 @@ block content
 	h1.mb-4 All Homework
 	.stripe-rows
 		each hw in homework
+			//- .mb-6(class="shadow-[0_2px_10px_0_rgba(0,0,0,0.1)]")
 			+homework(hw)
 
 	include ./partials/to-top.pug

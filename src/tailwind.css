@@ -202,6 +202,6 @@
 
 @layer utilities {
 	.stripe-rows {
-		@apply [&>:nth-of-type(odd)]:bg-stone-100;
+		@apply [&>:nth-of-type(even)]:bg-stone-200;
 	}
 }

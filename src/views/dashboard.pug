@@ -3,17 +3,7 @@ include ./mixins/lessonCard.pug
 
 block variables
 	- title = "Dashboard"
-	-app.use( function ( req, res, next ) {
-
-    // rest of your code ...
-
-    res.locals.current_url = req.path;
-
-    // rest of your code ...
-
-	  next();
-
-} ); active = "Dashboard"
+	- active = "Dashboard"
 
 block content
 	if(user.admin)

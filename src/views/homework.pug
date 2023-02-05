@@ -1,5 +1,5 @@
 extends layouts/default.pug
-include ./mixins/homeworkList.pug
+include ./mixins/homework.pug
 
 block variables
 	- title = "100Devs Homework Tracker"
@@ -11,7 +11,9 @@ block content
 		include ./partials/flash-nologin.pug
 
 	h1.mb-4 All Homework
-	+homeworkList(homework)
+	.stripe-rows
+		each hw in homework
+			+homework(hw)
 
 	include ./partials/to-top.pug
 

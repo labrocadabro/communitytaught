@@ -2,8 +2,8 @@ include ./classNo.pug
 
 mixin lessonCard(lesson)
 	.lesson-card.border.relative(class=(lesson.watched && lesson.checkedIn) || !lesson.videoId ? "done" : "" id=lesson._id)
-		.card-top-banner.bg-twilight-50.px-3.py-2
 
+		.card-top-banner.bg-twilight-50.px-3.py-2
 			h3.text-twilight-900.text-2xl
 				+classNo(lesson.classNo)
 
@@ -22,9 +22,11 @@ mixin lessonCard(lesson)
 						else
 							input.checkedin.hidden(type="checkbox" id="checkedin-" + lesson._id autocomplete="off" checked)
 							| No Check In
-		.card-main-content.py-4.px-6.mb-12
+
+		.card-main-content.py-4.px-6.mb-12.group
 			a(href=`/class/${lesson.permalink}` class="hover:no-underline")
-				img.w-full.mb-2(src=lesson.thumbnail)
-				h2 #{lesson.title}
+				img.w-full.mb-2(src=lesson.thumbnail class="group-hover:shadow-[0_0_10px_rgba(0,_0,_0,_0.2)]")
+				h2(class="group-hover:text-pink-900") #{lesson.title}
+
 			a.absolute.bottom-3(href=`/class/${lesson.permalink}`) More Info
 			a.absolute.bottom-3.right-6.text-right(href=`https://youtu.be/${lesson.video}`) Youtube

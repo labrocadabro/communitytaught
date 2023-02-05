@@ -1,7 +1,7 @@
 extends layouts/default.pug
 include ./mixins/classNo.pug
 include ./mixins/lessonLinks.pug
-include ./mixins/homeworkList.pug
+include ./mixins/homework.pug
 
 block variables
 	- title = lesson.title
@@ -68,11 +68,13 @@ block content
 
 	if assigned.length
 		h2.mt-10.mb-3 Homework Assigned
-		+homeworkList(assigned)
+		each homework in assigned
+			+homework(homework)
 
 	if due.length
 		h2.mt-10.mb-3 Homework Due
-		+homeworkList(due)
+		each homework in assigned
+			+homework(homework)
 
 append scripts
 	if loggedIn

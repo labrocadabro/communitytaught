@@ -119,99 +119,6 @@
 		top: 0;
 	}
 
-	/***** mobile tables *****/
-
-	/* @media screen and (max-width: 768px) {
-	table,
-	thead,
-	tbody,
-	th,
-	td,
-	tr {
-		@apply block text-left;
-	}
-	thead tr {
-		position: absolute;
-		top: -9999px;
-		left: -9999px;
-	}
-
-	tr {
-		@apply border border-stone-300;
-	}
-
-	td,
-	td:first-of-type {
-		@apply border-0 border-b border-stone-200 w-full relative;
-		padding-left: 35%;
-	}
-
-	td:before {
-		@apply font-bold absolute pr-2 text-pink-800 uppercase text-base;
-		top: 15px;
-		left: 8px;
-		width: 30%;
-		padding-right: 10px;
-		white-space: nowrap;
-	}
-
-	.homework td {
-		padding-left: 25%;
-	}
-
-	.homework td:before {
-		width: 20%;
-	}
-
-	.hw-submit {
-		@apply w-auto text-center;
-	}
-	.hw-submit:before,
-	.thumbnail:before {
-		@apply text-left;
-	}
-	.thumbnail,
-	.motivation {
-		@apply max-w-full;
-	}
-	.thumbnail {
-		@apply text-center;
-	}
-	.submit-button {
-		@apply mx-6;
-	}
-
-	td ul {
-		@apply m-0 p-0;
-	}
-
-	.lessons td:nth-of-type(1):before {
-		content: "Class";
-	}
-	.lessons td:nth-of-type(2):before {
-		content: "Done";
-	}
-	.lessons td:nth-of-type(3):before {
-		content: "Video";
-	}
-	.lessons td:nth-of-type(4):before {
-		content: "Motivation";
-	}
-	.lessons td:nth-of-type(5):before {
-		content: "Check In";
-	}
-
-	.homework td:nth-of-type(1):before {
-		content: "Class";
-	}
-	.homework td:nth-of-type(2):before {
-		content: "Work";
-	}
-	.homework td:nth-of-type(3):before {
-		content: "Submit";
-	}
-}  */
-
 	/*** FAQ ACCORDION ***/
 	dl {
 		@apply bg-white py-2 xs:py-4 px-2 xs:px-5 border border-stone-200;
@@ -291,10 +198,10 @@
 	#player {
 		@apply w-full aspect-video;
 	}
-	.card-main-content a:hover img {
-		box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-	}
-	.card-main-content a:hover h2 {
-		@apply text-pink-900;
+}
+
+@layer utilities {
+	.stripe-rows {
+		@apply [&>:nth-of-type(odd)]:bg-stone-100;
 	}
 }

@@ -27,15 +27,12 @@
 	h3 {
 		@apply text-xl font-medium;
 	}
-
-
 }
 @layer components {
-
 	/* BUTTONS */
 	.btn {
 		@apply py-2 px-5 rounded block no-underline mb-2 hover:no-underline w-full text-center;
-	}if (
+	}
 	.btn.secondary {
 		@apply border border-pink-800 hover:bg-pink-700 text-pink-800 hover:text-white;
 	}
@@ -68,15 +65,15 @@
 
 	/* AUTH FORMS */
 	.auth-form {
-		@apply mt-5 max-w-lg w-full mx-auto border xs:grid p-4 xs:p-10 gap-2 bg-white grid-cols-[auto_1fr];
+		@apply mt-5 max-w-sm w-full mx-auto gap-2 bg-white;
 	}
 	.auth-form label {
-		@apply text-right;
+		@apply w-full block text-base uppercase;
 	}
 	.auth-form input {
-		@apply w-full mb-4 xs:mb-0;
+		@apply w-full mb-3 border-stone-300;
 	}
-	.auth-form div {
+	.auth-form button {
 		@apply mt-2;
 	}
 

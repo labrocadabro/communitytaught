@@ -6,11 +6,10 @@ block variables
 block content
 	form.auth-form.forgot(action="/email/forgot" method="post")
 
-		h1.col-span-2 Forgot Password
+		h1 Forgot Password
 
 		label(for="email") Email
 		input#email(type="email", name="username" placeholder="Ex: john@smith.com")
 
-		div.col-span-2.text-center
-			button.btn.primary(type="submit") Send Reset Link
-		span.col-span-2.text-center #[a(href="/register") Create an account] | #[a(href="/login") Log In]
+		button.btn.primary(type="submit") Send Reset Link
+		div.text-center.text-base #[a(href="/register") Create an account] | #[a(href="/login") Log In]

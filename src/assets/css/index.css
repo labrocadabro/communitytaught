@@ -625,12 +625,6 @@ h3 {
   font-weight: 500;
 }
 
-/* COMPLETED LESSONS/HOMEWORK */
-
-.done {
-  opacity: 0.25;
-}
-
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -776,7 +770,7 @@ h3 {
   background-color: rgb(190 24 93 / var(--tw-bg-opacity));
 }
 
-/*** HEADER MENU ***/
+/*** HEADER LINKS ***/
 
 .nav-link,
 	.account-link {
@@ -832,7 +826,9 @@ h3 {
   text-decoration-line: underline;
 }
 
-.menu-opened {
+/***  MOBILE MENU  ***/
+
+.mobile-menu {
   position: absolute;
   top: 100%;
   left: 0px;
@@ -844,8 +840,14 @@ h3 {
   padding-top: 5rem;
 }
 
-.menu-opened li {
+.mobile-menu li {
   text-align: center;
+}
+
+/* COMPLETED LESSONS/HOMEWORK */
+
+.done {
+  opacity: 0.25;
 }
 
 /* AUTH FORMS */
@@ -855,38 +857,28 @@ h3 {
   margin-right: auto;
   margin-top: 1.25rem;
   width: 100%;
-  max-width: 32rem;
-  grid-template-columns: auto 1fr;
+  max-width: 24rem;
   gap: 0.5rem;
-  border-width: 1px;
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  padding: 1rem;
-}
-
-@media (min-width: 640px) {
-  .auth-form {
-    display: grid;
-    padding: 2.5rem;
-  }
 }
 
 .auth-form label {
-  text-align: right;
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  text-transform: uppercase;
 }
 
 .auth-form input {
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   width: 100%;
+  --tw-border-opacity: 1;
+  border-color: rgb(214 211 209 / var(--tw-border-opacity));
 }
 
-@media (min-width: 640px) {
-  .auth-form input {
-    margin-bottom: 0px;
-  }
-}
-
-.auth-form div {
+.auth-form button {
   margin-top: 0.5rem;
 }
 
@@ -1775,6 +1767,11 @@ dd ol {
 .text-6xl {
   font-size: 3.75rem;
   line-height: 1;
+}
+
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 .font-bold {

@@ -7,7 +7,7 @@ block variables
 block content
 	form.auth-form(action="/register" method="post")
 
-		h1.col-span-2 Sign Up
+		h1 Sign Up
 
 		label(for="email") Email
 		input#email(type="email", name="username" placeholder="Ex: john@smith.com")
@@ -18,9 +18,8 @@ block content
 		label(for="conf") Confirm
 		input#conf(type="password", name="confirm" placeholder="Reenter password")
 
-		div.col-span-2.text-center
-			button.btn.primary(type="submit") Sign Up
-			a.btn.secondary(href="/oauth/google") Sign Up with Google
-			a.btn.secondary(href="/oauth/github") Sign Up with Github
+		button.btn.primary(type="submit") Sign Up
+		a.btn.secondary(href="/oauth/google") Sign Up with Google
+		a.btn.secondary(href="/oauth/github") Sign Up with Github
 
-		div.col-span-2.text-center #[a(href="/login") Log in] | #[a(href="/forgot") Forgot password]
+		div.text-center.text-base #[a(href="/login") Log in] | #[a(href="/forgot") Forgot password]

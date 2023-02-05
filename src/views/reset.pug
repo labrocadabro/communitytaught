@@ -8,7 +8,7 @@ block content
 		input(type="hidden" name="username" value=email)
 		input(type="hidden" name="token" value=token)
 
-		h1.col-span-2 Reset Password
+		h1 Reset Password
 
 		label(for="pwd") Password
 		input#pwd(type="password", name="password" placeholder="Enter password")
@@ -16,5 +16,4 @@ block content
 		label(for="conf") Confirm
 		input#conf(type="password", name="confirm" placeholder="Reenter password")
 
-		div.col-span-2.text-center
-			button.btn.primary(type="submit") Reset Password
+		button.btn.primary(type="submit") Reset Password

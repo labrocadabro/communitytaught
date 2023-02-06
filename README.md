@@ -14,7 +14,7 @@ This app was built from scratch using my [authentication boilerplate](https://gi
 
 ## How to Contribute:
 
-I build the website without really taking collaboration into account and the project needs some work in terms of both documentation and processes. I am in the proess of getting that built out, but in the meantime, here are the basic steps to get the project up and running locally:
+I build the website without really taking collaboration into account and the project needs some work in terms of both documentation and processes. I am in the process of getting that built out, but in the meantime, here are the basic steps to get the project up and running locally:
 
 - fork the repository
 - create a MongoDB database on your account to store the data

@@ -30,4 +30,4 @@ mixin lessonCard(lesson)
 
 			a.absolute.bottom-3(href=`/class/${lesson.permalink}`) More Info
 			if lesson.videoId && !lesson.twitchVideo
-				a.absolute.bottom-3.right-6.text-right(href=`https://youtu.be/${lesson.video}`) Youtube
+				a.absolute.bottom-3.right-6.text-right(href=`https://youtu.be/${lesson.videoId}`) Youtube

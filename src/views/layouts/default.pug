@@ -33,7 +33,7 @@ html.scroll-smooth
 		link(rel="stylesheet" href="/css/index.css")
 
 	body.flex.flex-col.min-h-screen.text-stone-800.text-lg.font-main
-		if mode === "dev"
+		if env === "development"
 			.flash.flash-error DEVELOPMENT SERVER
 
 		include ../partials/header.pug

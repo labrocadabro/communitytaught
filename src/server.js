@@ -31,11 +31,6 @@ morgan(":method :url :status :res[content-length] - :response-time ms");
 const app = express();
 const port = process.env.PORT;
 
-app.use((req, res, next) => {
-	res.locals.current_url = req.path;
-	next();
-});
-
 app.set("views", "./src/views");
 app.set("view engine", "pug");
 
@@ -59,6 +54,11 @@ passport.use(github);
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+app.use((req, res, next) => {
+	res.locals.current_url = req.path;
+	res.locals.env = process.env.NODE_ENV;
+	next();
+});
 app.use(auth);
 app.use(flash);
 

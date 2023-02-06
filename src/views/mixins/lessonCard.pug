@@ -29,4 +29,5 @@ mixin lessonCard(lesson)
 				h2(class="group-hover:text-pink-900") #{lesson.title}
 
 			a.absolute.bottom-3(href=`/class/${lesson.permalink}`) More Info
-			a.absolute.bottom-3.right-6.text-right(href=`https://youtu.be/${lesson.video}`) Youtube
+			if lesson.videoId && !lesson.twitchVideo
+				a.absolute.bottom-3.right-6.text-right(href=`https://youtu.be/${lesson.video}`) Youtube

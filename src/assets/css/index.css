@@ -1401,6 +1401,10 @@ dd ol {
   display: flex;
 }
 
+.table {
+  display: table;
+}
+
 .grid {
   display: grid;
 }
@@ -1854,6 +1858,10 @@ dd ol {
 }
 
 @media (min-width: 768px) {
+  .sm\:mb-4 {
+    margin-bottom: 1rem;
+  }
+
   .sm\:flex {
     display: flex;
   }
@@ -1920,6 +1928,10 @@ dd ol {
 @media (min-width: 1024px) {
   .lg\:gap-6 {
     gap: 1.5rem;
+  }
+
+  .lg\:gap-4 {
+    gap: 1rem;
   }
 
   .lg\:px-14 {

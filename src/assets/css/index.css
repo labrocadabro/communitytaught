@@ -1530,6 +1530,10 @@ dd ol {
        column-gap: 4rem;
 }
 
+.gap-y-12 {
+  row-gap: 3rem;
+}
+
 .scroll-smooth {
   scroll-behavior: smooth;
 }
@@ -1862,8 +1866,16 @@ dd ol {
     display: none;
   }
 
+  .sm\:w-full {
+    width: 100%;
+  }
+
   .sm\:flex-row {
     flex-direction: row;
+  }
+
+  .sm\:gap-y-24 {
+    row-gap: 6rem;
   }
 
   .sm\:px-8 {

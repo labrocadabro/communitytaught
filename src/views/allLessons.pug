@@ -11,7 +11,7 @@ block content
 
 	h1.mb-4 All Classes
 
-	#lessons.grid.gap-y-24.gap-x-16(class="grid-cols-[repeat(auto-fill,_minmax(285px,_1fr))]")
+	#lessons.grid.gap-y-12.gap-x-16(class="sm:gap-y-24 grid-cols-[repeat(auto-fill,_minmax(285px,_1fr))]")
 		each lesson in lessons
 			+lessonCard(lesson)
 

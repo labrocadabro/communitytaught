@@ -1,0 +1,15 @@
+mixin homeworkItems(items, item_type, hw_id, show_classNo)
+	ul
+		each item in items
+			li.relative.ml-3
+				if item.required
+					span.required.absolute.top-1.text-red-800.text-2xl.cursor-default(class="-left-5" title="Must submit") *
+				else if !loggedIn && !item.required
+					span.absolute.text-2xl.cursor-default(class="-left-5 -top-[2px] text-stone-400/80") &#x2022;
+
+				if loggedIn
+					input.mr-3(class=item_type type="checkbox" id=`${item_type}-${item._id}` autocomplete="off" checked=item.done data-hw=hw_id)
+				label(for=`${item_type}-${item._id}`)
+					|!{item.description}
+					if show_classNo
+						span.uppercase.text-xs.text-stone-500.ml-2 Class #{item.class}

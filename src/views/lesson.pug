@@ -1,95 +1,89 @@
 extends layouts/default.pug
+include ./mixins/classNo.pug
+include ./mixins/lessonLinks.pug
+include ./mixins/homework.pug
 
 block variables
-	- const title = lesson.title
+	- title = lesson.title
 	- active = "Classes"
 	- const watched = lesson.watched ? "checked" : ""
+	- const formattedDates = lesson.dates.map(date => date.toLocaleDateString('en-US', {day: "numeric", month: "short", year: "numeric"})).join(' / ')
 
 block content
-	if (!loggedIn)
+	if !loggedIn
 		include ./partials/flash-nologin.pug
+
 	div(class="sm:flex block justify-between items-baseline")
-		h1(class="mb-2 sm:mb-4 text-center sm:text-left") #{lesson.classNo[0] ? `Class ${lesson.classNo.join(', ')}` : "Super Review" }: #{lesson.title}
-			if (loggedIn && user.admin)
-				a(href=`/class/edit/${lesson._id}`)
-					i.fas.fa-pencil
-		h3(class="mb-4 text-center sm:text-left text-twilight-800 whitespace-nowrap")   #{`${lesson.dates.map(date => date.toLocaleDateString('en-US', {day: "numeric", month: "short", year: "numeric"})).join(' / ')}`}
+		h1
+			+classNo(lesson.classNo)
+			|: #{lesson.title}
+			if loggedIn && user.admin
+				a(href=`/class/edit/${lesson._id}`) #[i.fas.fa-pencil]
+
+		h3(class="mb-4 text-center sm:text-left text-twilight-800 whitespace-nowrap")   #{`${formattedDates}`}
+
 	if lesson.note
 		p(class="mb-3 text-center sm:text-left") !{lesson.note}
 
 	#video-container(class="block text-center sm:text-left mx-auto sm:grid grid-cols-3 gap-10 items-center")
 		#video.col-span-2
 			#player
-				if (!lesson.videoId)
+				if !lesson.videoId
 					img(src="/img/thumbnails/no-stream-lg.png")
 			.flex
 				.flex-1
-					if (prev)
+					if prev
 						h3.text-left
 							a(href="/class/" + prev) Previous Class
 				.flex-1.text-center
 					h3
 						a(href="/class/all") Class List
 				.flex-1.text-right
-					if (next)
+					if next
 						h3
 							a(href="/class/" + next) Next Class
 		#info
-			if (loggedIn)
-				h3.flex.flex-wrap
-					if (lesson.videoId.length)
+			if loggedIn
+				if lesson.videoId
+					input.watched.mr-2.mb-1(type="checkbox" id="watched-" + lesson._id autocomplete="off" checked=lesson.watched)
+					label.mr-4.text-pink-800.text-xl.font-medium(for="watched-" + lesson._id) Watched
 
-					label.mr-4(for="watched-" + lesson._id)
-						input.watched.mr-2(type="checkbox" id="watched-" + lesson._id autocomplete="off" checked=lesson.watched)
-						| Watched
+				if lesson.checkin.length
+					input.checkedin.mr-2.mb-1(type="checkbox" id="checkedin-" + lesson._id autocomplete="off" checked=lesson.checkedIn)
+					label.text-pink-800.text-xl.font-medium(for="checkedin-" + lesson._id) Checked In
 
-					if (lesson.checkin.length && lesson.checkin[0].length)
-						label(for="checkedin-" + lesson._id)
-							input.checkedin.mr-2(type="checkbox" id="checkedin-" + lesson._id autocomplete="off" checked=lesson.checkedIn)
-							| Checked In
 			.mb-3(class="mt-3")
-				if (lesson.checkin.length)
-					if (lesson.checkin.length > 1)
-						p
-							each checkin, index in lesson.checkin
-								| #[a(href=checkin target="_blank") Check In #{index + 1}]
-								if (index < lesson.checkin.length - 1)
-									span &nbsp;|&nbsp;
-					else if (lesson.checkin[0].length)
-						p #[a(href=lesson.checkin[0] target="_blank") Check In]
-				if (lesson.materials)
+				p
+					+lessonLinks(lesson.checkin, "Check In")
+
+				p
+					+lessonLinks(lesson.slides, "Slides")
+
+				if lesson.materials
 					p #[a(href=lesson.materials  target="_blank") Follow-Along Materials]
-				if (lesson.slides.length)
-					if (lesson.slides.length > 1)
-						p
-							each slide, index in lesson.slides
-								| #[a(href=slide target="_blank") Slides #{index + 1}]
-								if (index < lesson.slides.length - 1)
-									span &nbsp;|&nbsp;
-					else if (lesson.slides[0].length)
-						p #[a(href=lesson.slides[0] target="_blank") Slides]
-	if !lesson.twitchVideo
+
+	if lesson.videoId && !lesson.twitchVideo
 		h3.mt-8 Feed the algorithm and spread the word!
 		p #[a(href=`https://www.youtube.com/watch?v=${lesson.videoId}` target="_blank") Like, comment and subscribe on Youtube]
+
 	if assigned.length
 		h2.mt-10.mb-3 Homework Assigned
-		include ./partials/mixins.pug
-		+hwtable(assigned)
+		each homework in assigned
+			.mb-6(class="shadow-[0_2px_10px_0_rgba(0,0,0,0.1)]")
+				+homework(homework)
+
 	if due.length
 		h2.mt-10.mb-3 Homework Due
-		include ./partials/mixins.pug
-		+hwtable(due)
-	//- .lesson-tab.notes(title="Take notes")
-	//- 	i.fa.fa-pencil
-	//- .lesson-tab.timestamps(title="Timestamps")
-	//- 	i.fa.fa-clock
-	//- .side-panel Test Content
+		each homework in due
+			.mb-6(class="shadow-[0_2px_10px_0_rgba(0,0,0,0.1)]")
+				+homework(homework)
 
-block extra-scripts
+append scripts
 	if loggedIn
 		script(src="/js/hwDone.js")
 		script(src="/js/hwProgress.js")
 		script(src="/js/lessonProgress.js")
+
 	if lesson.videoId && !lesson.twitchVideo
 		script.
 			var tag = document.createElement('script');
@@ -106,6 +100,7 @@ block extra-scripts
 			//- 	var object = [ 0, 320 ];
 			//- 	player.seekTo(object[slideNum]);
 			//- }
+
 	else if lesson.twitchVideo
 		script(src="https://player.twitch.tv/js/embed/v1.js")
 		script.

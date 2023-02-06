@@ -1,0 +1,11 @@
+mixin lessonLinks(links, text)
+	case links.length
+		when 0
+			- break
+		when 1
+			a(href=links[0] target="_blank") #{text}
+		default
+			each checkin, index in links
+				a(href=checkin target="_blank") #{text} #{index + 1}
+				if index < links.length - 1
+					|&nbsp;|&nbsp;

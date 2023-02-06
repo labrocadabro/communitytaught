@@ -1,0 +1,33 @@
+include ./classNo.pug
+include ./homeworkItems.pug
+
+mixin homework(hw)
+	- function isDone(hw) {
+	-		return (hw.submitted || !hw.submit.length) && hw.items.every(item => item.done)
+	- }
+
+	div.grid.grid-cols-1.p-6(id=hw._id class="md:grid-cols-[220px_1fr_200px]" class=isDone(hw) ? "done" : "")
+		.hw-classNo
+			h2
+				+classNo(hw.classNo)
+
+			if loggedIn && user.admin
+				a.ml-2(href=`/hw/edit/${hw._id}`)
+					i.fas.fa-pencil
+		.hw-items.pr-12
+			+homeworkItems(hw.items, "item", hw._id, hw.classNo.length > 1)
+			if hw.extras.length
+				h3.mt-2(class="-ml-3") Extras
+				+homeworkItems(hw.extras, "extra", hw_id, hw.classNo.length > 1)
+
+		.hw-due
+			h2.mb-4.text-twilight-800 Due Class #{hw.dueNo}
+			if hw.submit
+				a.btn.primary.uppercase.tracking-wider.font-bold.text-xl(class="w-1/2 xs:w-1/3 md:w-full" href=hw.submit target="_blank") Submit
+				if loggedIn
+						input.submitted.mr-3(type="checkbox" id=`submit-${hw._id}` autocomplete="off" checked=hw.submitted data-hw=hw._id)
+						label(for=`submit-${hw._id}`) Submitted
+
+
+			if hw.note
+					p.italic.text-sm.mt-2 !{hw.note}

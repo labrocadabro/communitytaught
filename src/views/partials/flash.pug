@@ -1,10 +1,10 @@
-if (flash) 
+if flash
 	div(open role="alert" class="flash flash-" + flash.type)
 		span.flash-close &times;
-		each message in flash.message  
+		each message in flash.message
 			span.block #{message}
-if (user && !user.verified)
-	if (token) 
+if user && !user.verified
+	if token
 		div(role="alert" class="flash flash-info")
 			span.flash-close &times;
 			span A verification email was sent to #{user.username}. Didn't receive it? #[a(href="/email/verify") Resend]

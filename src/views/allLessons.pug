@@ -1,23 +1,23 @@
 extends layouts/default.pug
+include ./mixins/lessonCard.pug
 
 block variables
-	- const title = "Classes"
+	- title = "Classes"
 	- active = "Classes"
 
 block content
-	if (!loggedIn)
+	if !loggedIn
 		include ./partials/flash-nologin.pug
 
 	h1.mb-4 All Classes
 
-	include ./partials/mixins.pug
-	+lessontable(lessons)
+	#lessons.grid.gap-y-12.gap-x-16(class="sm:gap-y-24 grid-cols-[repeat(auto-fill,_minmax(285px,_1fr))]")
+		each lesson in lessons
+			+lessonCard(lesson)
 
-	#to-top
-		i.far.fa-square-caret-up(title="Back to top")
+	include ./partials/to-top.pug
 
-block extra-scripts
-	script(src="/js/toTop.js")
+append scripts
 	if loggedIn
 		script(src="/js/lessonProgress.js")
 		script(src="/js/lessonDone.js")

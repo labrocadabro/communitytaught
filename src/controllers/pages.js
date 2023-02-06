@@ -18,13 +18,12 @@ export const about = (req, res) => {
 
 export const dashboard = async (req, res) => {
 	if (!req.isAuthenticated()) return notLoggedIn(req, res);
-	let lesson = [];
+	let currentLesson;
 	if (req.user.currentClass) {
-		let currentLesson = await Lesson.findById(req.user.currentClass);
+		currentLesson = await Lesson.findById(req.user.currentClass);
 		currentLesson = await getLessonProgress(req.user.id, currentLesson);
-		lesson.push(currentLesson);
 	}
-	res.render("dashboard", { lesson });
+	res.render("dashboard", { lesson: currentLesson });
 };
 
 export const account = (req, res) => {

@@ -1,35 +1,36 @@
-nav.flex.items-baseline.justify-between
-	h3.m-0
-		a(class="p-0 m-0 text-twilight-900 no-underline text-3xl sm:text-2xl lg:text-3xl font-logo" href="/") #communitytaught
-	ul#mobile-menu(class="sm:hidden text-3xl text-pink-800")
-		li
-			i.fas.fa-bars
-	ul#desktop-menu(class="hidden sm:flex gap-2 lg:gap-4 text-xl font-medium")
-		li
-			a(href="/" class = active === "Home" ? "active" : "") Home
-		if loggedIn
+header.sticky.top-0.z-10.px-5.py-3.bg-stone-50.border-b.border-stone-200(class="sm:px-8 lg:px-14 sm:py-5 shadow-[3px_3px_15px_-12px_rgba(0,0,0,.3)]")
+	nav.flex.items-baseline.justify-between
+		h3.m-0
+			a(class="p-0 m-0 text-twilight-900 no-underline text-3xl sm:text-2xl lg:text-3xl font-logo" href="/") #communitytaught
+		ul#mobile-menu(class="sm:hidden text-3xl text-pink-800")
 			li
-					a(href="/dashboard" class = active === "Dashboard" ? "active" : "") Dashboard
-		li
-			a(href="/class/all" class = active === "Classes" ? "active" : "") Classes
-		li
-			a(href="/hw/all" class = active === "Homework" ? "active" : "") Homework
-		li
-			a(href="/resources/" class = active === "Resources" ? "active" : "") Resources
-		if loggedIn
-			li#account-menu.relative
-				.no-mobile.mt-1
-					i(class="text-pink-800/80").fas.fa-user.text-2xl.cursor-pointer
-				ul#account-dropdown(class="hidden absolute z-20 bg-white top-12 -right-5 [&>li]:px-6 text-center shadow-[0_0_25px_-5px_rgba(0,0,0,.3)]")
-					li.no-mobile.cursor-default.py-3.bg-twilight-50 #{user.username}
-					//- li#account-first.pt-2
-					//- 	a(href="/settings" class = active === "Settings" ? "active" : "") Settings
-					li#account-first.pt-2
-						a(href="/account" class = active === "Account" ? "active" : "") Account
-					li#account-last.pb-4
-						a(href="/logout") Sign out
-		else
+				i.fas.fa-bars
+		ul#desktop-menu(class="hidden sm:flex gap-2 md:gap-4 lg:gap-6 text-xl font-medium")
 			li
-				a(href="/register" class = active === "Register" ? "active" : "") Sign up
+				a.nav-link(href="/" class = active === "Home" ? "active" : "") Home
+			if loggedIn
+				li
+						a.nav-link(href="/dashboard" class = active === "Dashboard" ? "active" : "") Dashboard
 			li
-				a(href="/login" class = active === "Login" ? "active" : "") Sign in
+				a.nav-link(href="/class/all" class = active === "Classes" ? "active" : "") Classes
+			li
+				a.nav-link(href="/hw/all" class = active === "Homework" ? "active" : "") Homework
+			li
+				a.nav-link(href="/resources/" class = active === "Resources" ? "active" : "") Resources
+			if loggedIn
+				li#account-menu.relative
+					.no-mobile.mt-1
+						i(class="text-pink-800/80").fas.fa-user.text-2xl.cursor-pointer
+					ul#account-dropdown(class="hidden absolute z-20 bg-white top-12 -right-5 [&>li]:px-6 text-center shadow-[0_0_25px_-5px_rgba(0,0,0,.3)] [&>li a]:text-black")
+						li.no-mobile.cursor-default.py-3.bg-twilight-50 #{user.username}
+						//- li#account-first.pt-2
+						//- 	a.account-link(href="/settings" class = active === "Settings" ? "active" : "") Settings
+						li#account-first.pt-2
+							a.account-link(href="/account" class = active === "Account" ? "active" : "") Account
+						li#account-last.pb-4
+							a.account-link(href="/logout") Sign out
+			else
+				li
+					a.nav-link(href="/login") Log in
+				li
+					a.btn.primary(class="w-1/2 mx-auto sm:w-full" href="/register") Sign up

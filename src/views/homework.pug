@@ -1,22 +1,24 @@
 extends layouts/default.pug
+include ./mixins/homework.pug
 
 block variables
-	- const title = "Homework"
+	- title = "100Devs Homework Tracker"
 	- active = "Homework"
+	- description = "Keep track of all your 100Devs homework easily."
 
 block content
-	if (!loggedIn)
+	if !loggedIn
 		include ./partials/flash-nologin.pug
 
 	h1.mb-4 All Homework
-	include ./partials/mixins.pug
-	+hwtable(homework)
+	.stripe-rows
+		each hw in homework
+			//- .mb-6(class="shadow-[0_2px_10px_0_rgba(0,0,0,0.1)]")
+			+homework(hw)
 
-	#to-top
-		i.far.fa-square-caret-up(title="Back to top")
+	include ./partials/to-top.pug
 
-block extra-scripts
-	script(src="/js/toTop.js")
+append scripts
 	if loggedIn
 		script(src="/js/hwProgress.js")
 		script(src="/js/hwDone.js")

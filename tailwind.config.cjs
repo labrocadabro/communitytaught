@@ -36,6 +36,10 @@ module.exports = {
 			textDecorationThickness: {
 				3: "3px",
 			},
+			maxWidth: {
+				"1/3": "33%",
+				80: "20rem",
+			},
 		},
 	},
 	plugins: [require("@tailwindcss/forms")],

@@ -4,9 +4,6 @@ block variables
 	- const action = edit ? "Edit" : "Add"
 	- title = `${action} Class`
 
-append css
-	link(rel="stylesheet" href="/css/admin.css")
-
 block content
 	form.add-form(action=edit? `/class/edit/${lesson._id}` : "/class/add" method="post")
 		h1.col-span-4 #{action} Class

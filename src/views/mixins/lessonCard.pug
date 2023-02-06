@@ -6,7 +6,8 @@ mixin lessonCard(lesson)
 		.card-top-banner.bg-twilight-50.px-3.py-2
 			h3.text-twilight-900.text-2xl
 				+classNo(lesson.classNo)
-
+				if loggedIn && user.admin
+					a.ml-2(href=`/class/edit/${lesson._id}`) #[i.fas.fa-pencil]
 			if loggedIn
 				.lesson-checks.flex.flex-wrap
 					.lesson-watched.mr-6

@@ -15,6 +15,7 @@ const router = express.Router();
 router.get("/register", auth.showRegister);
 router.get("/login", auth.showLogin);
 router.get("/forgot", auth.showForgot);
+router.get("/reset", auth.showReset);
 
 router.post("/register", auth.register);
 router.post("/login", auth.login);

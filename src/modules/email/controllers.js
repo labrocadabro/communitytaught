@@ -35,8 +35,8 @@ export const verify = async (req, res) => {
 		const email = req.user?.username;
 		if (!email) return res.redirect("/user/dashboard");
 		if (!req.user.verified) {
-			const token = crypto.randomBytes(32).toString("hex");
-			await new Token({ token, email }).save();
+			const token = Token.generate();
+			await Token.saveNew(token, email);
 			const url = `${process.env.DOMAIN}/verify?token=${token}`;
 			await transport.sendMail({
 				from: from,
@@ -49,7 +49,7 @@ export const verify = async (req, res) => {
 	} catch (err) {
 		console.log(err);
 	} finally {
-		res.redirect(req.session.returnTo || "/user/dashboard");
+		res.redirect(req.session.returnTo || "/dashboard");
 	}
 };
 
@@ -66,8 +66,8 @@ export const forgot = async (req, res) => {
 	// will need some logic here to handle 3rd party logins that don't have passwords
 	let token = null;
 	if (user) {
-		token = crypto.randomBytes(32).toString("hex");
-		await new Token({ token, email }).save();
+		token = Token.generate();
+		await Token.saveNew(token, email);
 	}
 	if (token) {
 		const url = `${process.env.DOMAIN}/reset?token=${token}`;

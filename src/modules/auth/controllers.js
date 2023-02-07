@@ -21,6 +21,25 @@ export const showForgot = (req, res) => {
 	else res.render("auth/forgot");
 };
 
+export const showReset = async (req, res) => {
+	try {
+		if (!req.query.token) return res.redirect("/login");
+		const token = await Token.getToken(req.query.token);
+		if (!token) {
+			req.session.flash = {
+				type: "error",
+				message: ["Invalid or expired link."],
+			};
+			return res.redirect("/forgot");
+		}
+		res.render("auth/reset", { email: token.email, token: token.token });
+	} catch (err) {
+		console.log(err);
+		req.session.flash = { type: "error", message: ["Verification error."] };
+		res.redirect("/forgot");
+	}
+};
+
 export const register = async (req, res) => {
 	try {
 		const validationErrors = [];
@@ -106,7 +125,7 @@ export const verify = async (req, res) => {
 	}
 	try {
 		if (!req.query.token) return res.redirect("/user/dashboard");
-		const token = await Token.findOne({ token: req.query.token });
+		const token = Token.getToken(req.query.token);
 		if (!token) {
 			req.session.flash = {
 				type: "error",
@@ -114,17 +133,18 @@ export const verify = async (req, res) => {
 			};
 			return res.redirect("/user/dashboard");
 		}
-		const user = await User.findOne({ username: token.email });
-		if (!user || user.username !== req.user.username) {
+		const isVerified = await token.verify(req.user.username);
+		if (!isVerified) {
 			req.session.flash = {
 				type: "error",
 				message: ["Invalid or expired link."],
 			};
 			return res.redirect("/user/dashboard");
 		}
+		const user = await User.findOne({ username: req.user.username });
 		user.verified = true;
 		await user.save();
-		await Token.findOneAndDelete({ token });
+		await Token.delete(token);
 		req.session.flash = {
 			type: "success",
 			message: ["Your email has been verified."],
@@ -155,7 +175,7 @@ export const reset = async (req, res) => {
 	await user.setPassword(req.body.password);
 	user.hasPassword = true;
 	await user.save();
-	await Token.findOneAndDelete({ token: req.body.token });
+	await Token.delete(req.body.token);
 	req.session.flash = {
 		type: "success",
 		message: ["Password changed successfully."],

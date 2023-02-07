@@ -8,17 +8,17 @@ import { unlinkGithub, unlinkGoogle } from "./routes.js";
 
 export const showLogin = (req, res) => {
 	if (req.isAuthenticated()) res.redirect("/user/dashboard");
-	else res.render("login");
+	else res.render("auth/login");
 };
 
 export const showRegister = (req, res) => {
 	if (req.isAuthenticated()) res.redirect("/user/dashboard");
-	else res.render("register");
+	else res.render("auth/register");
 };
 
 export const showForgot = (req, res) => {
 	if (req.isAuthenticated()) res.redirect("/user/dashboard");
-	else res.render("forgot");
+	else res.render("auth/forgot");
 };
 
 export const register = async (req, res) => {

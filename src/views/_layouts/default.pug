@@ -36,13 +36,13 @@ html.scroll-smooth
 		if env === "development"
 			.flash.flash-error DEVELOPMENT SERVER
 
-		include ../partials/header.pug
+		include ../_partials/header.pug
 
 		main(class="px-5 sm:px-8 lg:px-14 py-4 sm:py-8")
-			include ../partials/flash.pug
+			include ../_partials/flash.pug
 			block content
 
-		include ../partials/footer.pug
+		include ../_partials/footer.pug
 
 
 		block scripts

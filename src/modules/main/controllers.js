@@ -28,9 +28,9 @@ export const reset = async (req, res) => {
 };
 
 export const resources = (req, res) => {
-	res.render("resources/index");
+	res.render("resource/index");
 };
 
 export const resourcePage = (req, res) => {
-	res.render(`resources/${req.params.page}`);
+	res.render(`resource/${req.params.page}`);
 };

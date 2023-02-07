@@ -1,7 +1,7 @@
-extends layouts/default.pug
-include ./mixins/classNo.pug
-include ./mixins/lessonLinks.pug
-include ./mixins/homework.pug
+extends ../_layouts/default.pug
+include ../_mixins/classNo.pug
+include ../_mixins/lessonLinks.pug
+include ../_mixins/homework.pug
 
 block variables
 	- title = lesson.title

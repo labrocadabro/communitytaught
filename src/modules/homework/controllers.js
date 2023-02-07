@@ -22,7 +22,7 @@ export const addEditHomeworkForm = async (req, res) => {
 			.populate(["items", "extras"]);
 		homework.classNo = homework.classNo.join(",");
 	}
-	res.render("addHomework", { edit, homework });
+	res.render("homework/addHomework", { edit, homework });
 };
 
 export const addEditHomework = async (req, res) => {
@@ -130,7 +130,7 @@ export const showHomework = async (req, res) => {
 		.populate(["items", "extras"]);
 	if (req.isAuthenticated())
 		homework = await getHwProgress(req.user.id, homework);
-	res.render("homework", { homework });
+	res.render("homework/homework", { homework });
 };
 
 export const importData = async (req, res) => {

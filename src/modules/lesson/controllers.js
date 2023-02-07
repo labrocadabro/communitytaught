@@ -22,7 +22,7 @@ export const addEditLessonForm = async (req, res) => {
 			})
 			.join(",");
 	}
-	res.render("addLesson", { edit, lesson });
+	res.render("lesson/addLesson", { edit, lesson });
 };
 
 export const addEditLesson = async (req, res) => {
@@ -107,7 +107,7 @@ export const allLessons = async (req, res) => {
 	if (req.isAuthenticated()) {
 		lessons = await getAllLessonsProgress(req.user.id, lessons);
 	}
-	res.render("allLessons", { lessons });
+	res.render("lesson/allLessons", { lessons });
 };
 
 export const getLessonProgress = async (userId, lesson) => {
@@ -148,7 +148,7 @@ export const showLesson = async (req, res) => {
 				assigned = await getHwProgress(req.user.id, assigned);
 			if (due.length) due = await getHwProgress(req.user.id, due);
 		}
-		res.render("lesson", { lesson, next, prev, assigned, due });
+		res.render("lesson/lesson", { lesson, next, prev, assigned, due });
 	} catch (err) {
 		console.log(err);
 		res.redirect("/class/all");

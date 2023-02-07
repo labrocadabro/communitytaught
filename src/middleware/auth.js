@@ -1,6 +1,6 @@
 import dotenv from "dotenv";
 
-import Token from "../models/Token.js";
+import Token from "../modules/auth/models/Token.js";
 
 dotenv.config();
 

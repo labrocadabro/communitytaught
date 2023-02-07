@@ -10,7 +10,7 @@ header.sticky.top-0.z-10.px-5.py-3.bg-stone-50.border-b.border-stone-200(class="
 				a.nav-link(href="/" class = active === "Home" ? "active" : "") Home
 			if loggedIn
 				li
-						a.nav-link(href="/dashboard" class = active === "Dashboard" ? "active" : "") Dashboard
+						a.nav-link(href="/user/dashboard" class = active === "Dashboard" ? "active" : "") Dashboard
 			li
 				a.nav-link(href="/class/all" class = active === "Classes" ? "active" : "") Classes
 			li
@@ -26,7 +26,7 @@ header.sticky.top-0.z-10.px-5.py-3.bg-stone-50.border-b.border-stone-200(class="
 						//- li#account-first.pt-2
 						//- 	a.account-link(href="/settings" class = active === "Settings" ? "active" : "") Settings
 						li#account-first.pt-2
-							a.account-link(href="/account" class = active === "Account" ? "active" : "") Account
+							a.account-link(href="/user/account" class = active === "Account" ? "active" : "") Account
 						li#account-last.pb-4
 							a.account-link(href="/logout") Sign out
 			else

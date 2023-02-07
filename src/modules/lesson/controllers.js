@@ -1,11 +1,11 @@
 import mongoose from "mongoose";
 
-import Lesson from "../models/Lesson.js";
-import User from "../models/User.js";
-import LessonProgress from "../models/LessonProgress.js";
-import Homework from "../models/Homework.js";
+import Lesson from "./models/Lesson.js";
+import User from "../user/models/User.js";
+import LessonProgress from "./models/LessonProgress.js";
+import Homework from "../homework/models/Homework.js";
 
-import { getHwProgress } from "./homework.js";
+import { getHwProgress } from "../homework/controllers.js";
 
 export const addEditLessonForm = async (req, res) => {
 	if (!req.isAuthenticated() || !req.user.admin) return res.redirect("/");

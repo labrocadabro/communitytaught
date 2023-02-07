@@ -1,10 +1,25 @@
 import passport from "passport";
 import validator from "validator";
 
-import User from "../models/User.js";
-import Token from "../models/Token.js";
+import User from "../user/models/User.js";
+import Token from "./models/Token.js";
 
-import { unlinkGithub, unlinkGoogle } from "../routes/oauthRouter.js";
+import { unlinkGithub, unlinkGoogle } from "./routes.js";
+
+export const showLogin = (req, res) => {
+	if (req.isAuthenticated()) res.redirect("/user/dashboard");
+	else res.render("login");
+};
+
+export const showRegister = (req, res) => {
+	if (req.isAuthenticated()) res.redirect("/user/dashboard");
+	else res.render("register");
+};
+
+export const showForgot = (req, res) => {
+	if (req.isAuthenticated()) res.redirect("/user/dashboard");
+	else res.render("forgot");
+};
 
 export const register = async (req, res) => {
 	try {
@@ -61,7 +76,7 @@ export const login = (req, res, next) => {
 			if (err) {
 				return next(err);
 			}
-			res.redirect(req.session.returnTo || "/dashboard");
+			res.redirect(req.session.returnTo || "/user/dashboard");
 		});
 	})(req, res, next);
 };
@@ -90,14 +105,14 @@ export const verify = async (req, res) => {
 		return res.redirect("/login");
 	}
 	try {
-		if (!req.query.token) return res.redirect("/dashboard");
+		if (!req.query.token) return res.redirect("/user/dashboard");
 		const token = await Token.findOne({ token: req.query.token });
 		if (!token) {
 			req.session.flash = {
 				type: "error",
 				message: ["Invalid or expired link."],
 			};
-			return res.redirect("/dashboard");
+			return res.redirect("/user/dashboard");
 		}
 		const user = await User.findOne({ username: token.email });
 		if (!user || user.username !== req.user.username) {
@@ -105,7 +120,7 @@ export const verify = async (req, res) => {
 				type: "error",
 				message: ["Invalid or expired link."],
 			};
-			return res.redirect("/dashboard");
+			return res.redirect("/user/dashboard");
 		}
 		user.verified = true;
 		await user.save();
@@ -114,11 +129,11 @@ export const verify = async (req, res) => {
 			type: "success",
 			message: ["Your email has been verified."],
 		};
-		res.redirect("/dashboard");
+		res.redirect("/user/dashboard");
 	} catch (err) {
 		console.log(err);
 		req.session.flash = { type: "error", message: ["Verification error."] };
-		res.redirect("/dashboard");
+		res.redirect("/user/dashboard");
 	}
 };
 
@@ -169,7 +184,7 @@ export const changePassword = async (req, res) => {
 			validationErrors.push("New passwords must match");
 		if (validationErrors.length) {
 			req.session.flash = { type: "error", message: validationErrors };
-			return res.redirect(`/account`);
+			return res.redirect(`/user/account`);
 		}
 		await user.changePassword(req.body.oldPassword, req.body.newPassword);
 		await user.save();
@@ -186,7 +201,7 @@ export const changePassword = async (req, res) => {
 	} catch (err) {
 		if (!err.message) err.message = "Something went wrong.";
 		req.session.flash = { type: "error", message: [err.message] };
-		return res.redirect("/account");
+		return res.redirect("/user/account");
 	}
 };
 
@@ -207,7 +222,7 @@ export const setPassword = async (req, res) => {
 			validationErrors.push("Passwords must match");
 		if (validationErrors.length) {
 			req.session.flash = { type: "error", message: validationErrors };
-			return res.redirect(`/account`);
+			return res.redirect(`/user/account`);
 		}
 		await user.setPassword(req.body.password);
 		user.hasPassword = true;
@@ -216,11 +231,11 @@ export const setPassword = async (req, res) => {
 			type: "success",
 			message: ["Password set successfully"],
 		};
-		res.redirect("/account");
+		res.redirect("/user/account");
 	} catch (err) {
 		if (!err.message) err.message = "Something went wrong.";
 		req.session.flash = { type: "error", message: [err.message] };
-		return res.redirect("/account");
+		return res.redirect("/user/account");
 	}
 };
 
@@ -239,7 +254,7 @@ export const changeEmail = async (req, res) => {
 			validationErrors.push("Please enter a valid email address");
 		if (validationErrors.length) {
 			req.session.flash = { type: "error", message: validationErrors };
-			return res.redirect(`/account`);
+			return res.redirect(`/user/account`);
 		}
 		user.username = req.body.username;
 		user.verified = false;
@@ -257,7 +272,7 @@ export const changeEmail = async (req, res) => {
 			err.message = "This email address is registered with another account";
 		if (!err.message) err.message = "Something went wrong.";
 		req.session.flash = { type: "error", message: [err.message] };
-		return res.redirect("/account");
+		return res.redirect("/user/account");
 	}
 };
 

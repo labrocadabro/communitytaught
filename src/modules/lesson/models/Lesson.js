@@ -4,54 +4,54 @@ const Schema = mongoose.Schema;
 
 const TimestampSchema = new Schema({
 	time: Number,
-	title: String
+	title: String,
 });
 
 const lessonSchema = new Schema({
 	videoId: {
-		type: String
+		type: String,
 	},
 	twitchVideo: {
-		type:Boolean,
-		default: false
+		type: Boolean,
+		default: false,
 	},
 	title: {
 		type: String,
-		required: true
+		required: true,
 	},
 	permalink: {
 		type: String,
-		unique: true
+		unique: true,
 	},
 	dates: {
 		type: [Date],
-		required: true
+		required: true,
 	},
 	classNo: {
-		type: [Number]
+		type: [Number],
 	},
 	thumbnail: {
 		type: String,
-		required: true
+		required: true,
 	},
 	slides: {
-		type: [String]
+		type: [String],
 	},
 	materials: {
-		type: String
+		type: String,
 	},
 	checkin: {
-		type: [String]
+		type: [String],
 	},
 	motivationLink: {
-		type: String
+		type: String,
 	},
 	motivationTitle: {
-		type: String
+		type: String,
 	},
 	timestamps: [TimestampSchema],
 	cohort: Number,
-	note: String
+	note: String,
 });
 
-export default mongoose.model('Lesson', lessonSchema);
+export default mongoose.model("Lesson", lessonSchema);

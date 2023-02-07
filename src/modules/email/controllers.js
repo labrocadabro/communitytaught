@@ -3,8 +3,8 @@ import crypto from "crypto";
 import dotenv from "dotenv";
 import validator from "validator";
 
-import User from "../models/User.js";
-import Token from "../models/Token.js";
+import User from "../user/models/User.js";
+import Token from "../auth/models/Token.js";
 
 dotenv.config();
 
@@ -33,7 +33,7 @@ if (process.env.NODE_ENV === "production") {
 export const verify = async (req, res) => {
 	try {
 		const email = req.user?.username;
-		if (!email) return res.redirect("/dashboard");
+		if (!email) return res.redirect("/user/dashboard");
 		if (!req.user.verified) {
 			const token = crypto.randomBytes(32).toString("hex");
 			await new Token({ token, email }).save();
@@ -49,7 +49,7 @@ export const verify = async (req, res) => {
 	} catch (err) {
 		console.log(err);
 	} finally {
-		res.redirect(req.session.returnTo || "/dashboard");
+		res.redirect(req.session.returnTo || "/user/dashboard");
 	}
 };
 

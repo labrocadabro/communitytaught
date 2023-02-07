@@ -12,8 +12,11 @@ import LessonProgress from "../lesson/models/LessonProgress.js";
 
 import { hwData, lessonData } from "../../data/importData.js";
 
+import redirects from "../../data/redirects.js";
+
 export const addEditHomeworkForm = async (req, res) => {
-	if (!req.isAuthenticated() || !req.user.admin) return res.redirect("/");
+	if (!req.isAuthenticated() || !req.user.admin)
+		return res.redirect(redirects.home);
 	const edit = !!req.params.id;
 	let homework = null;
 	if (edit) {
@@ -26,7 +29,8 @@ export const addEditHomeworkForm = async (req, res) => {
 };
 
 export const addEditHomework = async (req, res) => {
-	if (!req.isAuthenticated() || !req.user.admin) return res.redirect("/");
+	if (!req.isAuthenticated() || !req.user.admin)
+		return res.redirect(redirects.home);
 	try {
 		// prepare homework data to be processed
 		const hwDesc = req.body.hwDesc ? [].concat(req.body.hwDesc) : [];
@@ -101,7 +105,7 @@ export const addEditHomework = async (req, res) => {
 			message: [`Homework not ${!!req.params.id ? "updated" : "added"}`],
 		};
 	} finally {
-		res.redirect("/hw/add");
+		res.redirect(redirects.addHomework);
 	}
 };
 
@@ -230,7 +234,7 @@ export const importData = async (req, res) => {
 		console.log(err);
 		req.session.flash = { type: "error", message: ["Error importing data"] };
 	} finally {
-		res.redirect("/user/account");
+		res.redirect(redirects.account);
 	}
 };
 

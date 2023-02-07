@@ -1,12 +1,13 @@
 import nodemailer from "nodemailer";
-import crypto from "crypto";
-import dotenv from "dotenv";
 import validator from "validator";
+
+import dotenv from "dotenv";
+dotenv.config();
 
 import User from "../user/models/User.js";
 import Token from "../auth/models/Token.js";
 
-dotenv.config();
+import redirects from "../../data/redirects.js";
 
 const from = `${process.env.FROM_NAME} <${process.env.FROM_EMAIL}>`;
 
@@ -33,7 +34,7 @@ if (process.env.NODE_ENV === "production") {
 export const verify = async (req, res) => {
 	try {
 		const email = req.user?.username;
-		if (!email) return res.redirect("/user/dashboard");
+		if (!email) return res.redirect(redirects.dashboard);
 		if (!req.user.verified) {
 			const token = Token.generate();
 			await Token.saveNew(token, email);
@@ -49,7 +50,7 @@ export const verify = async (req, res) => {
 	} catch (err) {
 		console.log(err);
 	} finally {
-		res.redirect(req.session.returnTo || "/dashboard");
+		res.redirect(req.session.returnTo || redirects.dashboard);
 	}
 };
 
@@ -59,7 +60,7 @@ export const forgot = async (req, res) => {
 			type: "error",
 			message: "Please enter a valid email address.",
 		};
-		return res.redirect("/forgot");
+		return res.redirect(redirects.forgot);
 	}
 	const email = req.body.username;
 	const user = await User.findOne({ username: email });
@@ -92,5 +93,5 @@ export const forgot = async (req, res) => {
 		type: "success",
 		message: [`A reset password link has been sent to ${email}`],
 	};
-	res.redirect("/forgot");
+	res.redirect(redirects.forgot);
 };

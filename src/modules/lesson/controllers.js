@@ -7,8 +7,11 @@ import Homework from "../homework/models/Homework.js";
 
 import { getHwProgress } from "../homework/controllers.js";
 
+import redirects from "../../data/redirects.js";
+
 export const addEditLessonForm = async (req, res) => {
-	if (!req.isAuthenticated() || !req.user.admin) return res.redirect("/");
+	if (!req.isAuthenticated() || !req.user.admin)
+		return res.redirect(redirects.home);
 	const edit = !!req.params.id;
 	let lesson = null;
 	if (edit) {
@@ -26,7 +29,8 @@ export const addEditLessonForm = async (req, res) => {
 };
 
 export const addEditLesson = async (req, res) => {
-	if (!req.isAuthenticated() || !req.user.admin) return res.redirect("/");
+	if (!req.isAuthenticated() || !req.user.admin)
+		return res.redirect(redirects.home);
 	try {
 		let dates = [];
 		if (req.body.date) {
@@ -81,7 +85,7 @@ export const addEditLesson = async (req, res) => {
 			message: [`Class not ${!!req.params.id ? "updated" : "added"}`],
 		};
 	} finally {
-		res.redirect("/class/add");
+		res.redirect(redirects.addClass);
 	}
 };
 
@@ -151,12 +155,12 @@ export const showLesson = async (req, res) => {
 		res.render("lesson/lesson", { lesson, next, prev, assigned, due });
 	} catch (err) {
 		console.log(err);
-		res.redirect("/class/all");
+		res.redirect(redirects.classes);
 	}
 };
 
 export const deleteLesson = async (req, res) => {
-	if (!req.user?.admin) return res.redirect("/");
+	if (!req.user?.admin) return res.redirect(redirects.home);
 	try {
 		const lessonId = req.params.id;
 		let next = await Lesson.find({ _id: { $gt: lessonId } })
@@ -172,7 +176,7 @@ export const deleteLesson = async (req, res) => {
 	} catch (err) {
 		console.log(err);
 	} finally {
-		res.redirect("/class/all");
+		res.redirect(redirects.classes);
 	}
 };
 

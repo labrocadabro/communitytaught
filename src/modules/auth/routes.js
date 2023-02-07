@@ -2,13 +2,15 @@ import express from "express";
 import passport from "passport";
 import { Octokit } from "@octokit/core";
 import { createOAuthUserAuth } from "@octokit/auth-oauth-user";
+
 import dotenv from "dotenv";
+dotenv.config();
 
 import * as auth from "./controllers.js";
 
 import User from "../user/models/User.js";
 
-dotenv.config();
+import redirects from "../../data/redirects.js";
 
 const router = express.Router();
 
@@ -38,7 +40,7 @@ router.get(
 	"/oauth/google/callback",
 	passport.authenticate("google", { failureRedirect: "/login" }),
 	function (req, res) {
-		res.redirect("/user/dashboard");
+		res.redirect(redirects.dashboard);
 	}
 );
 
@@ -48,13 +50,13 @@ router.get("/oauth/google/revoke", async (req, res) => {
 			type: "success",
 			message: ["Google acocunt unlinked successfully"],
 		};
-		res.redirect("/user/account");
+		res.redirect(redirects.account);
 	} else {
 		req.session.flash = {
 			type: "error",
 			message: ["Could not unlink account"],
 		};
-		res.redirect("/user/account");
+		res.redirect(redirects.account);
 	}
 });
 
@@ -91,7 +93,7 @@ router.get(
 	"/oauth/github/callback",
 	passport.authenticate("github", { failureRedirect: "/login" }),
 	function (req, res) {
-		res.redirect("/user/dashboard");
+		res.redirect(redirects.dashboard);
 	}
 );
 
@@ -101,13 +103,13 @@ router.get("/oauth/github/revoke", async (req, res) => {
 			type: "success",
 			message: ["Github account unlinked successfully"],
 		};
-		res.redirect("/user/account");
+		res.redirect(redirects.account);
 	} else {
 		req.session.flash = {
 			type: "error",
 			message: ["Could not unlink account."],
 		};
-		res.redirect("/user/account");
+		res.redirect(redirects.account);
 	}
 });
 

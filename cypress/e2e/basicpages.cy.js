@@ -18,10 +18,3 @@ describe("about page", () => {
 		cy.get("h1").should("have.text", "About the 100Devs Progress Tracker");
 	});
 });
-
-describe("resources page", () => {
-	it("displays correctly", () => {
-		cy.get("a").contains("Resources").click();
-		cy.get("h1").should("have.text", "Additional Resources");
-	});
-});

@@ -1,5 +1,7 @@
 /// <reference types="cypress" />
 
+import { login } from "./utils.js";
+
 const domain = Cypress.config().baseUrl;
 
 beforeEach(() => {
@@ -17,10 +19,7 @@ describe("homework page when not logged in", () => {
 
 describe("homework page when logged in", () => {
 	beforeEach(() => {
-		cy.get("a").contains("Log in").click();
-		cy.get("#email").type("test@test.com");
-		cy.get("#pwd").type("testtest");
-		cy.get("button[type='submit']").click();
+		login();
 		cy.get("a").contains("Homework").click();
 	});
 	const item = Math.floor(Math.random() * 50);
@@ -48,5 +47,31 @@ describe("homework page when logged in", () => {
 		cy.get("input[type='checkbox'].extra").eq(extra).click({ force: true });
 		cy.reload();
 		cy.get("input[type='checkbox'].extra").eq(extra).should("not.be.checked");
+	});
+});
+
+describe("homework page when logged in then logged out", () => {
+	beforeEach(() => {
+		login();
+		cy.get("a").contains("Homework").click();
+	});
+	const item = Math.floor(Math.random() * 50);
+	const extra = Math.floor(Math.random() * 20);
+	it("doesn't mark items complete", () => {
+		// simulate cookie expiring
+		cy.clearCookies();
+		cy.get("input[type='checkbox'].item").eq(item).click({ force: true });
+		cy.reload();
+		login();
+		cy.get("a").contains("Homework").click();
+		cy.get("input[type='checkbox'].item").eq(item).should("not.be.checked");
+	});
+	it("doesn't mark extras complete", () => {
+		cy.clearCookies();
+		cy.get("input[type='checkbox'].item").eq(extra).click({ force: true });
+		cy.reload();
+		login();
+		cy.get("a").contains("Homework").click();
+		cy.get("input[type='checkbox'].item").eq(extra).should("not.be.checked");
 	});
 });

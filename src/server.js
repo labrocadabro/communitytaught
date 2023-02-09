@@ -3,9 +3,14 @@ import path from "path";
 import cors from "cors";
 import passport from "passport";
 import session from "express-session";
-import dotenv from "dotenv";
 import morgan from "morgan";
 import * as url from "url";
+
+import dotenv from "dotenv";
+dotenv.config();
+
+import { default as connectMongoDBSession } from "connect-mongodb-session";
+const MongoDBStore = connectMongoDBSession(session);
 
 import connectDB from "./config/db.js";
 import google from "./config/googleAuth.js";
@@ -25,7 +30,6 @@ import hwRouter from "./routes/hwRouter.js";
 // const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = url.fileURLToPath(new URL(".", import.meta.url));
 
-dotenv.config();
 morgan(":method :url :status :res[content-length] - :response-time ms");
 
 const app = express();
@@ -38,12 +42,23 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "assets")));
 app.use(cors());
+
+const user = process.env.DB_USER;
+const pass = process.env.DB_PASS;
+const cluster = process.env.DB_CLUSTER;
+const dbName = process.env.DB_NAME;
+const store = new MongoDBStore({
+	uri: `mongodb+srv://${user}:${pass}@${cluster}.58qh2.mongodb.net/${dbName}?retryWrites=true&w=majority`,
+	collection: "sessions",
+});
+
 app.use(
 	session({
 		secret: process.env.SECRET,
 		resave: false,
-		saveUninitialized: true,
-		cookie: { maxAge: 60 * 60 * 1000 * 24 }, // 1 day
+		saveUninitialized: false,
+		cookie: { maxAge: 60 * 60 * 1000 * 24 * 7 }, // 1 week
+		store,
 	})
 );
 app.use(passport.initialize());

@@ -8,8 +8,10 @@
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"start": "node .",
 		"dev": "nodemon . --ignore '/assets/js/*.js'",
-		"watch": "npx tailwindcss -i ./src/tailwind.css -o ./src/assets/css/index.css --watch",
+		"css": "npx tailwindcss -i ./src/tailwind.css -o ./src/assets/css/index.css --watch",
 		"e2e": "cypress run",
+		"e2e:watch": "cypress open",
+		"e2e:video": "cypress open --config videoRecording=true",
 		"e2e:chrome": "cypress run --browser chrome",
 		"e2e:record": "cypress run --record",
 		"e2e:record:chrome": "cypress run --record --browser chrome",
@@ -21,8 +23,7 @@
 		"cy:version": "cypress version",
 		"cy:cache:list": "cypress cache list",
 		"cy:run": "cypress run",
-		"cy:run:record": "cypress run --record",
-		"cy:open": "cypress open"
+		"cy:run:record": "cypress run --record"
 	},
 	"repository": {
 		"type": "git",

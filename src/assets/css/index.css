@@ -789,7 +789,7 @@ h3 {
   text-decoration-line: none;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 780px) {
   .nav-link,
 	.account-link {
     font-size: 1rem;
@@ -1401,10 +1401,6 @@ dd ol {
   display: flex;
 }
 
-.table {
-  display: table;
-}
-
 .grid {
   display: grid;
 }
@@ -1525,17 +1521,13 @@ dd ol {
   gap: 0.5rem;
 }
 
-.gap-y-24 {
-  row-gap: 6rem;
+.gap-y-12 {
+  row-gap: 3rem;
 }
 
 .gap-x-16 {
   -moz-column-gap: 4rem;
        column-gap: 4rem;
-}
-
-.gap-y-12 {
-  row-gap: 3rem;
 }
 
 .scroll-smooth {
@@ -1857,11 +1849,7 @@ dd ol {
   }
 }
 
-@media (min-width: 768px) {
-  .sm\:mb-4 {
-    margin-bottom: 1rem;
-  }
-
+@media (min-width: 780px) {
   .sm\:flex {
     display: flex;
   }
@@ -1928,10 +1916,6 @@ dd ol {
 @media (min-width: 1024px) {
   .lg\:gap-6 {
     gap: 1.5rem;
-  }
-
-  .lg\:gap-4 {
-    gap: 1rem;
   }
 
   .lg\:px-14 {

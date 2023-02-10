@@ -5,16 +5,16 @@ import { login, logout } from "./utils.js";
 const domain = Cypress.config().baseUrl;
 
 beforeEach(() => {
-	cy.visit(`${domain}/hw/all`);
+	cy.visit(domain);
 });
 
 describe("login", () => {
-	it("logs in correctly", () => {
+	it("works correctly", () => {
 		login();
 		cy.get("h1").should("have.text", "Your Progress");
 		cy.get(".lesson-card h3").should("have.text", "Class 1");
 	});
-	it("logs in correctly if email has uppercase letters", () => {
+	it("works correctly if email has uppercase letters", () => {
 		login("TEST@TEST.COM");
 		cy.get("h1").should("have.text", "Your Progress");
 		cy.get(".lesson-card h3").should("have.text", "Class 1");
@@ -45,11 +45,23 @@ describe("login", () => {
 });
 
 describe("github login", () => {
-	it("redirects to github login page", () => {});
+	it("redirects to github login page", () => {
+		cy.get("a").contains("Log in").click();
+		cy.get("a").contains("Log In with Github").click();
+		cy.origin("github.com", () => {
+			cy.url().should("include", "github.com/login");
+		});
+	});
 });
 
 describe("google login", () => {
-	it("redirects to github login page", () => {});
+	it("redirects to google login page", () => {
+		cy.get("a").contains("Log in").click();
+		cy.get("a").contains("Log In with Google").click();
+		cy.origin("accounts.google.com", () => {
+			cy.url().should("include", "google.com/o/oauth2/v2/auth/");
+		});
+	});
 });
 
 describe("logout", () => {

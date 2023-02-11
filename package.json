@@ -7,7 +7,7 @@
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"start": "node .",
-		"dev": "nodemon . --ignore '/assets/js/*.js'",
+		"dev": "nodemon . --ignore 'src/assets/js/*.js' --ignore 'cypress/**/*.js' --ignore 'test/**/*.js'",
 		"css": "npx tailwindcss -i ./src/tailwind.css -o ./src/assets/css/index.css --watch",
 		"e2e": "cypress run --browser chrome",
 		"e2e:watch": "cypress open",

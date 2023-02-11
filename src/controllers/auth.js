@@ -7,6 +7,7 @@ import Token from "../models/Token.js";
 import { unlinkGithub, unlinkGoogle } from "../routes/oauthRouter.js";
 
 export const register = async (req, res) => {
+	req.body.username = req.body.username.toLowerCase();
 	try {
 		const validationErrors = [];
 		if (!validator.isEmail(req.body.username))
@@ -19,7 +20,7 @@ export const register = async (req, res) => {
 			req.session.flash = { type: "error", message: validationErrors };
 			return res.redirect("/register");
 		}
-		const user = new User({ username: req.body.username.toLowerCase() });
+		const user = new User({ username: req.body.username });
 		await User.register(user, req.body.password);
 		passport.authenticate("local")(req, res, function () {
 			res.redirect("/email/verify");

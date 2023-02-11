@@ -1,5 +1,5 @@
 {
-	"name": "node-mongo-boilerplate",
+	"name": "communitytaught",
 	"version": "1.0.0",
 	"description": "MVC boilerplate for Node/MongoDB projects with Tailwind and Pug, with authentication via Passport.",
 	"main": "src/server.js",

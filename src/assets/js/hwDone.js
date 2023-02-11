@@ -3,6 +3,8 @@ cbs.forEach((cb) => cb.addEventListener("change", checkDone));
 
 function checkDone() {
 	if (this.classList.contains("extra")) return;
+	if (this.classList.contains("watched")) return;
+	if (this.classList.contains("checkedin")) return;
 	const homework = this.dataset.hw;
 	const hwCBs = Array.from(
 		document.querySelectorAll(`[data-hw="${homework}"]`)

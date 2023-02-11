@@ -18,7 +18,7 @@ mixin homework(hw)
 			+homeworkItems(hw.items, "item", hw._id, hw.classNo.length > 1)
 			if hw.extras.length
 				h3.mt-2(class="-ml-3") Extras
-				+homeworkItems(hw.extras, "extra", hw_id, hw.classNo.length > 1)
+				+homeworkItems(hw.extras, "extra", hw._id, hw.classNo.length > 1)
 
 		.hw-due
 			h2.mb-4.text-twilight-800 Due Class #{hw.dueNo}

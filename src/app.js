@@ -8,6 +8,9 @@ import * as url from "url";
 import dotenv from "dotenv";
 dotenv.config();
 
+import { default as connectMongoDBSession } from "connect-mongodb-session";
+const MongoDBStore = connectMongoDBSession(session);
+
 import google from "./modules/auth/oauth/google.js";
 import github from "./modules/auth/oauth/github.js";
 
@@ -31,18 +34,27 @@ export const app = express();
 app.set("views", "./src/views");
 app.set("view engine", "pug");
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, "assets")));
-app.use(cors());
+const user = process.env.DB_USER;
+const pass = process.env.DB_PASS;
+const cluster = process.env.DB_CLUSTER;
+const dbName = process.env.DB_NAME;
+const store = new MongoDBStore({
+	uri: `mongodb+srv://${user}:${pass}@${cluster}.58qh2.mongodb.net/${dbName}?retryWrites=true&w=majority`,
+	collection: "sessions",
+});
 app.use(
 	session({
 		secret: process.env.SECRET,
 		resave: false,
-		saveUninitialized: true,
-		cookie: { maxAge: 60 * 60 * 1000 * 24 }, // 1 day
+		saveUninitialized: false,
+		cookie: { maxAge: 60 * 60 * 1000 * 24 * 7 }, // 1 week
+		store,
 	})
 );
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, "assets")));
+app.use(cors());
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(User.createStrategy());

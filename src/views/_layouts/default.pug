@@ -33,9 +33,6 @@ html.scroll-smooth
 		link(rel="stylesheet" href="/css/index.css")
 
 	body.flex.flex-col.min-h-screen.text-stone-800.text-lg.font-main
-		if env === "development"
-			.flash.flash-error DEVELOPMENT SERVER
-
 		include ../_partials/header.pug
 
 		main(class="px-5 sm:px-8 lg:px-14 py-4 sm:py-8")

@@ -1,12 +1,12 @@
-import dotenv from "dotenv";
 import morgan from "morgan";
-import passport from "passport";
+
+import dotenv from "dotenv";
+dotenv.config();
 
 import { app } from "./app.js";
 
 import connectDB from "./db.js";
 
-dotenv.config();
 morgan(":method :url :status :res[content-length] - :response-time ms");
 
 const port = process.env.PORT;

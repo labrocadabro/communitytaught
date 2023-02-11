@@ -1,14 +1,24 @@
 {
-	"name": "node-mongo-boilerplate",
+	"name": "communitytaught",
 	"version": "1.0.0",
 	"description": "MVC boilerplate for Node/MongoDB projects with Tailwind and Pug, with authentication via Passport.",
 	"main": "src/server.js",
 	"type": "module",
 	"scripts": {
-		"test": "jest --watch",
+		"test": "echo \"Error: no test specified\" && exit 1",
 		"start": "node .",
-		"dev": "nodemon . --ignore '/assets/js/*.js'",
-		"watch": "npx tailwindcss -i ./src/tailwind.css -o ./src/assets/css/index.css --watch"
+		"dev": "nodemon . --ignore 'src/assets/js/*.js' --ignore 'cypress/**/*.js' --ignore 'test/**/*.js'",
+		"css": "npx tailwindcss -i ./src/tailwind.css -o ./src/assets/css/index.css --watch",
+		"e2e": "cypress run --browser chrome",
+		"e2e:watch": "cypress open",
+		"e2e:video": "cypress open --config videoRecording=true",
+		"e2e:record": "cypress run --record --browser chrome",
+		"e2e:record:edge": "cypress run --record --browser edge",
+		"e2e:record:firefox": "cypress run --record --browser firefox",
+		"cy:verify": "cypress verify",
+		"cy:info": "cypress info",
+		"cy:version": "cypress version",
+		"cy:cache:list": "cypress cache list"
 	},
 	"repository": {
 		"type": "git",
@@ -23,6 +33,7 @@
 	"dependencies": {
 		"@octokit/auth-oauth-user": "^2.0.3",
 		"@octokit/core": "^4.0.5",
+		"connect-mongodb-session": "^3.1.1",
 		"cors": "^2.8.5",
 		"crypto": "^1.0.1",
 		"dotenv": "^16.0.2",

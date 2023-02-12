@@ -8,6 +8,7 @@ import Homework from "../homework/models/Homework.js";
 import { getHwProgress } from "../homework/controllers.js";
 
 import redirects from "../../data/redirects.js";
+import { mapData } from "./utils.js";
 
 export const addEditLessonForm = async (req, res) => {
 	if (!req.isAuthenticated() || !req.user.admin)

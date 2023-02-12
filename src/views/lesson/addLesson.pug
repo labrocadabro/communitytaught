@@ -6,54 +6,92 @@ block variables
 
 block content
 	form.add-form(action=edit? `/class/edit/${lesson._id}` : "/class/add" method="post")
-		h1.col-span-4 #{action} Class
-		.col-span-1
-		.col-span-3
-			input#twitch.mr-2(type="checkbox" name="twitch" checked=edit? lesson.twitchVideo : false)
-			label(for="twitch") Twitch Video
-		label(for="number") Class Numbers
-		input#number(type="text", name="number" value=edit? lesson.classNo : "")
-		label(for="date") Class Dates
-		input#date(type="text", name="date" value=edit? lesson.dates : "")
-		label(for="video-id") Video ID
-		input#video-id(type="text", name="videoId" value=edit? lesson.videoId : "")
-		label(for="thumbnail") Thumbnail
-		input#thumbnail(type="text", name="thumbnail" disabled=!edit value=edit? lesson.thumbnail : "")
+		h1 #{action} Class
+		.selects.w-full.flex.justify-between
+			div
+				label(for="videoType") Video Type
+				select#videoType(name="videoType")
+					option(value="youtube") YouTube
+					option(value="twitch") Twitch
+					option(value="none") No Video
+			div
+				label(for="cohort") Cohort
+				select#cohort(name="cohort")
+					option(value="2") 2
+					option(value="3") 3
+
+		.pr-14.mt-3.relative
+			.classData.grid.gap-4(class="grid-cols-[1fr_1fr]")
+				.classNo
+					label(for="number") Class Number
+					input#number.w-full(type="text", name="number" value=edit? lesson.classNo : "")
+				.classDate
+					label(for="date") Class Date
+					input#date.w-full(type="text", name="date" value=edit? lesson.dates : "")
+			#addClass.absolute.right-0.bottom-1
+				button.btn.secondary.add(type="button") +
+		.grid.gap-4(class="grid-cols-[1fr_2fr]")
+			div
+				label(for="video-id") Video ID
+				input#video-id(type="text", name="videoId" value=edit? lesson.videoId : "")
+			div
+				label(for="thumbnail") Thumbnail
+				input#thumbnail(type="text", name="thumbnail" disabled=!edit value=edit? lesson.thumbnail : "")
 		label(for="video-title") Video Title
 		input#video-title(type="text", name="videoTitle" value=edit? lesson.title : "")
-		label(for="permalink") Permalink
-		input#permalink(type="text", name="permalink" disabled=!edit value=edit? lesson.permalink : "")
+		.mb-3.text-sm(class="-mt-2") PERMALINK: #{lesson.permalink} #[i.fas.fa-pencil]
+		//- label(for="permalink") Permalink
+		//- input#permalink(type="text", name="permalink" disabled=!edit value=edit? lesson.permalink : "")
+		.relative(class="[&>input]:w-[calc(100%-3.5rem)]")
+			label(for="slides") Slides
+			input#slides(type="text", name="slides" value=edit? lesson.slides : "")
+			#addSlides.absolute.right-0.bottom-1
+				button.btn.secondary.add(type="button") +
+		.relative(class="[&>input]:w-[calc(100%-3.5rem)]")
+			label(for="materials") Materials
+			input#materials(type="text", name="materials" value=edit? lesson.materials : "")
+			#addMaterials.absolute.right-0.bottom-1
+				button.btn.secondary.add(type="button") +
+		.relative(class="[&>input]:w-[calc(100%-3.5rem)]")
+			label(for="checkins") Checkin
+			input#checkins(type="text", name="checkin_arr" value=edit? lesson.checkin : "")
+			#addCheckins.absolute.right-0.bottom-1
+				button.btn.secondary.add(type="button") +
 		label(for="checkin-link") Motivation Link
 		input#motivation-link(type="text", name="motivationLink" value=edit? lesson.motivationLink : "")
 		label(for="checkin-link") Motivation Title
 		input#motivation-title(type="text", name="motivationTitle" value=edit? lesson.motivationTitle : "")
-		label(for="slides-link") Slides
-		input#slides-link(type="text", name="slides" value=edit? lesson.slides : "")
-		label(for="slides-link") Materials
-		input#materials-link(type="text", name="materials" value=edit? lesson.materials : "")
-		label(for="checkin-link") Checkin
-		input#checkin-link(type="text", name="checkin" value=edit? lesson.checkin : "")
-		label(for="number") Cohort
-		input#cohort(type="text", name="cohort" value="2")
-		label(for="number") Note
+		label(for="note") Note
 		textarea#note.col-span-3(type="text", name="note") #{edit? lesson.note : ""}
-		#timestamps.col-span-4
-			h2.col-span-4.mb-3 Timestamps
-			button#add-timestamp.col-span-4 Add another timestamp
-			if edit && lesson.timestamps.length
-				each timestamp, index in lesson.timestamps
-					.timestamp
-						label(for=`ts-time-${index}`) Time
-						input(type="number", name="tsTime" id=`ts-title-${index}` value=timestamp.time)
-						label(for=`ts-title-${index}`) Title
-						input(type="text", name="tsTitle" id=`ts-title-${index}` value=timestamp.title)
-			else
-				.timestamp
-					label(for="ts-time-0") Time
-					input#ts-time-0(type="number", name="tsTime")
-					label(for="ts-title-0") Title
-					input#ts-title-0(type="text", name="tsTitle")
-		.col-span-4.mt-3.text-center
+		.pr-14.relative.mt-5
+			h2 Timestamps
+			.timestamp.grid.gap-4(class="grid-cols-[1fr_1fr]")
+				.tsTime
+					label(for="tsTime") Time
+					input#tsTime.w-full(type="number", name="tsTime")
+				.tsTitle
+					label(for="tsTime") Title
+					input#tsTime.w-full(type="text", name="tsTime")
+			#addTimestamp.absolute.right-0.bottom-4
+				button.btn.secondary.add(type="button") +
+
+		//- #timestamps.col-span-4
+		//- 	h2.col-span-4.mb-3 Timestamps
+		//- 	button#add-timestamp.col-span-4 Add another timestamp
+		//- 	if edit && lesson.timestamps.length
+		//- 		each timestamp, index in lesson.timestamps
+		//- 			.timestamp
+		//- 				label(for=`ts-time-${index}`) Time
+		//- 				input(type="number", name="tsTime" id=`ts-title-${index}` value=timestamp.time)
+		//- 				label(for=`ts-title-${index}`) Title
+		//- 				input(type="text", name="tsTitle" id=`ts-title-${index}` value=timestamp.title)
+		//- 	else
+		//- 		.timestamp
+		//- 			label(for="ts-time-0") Time
+		//- 			input#ts-time-0(type="number", name="tsTime")
+		//- 			label(for="ts-title-0") Title
+		//- 			input#ts-title-0(type="text", name="tsTitle")
+		.mt-3
 			button(class="btn primary max-w-1/3 mx-auto" type="submit") #{action} Class
 
 

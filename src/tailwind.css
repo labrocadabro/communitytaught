@@ -39,6 +39,9 @@
 	.btn.primary {
 		@apply border border-pink-800 bg-pink-800 hover:bg-pink-700 hover:border-pink-700 text-white;
 	}
+	.btn.add {
+		@apply px-4 py-1.5;
+	}
 
 	/*** HEADER LINKS ***/
 	.nav-link,
@@ -79,11 +82,16 @@
 
 	/* ADD/EDIT FORMS (ADMIN ONLY) */
 	.add-form {
-		@apply mt-5 max-w-5xl mx-auto border grid p-10 gap-2 items-center grid-cols-[repeat(4,_1fr)];
+		@apply mt-5 max-w-5xl mx-auto border p-10;
 	}
 	.add-form label {
-		@apply text-right;
+		@apply w-full block text-sm uppercase;
 	}
+	.add-form input,
+	.add-form textarea {
+		@apply w-full mb-3 border-stone-300;
+	}
+
 	#timestamps,
 	#hw-items,
 	#pw-items {

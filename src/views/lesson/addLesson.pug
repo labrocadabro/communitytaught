@@ -21,13 +21,43 @@ block content
 					option(value="3") 3
 
 		.pr-14.mt-3.relative
-			.classData.grid.gap-4(class="grid-cols-[1fr_1fr]")
-				.classNo
-					label(for="number") Class Number
-					input#number.w-full(type="text", name="number" value=edit? lesson.classNo : "")
-				.classDate
-					label(for="date") Class Date
-					input#date.w-full(type="text", name="date" value=edit? lesson.dates : "")
+			#classData.grid.gap-4(class="grid-cols-[1fr_1fr]")
+				if edit
+					each num, i in lesson.classNo
+						if i === 0
+							div
+								label(for="number") Class Number
+								input#classNo.w-full(type="text", name="classNo[]" value=num)
+							div
+								label(for="date") Class Date
+								input#dates.w-full(type="text", name="dates[]" value=lesson.dates[0])
+
+						else
+							input#classNo.w-full(type="text", name="classNo[]" value=num)
+							input#dates.w-full(type="text", name="dates[]" value=lesson.dates[i])
+				else
+					div
+						label(for="number") Class Number
+						input#classNo.w-full(type="text", name="classNo[]")
+					div
+						label(for="date") Class Date
+						input#dates.w-full(type="text", name="dates[]")
+				#addClass.absolute.right-0.bottom-1
+					button.btn.secondary.add(type="button") +
+
+
+		//- 		each timestamp, index in lesson.timestamps
+		//- 			.timestamp
+		//- 				label(for=`ts-time-${index}`) Time
+		//- 				input(type="number", name="tsTime" id=`ts-title-${index}` value=timestamp.time)
+		//- 				label(for=`ts-title-${index}`) Title
+		//- 				input(type="text", name="tsTitle" id=`ts-title-${index}` value=timestamp.title)
+		//- 	else
+		//- 		.timestamp
+		//- 			label(for="ts-time-0") Time
+		//- 			input#ts-time-0(type="number", name="tsTime")
+		//- 			label(for="ts-title-0") Title
+		//- 			input#ts-title-0(type="text", name="tsTitle")
 			#addClass.absolute.right-0.bottom-1
 				button.btn.secondary.add(type="button") +
 		.grid.gap-4(class="grid-cols-[1fr_2fr]")
@@ -39,23 +69,35 @@ block content
 				input#thumbnail(type="text", name="thumbnail" disabled=!edit value=edit? lesson.thumbnail : "")
 		label(for="video-title") Video Title
 		input#video-title(type="text", name="videoTitle" value=edit? lesson.title : "")
-		.mb-3.text-sm(class="-mt-2") PERMALINK: #{lesson.permalink} #[i.fas.fa-pencil]
-		//- label(for="permalink") Permalink
-		//- input#permalink(type="text", name="permalink" disabled=!edit value=edit? lesson.permalink : "")
-		.relative(class="[&>input]:w-[calc(100%-3.5rem)]")
+		//- .mb-3.text-sm(class="-mt-2") PERMALINK: #{lesson.permalink} #[i.fas.fa-pencil]
+		label(for="permalink") Permalink
+		input#permalink(type="text", name="permalink" disabled=!edit value=edit? lesson.permalink : "")
+		#slidesData.relative(class="[&>input]:w-[calc(100%-3.5rem)]")
 			label(for="slides") Slides
-			input#slides(type="text", name="slides" value=edit? lesson.slides : "")
+			if edit && lesson.slides.length
+				each slide in lesson.slides
+					input#slides(type="text", name="slides[]" value=slide)
+			else
+				input#slides(type="text", name="slides[]")
 			#addSlides.absolute.right-0.bottom-1
 				button.btn.secondary.add(type="button") +
-		.relative(class="[&>input]:w-[calc(100%-3.5rem)]")
+		#materialsData.relative(class="[&>input]:w-[calc(100%-3.5rem)]")
 			label(for="materials") Materials
-			input#materials(type="text", name="materials" value=edit? lesson.materials : "")
+			if edit && lesson.materials.length
+				each material in lesson.materials
+					input#materials(type="text", name="materials[]" value=material)
+			else
+				input#materials(type="text", name="materials[]")
 			#addMaterials.absolute.right-0.bottom-1
 				button.btn.secondary.add(type="button") +
-		.relative(class="[&>input]:w-[calc(100%-3.5rem)]")
+		#checkinData.relative(class="[&>input]:w-[calc(100%-3.5rem)]")
 			label(for="checkins") Checkin
-			input#checkins(type="text", name="checkin_arr" value=edit? lesson.checkin : "")
-			#addCheckins.absolute.right-0.bottom-1
+			if edit && lesson.checkin.length
+				each checkin in lesson.checkin
+					input#checkins(type="text", name="checkins[]" value=checkin)
+			else
+				input#checkins(type="text", name="checkins[]")
+			#addCheckin.absolute.right-0.bottom-1
 				button.btn.secondary.add(type="button") +
 		label(for="checkin-link") Motivation Link
 		input#motivation-link(type="text", name="motivationLink" value=edit? lesson.motivationLink : "")
@@ -67,11 +109,11 @@ block content
 			h2 Timestamps
 			.timestamp.grid.gap-4(class="grid-cols-[1fr_1fr]")
 				.tsTime
-					label(for="tsTime") Time
-					input#tsTime.w-full(type="number", name="tsTime")
+					label(for="tsTimes") Time
+					input#tsTime.w-full(type="number", name="tsTime[]")
 				.tsTitle
-					label(for="tsTime") Title
-					input#tsTime.w-full(type="text", name="tsTime")
+					label(for="tsTitle") Title
+					input#tsTime.w-full(type="text", name="tsTitle[]")
 			#addTimestamp.absolute.right-0.bottom-4
 				button.btn.secondary.add(type="button") +
 

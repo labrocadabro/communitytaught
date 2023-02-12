@@ -38,7 +38,7 @@ const lessonSchema = new Schema({
 		type: [String],
 	},
 	materials: {
-		type: String,
+		type: [String],
 	},
 	checkin: {
 		type: [String],

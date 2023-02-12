@@ -1,26 +1,31 @@
-const title = document.getElementById('video-title');
-const videoId = document.getElementById('video-id');
-const classNo = document.getElementById('number');
-const addTsButton = document.getElementById('add-timestamp');
-let tsIndex = document.querySelectorAll('.timestamp').length;
+const title = document.getElementById("video-title");
+const videoId = document.getElementById("video-id");
+// const addTsButton = document.getElementById("add-timestamp");
+// let tsIndex = document.querySelectorAll(".timestamp").length;
 
-title.addEventListener("change", addPermalink);
+title.addEventListener("blur", addPermalink);
 videoId.addEventListener("change", addThumbnail);
-classNo.addEventListener("change", updateSlidesClass);
-addTsButton.addEventListener('click', addTimestamp);
+// addTsButton.addEventListener("click", addTimestamp);
 
 function addPermalink() {
+	// don't generate permalink if one already exists
+	if (document.getElementById("permalink").value.trim().length) return;
 	const permalink = title.value
-		
-		.split('')
-		.map(c => c.toLowerCase())
-		.filter(c => {
-			return (c.charCodeAt(0) >= 97 && c.charCodeAt(0) <= 122) || c.charCodeAt(0) === 32;
+		.trim()
+		.split("")
+		.map((c) => c.toLowerCase())
+		.filter((c) => {
+			return (
+				(c.charCodeAt(0) >= 97 && c.charCodeAt(0) <= 122) ||
+				(c.charCodeAt(0) >= 48 && c.charCodeAt(0) <= 57) ||
+				c.charCodeAt(0) === 32
+			);
 		})
-		.join('')
-		.replace(/\s/g, "-");
-		document.getElementById("permalink").value = permalink;
-		document.getElementById("permalink").disabled = false;
+		.join("")
+		.replace(/\s/g, "-")
+		.replace(/--/g, "-");
+	document.getElementById("permalink").value = permalink;
+	document.getElementById("permalink").disabled = false;
 }
 
 function addThumbnail() {
@@ -29,14 +34,10 @@ function addThumbnail() {
 	document.getElementById("thumbnail").disabled = false;
 }
 
-function updateSlidesClass() {
-	document.getElementById("slides-classNo").value = classNo.value;
-}
-
 function addTimestamp(e) {
 	e.preventDefault();
-	const newTs = document.createElement('div');
-	newTs.classList.add('timestamp');
+	const newTs = document.createElement("div");
+	newTs.classList.add("timestamp");
 	newTs.innerHTML = `
 		<label for="ts-time-${tsIndex}">Time</label>
 		<input id="ts-time-${tsIndex}" type="number" name="tsTime">
@@ -44,5 +45,49 @@ function addTimestamp(e) {
 		<input id="ts-title-${tsIndex}" type="text" name="tsTitle">
 	`;
 	tsIndex += 1;
-	document.getElementById('timestamps').append(newTs);
+	document.getElementById("timestamps").append(newTs);
 }
+
+function addEntry(container, ...fields) {
+	for (let field of fields) {
+		let clone = field.cloneNode(true);
+		clone.value = "";
+		container.append(clone);
+	}
+}
+
+document
+	.getElementById("addSlides")
+	.addEventListener("click", () =>
+		addEntry(
+			document.getElementById("slidesData"),
+			document.getElementById("slides")
+		)
+	);
+
+document
+	.getElementById("addMaterials")
+	.addEventListener("click", () =>
+		addEntry(
+			document.getElementById("materialsData"),
+			document.getElementById("materials")
+		)
+	);
+
+document
+	.getElementById("addCheckin")
+	.addEventListener("click", () =>
+		addEntry(
+			document.getElementById("checkinData"),
+			document.getElementById("checkin")
+		)
+	);
+document
+	.getElementById("addClass")
+	.addEventListener("click", () =>
+		addEntry(
+			document.getElementById("classData"),
+			document.getElementById("classNo"),
+			document.getElementById("dates")
+		)
+	);

@@ -8,7 +8,7 @@ import Homework from "../homework/models/Homework.js";
 import { getHwProgress } from "../homework/controllers.js";
 
 import redirects from "../../data/redirects.js";
-import { mapData } from "./utils.js";
+import { mapData } from "../../utils/formatting.js";
 
 export const addEditLessonForm = async (req, res) => {
 	if (!req.isAuthenticated() || !req.user.admin)
@@ -17,51 +17,37 @@ export const addEditLessonForm = async (req, res) => {
 	let lesson = null;
 	if (edit) {
 		lesson = await Lesson.findById(req.params.id).lean();
-		lesson.classNo = lesson.classNo.join(",");
-		lesson.checkin = lesson.checkin.join(",");
-		lesson.slides = lesson.slides.join(",");
-		lesson.dates = lesson.dates
-			.map((date) => {
-				return date.toISOString().split("T")[0];
-			})
-			.join(",");
+		lesson.dates = lesson.dates.map((date) => {
+			return date.toISOString().split("T")[0];
+		});
 	}
 	res.render("lesson/addLesson", { edit, lesson });
 };
+
+// export const addEditLesson = async (req, res) => {
+// 	if (!req.isAuthenticated() || !req.user.admin)
+// 		return res.redirect(redirects.home);
+// 	console.log(mapData(req.body));
+// };
 
 export const addEditLesson = async (req, res) => {
 	if (!req.isAuthenticated() || !req.user.admin)
 		return res.redirect(redirects.home);
 	try {
-		let dates = [];
-		if (req.body.date) {
-			dates = req.body.date.split(",").map((date) => new Date(date));
-		}
-		let slides = [];
-		const timestamps = [];
-		for (let i = 0; i < req.body.tsTime.length; i++) {
-			timestamps.push({
-				time: Number(req.body.tsTime[i]),
-				title: req.body.tsTitle[i],
-			});
-		}
-		const lessonData = {
-			videoId: req.body.videoId,
-			twitchVideo: !!req.body.twitch ? true : false,
-			title: req.body.videoTitle,
-			dates: dates,
-			permalink: req.body.permalink,
-			thumbnail: req.body.thumbnail,
-			classNo: req.body.number ? req.body.number.split(",") : [],
-			slides: req.body.slides ? req.body.slides.split(",") : [],
-			materials: req.body.materials,
-			checkin: req.body.checkin ? req.body.checkin.split(",") : [],
-			motivationLink: req.body.motivationLink,
-			motivationTitle: req.body.motivationTitle,
-			cohort: req.body.cohort,
-			note: req.body.note,
-			timestamps: timestamps,
-		};
+		// let dates = [];
+		// if (req.body.date) {
+		// 	dates = req.body.date.split(",").map((date) => new Date(date));
+		// }
+		// let slides = [];
+		// const timestamps = [];
+		// for (let i = 0; i < req.body.tsTime.length; i++) {
+		// 	timestamps.push({
+		// 		time: Number(req.body.tsTime[i]),
+		// 		title: req.body.tsTitle[i],
+		// 	});
+		// }
+		const lessonData = mapData(req.body);
+		console.log(lessonData);
 		const lesson = await Lesson.findByIdAndUpdate(
 			req.params.id || mongoose.Types.ObjectId(),
 			lessonData,

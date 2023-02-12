@@ -59,8 +59,8 @@ block content
 				p
 					+lessonLinks(lesson.slides, "Slides")
 
-				if lesson.materials
-					p #[a(href=lesson.materials  target="_blank") Follow-Along Materials]
+				p
+					+lessonLinks(lesson.materials, "Materials")
 
 					if lesson.motivationLink
 						h2 Motivation

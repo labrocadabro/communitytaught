@@ -1,4 +1,4 @@
-export default redirects = {
+export default {
 	home: "/",
 	dashboard: "/user/dashboard",
 	account: "/user/account",

@@ -2,33 +2,47 @@ import mongoose from "mongoose";
 
 const Schema = mongoose.Schema;
 
+const classSchema = new Schema({
+	number: {
+		type: Number,
+	},
+	date: {
+		type: Date,
+		required: true,
+	},
+});
+
+const MotivationSchema = new Schema({
+	title: String,
+	link: String,
+});
+
 const TimestampSchema = new Schema({
 	time: Number,
 	title: String,
 });
 
 const lessonSchema = new Schema({
-	videoId: {
-		type: String,
-	},
-	twitchVideo: {
-		type: Boolean,
-		default: false,
+	classes: {
+		type: [classSchema],
+		required: true,
 	},
 	title: {
 		type: String,
 		required: true,
+		unique: true,
+	},
+	videoId: {
+		type: String,
+	},
+	videoType: {
+		type: String,
+		enum: ["youtube", "twitch", "none"],
+		default: "youtube",
 	},
 	permalink: {
 		type: String,
 		unique: true,
-	},
-	dates: {
-		type: [Date],
-		required: true,
-	},
-	classNo: {
-		type: [Number],
 	},
 	thumbnail: {
 		type: String,
@@ -40,17 +54,19 @@ const lessonSchema = new Schema({
 	materials: {
 		type: [String],
 	},
-	checkin: {
+	checkins: {
 		type: [String],
 	},
-	motivationLink: {
-		type: String,
-	},
-	motivationTitle: {
-		type: String,
+	motivation: {
+		type: MotivationSchema,
 	},
 	timestamps: [TimestampSchema],
-	cohort: Number,
+	cohort: {
+		type: Number,
+		enum: [2, 3],
+		required: true,
+		default: 2,
+	},
 	note: String,
 });
 

@@ -2,7 +2,7 @@ extends layouts/default.pug
 
 block variables
 	- const action = edit ? "Edit" : "Add"
-	- const title = `${action} Homework`
+	- title = `${action} Homework`
 
 block content
 	form.add-form(action=edit? `/hw/edit/${homework._id}` : "/hw/add" method="post")

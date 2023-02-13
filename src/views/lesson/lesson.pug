@@ -7,7 +7,7 @@ block variables
 	- title = lesson.title
 	- active = "Classes"
 	- const watched = lesson.watched ? "checked" : ""
-	- const formattedDates = lesson.dates.map(date => date.toLocaleDateString('en-US', {day: "numeric", month: "short", year: "numeric"})).join(' / ')
+	- const formattedDates = lesson.classes.map(c => c.date.toLocaleDateString('en-US', {day: "numeric", month: "short", year: "numeric"})).join(' / ')
 
 block content
 	if !loggedIn
@@ -15,7 +15,7 @@ block content
 
 	div(class="sm:flex block justify-between items-baseline")
 		h1
-			+classNo(lesson.classNo)
+			+classNo(lesson.classes)
 			|: #{lesson.title}
 			if loggedIn && user.admin
 				a(href=`/class/edit/${lesson._id}`) #[i.fas.fa-pencil]
@@ -48,13 +48,13 @@ block content
 					input.watched.mr-2.mb-1(type="checkbox" id="watched-" + lesson._id autocomplete="off" checked=lesson.watched)
 					label.mr-4.text-pink-800.text-xl.font-medium(for="watched-" + lesson._id) Watched
 
-				if lesson.checkin.length
+				if lesson.checkins.length
 					input.checkedin.mr-2.mb-1(type="checkbox" id="checkedin-" + lesson._id autocomplete="off" checked=lesson.checkedIn)
 					label.text-pink-800.text-xl.font-medium(for="checkedin-" + lesson._id) Checked In
 
 			.mb-3(class="mt-3")
 				p
-					+lessonLinks(lesson.checkin, "Check In")
+					+lessonLinks(lesson.checkins, "Check In")
 
 				p
 					+lessonLinks(lesson.slides, "Slides")

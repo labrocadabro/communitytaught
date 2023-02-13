@@ -11,10 +11,10 @@ mixin inputPair(parentName, child1Name, child1Label, child2Name, child2Label)
   .grid.gap-4(class="grid-cols-[1fr_1fr]")
     div
       label(for=`${parentName}_${child1Name}`) #{child1Label}
-      input(id=`${parentName}_${child1Name}` type="text", name=`${parentName}_${child1Name}` value=edit? lesson[`${parentName}`][`${child1Name}`] : "")
+      input(id=`${parentName}_${child1Name}` type="text", name=`${parentName}_${child1Name}` value=(edit && lesson[`${parentName}`]) ? lesson[`${parentName}`][`${child1Name}`] : "")
     div
       label(for=`${parentName}_${child2Name}`) #{child2Label}
-      input(id=`${parentName}_${child2Name}` type="text", name=`${parentName}_${child2Name}` value=edit? lesson[`${parentName}`][`${child2Name}`] : "")
+      input(id=`${parentName}_${child2Name}` type="text", name=`${parentName}_${child2Name}` value=(edit && lesson[`${parentName}`]) lesson[`${parentName}`][`${child2Name}`] : "")
 
 mixin multiInput(name, label)
   - const data = lesson ? lesson[`${name}`] : [];

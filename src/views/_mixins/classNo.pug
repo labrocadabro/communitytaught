@@ -1,10 +1,10 @@
-mixin classNo(classNo)
-	case classNo.length
+mixin classNo(classes)
+	case classes.length
 		when 0
 			|Super Review
 		when 1
-			|Class #{classNo[0]}
+			|Class #{classes[0].number}
 		when 2
-			|Classes #{classNo[0]} &amp; #{classNo[1]}
+			|Classes #{classes[0].number} &amp; #{classes[1].number}
 		default
-			|Classes #{classNo[0]} - #{classNo.at(-1)}
+			|Classes #{classes[0].number} - #{classes.at(-1).number}

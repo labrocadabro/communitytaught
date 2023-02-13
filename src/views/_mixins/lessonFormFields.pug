@@ -1,0 +1,45 @@
+mixin input(name, label, isInput=true)
+  div
+    label(for=name) #{label}
+    if isInput
+      input(id=name type="text", name=name value=edit? lesson[`${name}`] : "")
+    else
+      textarea(id="name" name=name) #{edit? lesson[`${name}`] : ""}
+
+
+mixin inputPair(parentName, child1Name, child1Label, child2Name, child2Label)
+  .grid.gap-4(class="grid-cols-[1fr_1fr]")
+    div
+      label(for=`${parentName}_${child1Name}`) #{child1Label}
+      input(id=`${parentName}_${child1Name}` type="text", name=`${parentName}_${child1Name}` value=edit? lesson[`${parentName}`][`${child1Name}`] : "")
+    div
+      label(for=`${parentName}_${child2Name}`) #{child2Label}
+      input(id=`${parentName}_${child2Name}` type="text", name=`${parentName}_${child2Name}` value=edit? lesson[`${parentName}`][`${child2Name}`] : "")
+
+mixin multiInput(name, label)
+  - const data = lesson ? lesson[`${name}`] : [];
+
+  .relative(class="[&>input]:w-[calc(100%-3.5rem)]" id=`${name}Data`)
+    label(for=name) #{label}
+    if edit && data.length
+      each item in data
+        input(type="text", name=`${name}[]` id=name value=item)
+    else
+      input(type="text", name=`${name}[]` id=name)
+    .absolute.right-0.bottom-1(id=`add-${name}`)
+      button.btn.secondary.add(type="button") +
+
+mixin multiInputPair(parentName, child1Name, child1Label, child2Name, child2Label)
+  - const data = lesson ? lesson[`${parentName}`] : [];
+  .grid.gap-4.pr-14.mt-3.relative(id=`${parentName}Data` class="grid-cols-[1fr_1fr]")
+      label(for=`${parentName}_${child1Name}`) #{child1Label}
+      label(for=`${parentName}_${child2Name}`) #{child2Label}
+      if edit && data.length
+        each entry, i in data
+          input.w-full(id=`${parentName}_${child1Name}` type="text", name=`${parentName}_${child1Name}[]` class="-mt-4" value=entry[`${child1Name}`])
+          input.w-full(id=`${parentName}_${child2Name}` type="text", name=`${parentName}_${child2Name}[]` class="-mt-4" value=entry[`${child2Name}`])
+      else
+        input.w-full(id=`${parentName}_${child1Name}` type="text", name=`${parentName}_${child1Name}[]` class="-mt-4")
+        input.w-full(id=`${parentName}_${child2Name}` type="text", name=`${parentName}_${child2Name}[]` class="-mt-4")
+      .absolute.right-0.bottom-1(id=`add-${parentName}`)
+        button.btn.secondary.add(type="button") +

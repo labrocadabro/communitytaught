@@ -82,7 +82,7 @@
 
 	/* ADD/EDIT FORMS (ADMIN ONLY) */
 	.add-form {
-		@apply mt-5 max-w-5xl mx-auto border p-10;
+		@apply w-full mt-5 max-w-5xl mx-auto p-10;
 	}
 	.add-form label {
 		@apply w-full block text-sm uppercase;
@@ -91,19 +91,15 @@
 	.add-form textarea {
 		@apply w-full mb-3 border-stone-300;
 	}
-
-	#timestamps,
 	#hw-items,
 	#pw-items {
 		@apply mt-3 w-full border px-5 py-3;
 	}
-	.timestamp,
 	.hw-item,
 	.pw-item {
 		@apply grid grid-cols-4 gap-2 items-center py-3 border-t border-dashed border-gray-700;
 		grid-template-columns: repeat(4, 1fr);
 	}
-	.timestamp:first-of-type,
 	.hw-item:first-of-type,
 	.pw-item:first-of-type {
 		@apply border-0;

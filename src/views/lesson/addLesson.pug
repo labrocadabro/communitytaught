@@ -1,5 +1,5 @@
 extends ../_layouts/default.pug
-include ../_mixins/formFields.pug
+include ../_mixins/lessonFormFields.pug
 
 block variables
   - const action = edit ? "Edit" : "Add"
@@ -21,93 +21,27 @@ block content
           option(value="2") 2
           option(value="3") 3
 
-    .pr-14.mt-3.relative
-      #classData.grid.gap-4(class="grid-cols-[1fr_1fr]")
-        if edit
-          each num, i in lesson.classNo
-            if i === 0
-              div
-                label(for="classes_number") Class Number
-                input#classNo.w-full(type="text", name="classNo[]" value=num)
-              div
-                label(for="classes_date") Class Date
-                input#dates.w-full(type="text", name="dates[]" value=lesson.dates[0])
+    +multiInputPair("classes", "number", "Class Number", "date", "Class Date")
 
-            else
-              input#classNo.w-full(type="text", name="classNo[]" value=num)
-              input#dates.w-full(type="text", name="dates[]" value=lesson.dates[i])
-        else
-          div
-            label(for="number") Class Number
-            input#classNo.w-full(type="text", name="classNo[]")
-          div
-            label(for="date") Class Date
-            input#dates.w-full(type="text", name="dates[]")
-        #add-class.absolute.right-0.bottom-1
-          button.btn.secondary.add(type="button") +
-
-
-    //- 		each timestamp, index in lesson.timestamps
-    //- 			.timestamp
-    //- 				label(for=`ts-time-${index}`) Time
-    //- 				input(type="number", name="tsTime" id=`ts-title-${index}` value=timestamp.time)
-    //- 				label(for=`ts-title-${index}`) Title
-    //- 				input(type="text", name="tsTitle" id=`ts-title-${index}` value=timestamp.title)
-    //- 	else
-    //- 		.timestamp
-    //- 			label(for="ts-time-0") Time
-    //- 			input#ts-time-0(type="number", name="tsTime")
-    //- 			label(for="ts-title-0") Title
-    //- 			input#ts-title-0(type="text", name="tsTitle")
-      #addClass.absolute.right-0.bottom-1
-        button.btn.secondary.add(type="button") +
     .grid.gap-4(class="grid-cols-[1fr_2fr]")
-      div
-        +input({name:"videoId", label:"Video ID", type: "text", data: lesson.videoId})
-      div
-        +input({name:"thumbnail", label:"Thumbnail", type: "text", data: lesson.thumbnail})
-    +input({name:"title", type: "text", data: lesson.title})
+      +input("videoId", "Video ID")
+      +input("thumbnail", "Thumbnail")
+
+    +input("title", "Class Name")
     //- .mb-3.text-sm(class="-mt-2") PERMALINK: #{lesson.permalink} #[i.fas.fa-pencil]
-    +input({name:"permalink", type: "text", data: lesson.permalink})
+    +input("permalink", "Class Permalink")
 
-    +multiInput({name: "slides", label:"Slides", type: "text", data: lesson.slides})
-    +multiInput({name: "materials", label:"Materials", type: "text", data: lesson.materials})
-    +multiInput({name: "checkins", type: "text", data: lesson.checkins})
+    +multiInput("slides", "Slides")
+    +multiInput("materials", "Materials")
+    +multiInput("checkins", "Checkins")
 
-    +input({name:"motivationLink", label:"Motivation Link", type: "text"})
-    +input({name:"motivationTitle", label:"Motivation Title", type: "text"})
+    +inputPair("motivation", "title", "Motivation Title", "link", "Motivation Link")
 
-    label(for="note") Note
-    textarea#note.col-span-3(type="text", name="note") #{edit? lesson.note : ""}
+    +input("note", "Note", false)
 
-    .pr-14.relative.mt-5
-      h2 Timestamps
-      .timestamp.grid.gap-4(class="grid-cols-[1fr_1fr]")
-        .tsTime
-          label(for="tsTimes") Time
-          input#tsTime.w-full(type="number", name="tsTime[]")
-        .tsTitle
-          label(for="tsTitle") Title
-          input#tsTime.w-full(type="text", name="tsTitle[]")
-      #addTimestamp.absolute.right-0.bottom-4
-        button.btn.secondary.add(type="button") +
+    h2.mt-6 Timestamps
+    +multiInputPair("timestamps", "title", "Timestamp Name", "time", "Time")
 
-    //- #timestamps.col-span-4
-    //- 	h2.col-span-4.mb-3 Timestamps
-    //- 	button#add-timestamp.col-span-4 Add another timestamp
-    //- 	if edit && lesson.timestamps.length
-    //- 		each timestamp, index in lesson.timestamps
-    //- 			.timestamp
-    //- 				label(for=`ts-time-${index}`) Time
-    //- 				input(type="number", name="tsTime" id=`ts-title-${index}` value=timestamp.time)
-    //- 				label(for=`ts-title-${index}`) Title
-    //- 				input(type="text", name="tsTitle" id=`ts-title-${index}` value=timestamp.title)
-    //- 	else
-    //- 		.timestamp
-    //- 			label(for="ts-time-0") Time
-    //- 			input#ts-time-0(type="number", name="tsTime")
-    //- 			label(for="ts-title-0") Title
-    //- 			input#ts-title-0(type="text", name="tsTitle")
     .mt-3
       button(class="btn primary max-w-1/3 mx-auto" type="submit") #{action} Class
 

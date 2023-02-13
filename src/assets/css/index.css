@@ -935,8 +935,8 @@ h3 {
   margin-left: auto;
   margin-right: auto;
   margin-top: 1.25rem;
+  width: 100%;
   max-width: 64rem;
-  border-width: 1px;
   padding: 2.5rem;
 }
 
@@ -956,8 +956,7 @@ h3 {
   border-color: rgb(214 211 209 / var(--tw-border-opacity));
 }
 
-#timestamps,
-	#hw-items,
+#hw-items,
 	#pw-items {
   margin-top: 0.75rem;
   width: 100%;
@@ -968,8 +967,7 @@ h3 {
   padding-bottom: 0.75rem;
 }
 
-.timestamp,
-	.hw-item,
+.hw-item,
 	.pw-item {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -984,8 +982,7 @@ h3 {
   grid-template-columns: repeat(4, 1fr);
 }
 
-.timestamp:first-of-type,
-	.hw-item:first-of-type,
+.hw-item:first-of-type,
 	.pw-item:first-of-type {
   border-width: 0px;
 }
@@ -1294,6 +1291,14 @@ dd ol {
   right: 1.5rem;
 }
 
+.right-0 {
+  right: 0px;
+}
+
+.bottom-1 {
+  bottom: 0.25rem;
+}
+
 .top-0 {
   top: 0px;
 }
@@ -1316,22 +1321,6 @@ dd ol {
 
 .right-1 {
   right: 0.25rem;
-}
-
-.right-2 {
-  right: 0.5rem;
-}
-
-.bottom-5 {
-  bottom: 1.25rem;
-}
-
-.right-0 {
-  right: 0px;
-}
-
-.bottom-1 {
-  bottom: 0.25rem;
 }
 
 .z-10 {
@@ -1420,6 +1409,10 @@ dd ol {
   margin-bottom: 0.5rem;
 }
 
+.mt-3 {
+  margin-top: 0.75rem;
+}
+
 .mt-auto {
   margin-top: auto;
 }
@@ -1428,12 +1421,12 @@ dd ol {
   margin-top: 0.25rem;
 }
 
-.mt-3 {
-  margin-top: 0.75rem;
-}
-
 .-mt-2 {
   margin-top: -0.5rem;
+}
+
+.mt-6 {
+  margin-top: 1.5rem;
 }
 
 .mb-1 {
@@ -1468,8 +1461,12 @@ dd ol {
   margin-right: auto;
 }
 
-.mt-5 {
-  margin-top: 1.25rem;
+.-mb-4 {
+  margin-bottom: -1rem;
+}
+
+.-mt-4 {
+  margin-top: -1rem;
 }
 
 .block {
@@ -1600,12 +1597,12 @@ dd ol {
   gap: 1.5rem;
 }
 
-.gap-2 {
-  gap: 0.5rem;
-}
-
 .gap-4 {
   gap: 1rem;
+}
+
+.gap-2 {
+  gap: 0.5rem;
 }
 
 .gap-10 {
@@ -1728,23 +1725,12 @@ dd ol {
   padding-bottom: 0.75rem;
 }
 
-.px-2 {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
-
-.py-1\.5 {
-  padding-top: 0.375rem;
-  padding-bottom: 0.375rem;
-}
-
-.py-1 {
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-}
-
 .pr-12 {
   padding-right: 3rem;
+}
+
+.pr-14 {
+  padding-right: 3.5rem;
 }
 
 .pt-2 {
@@ -1753,18 +1739,6 @@ dd ol {
 
 .pb-4 {
   padding-bottom: 1rem;
-}
-
-.pr-16 {
-  padding-right: 4rem;
-}
-
-.pr-14 {
-  padding-right: 3.5rem;
-}
-
-.pt-3 {
-  padding-top: 0.75rem;
 }
 
 .text-left {
@@ -1841,10 +1815,6 @@ dd ol {
 
 .uppercase {
   text-transform: uppercase;
-}
-
-.capitalize {
-  text-transform: capitalize;
 }
 
 .italic {
@@ -2069,19 +2039,11 @@ dd ol {
   }
 }
 
+.\[\&\>input\]\:w-\[calc\(100\%-3\.5rem\)\]>input {
+  width: calc(100% - 3.5rem);
+}
+
 .\[\&\>li\]\:px-6>li {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-}
-
-.\[\&\>input\]\:w-\[calc\(100\%-4rem\)\]>input {
-  width: calc(100% - 4rem);
-}
-
-.\[\&\>input\]\:w-\[calc\(100\%-3rem\)\]>input {
-  width: calc(100% - 3rem);
-}
-
-.\[\&\>input\]\:w-\[calc\(100\%-3\.5rem\)\]>input {
-  width: calc(100% - 3.5rem);
 }

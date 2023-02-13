@@ -5,7 +5,7 @@ mixin lessonCard(lesson)
 
 		.card-top-banner.bg-twilight-50.px-3.py-2
 			h3.text-twilight-900.text-2xl
-				+classNo(lesson.classNo)
+				+classNo(lesson.classes)
 				if loggedIn && user.admin
 					a.ml-2(href=`/class/edit/${lesson._id}`) #[i.fas.fa-pencil]
 			if loggedIn
@@ -17,7 +17,7 @@ mixin lessonCard(lesson)
 						else
 							| No stream
 					.lesson-checkedin
-						if lesson.checkin.length && lesson.checkin[0].length
+						if lesson.checkins.length
 							input.checkedin.mr-2(type="checkbox" id="checkedin-" + lesson._id autocomplete="off" checked=lesson.checkedIn data-lesson=lesson._id)
 							label(for="checkedin-" + lesson._id) Checked In
 						else

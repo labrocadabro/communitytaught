@@ -8,7 +8,7 @@ import Homework from "../homework/models/Homework.js";
 import { getHwProgress } from "../homework/controllers.js";
 
 import redirects from "../../data/redirects.js";
-import { mapData } from "../../utils/formatting.js";
+import { mapData, ensureArray } from "../../utils/formatting.js";
 
 export const addEditLessonForm = async (req, res) => {
 	if (!req.isAuthenticated() || !req.user.admin)
@@ -17,37 +17,55 @@ export const addEditLessonForm = async (req, res) => {
 	let lesson = null;
 	if (edit) {
 		lesson = await Lesson.findById(req.params.id).lean();
-		lesson.dates = lesson.dates.map((date) => {
-			return date.toISOString().split("T")[0];
+		lesson.classes = lesson.classes.map((c) => {
+			return {
+				...c,
+				date: c.date.toISOString().split("T")[0],
+			};
 		});
 	}
 	res.render("lesson/addLesson", { edit, lesson });
 };
 
-// export const addEditLesson = async (req, res) => {
-// 	if (!req.isAuthenticated() || !req.user.admin)
-// 		return res.redirect(redirects.home);
-// 	console.log(mapData(req.body));
-// };
-
 export const addEditLesson = async (req, res) => {
 	if (!req.isAuthenticated() || !req.user.admin)
 		return res.redirect(redirects.home);
 	try {
-		// let dates = [];
-		// if (req.body.date) {
-		// 	dates = req.body.date.split(",").map((date) => new Date(date));
-		// }
-		// let slides = [];
-		// const timestamps = [];
-		// for (let i = 0; i < req.body.tsTime.length; i++) {
-		// 	timestamps.push({
-		// 		time: Number(req.body.tsTime[i]),
-		// 		title: req.body.tsTitle[i],
-		// 	});
-		// }
-		const lessonData = mapData(req.body);
-		console.log(lessonData);
+		// const lessonData = mapData(req.body);
+		const classesData = [];
+		const numberData = ensureArray(req.body["classes_number[]"]);
+		const dateData = ensureArray(req.body["classes_date[]"]);
+		for (let i = 0; i < numberData.length; i++) {
+			classesData.push({
+				number: numberData[i],
+				date: dateData[i],
+			});
+		}
+		const timestampsData = [];
+		const tstitleData = ensureArray(req.body["timestamps_title[]"]);
+		const tstimeData = ensureArray(req.body["timestamps_time[]"]);
+		for (let i = 0; i < tstitleData.length; i++) {
+			timestampsData.push({
+				title: tstitleData[i],
+				time: tstimeData[i],
+			});
+		}
+		const lessonData = {
+			classes: classesData,
+			videoId: req.body.videoId,
+			thumbnail: req.body.thumbnail,
+			title: req.body.title,
+			permalink: req.body.permalink,
+			slides: ensureArray(req.body["slides[]"]),
+			materials: ensureArray(req.body["materials[]"]),
+			checkins: ensureArray(req.body["checkins[]"]),
+			motivation: {
+				title: req.body.motivation_title,
+				link: req.body.motivation_link,
+			},
+			note: req.body.note,
+			timestamps: timestampsData,
+		};
 		const lesson = await Lesson.findByIdAndUpdate(
 			req.params.id || mongoose.Types.ObjectId(),
 			lessonData,
@@ -72,7 +90,9 @@ export const addEditLesson = async (req, res) => {
 			message: [`Class not ${!!req.params.id ? "updated" : "added"}`],
 		};
 	} finally {
-		res.redirect(redirects.addClass);
+		res.redirect(
+			!!req.params.id ? `/class/edit/${req.params.id}` : redirects.addClass
+		);
 	}
 };
 

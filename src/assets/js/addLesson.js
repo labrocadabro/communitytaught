@@ -1,5 +1,5 @@
-const title = document.getElementById("video-title");
-const videoId = document.getElementById("video-id");
+const title = document.getElementById("title");
+const videoId = document.getElementById("videoId");
 // const addTsButton = document.getElementById("add-timestamp");
 // let tsIndex = document.querySelectorAll(".timestamp").length;
 
@@ -75,19 +75,27 @@ document
 	);
 
 document
-	.getElementById("add-checkin")
+	.getElementById("add-checkins")
 	.addEventListener("click", () =>
 		addEntry(
-			document.getElementById("checkinData"),
-			document.getElementById("checkin")
+			document.getElementById("checkinsData"),
+			document.getElementById("checkins")
 		)
 	);
-document
-	.getElementById("add-class")
-	.addEventListener("click", () =>
-		addEntry(
-			document.getElementById("classData"),
-			document.getElementById("classNo"),
-			document.getElementById("dates")
-		)
+document.getElementById("add-classes").addEventListener("click", () => {
+	console.log(this);
+	addEntry(
+		document.getElementById("classesData"),
+		document.getElementById("classes_number"),
+		document.getElementById("classes_date")
 	);
+});
+
+document.getElementById("add-timestamps").addEventListener("click", () => {
+	console.log(this);
+	addEntry(
+		document.getElementById("timestampsData"),
+		document.getElementById("timestamps_title"),
+		document.getElementById("timestamps_time")
+	);
+});

@@ -5,6 +5,7 @@ const Schema = mongoose.Schema;
 const classSchema = new Schema({
 	number: {
 		type: Number,
+		required: true,
 	},
 	date: {
 		type: Date,

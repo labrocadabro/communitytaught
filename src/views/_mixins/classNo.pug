@@ -1,9 +1,10 @@
 mixin classNo(classes)
 	case classes.length
-		when 0
-			|Super Review
 		when 1
-			|Class #{classes[0].number}
+			if classes[0].number %1 != 0
+				|Super Review
+			else
+				|Class #{classes[0].number}
 		when 2
 			|Classes #{classes[0].number} &amp; #{classes[1].number}
 		default

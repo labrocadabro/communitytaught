@@ -1,19 +1,10 @@
 [
 	{
-		"_id": {
-			"$oid": "634615b97755d907aa66bd97"
-		},
+		"_id": { "$oid": "634615b97755d907aa66bd97" },
 		"__v": 0,
 		"checkins": ["https://twitter.com/leonnoel/status/1481030723347746816"],
 		"classes": [
-			{
-				"number": 1,
-				"date": {
-					"$date": {
-						"$numberLong": "1641859200000"
-					}
-				}
-			}
+			{ "number": 1, "date": { "$date": { "$numberLong": "1641859200000" } } }
 		],
 		"cohort": 2,
 		"materials": [
@@ -26,27 +17,17 @@
 		"permalink": "become-a-software-engineer-for-free",
 		"slides": ["https://slides.com/leonnoel/100devs2-html-the-basics"],
 		"thumbnail": "https://i3.ytimg.com/vi/o3IIobN4xR0/maxresdefault.jpg",
-		"timestamps": [],
 		"title": "Become A Software Engineer For Free",
 		"videoType": "youtube",
 		"videoId": "o3IIobN4xR0",
 		"note": ""
 	},
 	{
-		"_id": {
-			"$oid": "634616947755d907aa66bdbb"
-		},
+		"_id": { "$oid": "634616947755d907aa66bdbb" },
 		"__v": 0,
 		"checkins": ["https://twitter.com/leonnoel/status/1481755548227829764"],
 		"classes": [
-			{
-				"number": 2,
-				"date": {
-					"$date": {
-						"$numberLong": "1642032000000"
-					}
-				}
-			}
+			{ "number": 2, "date": { "$date": { "$numberLong": "1642032000000" } } }
 		],
 		"cohort": 2,
 		"materials": [
@@ -59,27 +40,17 @@
 		"permalink": "learn-html",
 		"slides": ["https://slides.com/leonnoel/100devs2-html-more-basics"],
 		"thumbnail": "https://i3.ytimg.com/vi/eCRbEILXXmE/maxresdefault.jpg",
-		"timestamps": [],
 		"title": "Learn HTML",
 		"videoType": "youtube",
 		"videoId": "eCRbEILXXmE",
 		"note": ""
 	},
 	{
-		"_id": {
-			"$oid": "634617887755d907aa66bdca"
-		},
+		"_id": { "$oid": "634617887755d907aa66bdca" },
 		"__v": 0,
 		"checkins": ["https://twitter.com/leonnoel/status/1483567676626653185"],
 		"classes": [
-			{
-				"number": 3,
-				"date": {
-					"$date": {
-						"$numberLong": "1642464000000"
-					}
-				}
-			}
+			{ "number": 3, "date": { "$date": { "$numberLong": "1642464000000" } } }
 		],
 		"cohort": 2,
 		"materials": [
@@ -92,27 +63,17 @@
 		"permalink": "learn-more-html",
 		"slides": ["https://slides.com/leonnoel/100devs2-html-even-more-basics"],
 		"thumbnail": "https://i3.ytimg.com/vi/rdWM6kUImjE/maxresdefault.jpg",
-		"timestamps": [],
 		"title": "Learn More HTML",
 		"videoType": "youtube",
 		"videoId": "rdWM6kUImjE",
 		"note": ""
 	},
 	{
-		"_id": {
-			"$oid": "634618287755d907aa66bdd1"
-		},
+		"_id": { "$oid": "634618287755d907aa66bdd1" },
 		"__v": 0,
 		"checkins": ["https://twitter.com/leonnoel/status/1484292275064631297"],
 		"classes": [
-			{
-				"number": 4,
-				"date": {
-					"$date": {
-						"$numberLong": "1642636800000"
-					}
-				}
-			}
+			{ "number": 4, "date": { "$date": { "$numberLong": "1642636800000" } } }
 		],
 		"cohort": 2,
 		"materials": [
@@ -125,27 +86,17 @@
 		"permalink": "learn-css",
 		"slides": ["https://slides.com/leonnoel/100devs2-css-the-basics"],
 		"thumbnail": "https://i3.ytimg.com/vi/Q1Obtn29twk/maxresdefault.jpg",
-		"timestamps": [],
 		"title": "Learn CSS",
 		"videoType": "youtube",
 		"videoId": "Q1Obtn29twk",
 		"note": ""
 	},
 	{
-		"_id": {
-			"$oid": "634618af7755d907aa66bdd8"
-		},
+		"_id": { "$oid": "634618af7755d907aa66bdd8" },
 		"__v": 0,
 		"checkins": ["https://twitter.com/leonnoel/status/1486104346227970050"],
 		"classes": [
-			{
-				"number": 5,
-				"date": {
-					"$date": {
-						"$numberLong": "1643068800000"
-					}
-				}
-			}
+			{ "number": 5, "date": { "$date": { "$numberLong": "1643068800000" } } }
 		],
 		"cohort": 2,
 		"materials": [
@@ -158,27 +109,17 @@
 		"permalink": "learn-css-layout",
 		"slides": ["https://slides.com/leonnoel/100devs2-css-more-basics"],
 		"thumbnail": "https://i3.ytimg.com/vi/E6Z8cWU_fjI/maxresdefault.jpg",
-		"timestamps": [],
 		"title": "Learn CSS Layout",
 		"videoType": "youtube",
 		"videoId": "E6Z8cWU_fjI",
 		"note": ""
 	},
 	{
-		"_id": {
-			"$oid": "634619677755d907aa66bddf"
-		},
+		"_id": { "$oid": "634619677755d907aa66bddf" },
 		"__v": 0,
 		"checkins": ["https://twitter.com/leonnoel/status/1486829337026260994"],
 		"classes": [
-			{
-				"number": 6,
-				"date": {
-					"$date": {
-						"$numberLong": "1643241600000"
-					}
-				}
-			}
+			{ "number": 6, "date": { "$date": { "$numberLong": "1643241600000" } } }
 		],
 		"cohort": 2,
 		"materials": [
@@ -191,27 +132,17 @@
 		"permalink": "lets-review-html-and-css",
 		"slides": ["https://slides.com/leonnoel/100devs2-review-and-responsive"],
 		"thumbnail": "https://i3.ytimg.com/vi/L55ax0blZY0/maxresdefault.jpg",
-		"timestamps": [],
 		"title": "Let's Review HTML and CSS",
 		"videoType": "youtube",
 		"videoId": "L55ax0blZY0",
 		"note": ""
 	},
 	{
-		"_id": {
-			"$oid": "634619d57755d907aa66bde6"
-		},
+		"_id": { "$oid": "634619d57755d907aa66bde6" },
 		"__v": 0,
 		"checkins": ["https://twitter.com/leonnoel/status/1488640947722145792"],
 		"classes": [
-			{
-				"number": 7,
-				"date": {
-					"$date": {
-						"$numberLong": "1643673600000"
-					}
-				}
-			}
+			{ "number": 7, "date": { "$date": { "$numberLong": "1643673600000" } } }
 		],
 		"cohort": 2,
 		"materials": [
@@ -220,27 +151,17 @@
 		"permalink": "learn-responsive-css",
 		"slides": ["https://slides.com/leonnoel/100devs2-css-responsive-basics"],
 		"thumbnail": "https://i3.ytimg.com/vi/k8r3B0JGMt4/maxresdefault.jpg",
-		"timestamps": [],
 		"title": "Learn Responsive CSS",
 		"videoType": "youtube",
 		"videoId": "k8r3B0JGMt4",
 		"note": ""
 	},
 	{
-		"_id": {
-			"$oid": "63461a237755d907aa66bded"
-		},
+		"_id": { "$oid": "63461a237755d907aa66bded" },
 		"__v": 0,
 		"checkins": ["https://twitter.com/leonnoel/status/1489365690217754628"],
 		"classes": [
-			{
-				"number": 8,
-				"date": {
-					"$date": {
-						"$numberLong": "1643846400000"
-					}
-				}
-			}
+			{ "number": 8, "date": { "$date": { "$numberLong": "1643846400000" } } }
 		],
 		"cohort": 2,
 		"materials": [
@@ -249,27 +170,17 @@
 		"permalink": "write-bad-css",
 		"slides": ["https://slides.com/leonnoel/100devs2-css-responsive-review"],
 		"thumbnail": "https://i3.ytimg.com/vi/PWVRSXQxsXc/maxresdefault.jpg",
-		"timestamps": [],
 		"title": "Write Bad CSS",
 		"videoType": "youtube",
 		"videoId": "PWVRSXQxsXc",
 		"note": ""
 	},
 	{
-		"_id": {
-			"$oid": "63461a8f7755d907aa66bdf4"
-		},
+		"_id": { "$oid": "63461a8f7755d907aa66bdf4" },
 		"__v": 0,
 		"checkins": ["https://twitter.com/leonnoel/status/1491177563003453440"],
 		"classes": [
-			{
-				"number": 9,
-				"date": {
-					"$date": {
-						"$numberLong": "1644278400000"
-					}
-				}
-			}
+			{ "number": 9, "date": { "$date": { "$numberLong": "1644278400000" } } }
 		],
 		"cohort": 2,
 		"materials": [
@@ -278,27 +189,17 @@
 		"permalink": "networking-night",
 		"slides": ["https://slides.com/leonnoel/100devs2-networking-night"],
 		"thumbnail": "https://i3.ytimg.com/vi/OaglXfjsBaE/maxresdefault.jpg",
-		"timestamps": [],
 		"title": "Networking Night",
 		"videoType": "youtube",
 		"videoId": "OaglXfjsBaE",
 		"note": "The networking sheet from this class is located <a href=\"https://docs.google.com/spreadsheets/d/1Be-6gYvrfi8l-M0RnObzdysRIG7N7Yyu6rIF0OHw0Q4/edit#gid=1771441293\" target=\"_blank\">here</a>."
 	},
 	{
-		"_id": {
-			"$oid": "63461b2c7755d907aa66bdfb"
-		},
+		"_id": { "$oid": "63461b2c7755d907aa66bdfb" },
 		"__v": 0,
 		"checkins": ["https://twitter.com/leonnoel/status/1491902703861071872"],
 		"classes": [
-			{
-				"number": 10,
-				"date": {
-					"$date": {
-						"$numberLong": "1644451200000"
-					}
-				}
-			}
+			{ "number": 10, "date": { "$date": { "$numberLong": "1644451200000" } } }
 		],
 		"cohort": 2,
 		"materials": [
@@ -311,27 +212,17 @@
 		"permalink": "rant-and-review",
 		"slides": ["https://slides.com/leonnoel/100devs-css-review-homework"],
 		"thumbnail": "https://i3.ytimg.com/vi/WftjV2L7oyk/maxresdefault.jpg",
-		"timestamps": [],
 		"title": "Rant and Review",
 		"videoType": "youtube",
 		"videoId": "WftjV2L7oyk",
 		"note": ""
 	},
 	{
-		"_id": {
-			"$oid": "63461b7e7755d907aa66be02"
-		},
+		"_id": { "$oid": "63461b7e7755d907aa66be02" },
 		"__v": 0,
 		"checkins": ["https://twitter.com/leonnoel/status/1493714553649041408"],
 		"classes": [
-			{
-				"number": 11,
-				"date": {
-					"$date": {
-						"$numberLong": "1644883200000"
-					}
-				}
-			}
+			{ "number": 11, "date": { "$date": { "$numberLong": "1644883200000" } } }
 		],
 		"cohort": 2,
 		"materials": [
@@ -340,27 +231,17 @@
 		"permalink": "learn-css-layout-and-flexbox",
 		"slides": ["https://slides.com/leonnoel/100devs2-css-review-flexbox"],
 		"thumbnail": "https://i3.ytimg.com/vi/qEj0pXGVwjY/maxresdefault.jpg",
-		"timestamps": [],
 		"title": "Learn CSS Layout and Flexbox",
 		"videoType": "youtube",
 		"videoId": "qEj0pXGVwjY",
 		"note": ""
 	},
 	{
-		"_id": {
-			"$oid": "63461c717755d907aa66be19"
-		},
+		"_id": { "$oid": "63461c717755d907aa66be19" },
 		"__v": 0,
 		"checkins": ["https://twitter.com/leonnoel/status/1494439359726043141"],
 		"classes": [
-			{
-				"number": 12,
-				"date": {
-					"$date": {
-						"$numberLong": "1645056000000"
-					}
-				}
-			}
+			{ "number": 12, "date": { "$date": { "$numberLong": "1645056000000" } } }
 		],
 		"cohort": 2,
 		"materials": [
@@ -373,27 +254,17 @@
 		"permalink": "learn-javascript",
 		"slides": ["https://slides.com/leonnoel/100devs2-javascript-basics"],
 		"thumbnail": "https://i3.ytimg.com/vi/_A20kVsaqIk/maxresdefault.jpg",
-		"timestamps": [],
 		"title": "Learn Javascript",
 		"videoType": "youtube",
 		"videoId": "_A20kVsaqIk",
 		"note": ""
 	},
 	{
-		"_id": {
-			"$oid": "63461d187755d907aa66be20"
-		},
+		"_id": { "$oid": "63461d187755d907aa66be20" },
 		"__v": 0,
 		"checkins": ["https://twitter.com/leonnoel/status/1496251214304264193"],
 		"classes": [
-			{
-				"number": 13,
-				"date": {
-					"$date": {
-						"$numberLong": "1645488000000"
-					}
-				}
-			}
+			{ "number": 13, "date": { "$date": { "$numberLong": "1645488000000" } } }
 		],
 		"cohort": 2,
 		"materials": [
@@ -406,27 +277,17 @@
 		"permalink": "fun-javascript-examples",
 		"slides": ["https://slides.com/leonnoel/100devs2-javascript-more-basics"],
 		"thumbnail": "https://i3.ytimg.com/vi/pS6ykGL-fRE/maxresdefault.jpg",
-		"timestamps": [],
 		"title": "Fun JavaScript Examples",
 		"videoType": "youtube",
 		"videoId": "pS6ykGL-fRE",
 		"note": ""
 	},
 	{
-		"_id": {
-			"$oid": "63461d907755d907aa66be27"
-		},
+		"_id": { "$oid": "63461d907755d907aa66be27" },
 		"__v": 0,
 		"checkins": ["https://twitter.com/leonnoel/status/1496975838327107591"],
 		"classes": [
-			{
-				"number": 14,
-				"date": {
-					"$date": {
-						"$numberLong": "1645660800000"
-					}
-				}
-			}
+			{ "number": 14, "date": { "$date": { "$numberLong": "1645660800000" } } }
 		],
 		"cohort": 2,
 		"materials": [
@@ -441,27 +302,17 @@
 			"https://slides.com/leonnoel/100devs2-javascript-more-basics-again"
 		],
 		"thumbnail": "https://i3.ytimg.com/vi/cBWUvTZPeKw/maxresdefault.jpg",
-		"timestamps": [],
 		"title": "Javascript Functions for Beginners",
 		"videoType": "youtube",
 		"videoId": "cBWUvTZPeKw",
 		"note": ""
 	},
 	{
-		"_id": {
-			"$oid": "63461e257755d907aa66be2e"
-		},
+		"_id": { "$oid": "63461e257755d907aa66be2e" },
 		"__v": 0,
 		"checkins": ["https://twitter.com/leonnoel/status/1498787819933691905"],
 		"classes": [
-			{
-				"number": 15,
-				"date": {
-					"$date": {
-						"$numberLong": "1646092800000"
-					}
-				}
-			}
+			{ "number": 15, "date": { "$date": { "$numberLong": "1646092800000" } } }
 		],
 		"cohort": 2,
 		"materials": [
@@ -474,27 +325,17 @@
 		"permalink": "how-to-start-freelancing",
 		"slides": ["https://slides.com/leonnoel/100devs2-intro-to-freelancing"],
 		"thumbnail": "https://i3.ytimg.com/vi/68Li7ukgDKg/maxresdefault.jpg",
-		"timestamps": [],
 		"title": "How to Start Freelancing",
 		"videoType": "youtube",
 		"videoId": "68Li7ukgDKg",
 		"note": ""
 	},
 	{
-		"_id": {
-			"$oid": "63461f817755d907aa66be35"
-		},
+		"_id": { "$oid": "63461f817755d907aa66be35" },
 		"__v": 0,
 		"checkins": ["https://twitter.com/leonnoel/status/1499512575393820677"],
 		"classes": [
-			{
-				"number": 16,
-				"date": {
-					"$date": {
-						"$numberLong": "1646265600000"
-					}
-				}
-			}
+			{ "number": 16, "date": { "$date": { "$numberLong": "1646265600000" } } }
 		],
 		"cohort": 2,
 		"materials": [
@@ -507,108 +348,59 @@
 		"permalink": "learn-javascript-loops",
 		"slides": ["https://slides.com/leonnoel/100devs2-js-review-loops"],
 		"thumbnail": "https://i3.ytimg.com/vi/av6iPI_zJTU/maxresdefault.jpg",
-		"timestamps": [],
 		"title": "Learn JavaScript Loops",
 		"videoType": "youtube",
 		"videoId": "av6iPI_zJTU",
 		"note": ""
 	},
 	{
-		"_id": {
-			"$oid": "634622c17755d907aa66be4a"
-		},
+		"_id": { "$oid": "634622c17755d907aa66be4a" },
 		"__v": 0,
 		"checkins": ["https://twitter.com/leonnoel/status/1351658490184364032"],
 		"classes": [
-			{
-				"number": 17,
-				"date": {
-					"$date": {
-						"$numberLong": "1646697600000"
-					}
-				}
-			}
+			{ "number": 17, "date": { "$date": { "$numberLong": "1646697600000" } } }
 		],
 		"cohort": 2,
-		"materials": [],
-		"permalink": "networking-night-2",
-		"slides": [],
-		"timestamps": [],
 		"title": "Networking Night 2",
 		"videoType": "none",
-		"videoId": "",
-		"thumbnail": "/img/thumbnails/no-stream.png",
 		"note": "No stream, instead there was a networking session on Remo."
 	},
 	{
-		"_id": {
-			"$oid": "634623037755d907aa66be50"
-		},
+		"_id": { "$oid": "634623037755d907aa66be50" },
 		"__v": 0,
 		"checkins": ["https://twitter.com/leonnoel/status/1502049287454306304"],
 		"classes": [
-			{
-				"number": 18,
-				"date": {
-					"$date": {
-						"$numberLong": "1646870400000"
-					}
-				}
-			}
+			{ "number": 18, "date": { "$date": { "$numberLong": "1646870400000" } } }
 		],
 		"cohort": 2,
-		"materials": [],
-		"permalink": "project-night",
-		"slides": [],
-		"timestamps": [],
 		"title": "Project Night",
 		"videoType": "none",
-		"videoId": "",
-		"thumbnail": "/img/thumbnails/no-stream.png",
 		"note": "Instead of a regular class, we were given time to work on a group project of our choosing."
 	},
 	{
-		"_id": {
-			"$oid": "634623d77755d907aa66be5b"
-		},
+		"_id": { "$oid": "634623d77755d907aa66be5b" },
 		"__v": 0,
 		"checkins": ["https://twitter.com/leonnoel/status/1503039026667827202"],
 		"classes": [
 			{
 				"number": 18.5,
-				"date": {
-					"$date": {
-						"$numberLong": "1647129600000"
-					}
-				}
+				"date": { "$date": { "$numberLong": "1647129600000" } }
 			}
 		],
 		"cohort": 2,
-		"materials": [],
 		"permalink": "frontend-crash-course-super-review",
-		"slides": [],
 		"thumbnail": "https://i3.ytimg.com/vi/AkXLGS57MS4/maxresdefault.jpg",
-		"timestamps": [],
-		"title": "Frontend Crash Course (Super Review)",
+		"title": "Frontend Crash Course",
 		"videoType": "youtube",
 		"videoId": "AkXLGS57MS4",
 		"note": ""
 	},
 	{
-		"_id": {
-			"$oid": "634624ac7755d907aa66be75"
-		},
+		"_id": { "$oid": "634624ac7755d907aa66be75" },
 		"__v": 0,
 		"checkins": ["https://twitter.com/leonnoel/status/1503846066055118849"],
 		"classes": [
-			{
-				"number": 19,
-				"date": {
-					"$date": {
-						"$numberLong": "1647302400000"
-					}
-				}
-			}
+			{ "number": 19, "date": { "$date": { "$numberLong": "1647302400000" } } }
 		],
 		"cohort": 2,
 		"materials": [
@@ -621,27 +413,17 @@
 		"permalink": "arrays",
 		"slides": ["https://slides.com/leonnoel/100devs2-javascript-arrays"],
 		"thumbnail": "https://i3.ytimg.com/vi/YUQUGtUbwMY/maxresdefault.jpg",
-		"timestamps": [],
 		"title": "Arrays",
 		"videoType": "youtube",
 		"videoId": "YUQUGtUbwMY",
 		"note": ""
 	},
 	{
-		"_id": {
-			"$oid": "6346251c7755d907aa66be7c"
-		},
+		"_id": { "$oid": "6346251c7755d907aa66be7c" },
 		"__v": 0,
 		"checkins": ["https://twitter.com/leonnoel/status/1504571048875814918"],
 		"classes": [
-			{
-				"number": 20,
-				"date": {
-					"$date": {
-						"$numberLong": "1647475200000"
-					}
-				}
-			}
+			{ "number": 20, "date": { "$date": { "$numberLong": "1647475200000" } } }
 		],
 		"cohort": 2,
 		"materials": [
@@ -656,27 +438,17 @@
 			"https://slides.com/leonnoel/100devs2-array-review-javascript-objects"
 		],
 		"thumbnail": "https://i3.ytimg.com/vi/cL0qP6kM_1U/maxresdefault.jpg",
-		"timestamps": [],
 		"title": "Practice JavaScript Arrays",
 		"videoType": "youtube",
 		"videoId": "cL0qP6kM_1U",
 		"note": ""
 	},
 	{
-		"_id": {
-			"$oid": "6346258e7755d907aa66be83"
-		},
+		"_id": { "$oid": "6346258e7755d907aa66be83" },
 		"__v": 0,
 		"checkins": ["https://twitter.com/leonnoel/status/1506382754010726403"],
 		"classes": [
-			{
-				"number": 21,
-				"date": {
-					"$date": {
-						"$numberLong": "1647907200000"
-					}
-				}
-			}
+			{ "number": 21, "date": { "$date": { "$numberLong": "1647907200000" } } }
 		],
 		"cohort": 2,
 		"materials": [
@@ -685,27 +457,17 @@
 		"permalink": "learn-javascript-objects",
 		"slides": ["https://slides.com/leonnoel/100devs2-javascript-objects"],
 		"thumbnail": "https://i3.ytimg.com/vi/75TQEQ6wxAE/maxresdefault.jpg",
-		"timestamps": [],
 		"title": "Learn JavaScript Objects",
 		"videoType": "youtube",
 		"videoId": "75TQEQ6wxAE",
 		"note": ""
 	},
 	{
-		"_id": {
-			"$oid": "6346263d7755d907aa66be94"
-		},
+		"_id": { "$oid": "6346263d7755d907aa66be94" },
 		"__v": 0,
 		"checkins": ["https://twitter.com/leonnoel/status/1507107645416620041"],
 		"classes": [
-			{
-				"number": 22,
-				"date": {
-					"$date": {
-						"$numberLong": "1648080000000"
-					}
-				}
-			}
+			{ "number": 22, "date": { "$date": { "$numberLong": "1648080000000" } } }
 		],
 		"cohort": 2,
 		"materials": [
@@ -714,27 +476,17 @@
 		"permalink": "more-fun-with-objects",
 		"slides": ["https://slides.com/leonnoel/100devs2-more-javascript-objects"],
 		"thumbnail": "https://i3.ytimg.com/vi/LTda62-jyoM/maxresdefault.jpg",
-		"timestamps": [],
 		"title": "More Fun With Objects",
 		"videoType": "youtube",
 		"videoId": "LTda62-jyoM",
 		"note": ""
 	},
 	{
-		"_id": {
-			"$oid": "6346269f7755d907aa66be9b"
-		},
+		"_id": { "$oid": "6346269f7755d907aa66be9b" },
 		"__v": 0,
 		"checkins": ["https://twitter.com/leonnoel/status/1508919468193312769"],
 		"classes": [
-			{
-				"number": 23,
-				"date": {
-					"$date": {
-						"$numberLong": "1648512000000"
-					}
-				}
-			}
+			{ "number": 23, "date": { "$date": { "$numberLong": "1648512000000" } } }
 		],
 		"cohort": 2,
 		"materials": [
@@ -749,81 +501,48 @@
 			"https://slides.com/leonnoel/100devs2-javascript-objects-fun-time"
 		],
 		"thumbnail": "https://i3.ytimg.com/vi/qnmKELgyXc0/maxresdefault.jpg",
-		"timestamps": [],
 		"title": "JavaScript APIs For Beginners",
 		"videoType": "youtube",
 		"videoId": "qnmKELgyXc0",
 		"note": ""
 	},
 	{
-		"_id": {
-			"$oid": "6346281d7755d907aa66bea7"
-		},
+		"_id": { "$oid": "6346281d7755d907aa66bea7" },
 		"__v": 0,
 		"checkins": ["https://twitter.com/leonnoel/status/1509644411528835084"],
 		"classes": [
-			{
-				"number": 24,
-				"date": {
-					"$date": {
-						"$numberLong": "1648684800000"
-					}
-				}
-			}
+			{ "number": 24, "date": { "$date": { "$numberLong": "1648684800000" } } }
 		],
 		"cohort": 2,
-		"materials": [],
 		"permalink": "git-and-github-for-beginners",
 		"slides": ["https://slides.com/leonnoel/100devs2-intro-to-git-and-github"],
 		"thumbnail": "https://i3.ytimg.com/vi/UpsonO_vBNk/maxresdefault.jpg",
-		"timestamps": [],
 		"title": "Git And Github For Beginners",
 		"videoType": "youtube",
 		"videoId": "UpsonO_vBNk",
 		"note": ""
 	},
 	{
-		"_id": {
-			"$oid": "634628617755d907aa66beae"
-		},
+		"_id": { "$oid": "634628617755d907aa66beae" },
 		"__v": 0,
 		"checkins": ["https://twitter.com/leonnoel/status/1509644411528835084"],
 		"classes": [
-			{
-				"number": 25,
-				"date": {
-					"$date": {
-						"$numberLong": "1649116800000"
-					}
-				}
-			}
+			{ "number": 25, "date": { "$date": { "$numberLong": "1649116800000" } } }
 		],
 		"cohort": 2,
-		"materials": [],
 		"permalink": "fix-your-resume-so-you-get-tech-interviews",
-		"slides": [],
 		"thumbnail": "https://i3.ytimg.com/vi/ZlB4BockYNQ/maxresdefault.jpg",
-		"timestamps": [],
 		"title": "Fix Your Resume So You Get Tech Interviews",
 		"videoType": "youtube",
 		"videoId": "ZlB4BockYNQ",
 		"note": ""
 	},
 	{
-		"_id": {
-			"$oid": "634628b37755d907aa66beb4"
-		},
+		"_id": { "$oid": "634628b37755d907aa66beb4" },
 		"__v": 0,
 		"checkins": ["https://twitter.com/leonnoel/status/1512181260801949696"],
 		"classes": [
-			{
-				"number": 26,
-				"date": {
-					"$date": {
-						"$numberLong": "1649289600000"
-					}
-				}
-			}
+			{ "number": 26, "date": { "$date": { "$numberLong": "1649289600000" } } }
 		],
 		"cohort": 2,
 		"materials": [
@@ -832,27 +551,17 @@
 		"permalink": "build-a-simple-app-using-apis",
 		"slides": ["https://slides.com/leonnoel/100devs-javascript-api-fun"],
 		"thumbnail": "https://i3.ytimg.com/vi/WcSTeotmJtw/maxresdefault.jpg",
-		"timestamps": [],
 		"title": "Build A Simple App Using APIs",
 		"videoType": "youtube",
 		"videoId": "WcSTeotmJtw",
 		"note": ""
 	},
 	{
-		"_id": {
-			"$oid": "634629247755d907aa66bec0"
-		},
+		"_id": { "$oid": "634629247755d907aa66bec0" },
 		"__v": 0,
 		"checkins": ["https://twitter.com/leonnoel/status/1513992949884809219"],
 		"classes": [
-			{
-				"number": 27,
-				"date": {
-					"$date": {
-						"$numberLong": "1649721600000"
-					}
-				}
-			}
+			{ "number": 27, "date": { "$date": { "$numberLong": "1649721600000" } } }
 		],
 		"cohort": 2,
 		"materials": [
@@ -861,27 +570,17 @@
 		"permalink": "get-data-from-nasa-simple-javascript-api",
 		"slides": ["https://slides.com/leonnoel/100devs2-more-api-review"],
 		"thumbnail": "https://i3.ytimg.com/vi/b5rjEW-_6po/maxresdefault.jpg",
-		"timestamps": [],
 		"title": "Get Data From NASA! Simple Javascript API",
 		"videoType": "youtube",
 		"videoId": "b5rjEW-_6po",
 		"note": ""
 	},
 	{
-		"_id": {
-			"$oid": "634629787755d907aa66bec7"
-		},
+		"_id": { "$oid": "634629787755d907aa66bec7" },
 		"__v": 0,
 		"checkins": ["https://twitter.com/leonnoel/status/1514718089618722816"],
 		"classes": [
-			{
-				"number": 28,
-				"date": {
-					"$date": {
-						"$numberLong": "1649894400000"
-					}
-				}
-			}
+			{ "number": 28, "date": { "$date": { "$numberLong": "1649894400000" } } }
 		],
 		"cohort": 2,
 		"materials": [
@@ -890,27 +589,17 @@
 		"permalink": "javascript-api-practice-for-beginners",
 		"slides": ["https://slides.com/leonnoel/100devs2-another-api-review"],
 		"thumbnail": "https://i3.ytimg.com/vi/G7XJRLaq2Cw/maxresdefault.jpg",
-		"timestamps": [],
 		"title": "JavaScript API Practice For Beginners",
 		"videoType": "youtube",
 		"videoId": "G7XJRLaq2Cw",
 		"note": ""
 	},
 	{
-		"_id": {
-			"$oid": "634629cf7755d907aa66bece"
-		},
+		"_id": { "$oid": "634629cf7755d907aa66bece" },
 		"__v": 0,
 		"checkins": ["https://twitter.com/leonnoel/status/1519066364501061632"],
 		"classes": [
-			{
-				"number": 29,
-				"date": {
-					"$date": {
-						"$numberLong": "1650931200000"
-					}
-				}
-			}
+			{ "number": 29, "date": { "$date": { "$numberLong": "1650931200000" } } }
 		],
 		"cohort": 2,
 		"materials": [
@@ -921,126 +610,79 @@
 			"https://slides.com/leonnoel/100devs2-javascript-review-back-from-break"
 		],
 		"thumbnail": "https://i3.ytimg.com/vi/EOjUT746oLs/maxresdefault.jpg",
-		"timestamps": [],
 		"title": "Review The Basics Of JavaScript",
 		"videoType": "youtube",
 		"videoId": "EOjUT746oLs",
 		"note": ""
 	},
 	{
-		"_id": {
-			"$oid": "63462a4a7755d907aa66bed5"
-		},
+		"_id": { "$oid": "63462a4a7755d907aa66bed5" },
 		"__v": 0,
 		"checkins": ["https://twitter.com/leonnoel/status/1519791265285505024"],
 		"classes": [
-			{
-				"number": 30,
-				"date": {
-					"$date": {
-						"$numberLong": "1651104000000"
-					}
-				}
-			}
+			{ "number": 30, "date": { "$date": { "$numberLong": "1651104000000" } } }
 		],
 		"cohort": 2,
 		"materials": [
 			"https://drive.google.com/file/d/11DQgP-s9ITIOe9FlkSdckFdKpNU2Il2Y/view?usp=sharing"
 		],
-
 		"permalink": "oop-but-it-actually-makes-sense",
 		"slides": ["https://slides.com/leonnoel/100devs2-javascript-oop"],
 		"thumbnail": "https://i3.ytimg.com/vi/GihfY5OVDdk/maxresdefault.jpg",
-		"timestamps": [],
 		"title": "OOP But It Actually Makes Sense",
 		"videoType": "youtube",
 		"videoId": "GihfY5OVDdk",
 		"note": ""
 	},
 	{
-		"_id": {
-			"$oid": "63462a8f7755d907aa66bedc"
-		},
+		"_id": { "$oid": "63462a8f7755d907aa66bedc" },
 		"__v": 0,
 		"checkins": ["https://twitter.com/leonnoel/status/1521603078406897664"],
 		"classes": [
-			{
-				"number": 31,
-				"date": {
-					"$date": {
-						"$numberLong": "1651536000000"
-					}
-				}
-			}
+			{ "number": 31, "date": { "$date": { "$numberLong": "1651536000000" } } }
 		],
 		"cohort": 2,
 		"materials": [
 			"https://drive.google.com/file/d/1HLRCKiFs69ZgViHeI2ejb_9ELQk4zIWq/view?usp=sharing"
 		],
-
 		"permalink": "what-is-inheritance--polymorphism",
 		"slides": ["https://slides.com/leonnoel/100devs2-javascript-oop-part-2"],
 		"thumbnail": "https://i3.ytimg.com/vi/PD-dx92RJtg/maxresdefault.jpg",
-		"timestamps": [],
 		"title": "What Is Inheritance & Polymorphism",
 		"videoType": "youtube",
 		"videoId": "PD-dx92RJtg",
 		"note": ""
 	},
 	{
-		"_id": {
-			"$oid": "63462af87755d907aa66bee3"
-		},
+		"_id": { "$oid": "63462af87755d907aa66bee3" },
 		"__v": 0,
 		"checkins": ["https://twitter.com/leonnoel/status/1522328349497909248"],
 		"classes": [
-			{
-				"number": 32,
-				"date": {
-					"$date": {
-						"$numberLong": "1651708800000"
-					}
-				}
-			}
+			{ "number": 32, "date": { "$date": { "$numberLong": "1651708800000" } } }
 		],
 		"cohort": 2,
 		"materials": [
 			"https://drive.google.com/file/d/1MBqSTXYPstQJhj60A9Hfy5xGZ-FDv2Gz/view?usp=sharing"
 		],
-
 		"permalink": "object-oriented-programming-with-js-review",
 		"slides": [
 			"https://slides.com/leonnoel/100devs2-javascript-oop-bring-it-home"
 		],
 		"thumbnail": "https://i3.ytimg.com/vi/yEhs4XtuAgA/maxresdefault.jpg",
-		"timestamps": [],
 		"title": "Object Oriented Programming with JS Review",
 		"videoType": "youtube",
 		"videoId": "yEhs4XtuAgA",
 		"note": ""
 	},
 	{
-		"_id": {
-			"$oid": "63462b5f7755d907aa66beea"
-		},
+		"_id": { "$oid": "63462b5f7755d907aa66beea" },
 		"__v": 0,
-		"checkins": [],
 		"classes": [
-			{
-				"number": 33,
-				"date": {
-					"$date": {
-						"$numberLong": "1652140800000"
-					}
-				}
-			}
+			{ "number": 33, "date": { "$date": { "$numberLong": "1652140800000" } } }
 		],
 		"cohort": 2,
-		"materials": [],
-
 		"permalink": "why-you-are-not-getting-interviews",
 		"slides": ["https://slides.com/leonnoel/100devs2-interview-prep"],
-		"timestamps": [],
 		"title": "Why You Are Not Getting Interviews",
 		"videoType": "youtube",
 		"videoId": "lIE1LFz4LJM",
@@ -1048,437 +690,239 @@
 		"note": ""
 	},
 	{
-		"_id": {
-			"$oid": "63462bd87755d907aa66bef9"
-		},
+		"_id": { "$oid": "63462bd87755d907aa66bef9" },
 		"__v": 0,
 		"checkins": ["https://twitter.com/leonnoel/status/1524864541107949568"],
 		"classes": [
-			{
-				"number": 34,
-				"date": {
-					"$date": {
-						"$numberLong": "1652313600000"
-					}
-				}
-			}
+			{ "number": 34, "date": { "$date": { "$numberLong": "1652313600000" } } }
 		],
 		"cohort": 2,
-		"materials": [],
-
 		"permalink": "crush-your-technical-interviews",
 		"slides": ["https://slides.com/leonnoel/100devs2-interview-prep-part-2"],
 		"thumbnail": "https://i3.ytimg.com/vi/KM1RyffIKMg/maxresdefault.jpg",
-		"timestamps": [],
 		"title": "Crush Your Technical Interviews",
 		"videoType": "youtube",
 		"videoId": "KM1RyffIKMg",
 		"note": ""
 	},
 	{
-		"_id": {
-			"$oid": "63462c9d7755d907aa66bf0e"
-		},
+		"_id": { "$oid": "63462c9d7755d907aa66bf0e" },
 		"__v": 0,
-		"checkins": [],
 		"classes": [
 			{
 				"number": 34.5,
-				"date": {
-					"$date": {
-						"$numberLong": "1652572800000"
-					}
-				}
+				"date": { "$date": { "$numberLong": "1652572800000" } }
 			}
 		],
 		"cohort": 2,
-		"materials": [],
-
 		"permalink": "javascript-crash-course-super-review",
-		"slides": [],
 		"thumbnail": "https://i3.ytimg.com/vi/1sRJYuaqoiI/maxresdefault.jpg",
-		"timestamps": [],
-		"title": "JavaScript Crash Course (Super Review)",
+		"title": "JavaScript Crash Course",
 		"videoType": "youtube",
 		"videoId": "1sRJYuaqoiI",
 		"note": ""
 	},
 	{
-		"_id": {
-			"$oid": "63462d127755d907aa66bf19"
-		},
+		"_id": { "$oid": "63462d127755d907aa66bf19" },
 		"__v": 0,
 		"checkins": ["https://twitter.com/leonnoel/status/1527401326325338118"],
 		"classes": [
-			{
-				"number": 35,
-				"date": {
-					"$date": {
-						"$numberLong": "1652918400000"
-					}
-				}
-			}
+			{ "number": 35, "date": { "$date": { "$numberLong": "1652918400000" } } }
 		],
 		"cohort": 2,
-		"materials": [],
-
 		"permalink": "easy-intro-to-node-promises--async-await",
 		"slides": ["https://slides.com/leonnoel/100devs2-promises-async-node"],
 		"thumbnail": "https://i3.ytimg.com/vi/IUCnAhr61pg/maxresdefault.jpg",
-		"timestamps": [],
 		"title": "Easy Intro to Node, Promises, & Async/Await",
 		"videoType": "youtube",
 		"videoId": "IUCnAhr61pg",
 		"note": ""
 	},
 	{
-		"_id": {
-			"$oid": "63462d877755d907aa66bf20"
-		},
+		"_id": { "$oid": "63462d877755d907aa66bf20" },
 		"__v": 0,
 		"checkins": ["https://twitter.com/leonnoel/status/1529213324633657345"],
 		"classes": [
-			{
-				"number": 36,
-				"date": {
-					"$date": {
-						"$numberLong": "1653350400000"
-					}
-				}
-			}
+			{ "number": 36, "date": { "$date": { "$numberLong": "1653350400000" } } }
 		],
 		"cohort": 2,
 		"materials": [
 			"https://drive.google.com/file/d/17RsrUfxaL9ssZb9ZoaNn1pVETz70m839/view?usp=sharing"
 		],
-
 		"permalink": "javascript-event-loop-for-beginners",
 		"slides": ["https://slides.com/leonnoel/100devs2-fancy-js-terms-and-node"],
 		"thumbnail": "https://i3.ytimg.com/vi/nv5SequVETI/maxresdefault.jpg",
-		"timestamps": [],
 		"title": "JavaScript Event Loop For Beginners",
 		"videoType": "youtube",
 		"videoId": "nv5SequVETI",
 		"note": ""
 	},
 	{
-		"_id": {
-			"$oid": "63462e157755d907aa66bf27"
-		},
+		"_id": { "$oid": "63462e157755d907aa66bf27" },
 		"__v": 0,
-		"checkins": [],
 		"classes": [
-			{
-				"number": 37,
-				"date": {
-					"$date": {
-						"$numberLong": "1653523200000"
-					}
-				}
-			}
+			{ "number": 37, "date": { "$date": { "$numberLong": "1653523200000" } } }
 		],
 		"cohort": 2,
 		"materials": [
 			"https://drive.google.com/file/d/17GKSJzrD38KUU85tUdfXzRO3XT4bY3ct/view?usp=sharing"
 		],
-
 		"permalink": "no-express-fullstack-app-just-node",
-		"slides": [],
 		"thumbnail": "https://i3.ytimg.com/vi/6rsA_RCe5YM/maxresdefault.jpg",
-		"timestamps": [],
 		"title": "No Express! Fullstack App Just Node",
 		"videoType": "youtube",
 		"videoId": "6rsA_RCe5YM",
 		"note": ""
 	},
 	{
-		"_id": {
-			"$oid": "63462e6b7755d907aa66bf2d"
-		},
+		"_id": { "$oid": "63462e6b7755d907aa66bf2d" },
 		"__v": 0,
 		"checkins": ["https://twitter.com/leonnoel/status/1531750076422402049"],
 		"classes": [
-			{
-				"number": 38,
-				"date": {
-					"$date": {
-						"$numberLong": "1653955200000"
-					}
-				}
-			}
+			{ "number": 38, "date": { "$date": { "$numberLong": "1653955200000" } } }
 		],
 		"cohort": 2,
 		"materials": [
 			"https://drive.google.com/file/d/1rO03PYP19lDzYgwgZ_vTXRSwQNnUm7Cp/view?usp=sharing"
 		],
-
 		"permalink": "build-your-own-api-hosted-on-heroku",
 		"slides": ["https://slides.com/leonnoel/100devs2-node-express"],
 		"thumbnail": "https://i3.ytimg.com/vi/000ai6I6Aow/maxresdefault.jpg",
-		"timestamps": [],
 		"title": "Build Your Own API Hosted On Heroku",
 		"videoType": "youtube",
 		"videoId": "000ai6I6Aow",
 		"note": ""
 	},
 	{
-		"_id": {
-			"$oid": "63462ec37755d907aa66bf39"
-		},
+		"_id": { "$oid": "63462ec37755d907aa66bf39" },
 		"__v": 0,
 		"checkins": ["https://twitter.com/leonnoel/status/1534286728218804224"],
 		"classes": [
-			{
-				"number": 39,
-				"date": {
-					"$date": {
-						"$numberLong": "1654128000000"
-					}
-				}
-			}
+			{ "number": 39, "date": { "$date": { "$numberLong": "1654128000000" } } }
 		],
 		"cohort": 2,
-		"materials": [],
-
 		"permalink": "crud-apis-for-beginners",
 		"slides": ["https://slides.com/leonnoel/100devs2-node-express-again"],
 		"thumbnail": "https://i3.ytimg.com/vi/zHq0v5RD_Zk/maxresdefault.jpg",
-		"timestamps": [],
 		"title": "CRUD APIs For Beginners",
 		"videoType": "youtube",
 		"videoId": "zHq0v5RD_Zk",
 		"note": ""
 	},
 	{
-		"_id": {
-			"$oid": "63462f787755d907aa66bf40"
-		},
+		"_id": { "$oid": "63462f787755d907aa66bf40" },
 		"__v": 0,
 		"checkins": ["https://twitter.com/leonnoel/status/1534286728218804224"],
 		"classes": [
-			{
-				"number": 40,
-				"date": {
-					"$date": {
-						"$numberLong": "1654560000000"
-					}
-				}
-			}
+			{ "number": 40, "date": { "$date": { "$numberLong": "1654560000000" } } }
 		],
 		"cohort": 2,
-		"materials": [],
-
 		"permalink": "what-is-mongodb-crud-apps-for-beginners",
 		"slides": ["https://slides.com/leonnoel/100devs2-express-crud"],
 		"thumbnail": "https://i3.ytimg.com/vi/3eafTTnEfMw/maxresdefault.jpg",
-		"timestamps": [],
 		"title": "What is MongoDB? CRUD Apps For Beginners",
 		"videoType": "youtube",
 		"videoId": "3eafTTnEfMw",
 		"note": ""
 	},
 	{
-		"_id": {
-			"$oid": "63462fb97755d907aa66bf47"
-		},
+		"_id": { "$oid": "63462fb97755d907aa66bf47" },
 		"__v": 0,
 		"checkins": ["https://twitter.com/leonnoel/status/1535011532551049216"],
 		"classes": [
-			{
-				"number": 41,
-				"date": {
-					"$date": {
-						"$numberLong": "1654732800000"
-					}
-				}
-			}
+			{ "number": 41, "date": { "$date": { "$numberLong": "1654732800000" } } }
 		],
 		"cohort": 2,
-		"materials": [],
-
 		"permalink": "build-a-simple-crud-app-with-express-mongodb--ejs",
 		"slides": ["https://slides.com/leonnoel/100devs2-express-crud-cohort-2"],
 		"thumbnail": "https://i3.ytimg.com/vi/LHf_STV_rLE/maxresdefault.jpg",
-		"timestamps": [],
 		"title": "Build A Simple CRUD App With Express, MongoDB, & EJS",
 		"videoType": "youtube",
 		"videoId": "LHf_STV_rLE",
 		"note": ""
 	},
 	{
-		"_id": {
-			"$oid": "63462ff87755d907aa66bf4e"
-		},
+		"_id": { "$oid": "63462ff87755d907aa66bf4e" },
 		"__v": 0,
-		"checkins": [],
 		"classes": [
-			{
-				"number": 42,
-				"date": {
-					"$date": {
-						"$numberLong": "1658361600000"
-					}
-				}
-			},
-			{
-				"number": 43,
-				"date": {
-					"$date": {
-						"$numberLong": "1659398400000"
-					}
-				}
-			}
+			{ "number": 42, "date": { "$date": { "$numberLong": "1658361600000" } } },
+			{ "number": 43, "date": { "$date": { "$numberLong": "1659398400000" } } }
 		],
 		"cohort": 2,
-		"materials": [],
-
-		"permalink": "welcome-back",
-		"slides": [],
-		"timestamps": [],
 		"title": "Welcome Back",
 		"videoType": "none",
-		"videoId": "",
-		"thumbnail": "/img/thumbnails/no-stream.png",
 		"note": "There was an unplanned extended break and these classes were casual \"welcome back\" sessions to get people ready to restart the lessons."
 	},
 	{
-		"_id": {
-			"$oid": "63463fea9fcf4107785a0a2b"
-		},
+		"_id": { "$oid": "63463fea9fcf4107785a0a2b" },
 		"__v": 0,
 		"checkins": [
 			"https://twitter.com/leonnoel/status/1557117071565000704",
 			"https://twitter.com/leonnoel/status/1557841864111230976"
 		],
 		"classes": [
-			{
-				"number": 44,
-				"date": {
-					"$date": {
-						"$numberLong": "1660003200000"
-					}
-				}
-			},
-			{
-				"number": 45,
-				"date": {
-					"$date": {
-						"$numberLong": "1660176000000"
-					}
-				}
-			}
+			{ "number": 44, "date": { "$date": { "$numberLong": "1660003200000" } } },
+			{ "number": 45, "date": { "$date": { "$numberLong": "1660176000000" } } }
 		],
 		"cohort": 2,
 		"materials": ["https://github.com/100devs/todo-list-express"],
-
 		"permalink": "how-to-build-fullstack-apps-with-javascript",
 		"slides": ["https://slides.com/leonnoel/100devs2-todo-list-cohort-2"],
 		"thumbnail": "https://i3.ytimg.com/vi/jZ-kmmgi_d0/maxresdefault.jpg",
-		"timestamps": [],
 		"title": "How To Build Fullstack Apps With Javascript",
 		"videoType": "youtube",
 		"videoId": "jZ-kmmgi_d0",
 		"note": ""
 	},
 	{
-		"_id": {
-			"$oid": "6346409d9fcf4107785a0a37"
-		},
+		"_id": { "$oid": "6346409d9fcf4107785a0a37" },
 		"__v": 0,
 		"checkins": [
 			"https://twitter.com/leonnoel/status/1559654124253196288",
 			"https://twitter.com/leonnoel/status/1560378673957482496"
 		],
 		"classes": [
-			{
-				"number": 46,
-				"date": {
-					"$date": {
-						"$numberLong": "1660608000000"
-					}
-				}
-			},
-			{
-				"number": 47,
-				"date": {
-					"$date": {
-						"$numberLong": "1660780800000"
-					}
-				}
-			}
+			{ "number": 46, "date": { "$date": { "$numberLong": "1660608000000" } } },
+			{ "number": 47, "date": { "$date": { "$numberLong": "1660780800000" } } }
 		],
 		"cohort": 2,
 		"materials": ["https://github.com/100devs/todo-mvc"],
-
 		"permalink": "build-a-nodejs-mvc-app",
-		"slides": [],
 		"thumbnail": "https://i3.ytimg.com/vi/SVX_HMum0n4/maxresdefault.jpg",
-		"timestamps": [],
 		"title": "Build A Node.js MVC App",
 		"videoType": "youtube",
 		"videoId": "SVX_HMum0n4",
 		"note": ""
 	},
 	{
-		"_id": {
-			"$oid": "634641949fcf4107785a0a42"
-		},
+		"_id": { "$oid": "634641949fcf4107785a0a42" },
 		"__v": 0,
 		"checkins": ["https://twitter.com/leonnoel/status/1562190629513228288"],
 		"classes": [
-			{
-				"number": 48,
-				"date": {
-					"$date": {
-						"$numberLong": "1661212800000"
-					}
-				}
-			}
+			{ "number": 48, "date": { "$date": { "$numberLong": "1661212800000" } } }
 		],
 		"cohort": 2,
-		"materials": [],
-
 		"permalink": "how-to-prepare-for-thehunt",
 		"slides": ["https://slides.com/leonnoel/100devs2-the-hunt"],
 		"thumbnail": "https://i3.ytimg.com/vi/2ObpRuvmT48/maxresdefault.jpg",
-		"timestamps": [],
 		"title": "How To Prepare For #THEHUNT",
 		"videoType": "youtube",
 		"videoId": "2ObpRuvmT48",
 		"note": ""
 	},
 	{
-		"_id": {
-			"$oid": "6346420a9fcf4107785a0a49"
-		},
+		"_id": { "$oid": "6346420a9fcf4107785a0a49" },
 		"__v": 0,
-		"checkins": [],
 		"classes": [
-			{
-				"number": 49,
-				"date": {
-					"$date": {
-						"$numberLong": "1661385600000"
-					}
-				}
-			}
+			{ "number": 49, "date": { "$date": { "$numberLong": "1661385600000" } } }
 		],
 		"cohort": 2,
-		"materials": [],
-
-		"permalink": "huntober-prep",
-		"slides": [],
-		"timestamps": [],
 		"title": "Huntober Prep",
 		"videoType": "none",
-		"videoId": "",
-		"thumbnail": "/img/thumbnails/no-stream.png",
 		"note": "Instead of a stream, we were given time to work on projects that needed to be finished up for Huntober submissions."
 	},
 	{
-		"_id": {
-			"$oid": "634643b59fcf4107785a0a4f"
-		},
+		"_id": { "$oid": "634643b59fcf4107785a0a4f" },
 		"__v": 0,
 		"checkins": [
 			"https://twitter.com/leonnoel/status/1564727546385555456",
@@ -1486,50 +930,25 @@
 			"https://twitter.com/leonnoel/status/1567264659186814976"
 		],
 		"classes": [
-			{
-				"number": 50,
-				"date": {
-					"$date": {
-						"$numberLong": "1661817600000"
-					}
-				}
-			},
-			{
-				"number": 51,
-				"date": {
-					"$date": {
-						"$numberLong": "1661990400000"
-					}
-				}
-			},
-			{
-				"number": 52,
-				"date": {
-					"$date": {
-						"$numberLong": "1662422400000"
-					}
-				}
-			}
+			{ "number": 50, "date": { "$date": { "$numberLong": "1661817600000" } } },
+			{ "number": 51, "date": { "$date": { "$numberLong": "1661990400000" } } },
+			{ "number": 52, "date": { "$date": { "$numberLong": "1662422400000" } } }
 		],
 		"cohort": 2,
 		"materials": ["https://github.com/100devs/todo-mvc-auth-local"],
-
-		"permalink": "easily-add-authentication-to-your-node-apps-email-logins-with-passport-",
+		"permalink": "easily-add-authentication-to-your-node-apps-email-logins-with-passport",
 		"slides": [
 			"https://slides.com/leonnoel/100devs2-auth-project-night",
 			"https://slides.com/leonnoel/100devs2-auth-project-night2-cohort-2"
 		],
 		"thumbnail": "https://i3.ytimg.com/vi/z5UgtXOxEEk/maxresdefault.jpg",
-		"timestamps": [],
-		"title": "Easily Add Authentication To Your Node Apps! Email Logins with Passport ",
+		"title": "Easily Add Authentication To Your Node Apps! Email Logins with Passport",
 		"videoType": "youtube",
 		"videoId": "z5UgtXOxEEk",
 		"note": ""
 	},
 	{
-		"_id": {
-			"$oid": "634e736865133f8616875ec6"
-		},
+		"_id": { "$oid": "634e736865133f8616875ec6" },
 		"__v": 0,
 		"checkins": [
 			"https://twitter.com/leonnoel/status/1567988894712627201",
@@ -1537,178 +956,84 @@
 			"https://twitter.com/leonnoel/status/1570527569166086144"
 		],
 		"classes": [
-			{
-				"number": 53,
-				"date": {
-					"$date": {
-						"$numberLong": "1662595200000"
-					}
-				}
-			},
-			{
-				"number": 54,
-				"date": {
-					"$date": {
-						"$numberLong": "1663027200000"
-					}
-				}
-			},
-			{
-				"number": 55,
-				"date": {
-					"$date": {
-						"$numberLong": "1663200000000"
-					}
-				}
-			}
+			{ "number": 53, "date": { "$date": { "$numberLong": "1662595200000" } } },
+			{ "number": 54, "date": { "$date": { "$numberLong": "1663027200000" } } },
+			{ "number": 55, "date": { "$date": { "$numberLong": "1663200000000" } } }
 		],
 		"cohort": 2,
 		"materials": ["https://github.com/100devs/binary-upload-boom"],
-
 		"note": "",
 		"permalink": "lets-build-a-social-network",
-		"slides": [],
 		"thumbnail": "https://i3.ytimg.com/vi/xsKGlEemTAo/maxresdefault.jpg",
-		"timestamps": [],
 		"title": "Let's Build A Social Network",
 		"videoType": "youtube",
 		"videoId": "xsKGlEemTAo"
 	},
 	{
-		"_id": {
-			"$oid": "634e73eb65133f8616875eca"
-		},
+		"_id": { "$oid": "634e73eb65133f8616875eca" },
 		"__v": 0,
-		"checkins": [],
 		"classes": [
 			{
 				"number": 55.5,
-				"date": {
-					"$date": {
-						"$numberLong": "1665946800000"
-					}
-				}
+				"date": { "$date": { "$numberLong": "1665946800000" } }
 			}
 		],
 		"cohort": 2,
-		"materials": [],
-
 		"note": "",
 		"permalink": "back-end-crash-course-super-review",
-		"slides": [],
 		"thumbnail": "https://i3.ytimg.com/vi/JGFS11u1TIQ/maxresdefault.jpg",
-		"timestamps": [],
-		"title": "Back End Crash Course (Super Review)",
+		"title": "Back End Crash Course",
 		"videoType": "youtube",
 		"videoId": "JGFS11u1TIQ"
 	},
 	{
-		"_id": {
-			"$oid": "634e744e65133f8616875ece"
-		},
+		"_id": { "$oid": "634e744e65133f8616875ece" },
 		"__v": 0,
-		"checkins": [],
 		"classes": [
-			{
-				"number": 56,
-				"date": {
-					"$date": {
-						"$numberLong": "1664323200000"
-					}
-				}
-			},
-			{
-				"number": 57,
-				"date": {
-					"$date": {
-						"$numberLong": "1664218800000"
-					}
-				}
-			}
+			{ "number": 56, "date": { "$date": { "$numberLong": "1664323200000" } } },
+			{ "number": 57, "date": { "$date": { "$numberLong": "1664218800000" } } }
 		],
 		"cohort": 2,
-		"materials": [],
-
 		"note": "",
 		"permalink": "one-project-that-will-get-you-hired",
-		"slides": [],
 		"thumbnail": "https://i3.ytimg.com/vi/zjxo_-wNZHE/maxresdefault.jpg",
-		"timestamps": [],
 		"title": "One Project That Will Get You Hired (100 Hours Project)",
 		"videoType": "youtube",
 		"videoId": "zjxo_-wNZHE"
 	},
 	{
-		"_id": {
-			"$oid": "634e74aa65133f8616875ed2"
-		},
+		"_id": { "$oid": "634e74aa65133f8616875ed2" },
 		"__v": 0,
 		"checkins": ["https://twitter.com/leonnoel/status/1575599063075987457"],
 		"classes": [
-			{
-				"number": 58,
-				"date": {
-					"$date": {
-						"$numberLong": "1664496000000"
-					}
-				}
-			}
+			{ "number": 58, "date": { "$date": { "$numberLong": "1664496000000" } } }
 		],
 		"cohort": 2,
-		"materials": [],
-
 		"note": "",
 		"permalink": "react-js-tutorial-for-beginners",
-		"slides": [],
 		"thumbnail": "https://i3.ytimg.com/vi/edsuuCsiah0/maxresdefault.jpg",
-		"timestamps": [],
 		"title": "React JS Tutorial For Beginners",
 		"videoType": "youtube",
 		"videoId": "edsuuCsiah0"
 	},
 	{
-		"_id": {
-			"$oid": "634e758465133f8616875eda"
-		},
+		"_id": { "$oid": "634e758465133f8616875eda" },
 		"__v": 0,
 		"checkins": [
 			"https://twitter.com/huntoberTweets/status/1577350336339230752",
 			"https://twitter.com/huntoberTweets/status/1578075112225415169"
 		],
 		"classes": [
-			{
-				"number": 59,
-				"date": {
-					"$date": {
-						"$numberLong": "1664928000000"
-					}
-				}
-			},
-			{
-				"number": 60,
-				"date": {
-					"$date": {
-						"$numberLong": "1665100800000"
-					}
-				}
-			}
+			{ "number": 59, "date": { "$date": { "$numberLong": "1664928000000" } } },
+			{ "number": 60, "date": { "$date": { "$numberLong": "1665100800000" } } }
 		],
 		"cohort": 2,
-		"materials": [],
-
 		"note": "These two classes talked about what to expect during Huntober. No new material was introduced.",
-		"permalink": "huntober2022",
-		"slides": [],
-		"thumbnail": "/img/thumbnails/no-stream.png",
-		"timestamps": [],
 		"title": "#HUNTOBER2022",
-		"videoType": "none",
-		"videoId": ""
+		"videoType": "none"
 	},
 	{
-		"_id": {
-			"$oid": "635129f770f39c8241328e52"
-		},
+		"_id": { "$oid": "635129f770f39c8241328e52" },
 		"__v": 0,
 		"checkins": [
 			"https://twitter.com/helloitsrufio/status/1579483421402976256",
@@ -1716,34 +1041,11 @@
 			"https://twitter.com/BlawblawLaw/status/1582051606614355974"
 		],
 		"classes": [
-			{
-				"number": 61,
-				"date": {
-					"$date": {
-						"$numberLong": "1665532800000"
-					}
-				}
-			},
-			{
-				"number": 62,
-				"date": {
-					"$date": {
-						"$numberLong": "1665532800000"
-					}
-				}
-			},
-			{
-				"number": 63,
-				"date": {
-					"$date": {
-						"$numberLong": "1666137600000"
-					}
-				}
-			}
+			{ "number": 61, "date": { "$date": { "$numberLong": "1665532800000" } } },
+			{ "number": 62, "date": { "$date": { "$numberLong": "1665532800000" } } },
+			{ "number": 63, "date": { "$date": { "$numberLong": "1666137600000" } } }
 		],
 		"cohort": 2,
-		"materials": [],
-
 		"note": "",
 		"permalink": "how-to-pass-any-technical-interview",
 		"slides": [
@@ -1752,155 +1054,78 @@
 			"https://slides.com/leonnoel/100devs2-big-o"
 		],
 		"thumbnail": "https://i3.ytimg.com/vi/FS7UxmzYF_M/maxresdefault.jpg",
-		"timestamps": [],
 		"title": "How To Pass ANY Technical Interview",
 		"videoType": "youtube",
 		"videoId": "FS7UxmzYF_M"
 	},
 	{
-		"_id": {
-			"$oid": "6352a28ffff5c2374dc0b626"
-		},
+		"_id": { "$oid": "6352a28ffff5c2374dc0b626" },
 		"__v": 0,
-		"checkins": [],
 		"classes": [
-			{
-				"number": 64,
-				"date": {
-					"$date": {
-						"$numberLong": "1668902400000"
-					}
-				}
-			}
+			{ "number": 64, "date": { "$date": { "$numberLong": "1668902400000" } } }
 		],
 		"cohort": 2,
-		"materials": [],
-
 		"note": "Due to technical difficulties, the last bit of the stream is in a separate VOD <a href=\"https://www.twitch.tv/videos/1629905403\" target=\"_blank\">here</a>.",
 		"permalink": "speed-run-getting-a-job",
-		"slides": [],
 		"thumbnail": "/img/thumbnails/twitch.png",
-		"timestamps": [],
 		"title": "Speed Run Getting a Job",
 		"videoType": "twitch",
 		"videoId": "1629773942"
 	},
 	{
-		"_id": {
-			"$oid": "63632be555fb735d86876929"
-		},
+		"_id": { "$oid": "63632be555fb735d86876929" },
 		"__v": 0,
 		"checkins": ["https://twitter.com/jlengstorf/status/1585004985527721985"],
 		"classes": [
-			{
-				"number": 65,
-				"date": {
-					"$date": {
-						"$numberLong": "1666656000000"
-					}
-				}
-			}
+			{ "number": 65, "date": { "$date": { "$numberLong": "1666656000000" } } }
 		],
 		"cohort": 2,
-		"materials": [],
-
 		"note": "",
 		"permalink": "speed-run-getting-a-job-2",
-		"slides": [],
 		"thumbnail": "/img/thumbnails/twitch.png",
-		"timestamps": [],
 		"title": "Speed Run Getting a Job 2",
 		"videoType": "twitch",
 		"videoId": "1634419069"
 	},
 	{
-		"_id": {
-			"$oid": "63632c7e55fb735d86876942"
-		},
+		"_id": { "$oid": "63632c7e55fb735d86876942" },
 		"__v": 0,
-		"checkins": [],
 		"classes": [
-			{
-				"number": 66,
-				"date": {
-					"$date": {
-						"$numberLong": "1666828800000"
-					}
-				}
-			},
-			{
-				"number": 67,
-				"date": {
-					"$date": {
-						"$numberLong": "1667260800000"
-					}
-				}
-			}
+			{ "number": 66, "date": { "$date": { "$numberLong": "1666828800000" } } },
+			{ "number": 67, "date": { "$date": { "$numberLong": "1667260800000" } } }
 		],
 		"cohort": 2,
-		"materials": [],
-
 		"note": "No stream, these classes were dedicated time to work on hitlists & 100 hours projects.",
-		"permalink": "hitlist-building",
-		"slides": [],
-		"thumbnail": "/img/thumbnails/no-stream.png",
-		"timestamps": [],
 		"title": "Hitlist Building",
-		"videoType": "none",
-		"videoId": ""
+		"videoType": "none"
 	},
 	{
-		"_id": {
-			"$oid": "637b7dc4f34baa27c35bcf4f"
-		},
+		"_id": { "$oid": "637b7dc4f34baa27c35bcf4f" },
 		"__v": 0,
 		"checkins": ["https://twitter.com/leonnoel/status/1588282168127590401"],
 		"classes": [
-			{
-				"number": 68,
-				"date": {
-					"$date": {
-						"$numberLong": "1667433600000"
-					}
-				}
-			}
+			{ "number": 68, "date": { "$date": { "$numberLong": "1667433600000" } } }
 		],
 		"cohort": 2,
-		"materials": [],
-
 		"note": "Due to technical difficulties, the last part of the class is available in a separate VOD <a href=\"https://www.twitch.tv/videos/1642824267\" target=\"_blank\">here</a>.",
 		"permalink": "how-to-get-a-job",
 		"slides": ["https://slides.com/leonnoel/100devs2-how-to-get-a-jobtw"],
 		"thumbnail": "/img/thumbnails/twitch.png",
-		"timestamps": [],
 		"title": "How to Get a Job",
 		"videoType": "twitch",
 		"videoId": "1642697696"
 	},
 	{
-		"_id": {
-			"$oid": "637b7e0df34baa27c35bcf54"
-		},
+		"_id": { "$oid": "637b7e0df34baa27c35bcf54" },
 		"__v": 0,
 		"checkins": ["https://twitter.com/leonnoel/status/1590804107476234240"],
 		"classes": [
-			{
-				"number": 69,
-				"date": {
-					"$date": {
-						"$numberLong": "1668038400000"
-					}
-				}
-			}
+			{ "number": 69, "date": { "$date": { "$numberLong": "1668038400000" } } }
 		],
 		"cohort": 2,
-		"materials": [],
-
 		"note": "",
 		"permalink": "last-class",
-		"slides": [],
 		"thumbnail": "/img/thumbnails/twitch.png",
-		"timestamps": [],
 		"title": "Last Class",
 		"videoType": "twitch",
 		"videoId": "1649152415"

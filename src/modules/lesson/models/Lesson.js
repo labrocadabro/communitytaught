@@ -14,13 +14,22 @@ const classSchema = new Schema({
 });
 
 const MotivationSchema = new Schema({
-	title: String,
-	link: String,
+	title: {
+		type: String,
+		trim: true,
+	},
+	link: {
+		type: String,
+		trim: true,
+	},
 });
 
 const TimestampSchema = new Schema({
 	time: Number,
-	title: String,
+	title: {
+		type: String,
+		trim: true,
+	},
 });
 
 const lessonSchema = new Schema({
@@ -30,11 +39,15 @@ const lessonSchema = new Schema({
 	},
 	title: {
 		type: String,
+		trim: true,
 		required: true,
 		unique: true,
 	},
 	videoId: {
-		type: String,
+		type: {
+			type: String,
+			trim: true,
+		},
 	},
 	videoType: {
 		type: String,
@@ -43,32 +56,58 @@ const lessonSchema = new Schema({
 	},
 	permalink: {
 		type: String,
-		unique: true,
+		trim: true,
+		index: {
+			unique: true,
+			partialFilterExpression: { permalink: { $type: "string" } },
+		},
 	},
 	thumbnail: {
 		type: String,
+		trim: true,
 		required: true,
 	},
 	slides: {
-		type: [String],
+		type: [
+			{
+				type: String,
+				trim: true,
+			},
+		],
+		default: undefined,
 	},
 	materials: {
-		type: [String],
+		type: [
+			{
+				type: String,
+				trim: true,
+			},
+		],
+		default: undefined,
 	},
 	checkins: {
-		type: [String],
+		type: [
+			{
+				type: String,
+				trim: true,
+			},
+		],
+		default: undefined,
 	},
 	motivation: {
 		type: MotivationSchema,
 	},
-	timestamps: [TimestampSchema],
+	timestamps: { type: [TimestampSchema], default: undefined },
 	cohort: {
 		type: Number,
 		enum: [2, 3],
 		required: true,
 		default: 2,
 	},
-	note: String,
+	note: {
+		type: String,
+		trim: true,
+	},
 });
 
 export default mongoose.model("Lesson", lessonSchema);

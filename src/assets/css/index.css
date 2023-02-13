@@ -1413,6 +1413,10 @@ dd ol {
   margin-top: 0.75rem;
 }
 
+.-mt-4 {
+  margin-top: -1rem;
+}
+
 .mt-auto {
   margin-top: auto;
 }
@@ -1459,14 +1463,6 @@ dd ol {
 
 .mr-auto {
   margin-right: auto;
-}
-
-.-mb-4 {
-  margin-bottom: -1rem;
-}
-
-.-mt-4 {
-  margin-top: -1rem;
 }
 
 .block {

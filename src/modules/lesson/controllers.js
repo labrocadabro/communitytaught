@@ -52,20 +52,29 @@ export const addEditLesson = async (req, res) => {
 		}
 		const lessonData = {
 			classes: classesData,
-			videoId: req.body.videoId,
-			thumbnail: req.body.thumbnail,
 			title: req.body.title,
-			permalink: req.body.permalink,
-			slides: ensureArray(req.body["slides[]"]),
-			materials: ensureArray(req.body["materials[]"]),
-			checkins: ensureArray(req.body["checkins[]"]),
-			motivation: {
+			videoType: req.body.videoType,
+			cohort: req.body.cohort,
+		};
+		if (req.body.permalink) lessonData.permalink = req.body.permalink;
+		if (req.body.videoId) lessonData.videoId = req.body.videoId;
+		if (req.body.thumbnail) lessonData.thumbnail = req.body.thumbnail;
+		if (req.body.note) lessonData.note = req.body.note;
+		if (req.body.slides) lessonData.slides = ensureArray(req.body["slides[]"]);
+		if (req.body.materials)
+			lessonData.materials = ensureArray(req.body["materials[]"]);
+		if (req.body.checkins) {
+			console.log(req.body.checkins);
+			lessonData.checkins = ensureArray(req.body["checkins[]"]);
+		}
+		if (req.body.motivation_title && req.body.motivation_title)
+			lessonData.motivation = {
 				title: req.body.motivation_title,
 				link: req.body.motivation_link,
-			},
-			note: req.body.note,
-			timestamps: timestampsData,
-		};
+			};
+		if (timestampsData.length) {
+			lessonData.timestamps = timestampsData;
+		}
 		const lesson = await Lesson.findByIdAndUpdate(
 			req.params.id || mongoose.Types.ObjectId(),
 			lessonData,

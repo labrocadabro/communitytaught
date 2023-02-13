@@ -48,7 +48,7 @@ block content
 					input.watched.mr-2.mb-1(type="checkbox" id="watched-" + lesson._id autocomplete="off" checked=lesson.watched)
 					label.mr-4.text-pink-800.text-xl.font-medium(for="watched-" + lesson._id) Watched
 
-				if lesson.checkins.length
+				if lesson.checkins
 					input.checkedin.mr-2.mb-1(type="checkbox" id="checkedin-" + lesson._id autocomplete="off" checked=lesson.checkedIn)
 					label.text-pink-800.text-xl.font-medium(for="checkedin-" + lesson._id) Checked In
 

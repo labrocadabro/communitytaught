@@ -1,0 +1,38 @@
+mixin input(inputData)
+  - const {name, label, type, data} = inputData
+  div
+    label(for=name) #{label}
+    input(id=name type=type, name=name value=edit? data : "")
+
+
+//- mixin inputPair(inputData1, inputData1, source)
+//-   - const {name1, label1, type1} = inputData1
+//-   - const {name2, label2, type2} = inputData2
+
+
+
+mixin multiInput(inputData)
+  - const {name, label, type, data} = inputData
+
+  .relative(class="[&>input]:w-[calc(100%-3.5rem)]" id=`${name}Data`)
+    label(for=name) #{label}
+    if edit && data.length
+      each item in data
+        input(type=type, name=`${name}[]` id=name value=item)
+    else
+      input(type=type, name=`${name}[]` id=name)
+    .absolute.right-0.bottom-1(id=`add-${name}`)
+      button.btn.secondary.add(type="button") +
+
+//- mixin multiInputPair(inputData1, inputData2)
+//-   - const capName = name[0].toUpperCase() + name.slice(1);
+
+//-   .relative(class="[&>input]:w-[calc(100%-3.5rem)]" id=`${name}Data`)
+//-     label(for=name) #{capName}
+//-     if edit && data.length
+//-       each item in data
+//-         input(type="text", name=`${name}[]` id=name value=item)
+//-     else
+//-       input(type="text", name=`${name}[]` id=name)
+//-     .absolute.right-0.bottom-1(id=`add${capName}`)
+//-       button.btn.secondary.add(type="button") +

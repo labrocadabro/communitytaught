@@ -57,7 +57,7 @@ function addEntry(container, ...fields) {
 }
 
 document
-	.getElementById("addSlides")
+	.getElementById("add-slides")
 	.addEventListener("click", () =>
 		addEntry(
 			document.getElementById("slidesData"),
@@ -66,7 +66,7 @@ document
 	);
 
 document
-	.getElementById("addMaterials")
+	.getElementById("add-materials")
 	.addEventListener("click", () =>
 		addEntry(
 			document.getElementById("materialsData"),
@@ -75,7 +75,7 @@ document
 	);
 
 document
-	.getElementById("addCheckin")
+	.getElementById("add-checkin")
 	.addEventListener("click", () =>
 		addEntry(
 			document.getElementById("checkinData"),
@@ -83,7 +83,7 @@ document
 		)
 	);
 document
-	.getElementById("addClass")
+	.getElementById("add-class")
 	.addEventListener("click", () =>
 		addEntry(
 			document.getElementById("classData"),

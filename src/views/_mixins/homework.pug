@@ -1,4 +1,4 @@
-include ./classNo.pug
+include ./homeworkClassNo.pug
 include ./homeworkItems.pug
 
 mixin homework(hw)
@@ -9,7 +9,7 @@ mixin homework(hw)
 	div.grid.grid-cols-1.p-6(id=hw._id class="md:grid-cols-[220px_1fr_200px]" class=isDone(hw) ? "done" : "")
 		.hw-classNo
 			h2
-				+classNo(hw.classNo)
+				+homeworkClassNo(hw.classNo)
 
 			if loggedIn && user.admin
 				a.ml-2(href=`/hw/edit/${hw._id}`)

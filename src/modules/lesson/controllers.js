@@ -153,11 +153,14 @@ export const showLesson = async (req, res) => {
 			.sort({ _id: -1 })
 			.limit(1);
 		prev = prev.length ? prev[0].permalink : null;
-		let assigned = await Homework.find({ classNo: { $in: lesson.classNo } })
+		const classNumbers = lesson.classes.map((c) => c.number);
+		let assigned = await Homework.find({
+			classNo: { $in: classNumbers },
+		})
 			.lean()
 			.sort({ _id: 1 })
 			.populate(["items", "extras"]);
-		let due = await Homework.find({ dueNo: { $in: lesson.classNo } })
+		let due = await Homework.find({ dueNo: { $in: classNumbers } })
 			.lean()
 			.sort({ _id: 1 })
 			.populate(["items", "extras"]);

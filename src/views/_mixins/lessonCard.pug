@@ -1,4 +1,4 @@
-include ./classNo.pug
+include ./lessonClassNo.pug
 include ../_mixins/lessonLinks.pug
 
 mixin lessonCard(lesson)
@@ -6,7 +6,7 @@ mixin lessonCard(lesson)
 
 		.card-top-banner.bg-twilight-50.px-3.py-2
 			h3.text-twilight-900.text-2xl
-				+classNo(lesson.classes)
+				+lessonClassNo(lesson.classes)
 				if loggedIn && user.admin
 					a.ml-2(href=`/class/edit/${lesson._id}`) #[i.fas.fa-pencil]
 			if loggedIn

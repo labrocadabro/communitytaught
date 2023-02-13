@@ -1,0 +1,8 @@
+mixin homeworkClassNo(classes)
+	case classes.length
+		when 1
+			|Class #{classes[0]}
+		when 2
+			|Classes #{classes[0]} &amp; #{classes[1]}
+		default
+			|Classes #{classes[0]} - #{classes.at(-1)}

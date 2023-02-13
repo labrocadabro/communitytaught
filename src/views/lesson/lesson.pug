@@ -1,5 +1,5 @@
 extends ../_layouts/default.pug
-include ../_mixins/classNo.pug
+include ../_mixins/lessonClassNo.pug
 include ../_mixins/lessonLinks.pug
 include ../_mixins/homework.pug
 
@@ -15,7 +15,7 @@ block content
 
 	div(class="sm:flex block justify-between items-baseline")
 		h1
-			+classNo(lesson.classes)
+			+lessonClassNo(lesson.classes)
 			|: #{lesson.title}
 			if loggedIn && user.admin
 				a(href=`/class/edit/${lesson._id}`) #[i.fas.fa-pencil]

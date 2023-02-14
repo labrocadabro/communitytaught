@@ -1,5 +1,7 @@
 import mongoose from "mongoose";
 
+import * as setters from "../../../utils/optionalFieldSetters.js";
+
 const Schema = mongoose.Schema;
 
 const classSchema = new Schema({
@@ -13,22 +15,12 @@ const classSchema = new Schema({
 	},
 });
 
-const MotivationSchema = new Schema({
-	title: {
-		type: String,
-		trim: true,
-	},
-	link: {
-		type: String,
-		trim: true,
-	},
-});
-
 const TimestampSchema = new Schema({
-	time: Number,
+	time: { type: Number, required: true },
 	title: {
 		type: String,
 		trim: true,
+		required: true,
 	},
 });
 
@@ -44,10 +36,9 @@ const lessonSchema = new Schema({
 		unique: true,
 	},
 	videoId: {
-		type: {
-			type: String,
-			trim: true,
-		},
+		type: String,
+		trim: true,
+		set: setters.setString,
 	},
 	videoType: {
 		type: String,
@@ -61,11 +52,12 @@ const lessonSchema = new Schema({
 			unique: true,
 			partialFilterExpression: { permalink: { $type: "string" } },
 		},
+		set: setters.setString,
 	},
 	thumbnail: {
 		type: String,
 		trim: true,
-		required: true,
+		set: setters.setString,
 	},
 	slides: {
 		type: [
@@ -74,6 +66,7 @@ const lessonSchema = new Schema({
 				trim: true,
 			},
 		],
+		set: setters.setArray,
 		default: undefined,
 	},
 	materials: {
@@ -83,6 +76,7 @@ const lessonSchema = new Schema({
 				trim: true,
 			},
 		],
+		set: setters.setArray,
 		default: undefined,
 	},
 	checkins: {
@@ -92,12 +86,18 @@ const lessonSchema = new Schema({
 				trim: true,
 			},
 		],
+		set: setters.setArray,
 		default: undefined,
 	},
 	motivation: {
-		type: MotivationSchema,
+		type: Schema.Types.ObjectId,
+		ref: "Motivation",
 	},
-	timestamps: { type: [TimestampSchema], default: undefined },
+	timestamps: {
+		type: [TimestampSchema],
+		default: undefined,
+		set: setters.setObjectArray,
+	},
 	cohort: {
 		type: Number,
 		enum: [2, 3],

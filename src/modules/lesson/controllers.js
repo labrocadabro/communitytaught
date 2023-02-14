@@ -8,11 +8,11 @@ import Homework from "../homework/models/Homework.js";
 import { getHwProgress } from "../homework/controllers.js";
 
 import redirects from "../../data/redirects.js";
-import { mapData, ensureArray } from "../../utils/formatting.js";
+import { ensureArray, createDocument } from "../../utils/formProcessing.js";
+import { redirectNotAdmin } from "../user/utils.js";
 
 export const addEditLessonForm = async (req, res) => {
-	if (!req.isAuthenticated() || !req.user.admin)
-		return res.redirect(redirects.home);
+	redirectNotAdmin(req, res);
 	const edit = !!req.params.id;
 	let lesson = null;
 	if (edit) {
@@ -28,13 +28,11 @@ export const addEditLessonForm = async (req, res) => {
 };
 
 export const addEditLesson = async (req, res) => {
-	if (!req.isAuthenticated() || !req.user.admin)
-		return res.redirect(redirects.home);
+	redirectNotAdmin(req, res);
 	try {
-		// const lessonData = mapData(req.body);
 		const classesData = [];
-		const numberData = ensureArray(req.body["classes_number[]"]);
-		const dateData = ensureArray(req.body["classes_date[]"]);
+		const numberData = ensureArray(req.body["classes[]_number"]);
+		const dateData = ensureArray(req.body["classes[]_date"]);
 		for (let i = 0; i < numberData.length; i++) {
 			classesData.push({
 				number: numberData[i],
@@ -42,46 +40,48 @@ export const addEditLesson = async (req, res) => {
 			});
 		}
 		const timestampsData = [];
-		const tstitleData = ensureArray(req.body["timestamps_title[]"]);
-		const tstimeData = ensureArray(req.body["timestamps_time[]"]);
+		const tstitleData = ensureArray(req.body["timestamps[]_title"]);
+		const tstimeData = ensureArray(req.body["timestamps[]_time"]);
 		for (let i = 0; i < tstitleData.length; i++) {
 			timestampsData.push({
 				title: tstitleData[i],
 				time: tstimeData[i],
 			});
 		}
-		const lessonData = {
-			classes: classesData,
-			title: req.body.title,
-			videoType: req.body.videoType,
-			cohort: req.body.cohort,
-		};
-		if (req.body.permalink) lessonData.permalink = req.body.permalink;
-		if (req.body.videoId) lessonData.videoId = req.body.videoId;
-		if (req.body.thumbnail) lessonData.thumbnail = req.body.thumbnail;
-		if (req.body.note) lessonData.note = req.body.note;
-		if (req.body.slides) lessonData.slides = ensureArray(req.body["slides[]"]);
-		if (req.body.materials)
-			lessonData.materials = ensureArray(req.body["materials[]"]);
-		if (req.body.checkins) {
-			console.log(req.body.checkins);
-			lessonData.checkins = ensureArray(req.body["checkins[]"]);
-		}
-		if (req.body.motivation_title && req.body.motivation_title)
-			lessonData.motivation = {
-				title: req.body.motivation_title,
-				link: req.body.motivation_link,
-			};
-		if (timestampsData.length) {
-			lessonData.timestamps = timestampsData;
-		}
+		const lessonData = createDocument(req.body);
+
+		// const lessonData = {
+		// 	classes: classesData,
+		// 	title: req.body.title,
+		// 	videoType: req.body.videoType,
+		// 	cohort: req.body.cohort,
+		// };
+		// if (req.body.permalink) lessonData.permalink = req.body.permalink;
+		// if (req.body.videoId) lessonData.videoId = req.body.videoId;
+		// if (req.body.thumbnail) lessonData.thumbnail = req.body.thumbnail;
+		// if (req.body.note) lessonData.note = req.body.note;
+		// if (req.body.slides) lessonData.slides = ensureArray(req.body["slides[]"]);
+		// if (req.body.materials)
+		// 	lessonData.materials = ensureArray(req.body["materials[]"]);
+		// if (req.body.checkins) {
+		// 	console.log(req.body.checkins);
+		// 	lessonData.checkins = ensureArray(req.body["checkins[]"]);
+		// }
+		// if (req.body.motivation_title && req.body.motivation_title)
+		// 	lessonData.motivation = {
+		// 		title: req.body.motivation_title,
+		// 		link: req.body.motivation_link,
+		// 	};
+		// if (timestampsData.length) {
+		// 	lessonData.timestamps = timestampsData;
+		// }
 		const lesson = await Lesson.findByIdAndUpdate(
 			req.params.id || mongoose.Types.ObjectId(),
 			lessonData,
 			{ upsert: true, new: true }
 		);
 
-		// if this is a new class, update all users with current class = null so this is now their current class
+		// if this is a new class, update all users that have current class = null so this is now their current class
 		if (!req.params.id) {
 			await User.updateMany(
 				{ currentClass: null },

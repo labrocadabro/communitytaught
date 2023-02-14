@@ -730,6 +730,9 @@
 			{ "number": 35, "date": { "$date": { "$numberLong": "1652918400000" } } }
 		],
 		"cohort": 2,
+		"materials": [
+			"https://drive.google.com/file/d/1uS_fAUuauN1WDd1i1zUNSAmTucmNHdhI/view?usp=sharing"
+		],
 		"permalink": "easy-intro-to-node-promises--async-await",
 		"slides": ["https://slides.com/leonnoel/100devs2-promises-async-node"],
 		"thumbnail": "https://i3.ytimg.com/vi/IUCnAhr61pg/maxresdefault.jpg",

@@ -113,7 +113,7 @@ export const showHomework =  async (req, res) => {
 };
 
 export const importData = async (req, res) => { 
-	if (!req.isAuthenticated()) return notLoggedIn(req, res);;
+	if (!req.isAuthenticated()) return notLoggedIn(req, res);
 	try {
 		const data = JSON.parse(JSON.parse(req.body.import).CBState);
 		const submitData = [];

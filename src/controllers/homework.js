@@ -40,7 +40,7 @@ export const addEditHomework = async (req, res) => {
 				class: hwClass[i],
 				due: req.body.due,
 				description: hwDesc[i],
-				required: hwRequired[i] === "true" ? true : false,
+				required: hwRequired[i] === "true",
 			};
 			const hwItem = await HomeworkItem.findByIdAndUpdate(hwId[i] || mongoose.Types.ObjectId(), item, {upsert: true, new: true});
 			items.push(hwItem._id);

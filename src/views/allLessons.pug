@@ -1,5 +1,6 @@
 extends layouts/default.pug
 include ./mixins/lessonCard.pug
+include ./mixins/progressBar.pug
 
 block variables
 	- title = "Classes"
@@ -11,6 +12,7 @@ block content
 
 	h1.mb-4 All Classes
 
+	+progressBar
 	#lessons.grid.gap-y-12.gap-x-16(class="sm:gap-y-24 grid-cols-[repeat(auto-fill,_minmax(285px,_1fr))]")
 		each lesson in lessons
 			+lessonCard(lesson)
@@ -21,3 +23,4 @@ append scripts
 	if loggedIn
 		script(src="/js/lessonProgress.js")
 		script(src="/js/lessonDone.js")
+		script(src="/js/progressBar.js")

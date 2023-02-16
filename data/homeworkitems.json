@@ -1,0 +1,1132 @@
+[
+	{
+		"_id": {
+			"$oid": "634e076d52c3058172e81aec"
+		},
+		"__v": 0,
+		"class": 12,
+		"description": "Read <a target=\"_blank\" href=\"https://javascript.info/function-basics\">Javascript.info: Function Basics</a> and do the tasks ",
+		"due": 15,
+		"required": true
+	},
+	{
+		"_id": {
+			"$oid": "634e048c52c3058172e81aa7"
+		},
+		"__v": 0,
+		"class": 4,
+		"description": "Finish <a href=\"/img/resources/simple-site-lab.png\" target=\"_blank\">Simple Site Lab</a>, HTML and CSS",
+		"due": 6,
+		"required": true
+	},
+	{
+		"_id": {
+			"$oid": "634d4701348624dd481253e1"
+		},
+		"__v": 0,
+		"class": 1,
+		"description": "Watch <a href=\"https://www.youtube.com/watch?v=ukLnPbIffxE\" target=\"_blank\">How to Study for Exams: Evidence-Based Revision Tips</a> by Ali Abdaal ",
+		"due": 3,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e048c52c3058172e81aa9"
+		},
+		"__v": 0,
+		"class": 4,
+		"description": "Do <a target=\"_blank\" href=\"https://www.typingtest.com/\">five minute typing test</a>",
+		"due": 6,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e048c52c3058172e81aaf"
+		},
+		"__v": 0,
+		"class": 5,
+		"description": "Read <a target=\"_blank\" href=\"https://learn.shayhowe.com/advanced-html-css/responsive-web-design/\">Shay Howe: Responsive Design</a>",
+		"due": 6,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e076d52c3058172e81aee"
+		},
+		"__v": 0,
+		"class": 12,
+		"description": "Delete the JS and do it again for all assignments in class (picker, calculator, angry parent, etc). If you make any changes, you can submit them <a href=\"https://forms.gle/G7LhHnyTA7zYq7UV6\" target=\"_blank\">here</a>.",
+		"due": 15,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e066852c3058172e81ad1"
+		},
+		"__v": 0,
+		"class": 10,
+		"description": "Do the <a target=\"_blank\" href=\"/img/resources/restaurant.png\">Restaurant</a> &amp; <a target=\"_blank\" href=\"/img/resources/hair-salon.png\">Hair Salon</a> layouts ",
+		"due": 12,
+		"required": true
+	},
+	{
+		"_id": {
+			"$oid": "634e076d52c3058172e81af4"
+		},
+		"__v": 0,
+		"class": 13,
+		"description": "Read <a target=\"_blank\" href=\"https://javascript.info/function-expressions\">Javascript.info: Function Expressions</a> and do the tasks ",
+		"due": 15,
+		"required": true
+	},
+	{
+		"_id": {
+			"$oid": "634e076d52c3058172e81aea"
+		},
+		"__v": 0,
+		"class": 12,
+		"description": "Read <a target=\"_blank\" href=\"https://javascript.info/variables\">Javascript.info: Variables</a> and do the tasks ",
+		"due": 15,
+		"required": true
+	},
+	{
+		"_id": {
+			"$oid": "634e076d52c3058172e81afa"
+		},
+		"__v": 0,
+		"class": 13,
+		"description": "Read <a target=\"_blank\" href=\"https://github.com/thejsway/thejsway/blob/master/manuscript/chapter04.md\">The JS Way: Loops</a>",
+		"due": 15,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e076d52c3058172e81af2"
+		},
+		"__v": 0,
+		"class": 12,
+		"description": "Do something special for yourself :) ",
+		"due": 15,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e0af052c3058172e81b33"
+		},
+		"__v": 0,
+		"class": 16,
+		"description": "Do <a target=\"_blank\" href=\"https://www.codecademy.com/learn/introduction-to-javascript \">Codecademy: Intro to Javascript</a> (1-6) ",
+		"due": 19,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e0b7d52c3058172e81b41"
+		},
+		"__v": 0,
+		"class": 19,
+		"description": "Read <a target=\"_blank\" href=\"https://javascript.info/array-methods\">Javascript.info: Array Methods</a> and do the tasks ",
+		"due": 22,
+		"required": true
+	},
+	{
+		"_id": {
+			"$oid": "634e0b7d52c3058172e81b3d"
+		},
+		"__v": 0,
+		"class": 19,
+		"description": "Read <a target=\"_blank\" href=\"https://github.com/thejsway/thejsway/blob/master/manuscript/chapter07.md\">The JS Way: Arrays</a>",
+		"due": 22,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e0b7d52c3058172e81b45"
+		},
+		"__v": 0,
+		"class": 19,
+		"description": "Do a minimum of 1 <a target=\"_blank\" href=\"https://www.codewars.com/kata/search/javascript?q=&r%5B%5D=-8&tags=Fundamentals&xids=completed&beta=false&order_by=total_completed%20desc\">8 kyu Fundamentals on CodeWars</a> EVERY DAY. Spend at least 20 minutes trying to solve it before looking at the solution!",
+		"due": 22,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e0b7d52c3058172e81b43"
+		},
+		"__v": 0,
+		"class": 19,
+		"description": "Read <a target=\"_blank\" href=\"https://eloquentjavascript.net/04_data.html\">Eloquent Javascript: Objects and Arrays</a> and do the tasks",
+		"due": 22,
+		"required": true
+	},
+	{
+		"_id": {
+			"$oid": "634e0c4852c3058172e81b4f"
+		},
+		"__v": 0,
+		"class": 22,
+		"description": "Watch <a target=\"_blank\" href=\"https://youtu.be/0fKg7e37bQE​\">Github in 20 minutes</a>",
+		"due": 25,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e136a52c3058172e81be2"
+		},
+		"__v": 0,
+		"class": 38,
+		"description": " Start prepping <a target=\"_blank\" href=\"https://docs.google.com/document/d/1p7DhCsLOMMybYfePWLlD1-_8KU20zkBoArH4pnW1o3c\">THE BANK</a> - More! ",
+		"due": 39,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e0c4852c3058172e81b53"
+		},
+		"__v": 0,
+		"class": 22,
+		"description": "(Before class 24, if you would like to type along) Install Git. <a target=\"_blank\" href=\"https://github.com/git-guides/install-git\">Github guide</a>, <a target=\"_blank\" href=\"https://www.theodinproject.com/lessons/foundations-setting-up-git\">Odin Project guide</a>. If on Windows, please use Git Bash and look into setting up <a target=\"_blank\" href=\"https://ubuntu.com/wsl\">WSL</a>. ",
+		"due": 25,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e151a52c3058172e81c20"
+		},
+		"__v": 0,
+		"class": 50,
+		"description": "Do <a href=\"https://www.codewars.com/kata/javascript?beta=false&amp;order_by=total_completed+desc&amp;q=&amp;tags=Strings&amp;xids=played\" target=\"_blank\">5 codewars tagged 'strings'</a>",
+		"due": 52,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e0d8252c3058172e81b77"
+		},
+		"__v": 0,
+		"class": 26,
+		"description": "Do Codewars daily! ",
+		"due": 28,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e791765133f8616875f37"
+		},
+		"__v": 0,
+		"class": 61,
+		"description": "Complete <a href=\"http://web.archive.org/web/20210616161653/https://scotch.io/courses/the-ultimate-guide-to-javascript-algorithms\" target=\"_blank\">Scotch.io Ultimate Algorithms Course</a>",
+		"due": 63,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e0f9752c3058172e81bb2"
+		},
+		"__v": 0,
+		"class": 33,
+		"description": "Type out all examples! ",
+		"due": 35,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e0f9752c3058172e81bb8"
+		},
+		"__v": 0,
+		"class": 33,
+		"description": "Start prepping <a target=\"_blank\" href=\"https://docs.google.com/document/d/1p7DhCsLOMMybYfePWLlD1-_8KU20zkBoArH4pnW1o3c\">THE BANK</a>",
+		"due": 35,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e136a52c3058172e81be8"
+		},
+		"__v": 0,
+		"class": 38,
+		"description": "Read and play with our code from today ",
+		"due": 39,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e151a52c3058172e81c1e"
+		},
+		"__v": 0,
+		"class": 50,
+		"description": "Add notes to an Interview Anki ",
+		"due": 52,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e151a52c3058172e81c22"
+		},
+		"__v": 0,
+		"class": 50,
+		"description": "Redo them a week later and do 5 more",
+		"due": 52,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e159c52c3058172e81c30"
+		},
+		"__v": 0,
+		"class": 52,
+		"description": "Read <a href=\"https://javascript.info/array-methods\">Javascript.info array methods</a>",
+		"due": 55,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e165d52c3058172e81c5b"
+		},
+		"__v": 0,
+		"class": 58,
+		"description": "Watch <a href=\"https://www.youtube.com/watch?v=w7ejDZ8SWv8\" target=\"_blank\">Traversy React Crash Course</a>",
+		"due": 61,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e791765133f8616875f35"
+		},
+		"__v": 0,
+		"class": 61,
+		"description": "Study <a href=\"https://docs.google.com/document/d/1p7DhCsLOMMybYfePWLlD1-_8KU20zkBoArH4pnW1o3c\" target=\"_blank\">the bank</a>",
+		"due": 63,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e03ca52c3058172e81aa1"
+		},
+		"__v": 0,
+		"class": 3,
+		"description": "Read <a target=\"_blank\" href=\"https://learnlayout.com/\">Learn layout</a>",
+		"due": 5,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e053152c3058172e81ac3"
+		},
+		"__v": 0,
+		"class": 7,
+		"description": "Read <a target=\"_blank\" href=\"https://css-tricks.com/snippets/css/a-guide-to-flexbox/\">A Guide to Flexbox</a>",
+		"due": 9,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e076d52c3058172e81af6"
+		},
+		"__v": 0,
+		"class": 13,
+		"description": "Read <a target=\"_blank\" href=\"https://javascript.info/arrow-functions-basics\">Javascript.info: Arrow Function Basics</a> and do the tasks ",
+		"due": 15,
+		"required": true
+	},
+	{
+		"_id": {
+			"$oid": "634e0d8252c3058172e81b73"
+		},
+		"__v": 0,
+		"class": 26,
+		"description": "Make the cocktailDB API work with spaces between the names! ",
+		"due": 28,
+		"required": true
+	},
+	{
+		"_id": {
+			"$oid": "634e0dc852c3058172e81b87"
+		},
+		"__v": 0,
+		"class": 28,
+		"description": "Do <a target=\"_blank\" href=\"https://www.codecademy.com/learn/introduction-to-javascript\">Intro to JS Codecademy course</a>. ~30 hours to finish whole course - don't pay!",
+		"due": 30,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e136a52c3058172e81be4"
+		},
+		"__v": 0,
+		"class": 38,
+		"description": "Create <a target=\"_blank\" href=\"https://signup.heroku.com/\">Heroku</a>, <a target=\"_blank\" href=\"https://www.mongodb.com/cloud/atlas/register\">Mongo Atlas</a>, and <a target=\"_blank\" href=\"https://identity.getpostman.com/signup\">Postman</a> accounts ",
+		"due": 39,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e159c52c3058172e81c2e"
+		},
+		"__v": 0,
+		"class": 52,
+		"description": "Study <a href=\"https://docs.google.com/document/d/1p7DhCsLOMMybYfePWLlD1-_8KU20zkBoArH4pnW1o3c\" target=\"_blank\">the bank</a>",
+		"due": 55,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e048c52c3058172e81aad"
+		},
+		"__v": 0,
+		"class": 5,
+		"description": "Complete the Three Layouts from class 5, HTML and CSS. <a href=\"/img/resources/layout1.png\" target=\"_blank\">Layout 1</a>, <a href=\"/img/resources/layout2.png\" target=\"_blank\">Layout 2</a>, <a href=\"/img/resources/layout3.png\" target=\"_blank\">Layout 3</a>",
+		"due": 6,
+		"required": true
+	},
+	{
+		"_id": {
+			"$oid": "634e04ea52c3058172e81abd"
+		},
+		"__v": 0,
+		"class": 6,
+		"description": "Read <a target=\"_blank\" href=\"https://learn.shayhowe.com/advanced-html-css/\">Shay Howe: Advanced</a> (all 10)",
+		"due": 8,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e076d52c3058172e81af0"
+		},
+		"__v": 0,
+		"class": 12,
+		"description": "Plan out your networking! ",
+		"due": 15,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e082c52c3058172e81b07"
+		},
+		"__v": 0,
+		"class": 15,
+		"description": "Comment out your js code from class (picker, calculator, etc) type it all out again without looking, peek if you have to. Repeat until you do not have to peek. Delete your JS entirely and do it again. Then do it again but change something and submit your changes.",
+		"due": 16,
+		"required": true
+	},
+	{
+		"_id": {
+			"$oid": "634e0af052c3058172e81b2d"
+		},
+		"__v": 0,
+		"class": 16,
+		"description": "Read <a target=\"_blank\" href=\"https://www.poetryfoundation.org/poems/51642/invictus\">Invictus (poem)</a>",
+		"due": 19,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e0af052c3058172e81b31"
+		},
+		"__v": 0,
+		"class": 16,
+		"description": "Read <a target=\"_blank\" href=\"http://eloquentjavascript.net/3rd_edition/\">Eloquent Javascript</a> (Chapters 1 - 3) ",
+		"due": 19,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e0b7d52c3058172e81b47"
+		},
+		"__v": 0,
+		"class": 19,
+		"description": "Do <a target=\"_blank\" href=\"https://javascript30.com/\">Javascript 30: Day 04 Array Cardio</a> (super hard, do it on Discord together) and then do it AGAIN",
+		"due": 22,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e0c4852c3058172e81b4d"
+		},
+		"__v": 0,
+		"class": 22,
+		"description": "Watch and do <a target=\"_blank\" href=\"https://youtu.be/PFmuCDHHpwk\">Object-Oriented Javascript</a>",
+		"due": 25,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e0cd352c3058172e81b66"
+		},
+		"__v": 0,
+		"class": 25,
+		"description": "Complete the <a target=\"_blank\" href=\"https://docs.google.com/document/d/1L2vTX3qvLhoGHeG5cVD2ljCfRGr1uJ_Gf-hNZj9KzTg\">Professional Checklist</a>",
+		"due": 38,
+		"required": true
+	},
+	{
+		"_id": {
+			"$oid": "634e0e0c52c3058172e81b96"
+		},
+		"__v": 0,
+		"class": 29,
+		"description": "Do 7 Codewars katas ",
+		"due": 32,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e132052c3058172e81bcb"
+		},
+		"__v": 0,
+		"class": 36,
+		"description": "Read and understand <strong><em>node-backend-simple-json</em></strong> and make it easier to read",
+		"due": 38,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e147852c3058172e81c0e"
+		},
+		"__v": 0,
+		"class": 46,
+		"description": "Work in a group to build out a lecture on MVC",
+		"due": 50,
+		"required": true
+	},
+	{
+		"_id": {
+			"$oid": "634e151a52c3058172e81c14"
+		},
+		"__v": 0,
+		"class": 50,
+		"description": "Work in a group to improve the <a href=\"https://github.com/100devs/todo-mvc-auth-local\" target=\"_blank\">todo list</a>",
+		"due": 52,
+		"required": true
+	},
+	{
+		"_id": {
+			"$oid": "634d46b4348624dd481253d2"
+		},
+		"__v": 0,
+		"class": 1,
+		"description": "Complete <a href=\"https://www.coursera.org/learn/learning-how-to-learn\" target=\"_blank\">Coursera Learning How To Learn</a> and submit screenshot of completion page",
+		"due": 3,
+		"required": true
+	},
+	{
+		"_id": {
+			"$oid": "634e03ca52c3058172e81a9f"
+		},
+		"__v": 0,
+		"class": 3,
+		"description": "Finish <a href=\"/img/resources/khan-academy.png\" target=\"_blank\">Khan Academy</a> and <a href=\"/img/resources/techcrunch.png\" target=\"_blank\">Tech Crunch</a> from class 3, HTML only",
+		"due": 5,
+		"required": true
+	},
+	{
+		"_id": {
+			"$oid": "634d4a093a4fa5132e26a4a0"
+		},
+		"__v": 0,
+		"class": 2,
+		"description": "Build HTML for <a href=\"/img/resources/bbc-image.png\" target=\"_blank\">BBC Website</a>. It doesn't need to look like the image, you just need to do the HTML structure with no CSS. ",
+		"due": 4,
+		"required": true
+	},
+	{
+		"_id": {
+			"$oid": "634d4a0a3a4fa5132e26a4a4"
+		},
+		"__v": 0,
+		"class": 2,
+		"description": "Read <a target=\"_blank\" href=\"https://learn.shayhowe.com/html-css/ \">Shay Howe: Learn to Code</a> (all 12) ",
+		"due": 4,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e04ea52c3058172e81abb"
+		},
+		"__v": 0,
+		"class": 6,
+		"description": "Make <a target=\"_blank\" href=\"/img/resources/15-min-pain.png\">15 minutes of pain</a> responsive (use floats and 3 media queries)",
+		"due": 8,
+		"required": true
+	},
+	{
+		"_id": {
+			"$oid": "634e0af052c3058172e81b2b"
+		},
+		"__v": 0,
+		"class": 16,
+		"description": "Draft your proposal/contract ",
+		"due": 19,
+		"required": true
+	},
+	{
+		"_id": {
+			"$oid": "634e0b7d52c3058172e81b3f"
+		},
+		"__v": 0,
+		"class": 19,
+		"description": "Read <a target=\"_blank\" href=\"https://github.com/thejsway/thejsway/blob/master/manuscript/chapter06.md\">The JS Way: Objects</a>",
+		"due": 22,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e0e7b52c3058172e81b9e"
+		},
+		"__v": 0,
+		"class": 31,
+		"description": "Get a paid client, volunteer, or contribute to open source software ",
+		"due": 36,
+		"required": true
+	},
+	{
+		"_id": {
+			"$oid": "634e132052c3058172e81bcd"
+		},
+		"__v": 0,
+		"class": 36,
+		"description": "Watch <a target=\"_blank\" href=\"https://www.youtube.com/watch?v=8aGhZQkoFbQ\">What the heck is the event loop?</a>",
+		"due": 38,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e136a52c3058172e81be6"
+		},
+		"__v": 0,
+		"class": 38,
+		"description": "Read <a target=\"_blank\" href=\"https://fullstackopen.com/en/part3/node_js_and_express\">Fullstack Open: Node.js and Express</a>",
+		"due": 39,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e151a52c3058172e81c1c"
+		},
+		"__v": 0,
+		"class": 50,
+		"description": "Read <a href=\"https://levelup.gitconnected.com/essential-javascript-string-methods-f1841dad1961\" target=\"_blank\">Essential JavaScript String Methods</a>",
+		"due": 52,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e159c52c3058172e81c34"
+		},
+		"__v": 0,
+		"class": 52,
+		"description": "Watch <a href=\"https://youtu.be/R8rmfD9Y5-c\" target=\"_blank\">8 must know JS array methods</a>",
+		"due": 55,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e165d52c3058172e81c59"
+		},
+		"__v": 0,
+		"class": 57,
+		"description": "5 Codewars tagged as strings (minimum) ",
+		"due": 61,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e048c52c3058172e81aab"
+		},
+		"__v": 0,
+		"class": 4,
+		"description": "<a target=\"_blank\" href=\"https://www.keybr.com/\">Practice typing</a>",
+		"due": 6,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e066852c3058172e81acd"
+		},
+		"__v": 0,
+		"class": 8,
+		"description": "Complete the 3 layouts we did in class (with CSS this time). <a href=\"/img/resources/bbc-image.png\" target=\"_blank\">BBC</a>,  <a href=\"/img/resources/khan-academy.png\" target=\"_blank\">Khan Academy</a>, and <a href=\"/img/resources/techcrunch.png\" target=\"_blank\">Tech Crunch</a>",
+		"due": 12,
+		"required": true
+	},
+	{
+		"_id": {
+			"$oid": "634e066852c3058172e81acf"
+		},
+		"__v": 0,
+		"class": 8,
+		"description": "Do the <a target=\"_blank\" href=\"/img/resources/level-ground.png\">Level Ground</a> &amp; <a target=\"_blank\" href=\"/img/resources/source.png\">Source</a> layouts",
+		"due": 12,
+		"required": true
+	},
+	{
+		"_id": {
+			"$oid": "634e0af052c3058172e81b29"
+		},
+		"__v": 0,
+		"class": 16,
+		"description": "Set up your portfolio ",
+		"due": 19,
+		"required": true
+	},
+	{
+		"_id": {
+			"$oid": "634e0f9752c3058172e81bb6"
+		},
+		"__v": 0,
+		"class": 33,
+		"description": "Watch <a target=\"_blank\" href=\"https://youtu.be/fBNz5xF-Kx4\">Node.js crash course</a> (just get through it) ",
+		"due": 35,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e132052c3058172e81bd1"
+		},
+		"__v": 0,
+		"class": 36,
+		"description": "Read and do <a target=\"_blank\" href=\"https://zellwk.com/blog/crud-express-mongodb/\">Build a CRUD app</a> (SUPER IMPORTANT) ",
+		"due": 38,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e147852c3058172e81c0c"
+		},
+		"__v": 0,
+		"class": 45,
+		"description": "<a href=\"https://github.com/100devs/todo-mvc-auth-local\" target=\"_blank\">Take a peek</a>",
+		"due": 50,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e151a52c3058172e81c1a"
+		},
+		"__v": 0,
+		"class": 50,
+		"description": "Study <a href=\" https://docs.google.com/document/d/1p7DhCsLOMMybYfePWLlD1-_8KU20zkBoArH4pnW1o3c\" target=\"_blank\">The Bank</a>",
+		"due": 52,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e159c52c3058172e81c38"
+		},
+		"__v": 0,
+		"class": 52,
+		"description": "Do <a href=\"https://www.codewars.com/kata/javascript?beta=false&amp;order_by=total_completed+desc&amp;q=&amp;tags=Arrays&amp;xids=played\" target=\"_blank\">5 codewars tagged 'arrays'</a>",
+		"due": 55,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e159c52c3058172e81c3a"
+		},
+		"__v": 0,
+		"class": 52,
+		"description": "Do them again a week later and do 5 more ",
+		"due": 55,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e159c52c3058172e81c3c"
+		},
+		"__v": 0,
+		"class": 52,
+		"description": "Do them again a week later and do 5 more, second time (total 3 weeks) ",
+		"due": 55,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e160f52c3058172e81c4f"
+		},
+		"__v": 0,
+		"class": 56,
+		"description": "Read <a href=\"https://reactjs.org/docs/hello-world.html\" target=\"_blank\">the React documentation</a>",
+		"due": 58,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e165d52c3058172e81c57"
+		},
+		"__v": 0,
+		"class": 57,
+		"description": "Research the following string methods: charAt, charCodeAt, concat, includes, indexOf, match, repeat, replace, search, slice, split, substr, toLowerCase, toUpperCase, trim. Give a short description of what the method does, how it works, its time complexity (if appropriate - we'll cover this soon), and give three examples of it in action! ",
+		"due": 61,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e165d52c3058172e81c5d"
+		},
+		"__v": 0,
+		"class": 58,
+		"description": "Do <a href=\"https://egghead.io/courses/the-beginner-s-guide-to-react\" target=\"_blank\">Kent C. Dodd's Beginner's Guide to React</a>",
+		"due": 61,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634d4701348624dd481253e3"
+		},
+		"__v": 0,
+		"class": 1,
+		"description": "Watch <a href=\"https://www.youtube.com/watch?v=Z-zNHHpXoMM\" target=\"_blank\">How to Study for Exams: Spaced Repetition</a> by Ali Abdaal ",
+		"due": 3,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634d4a093a4fa5132e26a4a2"
+		},
+		"__v": 0,
+		"class": 2,
+		"description": "Use <a target=\"_blank\" href=\"https://developer.mozilla.org/en-US/docs/Web/HTML\">MDN</a>",
+		"due": 4,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e053152c3058172e81ac5"
+		},
+		"__v": 0,
+		"class": 7,
+		"description": "Do <a target=\"_blank\" href=\"http://flexboxfroggy.com/\">Flexbox Froggy</a>",
+		"due": 9,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e053152c3058172e81ac7"
+		},
+		"__v": 0,
+		"class": 7,
+		"description": "Watch Independence Day (yes, the 1996 movie)",
+		"due": 9,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e066852c3058172e81ad3"
+		},
+		"__v": 0,
+		"class": 10,
+		"description": "Watch <a target=\"_blank\" href=\"https://youtu.be/hdI2bqOjy3c\">Javascript crash course for beginners</a>",
+		"due": 12,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e0c4852c3058172e81b51"
+		},
+		"__v": 0,
+		"class": 22,
+		"description": "Do <a target=\"_blank\" href=\"https://aka.ms/learnwithleon\">Intro to Github</a>",
+		"due": 25,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e0e8b52c3058172e81ba8"
+		},
+		"__v": 0,
+		"class": 32,
+		"description": "Work in a group on a project (whatever you like) ",
+		"due": 33,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e0f9752c3058172e81bb0"
+		},
+		"__v": 0,
+		"class": 33,
+		"description": "Watch <a target=\"_blank\" href=\"https://www.youtube.com/watch?v=vn3tm0quoqE\">The Async/Await Episode</a> (he goes <em>really</em> fast so slow it down or watch it a couple of times) ",
+		"due": 35,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e0f9752c3058172e81bb4"
+		},
+		"__v": 0,
+		"class": 33,
+		"description": "Read <a target=\"_blank\" href=\"https://medium.com/the-node-js-collection/modern-javascript-explained-for-dinosaurs-f695e9747b70\">Modern Javascript For Dinosaurs</a> (the article also links to a video course which is free, if you prefer that) ",
+		"due": 35,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e132052c3058172e81bc9"
+		},
+		"__v": 0,
+		"class": 35,
+		"description": "Install <a href=\"https://nodejs.org/en/\" target=\"_blank\">Node.js</a>",
+		"due": 38,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e147852c3058172e81c08"
+		},
+		"__v": 0,
+		"class": 44,
+		"description": "Watch <a href=\"https://youtu.be/1IsL6g2ixak\" target=\"_blank\">DevMarketer's MVC video</a>",
+		"due": 50,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e147852c3058172e81c0a"
+		},
+		"__v": 0,
+		"class": 44,
+		"description": "Watch <a href=\"https://youtu.be/SBvmnHTQIPY\" target=\"_blank\">Node.js App From Scratch</a> (THIS IS A BEAST just get through it!) ",
+		"due": 50,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e159c52c3058172e81c32"
+		},
+		"__v": 0,
+		"class": 52,
+		"description": "Read <a href=\"https://www.freecodecamp.org/news/array-destructuring-in-es6-30e398f21d10/\" target=\"_blank\">FCC array destructuring</a>",
+		"due": 55,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e159c52c3058172e81c36"
+		},
+		"__v": 0,
+		"class": 52,
+		"description": "Add notes to interview Anki ",
+		"due": 55,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e15e052c3058172e81c49"
+		},
+		"__v": 0,
+		"class": 55,
+		"description": "Work together with a group to add comments to <a href=\"https://github.com/100devs/binary-upload-boom\" target=\"_blank\">Binary Upload Boom</a> and submit a pull request with your completed code. ",
+		"due": 56,
+		"required": true
+	},
+	{
+		"_id": {
+			"$oid": "634e076d52c3058172e81af8"
+		},
+		"__v": 0,
+		"class": 13,
+		"description": "NETWORK! ",
+		"due": 15,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e0af052c3058172e81b2f"
+		},
+		"__v": 0,
+		"class": 16,
+		"description": "Read <a target=\"_blank\" href=\"https://github.com/bpesquet/thejsway\">The JS Way</a> ('3, 2, 1... Code!' through 'Write Functions') ",
+		"due": 19,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e0af052c3058172e81b35"
+		},
+		"__v": 0,
+		"class": 16,
+		"description": "Watch <a target=\"_blank\" href=\"https://youtu.be/SWYqp7iY_Tc\">Git and GitHub crash course</a>",
+		"due": 19,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e0d8252c3058172e81b75"
+		},
+		"__v": 0,
+		"class": 26,
+		"description": "Find three APIs from <a target=\"_blank\" href=\"https://github.com/public-apis/public-apis\">this list</a> (not all of them work) and build three simple apps using those APIs. ",
+		"due": 28,
+		"required": true
+	},
+	{
+		"_id": {
+			"$oid": "634e0d8252c3058172e81b79"
+		},
+		"__v": 0,
+		"class": 26,
+		"description": "Do Anki daily! ",
+		"due": 28,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e0e0c52c3058172e81b94"
+		},
+		"__v": 0,
+		"class": 29,
+		"description": "Read <a target=\"_blank\" href=\"https://github.com/thejsway/thejsway/blob/master/manuscript/chapter09.md\">The JS Way: Object-Oriented Programming</a>",
+		"due": 32,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e0e7b52c3058172e81ba0"
+		},
+		"__v": 0,
+		"class": 31,
+		"description": " Review, play with, and break the code we go over tonight. Get lost in it, come with questions, and be ready to review! ",
+		"due": 36,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e0f9652c3058172e81bae"
+		},
+		"__v": 0,
+		"class": 33,
+		"description": "Read <a target=\"_blank\" href=\"https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Async_await\">MDN: Async/Await</a>",
+		"due": 35,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e132052c3058172e81bcf"
+		},
+		"__v": 0,
+		"class": 36,
+		"description": "Watch <a target=\"_blank\" href=\"https://www.youtube.com/watch?v=cCOL7MC4Pl0\">In the loop</a>",
+		"due": 38,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e139d52c3058172e81bee"
+		},
+		"__v": 0,
+		"class": 39,
+		"description": "Make your own API and push to Heroku",
+		"due": 41,
+		"required": true
+	},
+	{
+		"_id": {
+			"$oid": "634e13e652c3058172e81bfb"
+		},
+		"__v": 0,
+		"class": 41,
+		"description": "Work with a group to comment every line of <a href=\"https://github.com/100devs/todo-list-express\" target=\"_blank\">this to-do list</a> and submit a pull request with your completed code.",
+		"due": 44,
+		"required": true
+	},
+	{
+		"_id": {
+			"$oid": "634e151a52c3058172e81c16"
+		},
+		"__v": 0,
+		"class": 50,
+		"description": "1 coffee chat / 3 connections",
+		"due": 52,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e151a52c3058172e81c18"
+		},
+		"__v": 0,
+		"class": 50,
+		"description": "Push code every day ",
+		"due": 52,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e159c52c3058172e81c2a"
+		},
+		"__v": 0,
+		"class": 52,
+		"description": "1 coffee chat / 3 connections ",
+		"due": 55,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e159c52c3058172e81c2c"
+		},
+		"__v": 0,
+		"class": 52,
+		"description": "Push code every day ",
+		"due": 55,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e160f52c3058172e81c51"
+		},
+		"__v": 0,
+		"class": 56,
+		"description": "Mentally break your favorite website down into reusable components! AND SEE COMPONENTS EVERYWHERE! ",
+		"due": 58,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e791765133f8616875f31"
+		},
+		"__v": 0,
+		"class": 61,
+		"description": "1 coffee chat / 3 connections",
+		"due": 63,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "634e791765133f8616875f33"
+		},
+		"__v": 0,
+		"class": 61,
+		"description": "Push Code Every Day",
+		"due": 63,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "63512aa870f39c8241328e6f"
+		},
+		"__v": 0,
+		"class": 63,
+		"description": "Complete <a href=\"https://frontendmasters.com/courses/practical-algorithms\" target=\"_blank\">Practical Algorithms Course</a>",
+		"due": 69,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "6395861956e90fe0f01b2b39"
+		},
+		"__v": 0,
+		"class": 29,
+		"description": "Watch <a target=\"_blank\" href=\"https://www.youtube.com/watch?v=PFmuCDHHpwk\">Object-oriented Programming in JavaScript</a>",
+		"due": 32,
+		"required": false
+	},
+	{
+		"_id": {
+			"$oid": "6395941d56e90fe0f01b2c79"
+		},
+		"__v": 0,
+		"class": 37,
+		"description": "Make a coin flip game where the randomization happens server side",
+		"due": 38,
+		"required": false
+	}
+]

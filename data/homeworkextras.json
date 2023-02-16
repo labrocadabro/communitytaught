@@ -1,0 +1,191 @@
+[
+	{
+		"_id": {
+			"$oid": "634e0d8252c3058172e81b7b"
+		},
+		"__v": 0,
+		"class": 26,
+		"description": "Make a rotating list of drinks (an automatic carousel) from the cocktailDB",
+		"due": 28
+	},
+	{
+		"_id": {
+			"$oid": "634e0c4852c3058172e81b59"
+		},
+		"__v": 0,
+		"class": 22,
+		"description": "Read <a target=\"_blank\" href=\"https://medium.com/@hamzzza.ahmed95/four-pillars-of-object-oriented-programming-oop-e8d7822aa219\">Pillars of OOP</a>",
+		"due": 25
+	},
+	{
+		"_id": {
+			"$oid": "634e066852c3058172e81ad7"
+		},
+		"__v": 0,
+		"class": 8,
+		"description": "Add media queries to other layouts",
+		"due": 12
+	},
+	{
+		"_id": {
+			"$oid": "634e0af052c3058172e81b37"
+		},
+		"__v": 0,
+		"class": 16,
+		"description": "<a target=\"_blank\" href=\"https://jwiegley.github.io/git-from-the-bottom-up/\">Git from the bottom up</a>",
+		"due": 19
+	},
+	{
+		"_id": {
+			"$oid": "634e0e7b52c3058172e81ba2"
+		},
+		"__v": 0,
+		"class": 31,
+		"description": "Do Codewars Array Problems: <a target=\"_blank\" href=\"https://www.codewars.com/kata/search/javascript?q=&r%5B%5D=-8&tags=Arrays&xids=completed&beta=false&order_by=total_completed%20desc\">8 kyu</a>, <a target=\"_blank\" href=\"https://www.codewars.com/kata/search/javascript?q=&r%5B%5D=-7&tags=Arrays&xids=completed&beta=false&order_by=total_completed%20desc\">7 kyu</a>, <a target=\"_blank\" href=\"https://www.codewars.com/kata/search/javascript?q=&r%5B%5D=-6&tags=Arrays&xids=completed&beta=false&order_by=total_completed%20desc\">6 kyu</a>, <a target=\"_blank\" href=\"https://www.codewars.com/kata/search/javascript?q=&r%5B%5D=-7&tags=Arrays&xids=completed&beta=false&order_by=total_completed%20desc\">7 kyu</a>, <a target=\"_blank\" href=\"https://www.codewars.com/kata/search/javascript?q=&r%5B%5D=-8&tags=Arrays&xids=completed&beta=false&order_by=total_completed%20desc\">8 kyu</a>",
+		"due": 36
+	},
+	{
+		"_id": {
+			"$oid": "634e0f9752c3058172e81bba"
+		},
+		"__v": 0,
+		"class": 33,
+		"description": "Watch our <a target=\"_blank\" href=\"https://www.youtube.com/watch?v=QoweoDsi5ZI\">Crafting your story</a> class from last cohort ",
+		"due": 35
+	},
+	{
+		"_id": {
+			"$oid": "634e066852c3058172e81ad9"
+		},
+		"__v": 0,
+		"class": 10,
+		"description": "<a target=\"_blank\" href=\"https://www.freecodecamp.org/news/css-flexbox-tutorial-with-cheatsheet/\">FCC Flexbox Tutorial</a>",
+		"due": 12
+	},
+	{
+		"_id": {
+			"$oid": "634e066852c3058172e81add"
+		},
+		"__v": 0,
+		"class": 10,
+		"description": "<a target=\"_blank\" href=\"https://mastery.games/flexboxzombies/\">Flexbox Zombies</a>",
+		"due": 12
+	},
+	{
+		"_id": {
+			"$oid": "634e0c4852c3058172e81b57"
+		},
+		"__v": 0,
+		"class": 22,
+		"description": "Read <a target=\"_blank\" href=\"https://javascript.info/object-basics\">Javascript.info: Objects</a> (whole chapter) and do the tasks",
+		"due": 25
+	},
+	{
+		"_id": {
+			"$oid": "634e165d52c3058172e81c5f"
+		},
+		"__v": 0,
+		"class": 57,
+		"description": "Watch Mayanwolfe's walkthrough of the React documentation/React basics: <a href=\"https://youtu.be/MFEmmHEm6nk\" target=\"_blank\">Part 1</a>, <a href=\"https://youtu.be/xzVggz2XJy4\" target=\"_blank\">Part 2</a>",
+		"due": 61
+	},
+	{
+		"_id": {
+			"$oid": "634e0d8252c3058172e81b7d"
+		},
+		"__v": 0,
+		"class": 26,
+		"description": "Make the NASA API handle all the data types including video",
+		"due": 28
+	},
+	{
+		"_id": {
+			"$oid": "634e0e0c52c3058172e81b98"
+		},
+		"__v": 0,
+		"class": 29,
+		"description": "Read <a target=\"_blank\" href=\"https://eloquentjavascript.net/06_object.html\">Eloquent JS: The Secret Life of Objects</a>",
+		"due": 32
+	},
+	{
+		"_id": {
+			"$oid": "634e0f9752c3058172e81bbc"
+		},
+		"__v": 0,
+		"class": 33,
+		"description": "Read <a target=\"_blank\" href=\"https://javascript.info/async\">Javascript.info: Async/Await</a> and do the tasks",
+		"due": 35
+	},
+	{
+		"_id": {
+			"$oid": "634e132052c3058172e81bd5"
+		},
+		"__v": 0,
+		"class": 35,
+		"description": "Watch Mayanwolfe's <a target=\"_blank\" href=\"https://www.youtube.com/watch?v=VOfqO4-RLd4\">stream on installing Node</a>",
+		"due": 38
+	},
+	{
+		"_id": {
+			"$oid": "634e151a52c3058172e81c24"
+		},
+		"__v": 0,
+		"class": 50,
+		"description": "Watch Mayanwolfe's <a href=\"https://www.youtube.com/watch?v=jo5GTErVBQU\" target=\"_blank\">walkthrough of the auth code</a>",
+		"due": 52
+	},
+	{
+		"_id": {
+			"$oid": "634e066852c3058172e81ad5"
+		},
+		"__v": 0,
+		"class": 8,
+		"description": "Complete <a target=\"_blank\" href=\"/img/resources/pushwork-class8.png\">Pushwork</a> layout (Can optionally submit this)",
+		"due": 12
+	},
+	{
+		"_id": {
+			"$oid": "634e066852c3058172e81adb"
+		},
+		"__v": 0,
+		"class": 10,
+		"description": "<a target=\"_blank\" href=\"https://youtu.be/JJSoEo8JSnc\">Flexbox in 20 minutes</a>",
+		"due": 12
+	},
+	{
+		"_id": {
+			"$oid": "634e0d8352c3058172e81b81"
+		},
+		"__v": 0,
+		"class": 26,
+		"description": "Do a <a href=\"https://www.codewars.com/kata/search/javascript?q=&r%5B%5D=-7&xids=completed&beta=false&order_by=total_completed%20desc\" target=\"_blank\">7kyu kata</a>",
+		"due": 28
+	},
+	{
+		"_id": {
+			"$oid": "634e0c4852c3058172e81b55"
+		},
+		"__v": 0,
+		"class": 22,
+		"description": "Complete <a target=\"_blank\" href=\"https://github.com/leonnoel/100devs-calculator\">Javascript Calculator</a> (Can be submitted with class 28 homework)",
+		"due": 25
+	},
+	{
+		"_id": {
+			"$oid": "634e0d8252c3058172e81b7f"
+		},
+		"__v": 0,
+		"class": 26,
+		"description": "Add an API project to your portfolio website",
+		"due": 28
+	},
+	{
+		"_id": {
+			"$oid": "639592c756e90fe0f01b2c56"
+		},
+		"__v": 0,
+		"class": 32,
+		"description": "Do Codewars String Problems: <a target=\"_blank\" href=\"https://www.codewars.com/kata/search/javascript?q=&amp;r%5B%5D=-8&amp;tags=Strings&amp;xids=completed&amp;beta=false&amp;order_by=total_completed%20desc\">8 kyu</a>, <a target=\"_blank\" href=\"https://www.codewars.com/kata/search/javascript?q=&amp;r%5B%5D=-7&amp;tags=Strings&amp;xids=completed&amp;beta=false&amp;order_by=total_completed%20desc\">7 kyu</a>, <a target=\"_blank\" href=\"https://www.codewars.com/kata/search/javascript?q=&amp;r%5B%5D=-6&amp;tags=Strings&amp;xids=completed&amp;beta=false&amp;order_by=total_completed%20desc\">6 kyu</a>, <a target=\"_blank\" href=\"https://www.codewars.com/kata/search/javascript?q=&amp;r%5B%5D=-7&amp;tags=Strings&amp;xids=completed&amp;beta=false&amp;order_by=total_completed%20desc\">7 kyu</a>, <a target=\"_blank\" href=\"https://www.codewars.com/kata/search/javascript?q=&amp;r%5B%5D=-8&amp;tags=Strings&amp;xids=completed&amp;beta=false&amp;order_by=total_completed%20desc\">8 kyu</a>",
+		"due": 33
+	}
+]

@@ -1,0 +1,1709 @@
+[
+	{
+		"_id": {
+			"$oid": "634615b97755d907aa66bd97"
+		},
+		"__v": 0,
+		"checkin": ["https://twitter.com/leonnoel/status/1481030723347746816"],
+		"classNo": [1],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1641859200000"
+				}
+			}
+		],
+		"materials": "https://drive.google.com/file/d/1rAlGpC-4WmtEJ9-RO6dtHqiiw57PjFth/view?usp=sharing",
+		"motivationLink": "https://www.poetryfoundation.org/poems/51642/invictus",
+		"motivationTitle": "Invictus By William Ernest Henley",
+		"permalink": "become-a-software-engineer-for-free",
+		"slides": ["https://slides.com/leonnoel/100devs2-html-the-basics"],
+		"thumbnail": "https://i3.ytimg.com/vi/o3IIobN4xR0/maxresdefault.jpg",
+		"timestamps": [],
+		"title": "Become A Software Engineer For Free",
+		"twitchVideo": false,
+		"videoId": "o3IIobN4xR0",
+		"note": ""
+	},
+	{
+		"_id": {
+			"$oid": "634616947755d907aa66bdbb"
+		},
+		"__v": 0,
+		"checkin": ["https://twitter.com/leonnoel/status/1481755548227829764"],
+		"classNo": [2],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1642032000000"
+				}
+			}
+		],
+		"materials": "https://drive.google.com/file/d/178XnAGdNHHgF0O1b1zNgTEQpJHGu7RMc/view?usp=sharing",
+		"motivationLink": "https://allpoetry.com/Desiderata---Words-for-Life",
+		"motivationTitle": "Desiderata - Words for Life by Max Ehrmann",
+		"permalink": "learn-html",
+		"slides": ["https://slides.com/leonnoel/100devs2-html-more-basics"],
+		"thumbnail": "https://i3.ytimg.com/vi/eCRbEILXXmE/maxresdefault.jpg",
+		"timestamps": [],
+		"title": "Learn HTML",
+		"twitchVideo": false,
+		"videoId": "eCRbEILXXmE",
+		"note": ""
+	},
+	{
+		"_id": {
+			"$oid": "634617887755d907aa66bdca"
+		},
+		"__v": 0,
+		"checkin": ["https://twitter.com/leonnoel/status/1483567676626653185"],
+		"classNo": [3],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1642464000000"
+				}
+			}
+		],
+		"materials": "https://drive.google.com/file/d/1jq4KyRu8_-8la9-kPC7MpvEi_RAP8jtn/view?usp=sharing",
+		"motivationLink": "https://www.familyfriendpoems.com/poem/have-you-earned-your-tomorrow-by-edgar-albert-guest",
+		"motivationTitle": "Have You Earned Your Tomorrow by Edgar Guest",
+		"permalink": "learn-more-html",
+		"slides": ["https://slides.com/leonnoel/100devs2-html-even-more-basics"],
+		"thumbnail": "https://i3.ytimg.com/vi/rdWM6kUImjE/maxresdefault.jpg",
+		"timestamps": [],
+		"title": "Learn More HTML",
+		"twitchVideo": false,
+		"videoId": "rdWM6kUImjE",
+		"note": ""
+	},
+	{
+		"_id": {
+			"$oid": "634618287755d907aa66bdd1"
+		},
+		"__v": 0,
+		"checkin": ["https://twitter.com/leonnoel/status/1484292275064631297"],
+		"classNo": [4],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1642636800000"
+				}
+			}
+		],
+		"materials": "https://drive.google.com/file/d/1nb5QadNC2Z1x2oqH9zIMZFVbYjarM5Br/view?usp=sharing",
+		"motivationLink": "https://www.youtube.com/watch?v=6vuetQSwFW8",
+		"motivationTitle": "How Bad Do You Want It by Eric Thomas",
+		"permalink": "learn-css",
+		"slides": ["https://slides.com/leonnoel/100devs2-css-the-basics"],
+		"thumbnail": "https://i3.ytimg.com/vi/Q1Obtn29twk/maxresdefault.jpg",
+		"timestamps": [],
+		"title": "Learn CSS",
+		"twitchVideo": false,
+		"videoId": "Q1Obtn29twk",
+		"note": ""
+	},
+	{
+		"_id": {
+			"$oid": "634618af7755d907aa66bdd8"
+		},
+		"__v": 0,
+		"checkin": ["https://twitter.com/leonnoel/status/1486104346227970050"],
+		"classNo": [5],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1643068800000"
+				}
+			}
+		],
+		"materials": "https://drive.google.com/file/d/1bCfEIHVAXuDo_XERIoog1bcuJfIqrgpv/view?usp=sharing",
+		"motivationLink": "https://www.youtube.com/watch?v=3sK3wJAxGfs",
+		"motivationTitle": "Make Your Bed by Navy Seal William McRaven",
+		"permalink": "learn-css-layout",
+		"slides": ["https://slides.com/leonnoel/100devs2-css-more-basics"],
+		"thumbnail": "https://i3.ytimg.com/vi/E6Z8cWU_fjI/maxresdefault.jpg",
+		"timestamps": [],
+		"title": "Learn CSS Layout",
+		"twitchVideo": false,
+		"videoId": "E6Z8cWU_fjI",
+		"note": ""
+	},
+	{
+		"_id": {
+			"$oid": "634619677755d907aa66bddf"
+		},
+		"__v": 0,
+		"checkin": ["https://twitter.com/leonnoel/status/1486829337026260994"],
+		"classNo": [6],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1643241600000"
+				}
+			}
+		],
+		"materials": "https://drive.google.com/file/d/1bF0LZBXdhXEMDLqcMZwNd8-ZbA2rRgQF/view?usp=sharing",
+		"motivationLink": "https://www.youtube.com/watch?v=7Oxz060iedY",
+		"motivationTitle": "You Owe You by Eric Thomas",
+		"permalink": "lets-review-html-and-css",
+		"slides": ["https://slides.com/leonnoel/100devs2-review-and-responsive"],
+		"thumbnail": "https://i3.ytimg.com/vi/L55ax0blZY0/maxresdefault.jpg",
+		"timestamps": [],
+		"title": "Let's Review HTML and CSS",
+		"twitchVideo": false,
+		"videoId": "L55ax0blZY0",
+		"note": ""
+	},
+	{
+		"_id": {
+			"$oid": "634619d57755d907aa66bde6"
+		},
+		"__v": 0,
+		"checkin": ["https://twitter.com/leonnoel/status/1488640947722145792"],
+		"classNo": [7],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1643673600000"
+				}
+			}
+		],
+		"materials": "https://drive.google.com/file/d/1h3CIJ3Uip8SF_jA4u0ykEnFNcyCsswRu/view?usp=sharing",
+		"motivationLink": "",
+		"motivationTitle": "",
+		"permalink": "learn-responsive-css",
+		"slides": ["https://slides.com/leonnoel/100devs2-css-responsive-basics"],
+		"thumbnail": "https://i3.ytimg.com/vi/k8r3B0JGMt4/maxresdefault.jpg",
+		"timestamps": [],
+		"title": "Learn Responsive CSS",
+		"twitchVideo": false,
+		"videoId": "k8r3B0JGMt4",
+		"note": ""
+	},
+	{
+		"_id": {
+			"$oid": "63461a237755d907aa66bded"
+		},
+		"__v": 0,
+		"checkin": ["https://twitter.com/leonnoel/status/1489365690217754628"],
+		"classNo": [8],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1643846400000"
+				}
+			}
+		],
+		"materials": "https://drive.google.com/file/d/1T9vHgSlwnI7NkXshRUpPuN6WLKm_kDKb/view?usp=sharing",
+		"motivationLink": "",
+		"motivationTitle": "",
+		"permalink": "write-bad-css",
+		"slides": ["https://slides.com/leonnoel/100devs2-css-responsive-review"],
+		"thumbnail": "https://i3.ytimg.com/vi/PWVRSXQxsXc/maxresdefault.jpg",
+		"timestamps": [],
+		"title": "Write Bad CSS",
+		"twitchVideo": false,
+		"videoId": "PWVRSXQxsXc",
+		"note": ""
+	},
+	{
+		"_id": {
+			"$oid": "63461a8f7755d907aa66bdf4"
+		},
+		"__v": 0,
+		"checkin": ["https://twitter.com/leonnoel/status/1491177563003453440"],
+		"classNo": [9],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1644278400000"
+				}
+			}
+		],
+		"materials": "https://100devsfollowalong.netlify.app/classes/class-09.html",
+		"motivationLink": "",
+		"motivationTitle": "",
+		"permalink": "networking-night",
+		"slides": ["https://slides.com/leonnoel/100devs2-networking-night"],
+		"thumbnail": "https://i3.ytimg.com/vi/OaglXfjsBaE/maxresdefault.jpg",
+		"timestamps": [],
+		"title": "Networking Night",
+		"twitchVideo": false,
+		"videoId": "OaglXfjsBaE",
+		"note": "The networking sheet from this class is located <a href=\"https://docs.google.com/spreadsheets/d/1Be-6gYvrfi8l-M0RnObzdysRIG7N7Yyu6rIF0OHw0Q4/edit#gid=1771441293\" target=\"_blank\">here</a>."
+	},
+	{
+		"_id": {
+			"$oid": "63461b2c7755d907aa66bdfb"
+		},
+		"__v": 0,
+		"checkin": ["https://twitter.com/leonnoel/status/1491902703861071872"],
+		"classNo": [10],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1644451200000"
+				}
+			}
+		],
+		"materials": "https://drive.google.com/file/d/19okZioPySMQtYXEX0JdIPDy1j4x38Quc/view?usp=sharing",
+		"motivationLink": "https://www.youtube.com/watch?v=E9MOhxS46d8",
+		"motivationTitle": "Who's Gonna Carry the Boats and Logs by Dave Goggins",
+		"permalink": "rant-and-review",
+		"slides": ["https://slides.com/leonnoel/100devs-css-review-homework"],
+		"thumbnail": "https://i3.ytimg.com/vi/WftjV2L7oyk/maxresdefault.jpg",
+		"timestamps": [],
+		"title": "Rant and Review",
+		"twitchVideo": false,
+		"videoId": "WftjV2L7oyk",
+		"note": ""
+	},
+	{
+		"_id": {
+			"$oid": "63461b7e7755d907aa66be02"
+		},
+		"__v": 0,
+		"checkin": ["https://twitter.com/leonnoel/status/1493714553649041408"],
+		"classNo": [11],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1644883200000"
+				}
+			}
+		],
+		"materials": "https://drive.google.com/file/d/1cMZC2gWgEb6WS6wAe-6kbI4iOfMQJzaZ/view?usp=sharing",
+		"motivationLink": "",
+		"motivationTitle": "",
+		"permalink": "learn-css-layout-and-flexbox",
+		"slides": ["https://slides.com/leonnoel/100devs2-css-review-flexbox"],
+		"thumbnail": "https://i3.ytimg.com/vi/qEj0pXGVwjY/maxresdefault.jpg",
+		"timestamps": [],
+		"title": "Learn CSS Layout and Flexbox",
+		"twitchVideo": false,
+		"videoId": "qEj0pXGVwjY",
+		"note": ""
+	},
+	{
+		"_id": {
+			"$oid": "63461c717755d907aa66be19"
+		},
+		"__v": 0,
+		"checkin": ["https://twitter.com/leonnoel/status/1494439359726043141"],
+		"classNo": [12],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1645056000000"
+				}
+			}
+		],
+		"materials": "https://drive.google.com/file/d/1w7gjBUWEpLIzg6y_t6XX5EhGeC4MbG4C/view?usp=sharing",
+		"motivationLink": "https://www.youtube.com/watch?v=01CL029k7pU",
+		"motivationTitle": "I Still Have A Soul",
+		"permalink": "learn-javascript",
+		"slides": ["https://slides.com/leonnoel/100devs2-javascript-basics"],
+		"thumbnail": "https://i3.ytimg.com/vi/_A20kVsaqIk/maxresdefault.jpg",
+		"timestamps": [],
+		"title": "Learn Javascript",
+		"twitchVideo": false,
+		"videoId": "_A20kVsaqIk",
+		"note": ""
+	},
+	{
+		"_id": {
+			"$oid": "63461d187755d907aa66be20"
+		},
+		"__v": 0,
+		"checkin": ["https://twitter.com/leonnoel/status/1496251214304264193"],
+		"classNo": [13],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1645488000000"
+				}
+			}
+		],
+		"materials": "https://drive.google.com/file/d/1qFTCerdFP8UxXKlXnWUYN--tETOUiEqz/view?usp=sharing",
+		"motivationLink": "https://www.youtube.com/watch?v=dV9worye5g0",
+		"motivationTitle": "What Will You Do With It? by Eric Thomas",
+		"permalink": "fun-javascript-examples",
+		"slides": ["https://slides.com/leonnoel/100devs2-javascript-more-basics"],
+		"thumbnail": "https://i3.ytimg.com/vi/pS6ykGL-fRE/maxresdefault.jpg",
+		"timestamps": [],
+		"title": "Fun JavaScript Examples",
+		"twitchVideo": false,
+		"videoId": "pS6ykGL-fRE",
+		"note": ""
+	},
+	{
+		"_id": {
+			"$oid": "63461d907755d907aa66be27"
+		},
+		"__v": 0,
+		"checkin": ["https://twitter.com/leonnoel/status/1496975838327107591"],
+		"classNo": [14],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1645660800000"
+				}
+			}
+		],
+		"materials": "https://drive.google.com/file/d/1J4xiKC4wk_oqt8cM2eV2tuCqHbzQjuyb/view?usp=sharing",
+		"motivationLink": "http://poemsspeak.blogspot.com/2016/12/poetry-speaks.html",
+		"motivationTitle": "Don't Quit by Edgar Albert Guest",
+		"permalink": "javascript-functions-for-beginners",
+		"slides": [
+			"https://slides.com/leonnoel/100devs2-javascript-more-basics-again"
+		],
+		"thumbnail": "https://i3.ytimg.com/vi/cBWUvTZPeKw/maxresdefault.jpg",
+		"timestamps": [],
+		"title": "Javascript Functions for Beginners",
+		"twitchVideo": false,
+		"videoId": "cBWUvTZPeKw",
+		"note": ""
+	},
+	{
+		"_id": {
+			"$oid": "63461e257755d907aa66be2e"
+		},
+		"__v": 0,
+		"checkin": ["https://twitter.com/leonnoel/status/1498787819933691905"],
+		"classNo": [15],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1646092800000"
+				}
+			}
+		],
+		"materials": "https://drive.google.com/file/d/1CQa9IHJ_kvoiEn91gmQFMVC9wJJ6WAtV/view?usp=sharing",
+		"motivationLink": "https://www.youtube.com/watch?v=jVkLVRt6c1U",
+		"motivationTitle": "F*ck You, Pay Me by Mike Monteiro",
+		"permalink": "how-to-start-freelancing",
+		"slides": ["https://slides.com/leonnoel/100devs2-intro-to-freelancing"],
+		"thumbnail": "https://i3.ytimg.com/vi/68Li7ukgDKg/maxresdefault.jpg",
+		"timestamps": [],
+		"title": "How to Start Freelancing",
+		"twitchVideo": false,
+		"videoId": "68Li7ukgDKg",
+		"note": ""
+	},
+	{
+		"_id": {
+			"$oid": "63461f817755d907aa66be35"
+		},
+		"__v": 0,
+		"checkin": ["https://twitter.com/leonnoel/status/1499512575393820677"],
+		"classNo": [16],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1646265600000"
+				}
+			}
+		],
+		"materials": "https://drive.google.com/file/d/1PEYbgqzKIhaCyAZrKHs4ZlF9tsNvpfOg/view?usp=sharing",
+		"motivationLink": "https://allpoetry.com/poem/8624439-Thinking-by-Walter-D-Wintle",
+		"motivationTitle": "Thinking by Walter D Wintle",
+		"permalink": "learn-javascript-loops",
+		"slides": ["https://slides.com/leonnoel/100devs2-js-review-loops"],
+		"thumbnail": "https://i3.ytimg.com/vi/av6iPI_zJTU/maxresdefault.jpg",
+		"timestamps": [],
+		"title": "Learn JavaScript Loops",
+		"twitchVideo": false,
+		"videoId": "av6iPI_zJTU",
+		"note": ""
+	},
+	{
+		"_id": {
+			"$oid": "634622c17755d907aa66be4a"
+		},
+		"__v": 0,
+		"checkin": ["https://twitter.com/leonnoel/status/1351658490184364032"],
+		"classNo": [17],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1646697600000"
+				}
+			}
+		],
+		"materials": "",
+		"motivationLink": "",
+		"motivationTitle": "",
+		"permalink": "networking-night-2",
+		"slides": [],
+		"timestamps": [],
+		"title": "Networking Night 2",
+		"twitchVideo": false,
+		"videoId": "",
+		"thumbnail": "/img/thumbnails/no-stream.png",
+		"note": "No stream, instead there was a networking session on Remo."
+	},
+	{
+		"_id": {
+			"$oid": "634623037755d907aa66be50"
+		},
+		"__v": 0,
+		"checkin": ["https://twitter.com/leonnoel/status/1502049287454306304"],
+		"classNo": [18],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1646870400000"
+				}
+			}
+		],
+		"materials": "",
+		"motivationLink": "",
+		"motivationTitle": "",
+		"permalink": "project-night",
+		"slides": [],
+		"timestamps": [],
+		"title": "Project Night",
+		"twitchVideo": false,
+		"videoId": "",
+		"thumbnail": "/img/thumbnails/no-stream.png",
+		"note": "Instead of a regular class, we were given time to work on a group project of our choosing."
+	},
+	{
+		"_id": {
+			"$oid": "634623d77755d907aa66be5b"
+		},
+		"__v": 0,
+		"checkin": ["https://twitter.com/leonnoel/status/1503039026667827202"],
+		"classNo": [],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1647129600000"
+				}
+			}
+		],
+		"materials": "",
+		"motivationLink": "",
+		"motivationTitle": "",
+		"permalink": "frontend-crash-course-super-review",
+		"slides": [],
+		"thumbnail": "https://i3.ytimg.com/vi/AkXLGS57MS4/maxresdefault.jpg",
+		"timestamps": [],
+		"title": "Frontend Crash Course (Super Review)",
+		"twitchVideo": false,
+		"videoId": "AkXLGS57MS4",
+		"note": ""
+	},
+	{
+		"_id": {
+			"$oid": "634624ac7755d907aa66be75"
+		},
+		"__v": 0,
+		"checkin": ["https://twitter.com/leonnoel/status/1503846066055118849"],
+		"classNo": [19],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1647302400000"
+				}
+			}
+		],
+		"materials": "https://drive.google.com/file/d/11T5hC5YOhLlMXXZlD09hb2hyAQMGyW6w/view?usp=sharing",
+		"motivationLink": "http://mwkworks.com/desiderata.html",
+		"motivationTitle": "Desiderata - Words for Life by Max Ehrmann",
+		"permalink": "arrays",
+		"slides": ["https://slides.com/leonnoel/100devs2-javascript-arrays"],
+		"thumbnail": "https://i3.ytimg.com/vi/YUQUGtUbwMY/maxresdefault.jpg",
+		"timestamps": [],
+		"title": "Arrays",
+		"twitchVideo": false,
+		"videoId": "YUQUGtUbwMY",
+		"note": ""
+	},
+	{
+		"_id": {
+			"$oid": "6346251c7755d907aa66be7c"
+		},
+		"__v": 0,
+		"checkin": ["https://twitter.com/leonnoel/status/1504571048875814918"],
+		"classNo": [20],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1647475200000"
+				}
+			}
+		],
+		"materials": "https://drive.google.com/file/d/1PafNt97ttju2oRLc2hflyH8-zndPsJo1/view?usp=sharing",
+		"motivationLink": "https://poets.org/poem/dreams",
+		"motivationTitle": "Dreams by Langston Hughes",
+		"permalink": "practice-javascript-arrays",
+		"slides": [
+			"https://slides.com/leonnoel/100devs2-array-review-javascript-objects"
+		],
+		"thumbnail": "https://i3.ytimg.com/vi/cL0qP6kM_1U/maxresdefault.jpg",
+		"timestamps": [],
+		"title": "Practice JavaScript Arrays",
+		"twitchVideo": false,
+		"videoId": "cL0qP6kM_1U",
+		"note": ""
+	},
+	{
+		"_id": {
+			"$oid": "6346258e7755d907aa66be83"
+		},
+		"__v": 0,
+		"checkin": ["https://twitter.com/leonnoel/status/1506382754010726403"],
+		"classNo": [21],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1647907200000"
+				}
+			}
+		],
+		"materials": "https://drive.google.com/file/d/1mVm2t1h0HX9lTNY2l9gOsPTaYR8sQV35/view?usp=sharing",
+		"motivationLink": "",
+		"motivationTitle": "",
+		"permalink": "learn-javascript-objects",
+		"slides": ["https://slides.com/leonnoel/100devs2-javascript-objects"],
+		"thumbnail": "https://i3.ytimg.com/vi/75TQEQ6wxAE/maxresdefault.jpg",
+		"timestamps": [],
+		"title": "Learn JavaScript Objects",
+		"twitchVideo": false,
+		"videoId": "75TQEQ6wxAE",
+		"note": ""
+	},
+	{
+		"_id": {
+			"$oid": "6346263d7755d907aa66be94"
+		},
+		"__v": 0,
+		"checkin": ["https://twitter.com/leonnoel/status/1507107645416620041"],
+		"classNo": [22],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1648080000000"
+				}
+			}
+		],
+		"materials": "https://drive.google.com/file/d/1eBL35Y9OL8dlITDeYESdTin0uxMHt6eW/view?usp=sharing",
+		"motivationLink": "",
+		"motivationTitle": "",
+		"permalink": "more-fun-with-objects",
+		"slides": ["https://slides.com/leonnoel/100devs2-more-javascript-objects"],
+		"thumbnail": "https://i3.ytimg.com/vi/LTda62-jyoM/maxresdefault.jpg",
+		"timestamps": [],
+		"title": "More Fun With Objects",
+		"twitchVideo": false,
+		"videoId": "LTda62-jyoM",
+		"note": ""
+	},
+	{
+		"_id": {
+			"$oid": "6346269f7755d907aa66be9b"
+		},
+		"__v": 0,
+		"checkin": ["https://twitter.com/leonnoel/status/1508919468193312769"],
+		"classNo": [23],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1648512000000"
+				}
+			}
+		],
+		"materials": "https://drive.google.com/file/d/15VNvk0aVooN_aROFUyvD68fo_7lbkViK/view?usp=sharing",
+		"motivationLink": "https://www.familyfriendpoems.com/poem/have-you-earned-your-tomorrow-by-edgar-albert-guest",
+		"motivationTitle": "Have You Earned Your Tomorrow by Edgar Guest",
+		"permalink": "javascript-apis-for-beginners",
+		"slides": [
+			"https://slides.com/leonnoel/100devs2-javascript-objects-fun-time"
+		],
+		"thumbnail": "https://i3.ytimg.com/vi/qnmKELgyXc0/maxresdefault.jpg",
+		"timestamps": [],
+		"title": "JavaScript APIs For Beginners",
+		"twitchVideo": false,
+		"videoId": "qnmKELgyXc0",
+		"note": ""
+	},
+	{
+		"_id": {
+			"$oid": "6346281d7755d907aa66bea7"
+		},
+		"__v": 0,
+		"checkin": ["https://twitter.com/leonnoel/status/1509644411528835084"],
+		"classNo": [24],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1648684800000"
+				}
+			}
+		],
+		"materials": "",
+		"motivationLink": "",
+		"motivationTitle": "",
+		"permalink": "git-and-github-for-beginners",
+		"slides": ["https://slides.com/leonnoel/100devs2-intro-to-git-and-github"],
+		"thumbnail": "https://i3.ytimg.com/vi/UpsonO_vBNk/maxresdefault.jpg",
+		"timestamps": [],
+		"title": "Git And Github For Beginners",
+		"twitchVideo": false,
+		"videoId": "UpsonO_vBNk",
+		"note": ""
+	},
+	{
+		"_id": {
+			"$oid": "634628617755d907aa66beae"
+		},
+		"__v": 0,
+		"checkin": ["https://twitter.com/leonnoel/status/1509644411528835084"],
+		"classNo": [25],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1649116800000"
+				}
+			}
+		],
+		"materials": "",
+		"motivationLink": "",
+		"motivationTitle": "",
+		"permalink": "fix-your-resume-so-you-get-tech-interviews",
+		"slides": [],
+		"thumbnail": "https://i3.ytimg.com/vi/ZlB4BockYNQ/maxresdefault.jpg",
+		"timestamps": [],
+		"title": "Fix Your Resume So You Get Tech Interviews",
+		"twitchVideo": false,
+		"videoId": "ZlB4BockYNQ",
+		"note": ""
+	},
+	{
+		"_id": {
+			"$oid": "634628b37755d907aa66beb4"
+		},
+		"__v": 0,
+		"checkin": ["https://twitter.com/leonnoel/status/1512181260801949696"],
+		"classNo": [26],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1649289600000"
+				}
+			}
+		],
+		"materials": "https://drive.google.com/file/d/1AvEI3n_j1QN7fH9gDLboFGjZ8Ix1PJSa/view?usp=sharing",
+		"motivationLink": "",
+		"motivationTitle": "",
+		"permalink": "build-a-simple-app-using-apis",
+		"slides": ["https://slides.com/leonnoel/100devs-javascript-api-fun"],
+		"thumbnail": "https://i3.ytimg.com/vi/WcSTeotmJtw/maxresdefault.jpg",
+		"timestamps": [],
+		"title": "Build A Simple App Using APIs",
+		"twitchVideo": false,
+		"videoId": "WcSTeotmJtw",
+		"note": ""
+	},
+	{
+		"_id": {
+			"$oid": "634629247755d907aa66bec0"
+		},
+		"__v": 0,
+		"checkin": ["https://twitter.com/leonnoel/status/1513992949884809219"],
+		"classNo": [27],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1649721600000"
+				}
+			}
+		],
+		"materials": "https://drive.google.com/file/d/1DDnZlxkfxMuaRp_Ey7JvuxSMGN7tpgeC/view?usp=sharing",
+		"motivationLink": "",
+		"motivationTitle": "",
+		"permalink": "get-data-from-nasa-simple-javascript-api",
+		"slides": ["https://slides.com/leonnoel/100devs2-more-api-review"],
+		"thumbnail": "https://i3.ytimg.com/vi/b5rjEW-_6po/maxresdefault.jpg",
+		"timestamps": [],
+		"title": "Get Data From NASA! Simple Javascript API",
+		"twitchVideo": false,
+		"videoId": "b5rjEW-_6po",
+		"note": ""
+	},
+	{
+		"_id": {
+			"$oid": "634629787755d907aa66bec7"
+		},
+		"__v": 0,
+		"checkin": ["https://twitter.com/leonnoel/status/1514718089618722816"],
+		"classNo": [28],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1649894400000"
+				}
+			}
+		],
+		"materials": "https://drive.google.com/file/d/1SXYWI78B5vqdyEy-x2EZJxPygMdcXPNN/view?usp=sharing",
+		"motivationLink": "",
+		"motivationTitle": "",
+		"permalink": "javascript-api-practice-for-beginners",
+		"slides": ["https://slides.com/leonnoel/100devs2-another-api-review"],
+		"thumbnail": "https://i3.ytimg.com/vi/G7XJRLaq2Cw/maxresdefault.jpg",
+		"timestamps": [],
+		"title": "JavaScript API Practice For Beginners",
+		"twitchVideo": false,
+		"videoId": "G7XJRLaq2Cw",
+		"note": ""
+	},
+	{
+		"_id": {
+			"$oid": "634629cf7755d907aa66bece"
+		},
+		"__v": 0,
+		"checkin": ["https://twitter.com/leonnoel/status/1519066364501061632"],
+		"classNo": [29],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1650931200000"
+				}
+			}
+		],
+		"materials": "https://drive.google.com/file/d/1iayN_ZHx6syv5LhzCcaoKTC64cs2Rwfc/view?usp=sharing",
+		"motivationLink": "",
+		"motivationTitle": "",
+		"permalink": "review-the-basics-of-javascript",
+		"slides": [
+			"https://slides.com/leonnoel/100devs2-javascript-review-back-from-break"
+		],
+		"thumbnail": "https://i3.ytimg.com/vi/EOjUT746oLs/maxresdefault.jpg",
+		"timestamps": [],
+		"title": "Review The Basics Of JavaScript",
+		"twitchVideo": false,
+		"videoId": "EOjUT746oLs",
+		"note": ""
+	},
+	{
+		"_id": {
+			"$oid": "63462a4a7755d907aa66bed5"
+		},
+		"__v": 0,
+		"checkin": ["https://twitter.com/leonnoel/status/1519791265285505024"],
+		"classNo": [30],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1651104000000"
+				}
+			}
+		],
+		"materials": "https://drive.google.com/file/d/11DQgP-s9ITIOe9FlkSdckFdKpNU2Il2Y/view?usp=sharing",
+		"motivationLink": "",
+		"motivationTitle": "",
+		"permalink": "oop-but-it-actually-makes-sense",
+		"slides": ["https://slides.com/leonnoel/100devs2-javascript-oop"],
+		"thumbnail": "https://i3.ytimg.com/vi/GihfY5OVDdk/maxresdefault.jpg",
+		"timestamps": [],
+		"title": "OOP But It Actually Makes Sense",
+		"twitchVideo": false,
+		"videoId": "GihfY5OVDdk",
+		"note": ""
+	},
+	{
+		"_id": {
+			"$oid": "63462a8f7755d907aa66bedc"
+		},
+		"__v": 0,
+		"checkin": ["https://twitter.com/leonnoel/status/1521603078406897664"],
+		"classNo": [31],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1651536000000"
+				}
+			}
+		],
+		"materials": "https://drive.google.com/file/d/1HLRCKiFs69ZgViHeI2ejb_9ELQk4zIWq/view?usp=sharing",
+		"motivationLink": "",
+		"motivationTitle": "",
+		"permalink": "what-is-inheritance--polymorphism",
+		"slides": ["https://slides.com/leonnoel/100devs2-javascript-oop-part-2"],
+		"thumbnail": "https://i3.ytimg.com/vi/PD-dx92RJtg/maxresdefault.jpg",
+		"timestamps": [],
+		"title": "What Is Inheritance & Polymorphism",
+		"twitchVideo": false,
+		"videoId": "PD-dx92RJtg",
+		"note": ""
+	},
+	{
+		"_id": {
+			"$oid": "63462af87755d907aa66bee3"
+		},
+		"__v": 0,
+		"checkin": ["https://twitter.com/leonnoel/status/1522328349497909248"],
+		"classNo": [32],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1651708800000"
+				}
+			}
+		],
+		"materials": "https://drive.google.com/file/d/1MBqSTXYPstQJhj60A9Hfy5xGZ-FDv2Gz/view?usp=sharing",
+		"motivationLink": "",
+		"motivationTitle": "",
+		"permalink": "object-oriented-programming-with-js-review",
+		"slides": [
+			"https://slides.com/leonnoel/100devs2-javascript-oop-bring-it-home"
+		],
+		"thumbnail": "https://i3.ytimg.com/vi/yEhs4XtuAgA/maxresdefault.jpg",
+		"timestamps": [],
+		"title": "Object Oriented Programming with JS Review",
+		"twitchVideo": false,
+		"videoId": "yEhs4XtuAgA",
+		"note": ""
+	},
+	{
+		"_id": {
+			"$oid": "63462b5f7755d907aa66beea"
+		},
+		"__v": 0,
+		"checkin": [],
+		"classNo": [33],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1652140800000"
+				}
+			}
+		],
+		"materials": "",
+		"motivationLink": "",
+		"motivationTitle": "",
+		"permalink": "why-you-are-not-getting-interviews",
+		"slides": ["https://slides.com/leonnoel/100devs2-interview-prep"],
+		"timestamps": [],
+		"title": "Why You Are Not Getting Interviews",
+		"twitchVideo": false,
+		"videoId": "lIE1LFz4LJM",
+		"thumbnail": "https://i3.ytimg.com/vi/lIE1LFz4LJM/maxresdefault.jpg",
+		"note": ""
+	},
+	{
+		"_id": {
+			"$oid": "63462bd87755d907aa66bef9"
+		},
+		"__v": 0,
+		"checkin": ["https://twitter.com/leonnoel/status/1524864541107949568"],
+		"classNo": [34],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1652313600000"
+				}
+			}
+		],
+		"materials": "",
+		"motivationLink": "",
+		"motivationTitle": "",
+		"permalink": "crush-your-technical-interviews",
+		"slides": ["https://slides.com/leonnoel/100devs2-interview-prep-part-2"],
+		"thumbnail": "https://i3.ytimg.com/vi/KM1RyffIKMg/maxresdefault.jpg",
+		"timestamps": [],
+		"title": "Crush Your Technical Interviews",
+		"twitchVideo": false,
+		"videoId": "KM1RyffIKMg",
+		"note": ""
+	},
+	{
+		"_id": {
+			"$oid": "63462c9d7755d907aa66bf0e"
+		},
+		"__v": 0,
+		"checkin": [],
+		"classNo": [],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1652572800000"
+				}
+			}
+		],
+		"materials": "",
+		"motivationLink": "",
+		"motivationTitle": "",
+		"permalink": "javascript-crash-course-super-review",
+		"slides": [],
+		"thumbnail": "https://i3.ytimg.com/vi/1sRJYuaqoiI/maxresdefault.jpg",
+		"timestamps": [],
+		"title": "JavaScript Crash Course (Super Review)",
+		"twitchVideo": false,
+		"videoId": "1sRJYuaqoiI",
+		"note": ""
+	},
+	{
+		"_id": {
+			"$oid": "63462d127755d907aa66bf19"
+		},
+		"__v": 0,
+		"checkin": ["https://twitter.com/leonnoel/status/1527401326325338118"],
+		"classNo": [35],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1652918400000"
+				}
+			}
+		],
+		"materials": "https://drive.google.com/file/d/1uS_fAUuauN1WDd1i1zUNSAmTucmNHdhI/view?usp=sharing",
+		"motivationLink": "",
+		"motivationTitle": "",
+		"permalink": "easy-intro-to-node-promises--async-await",
+		"slides": ["https://slides.com/leonnoel/100devs2-promises-async-node"],
+		"thumbnail": "https://i3.ytimg.com/vi/IUCnAhr61pg/maxresdefault.jpg",
+		"timestamps": [],
+		"title": "Easy Intro to Node, Promises, & Async/Await",
+		"twitchVideo": false,
+		"videoId": "IUCnAhr61pg",
+		"note": ""
+	},
+	{
+		"_id": {
+			"$oid": "63462d877755d907aa66bf20"
+		},
+		"__v": 0,
+		"checkin": ["https://twitter.com/leonnoel/status/1529213324633657345"],
+		"classNo": [36],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1653350400000"
+				}
+			}
+		],
+		"materials": "https://drive.google.com/file/d/17RsrUfxaL9ssZb9ZoaNn1pVETz70m839/view?usp=sharing",
+		"motivationLink": "",
+		"motivationTitle": "",
+		"permalink": "javascript-event-loop-for-beginners",
+		"slides": ["https://slides.com/leonnoel/100devs2-fancy-js-terms-and-node"],
+		"thumbnail": "https://i3.ytimg.com/vi/nv5SequVETI/maxresdefault.jpg",
+		"timestamps": [],
+		"title": "JavaScript Event Loop For Beginners",
+		"twitchVideo": false,
+		"videoId": "nv5SequVETI",
+		"note": ""
+	},
+	{
+		"_id": {
+			"$oid": "63462e157755d907aa66bf27"
+		},
+		"__v": 0,
+		"checkin": [],
+		"classNo": [37],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1653523200000"
+				}
+			}
+		],
+		"materials": "https://drive.google.com/file/d/17GKSJzrD38KUU85tUdfXzRO3XT4bY3ct/view?usp=sharing",
+		"motivationLink": "",
+		"motivationTitle": "",
+		"permalink": "no-express-fullstack-app-just-node",
+		"slides": [],
+		"thumbnail": "https://i3.ytimg.com/vi/6rsA_RCe5YM/maxresdefault.jpg",
+		"timestamps": [],
+		"title": "No Express! Fullstack App Just Node",
+		"twitchVideo": false,
+		"videoId": "6rsA_RCe5YM",
+		"note": ""
+	},
+	{
+		"_id": {
+			"$oid": "63462e6b7755d907aa66bf2d"
+		},
+		"__v": 0,
+		"checkin": ["https://twitter.com/leonnoel/status/1531750076422402049"],
+		"classNo": [38],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1653955200000"
+				}
+			}
+		],
+		"materials": "https://drive.google.com/file/d/1rO03PYP19lDzYgwgZ_vTXRSwQNnUm7Cp/view?usp=sharing",
+		"motivationLink": "",
+		"motivationTitle": "",
+		"permalink": "build-your-own-api-hosted-on-heroku",
+		"slides": ["https://slides.com/leonnoel/100devs2-node-express"],
+		"thumbnail": "https://i3.ytimg.com/vi/000ai6I6Aow/maxresdefault.jpg",
+		"timestamps": [],
+		"title": "Build Your Own API Hosted On Heroku",
+		"twitchVideo": false,
+		"videoId": "000ai6I6Aow",
+		"note": ""
+	},
+	{
+		"_id": {
+			"$oid": "63462ec37755d907aa66bf39"
+		},
+		"__v": 0,
+		"checkin": ["https://twitter.com/leonnoel/status/1534286728218804224"],
+		"classNo": [39],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1654128000000"
+				}
+			}
+		],
+		"materials": "",
+		"motivationLink": "",
+		"motivationTitle": "",
+		"permalink": "crud-apis-for-beginners",
+		"slides": ["https://slides.com/leonnoel/100devs2-node-express-again"],
+		"thumbnail": "https://i3.ytimg.com/vi/zHq0v5RD_Zk/maxresdefault.jpg",
+		"timestamps": [],
+		"title": "CRUD APIs For Beginners",
+		"twitchVideo": false,
+		"videoId": "zHq0v5RD_Zk",
+		"note": ""
+	},
+	{
+		"_id": {
+			"$oid": "63462f787755d907aa66bf40"
+		},
+		"__v": 0,
+		"checkin": ["https://twitter.com/leonnoel/status/1534286728218804224"],
+		"classNo": [40],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1654560000000"
+				}
+			}
+		],
+		"materials": "",
+		"motivationLink": "",
+		"motivationTitle": "",
+		"permalink": "what-is-mongodb-crud-apps-for-beginners",
+		"slides": ["https://slides.com/leonnoel/100devs2-express-crud"],
+		"thumbnail": "https://i3.ytimg.com/vi/3eafTTnEfMw/maxresdefault.jpg",
+		"timestamps": [],
+		"title": "What is MongoDB? CRUD Apps For Beginners",
+		"twitchVideo": false,
+		"videoId": "3eafTTnEfMw",
+		"note": ""
+	},
+	{
+		"_id": {
+			"$oid": "63462fb97755d907aa66bf47"
+		},
+		"__v": 0,
+		"checkin": ["https://twitter.com/leonnoel/status/1535011532551049216"],
+		"classNo": [41],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1654732800000"
+				}
+			}
+		],
+		"materials": "",
+		"motivationLink": "",
+		"motivationTitle": "",
+		"permalink": "build-a-simple-crud-app-with-express-mongodb--ejs",
+		"slides": ["https://slides.com/leonnoel/100devs2-express-crud-cohort-2"],
+		"thumbnail": "https://i3.ytimg.com/vi/LHf_STV_rLE/maxresdefault.jpg",
+		"timestamps": [],
+		"title": "Build A Simple CRUD App With Express, MongoDB, & EJS",
+		"twitchVideo": false,
+		"videoId": "LHf_STV_rLE",
+		"note": ""
+	},
+	{
+		"_id": {
+			"$oid": "63462ff87755d907aa66bf4e"
+		},
+		"__v": 0,
+		"checkin": [],
+		"classNo": [42, 43],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1658361600000"
+				}
+			},
+			{
+				"$date": {
+					"$numberLong": "1659398400000"
+				}
+			}
+		],
+		"materials": "",
+		"motivationLink": "",
+		"motivationTitle": "",
+		"permalink": "welcome-back",
+		"slides": [],
+		"timestamps": [],
+		"title": "Welcome Back",
+		"twitchVideo": false,
+		"videoId": "",
+		"thumbnail": "/img/thumbnails/no-stream.png",
+		"note": "There was an unplanned extended break and these classes were casual \"welcome back\" sessions to get people ready to restart the lessons."
+	},
+	{
+		"_id": {
+			"$oid": "63463fea9fcf4107785a0a2b"
+		},
+		"__v": 0,
+		"checkin": [
+			"https://twitter.com/leonnoel/status/1557117071565000704",
+			"https://twitter.com/leonnoel/status/1557841864111230976"
+		],
+		"classNo": [44, 45],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1660003200000"
+				}
+			},
+			{
+				"$date": {
+					"$numberLong": "1660176000000"
+				}
+			}
+		],
+		"materials": "https://github.com/100devs/todo-list-express",
+		"motivationLink": "",
+		"motivationTitle": "",
+		"permalink": "how-to-build-fullstack-apps-with-javascript",
+		"slides": ["https://slides.com/leonnoel/100devs2-todo-list-cohort-2"],
+		"thumbnail": "https://i3.ytimg.com/vi/jZ-kmmgi_d0/maxresdefault.jpg",
+		"timestamps": [],
+		"title": "How To Build Fullstack Apps With Javascript",
+		"twitchVideo": false,
+		"videoId": "jZ-kmmgi_d0",
+		"note": ""
+	},
+	{
+		"_id": {
+			"$oid": "6346409d9fcf4107785a0a37"
+		},
+		"__v": 0,
+		"checkin": [
+			"https://twitter.com/leonnoel/status/1559654124253196288",
+			"https://twitter.com/leonnoel/status/1560378673957482496"
+		],
+		"classNo": [46, 47],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1660608000000"
+				}
+			},
+			{
+				"$date": {
+					"$numberLong": "1660780800000"
+				}
+			}
+		],
+		"materials": "https://github.com/100devs/todo-mvc",
+		"motivationLink": "",
+		"motivationTitle": "",
+		"permalink": "build-a-nodejs-mvc-app",
+		"slides": [],
+		"thumbnail": "https://i3.ytimg.com/vi/SVX_HMum0n4/maxresdefault.jpg",
+		"timestamps": [],
+		"title": "Build A Node.js MVC App",
+		"twitchVideo": false,
+		"videoId": "SVX_HMum0n4",
+		"note": ""
+	},
+	{
+		"_id": {
+			"$oid": "634641949fcf4107785a0a42"
+		},
+		"__v": 0,
+		"checkin": ["https://twitter.com/leonnoel/status/1562190629513228288"],
+		"classNo": [48],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1661212800000"
+				}
+			}
+		],
+		"materials": "",
+		"motivationLink": "",
+		"motivationTitle": "",
+		"permalink": "how-to-prepare-for-thehunt",
+		"slides": ["https://slides.com/leonnoel/100devs2-the-hunt"],
+		"thumbnail": "https://i3.ytimg.com/vi/2ObpRuvmT48/maxresdefault.jpg",
+		"timestamps": [],
+		"title": "How To Prepare For #THEHUNT",
+		"twitchVideo": false,
+		"videoId": "2ObpRuvmT48",
+		"note": ""
+	},
+	{
+		"_id": {
+			"$oid": "6346420a9fcf4107785a0a49"
+		},
+		"__v": 0,
+		"checkin": [],
+		"classNo": [49],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1661385600000"
+				}
+			}
+		],
+		"materials": "",
+		"motivationLink": "",
+		"motivationTitle": "",
+		"permalink": "huntober-prep",
+		"slides": [],
+		"timestamps": [],
+		"title": "Huntober Prep",
+		"twitchVideo": false,
+		"videoId": "",
+		"thumbnail": "/img/thumbnails/no-stream.png",
+		"note": "Instead of a stream, we were given time to work on projects that needed to be finished up for Huntober submissions."
+	},
+	{
+		"_id": {
+			"$oid": "634643b59fcf4107785a0a4f"
+		},
+		"__v": 0,
+		"checkin": [
+			"https://twitter.com/leonnoel/status/1564727546385555456",
+			"https://twitter.com/leonnoel/status/1565452220727906309",
+			"https://twitter.com/leonnoel/status/1567264659186814976"
+		],
+		"classNo": [50, 51, 52],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1661817600000"
+				}
+			},
+			{
+				"$date": {
+					"$numberLong": "1661990400000"
+				}
+			},
+			{
+				"$date": {
+					"$numberLong": "1662422400000"
+				}
+			}
+		],
+		"materials": "https://github.com/100devs/todo-mvc-auth-local",
+		"motivationLink": "",
+		"motivationTitle": "",
+		"permalink": "easily-add-authentication-to-your-node-apps-email-logins-with-passport-",
+		"slides": [
+			"https://slides.com/leonnoel/100devs2-auth-project-night",
+			"https://slides.com/leonnoel/100devs2-auth-project-night2-cohort-2"
+		],
+		"thumbnail": "https://i3.ytimg.com/vi/z5UgtXOxEEk/maxresdefault.jpg",
+		"timestamps": [],
+		"title": "Easily Add Authentication To Your Node Apps! Email Logins with Passport ",
+		"twitchVideo": false,
+		"videoId": "z5UgtXOxEEk",
+		"note": ""
+	},
+	{
+		"_id": {
+			"$oid": "634e736865133f8616875ec6"
+		},
+		"__v": 0,
+		"checkin": [
+			"https://twitter.com/leonnoel/status/1567988894712627201",
+			"https://twitter.com/leonnoel/status/1569467339028201474",
+			"https://twitter.com/leonnoel/status/1570527569166086144"
+		],
+		"classNo": [53, 54, 55],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1662595200000"
+				}
+			},
+			{
+				"$date": {
+					"$numberLong": "1663027200000"
+				}
+			},
+			{
+				"$date": {
+					"$numberLong": "1663200000000"
+				}
+			}
+		],
+		"materials": "https://github.com/100devs/binary-upload-boom",
+		"motivationLink": "",
+		"motivationTitle": "",
+		"note": "",
+		"permalink": "lets-build-a-social-network",
+		"slides": [],
+		"thumbnail": "https://i3.ytimg.com/vi/xsKGlEemTAo/maxresdefault.jpg",
+		"timestamps": [],
+		"title": "Let's Build A Social Network",
+		"twitchVideo": false,
+		"videoId": "xsKGlEemTAo"
+	},
+	{
+		"_id": {
+			"$oid": "634e73eb65133f8616875eca"
+		},
+		"__v": 0,
+		"checkin": [],
+		"classNo": [],
+		"cohort": 2,
+		"dates": [],
+		"materials": "",
+		"motivationLink": "",
+		"motivationTitle": "",
+		"note": "",
+		"permalink": "back-end-crash-course-super-review",
+		"slides": [],
+		"thumbnail": "https://i3.ytimg.com/vi/JGFS11u1TIQ/maxresdefault.jpg",
+		"timestamps": [],
+		"title": "Back End Crash Course (Super Review)",
+		"twitchVideo": false,
+		"videoId": "JGFS11u1TIQ"
+	},
+	{
+		"_id": {
+			"$oid": "634e744e65133f8616875ece"
+		},
+		"__v": 0,
+		"checkin": [],
+		"classNo": [56, 57],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1664323200000"
+				}
+			}
+		],
+		"materials": "",
+		"motivationLink": "",
+		"motivationTitle": "",
+		"note": "",
+		"permalink": "one-project-that-will-get-you-hired",
+		"slides": [],
+		"thumbnail": "https://i3.ytimg.com/vi/zjxo_-wNZHE/maxresdefault.jpg",
+		"timestamps": [],
+		"title": "One Project That Will Get You Hired (100 Hours Project)",
+		"twitchVideo": false,
+		"videoId": "zjxo_-wNZHE"
+	},
+	{
+		"_id": {
+			"$oid": "634e74aa65133f8616875ed2"
+		},
+		"__v": 0,
+		"checkin": ["https://twitter.com/leonnoel/status/1575599063075987457"],
+		"classNo": [58],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1664496000000"
+				}
+			}
+		],
+		"materials": "",
+		"motivationLink": "",
+		"motivationTitle": "",
+		"note": "",
+		"permalink": "react-js-tutorial-for-beginners",
+		"slides": [],
+		"thumbnail": "https://i3.ytimg.com/vi/edsuuCsiah0/maxresdefault.jpg",
+		"timestamps": [],
+		"title": "React JS Tutorial For Beginners",
+		"twitchVideo": false,
+		"videoId": "edsuuCsiah0"
+	},
+	{
+		"_id": {
+			"$oid": "634e758465133f8616875eda"
+		},
+		"__v": 0,
+		"checkin": [
+			"https://twitter.com/huntoberTweets/status/1577350336339230752",
+			"https://twitter.com/huntoberTweets/status/1578075112225415169"
+		],
+		"classNo": [59, 60],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1664928000000"
+				}
+			},
+			{
+				"$date": {
+					"$numberLong": "1665100800000"
+				}
+			}
+		],
+		"materials": "",
+		"motivationLink": "",
+		"motivationTitle": "",
+		"note": "These two classes talked about what to expect during Huntober. No new material was introduced.",
+		"permalink": "huntober2022",
+		"slides": [],
+		"thumbnail": "/img/thumbnails/no-stream.png",
+		"timestamps": [],
+		"title": "#HUNTOBER2022",
+		"twitchVideo": false,
+		"videoId": ""
+	},
+	{
+		"_id": {
+			"$oid": "635129f770f39c8241328e52"
+		},
+		"__v": 0,
+		"checkin": [
+			"https://twitter.com/helloitsrufio/status/1579483421402976256",
+			"https://twitter.com/mayanwolfe/status/1580231634271768576",
+			"https://twitter.com/BlawblawLaw/status/1582051606614355974"
+		],
+		"classNo": [61, 62, 63],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1665532800000"
+				}
+			},
+			{
+				"$date": {
+					"$numberLong": "1665705600000"
+				}
+			},
+			{
+				"$date": {
+					"$numberLong": "1666137600000"
+				}
+			}
+		],
+		"materials": "",
+		"motivationLink": "",
+		"motivationTitle": "",
+		"note": "",
+		"permalink": "how-to-pass-any-technical-interview",
+		"slides": [
+			"https://slides.com/leonnoel/100devs2-interview-secrets",
+			"https://slides.com/leonnoel/100devs2-intro-ds-algorithms/",
+			"https://slides.com/leonnoel/100devs2-big-o"
+		],
+		"thumbnail": "https://i3.ytimg.com/vi/FS7UxmzYF_M/maxresdefault.jpg",
+		"timestamps": [],
+		"title": "How To Pass ANY Technical Interview",
+		"twitchVideo": false,
+		"videoId": "FS7UxmzYF_M"
+	},
+	{
+		"_id": {
+			"$oid": "6352a28ffff5c2374dc0b626"
+		},
+		"__v": 0,
+		"checkin": [],
+		"classNo": [64],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1668902400000"
+				}
+			}
+		],
+		"materials": "",
+		"motivationLink": "",
+		"motivationTitle": "",
+		"note": "Due to technical difficulties, the last bit of the stream is in a separate VOD <a href=\"https://www.twitch.tv/videos/1629905403\" target=\"_blank\">here</a>.",
+		"permalink": "speed-run-getting-a-job",
+		"slides": [],
+		"thumbnail": "/img/thumbnails/twitch.png",
+		"timestamps": [],
+		"title": "Speed Run Getting a Job",
+		"twitchVideo": true,
+		"videoId": "1629773942"
+	},
+	{
+		"_id": {
+			"$oid": "63632be555fb735d86876929"
+		},
+		"__v": 0,
+		"checkin": ["https://twitter.com/jlengstorf/status/1585004985527721985"],
+		"classNo": [65],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1666656000000"
+				}
+			}
+		],
+		"materials": "",
+		"motivationLink": "",
+		"motivationTitle": "",
+		"note": "",
+		"permalink": "speed-run-getting-a-job-2",
+		"slides": [],
+		"thumbnail": "/img/thumbnails/twitch.png",
+		"timestamps": [],
+		"title": "Speed Run Getting a Job 2",
+		"twitchVideo": true,
+		"videoId": "1634419069"
+	},
+	{
+		"_id": {
+			"$oid": "63632c7e55fb735d86876942"
+		},
+		"__v": 0,
+		"checkin": [],
+		"classNo": [66, 67],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1666828800000"
+				}
+			},
+			{
+				"$date": {
+					"$numberLong": "1667260800000"
+				}
+			}
+		],
+		"materials": "",
+		"motivationLink": "",
+		"motivationTitle": "",
+		"note": "No stream, these classes were dedicated time to work on hitlists & 100 hours projects.",
+		"permalink": "hitlist-building",
+		"slides": [],
+		"thumbnail": "/img/thumbnails/no-stream.png",
+		"timestamps": [],
+		"title": "Hitlist Building",
+		"twitchVideo": false,
+		"videoId": ""
+	},
+	{
+		"_id": {
+			"$oid": "637b7dc4f34baa27c35bcf4f"
+		},
+		"__v": 0,
+		"checkin": ["https://twitter.com/leonnoel/status/1588282168127590401"],
+		"classNo": [68],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1667433600000"
+				}
+			}
+		],
+		"materials": "",
+		"motivationLink": "",
+		"motivationTitle": "",
+		"note": "Due to technical difficulties, the last part of the class is available in a separate VOD <a href=\"https://www.twitch.tv/videos/1642824267\" target=\"_blank\">here</a>.",
+		"permalink": "how-to-get-a-job",
+		"slides": ["https://slides.com/leonnoel/100devs2-how-to-get-a-jobtw"],
+		"thumbnail": "/img/thumbnails/twitch.png",
+		"timestamps": [],
+		"title": "How to Get a Job",
+		"twitchVideo": true,
+		"videoId": "1642697696"
+	},
+	{
+		"_id": {
+			"$oid": "637b7e0df34baa27c35bcf54"
+		},
+		"__v": 0,
+		"checkin": ["https://twitter.com/leonnoel/status/1590804107476234240"],
+		"classNo": [69],
+		"cohort": 2,
+		"dates": [
+			{
+				"$date": {
+					"$numberLong": "1668038400000"
+				}
+			}
+		],
+		"materials": "",
+		"motivationLink": "",
+		"motivationTitle": "",
+		"note": "",
+		"permalink": "last-class",
+		"slides": [],
+		"thumbnail": "/img/thumbnails/twitch.png",
+		"timestamps": [],
+		"title": "Last Class",
+		"twitchVideo": true,
+		"videoId": "1649152415"
+	}
+]

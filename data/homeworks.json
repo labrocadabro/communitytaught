@@ -1,0 +1,849 @@
+[
+	{
+		"_id": {
+			"$oid": "634e082d52c3058172e81b09"
+		},
+		"__v": 0,
+		"classNo": [15],
+		"cohort": 2,
+		"dueNo": 16,
+		"extras": [],
+		"items": [
+			{
+				"$oid": "634e082c52c3058172e81b07"
+			}
+		],
+		"note": "Upload your code to <a target=\"_blank\" href=\"https://glitch.com/\">Glitch</a>, <a target=\"_blank\" href=\"https://codepen.io/\">Codepen</a>, or <a target=\"_blank\" href=\"https://replit.com/\">Replit</a>",
+		"submit": "https://forms.gle/q9qvPkrH5jKgEfxBA"
+	},
+	{
+		"_id": {
+			"$oid": "634e0b7d52c3058172e81b49"
+		},
+		"__v": 0,
+		"classNo": [19, 20, 21],
+		"cohort": 2,
+		"dueNo": 22,
+		"extras": [],
+		"items": [
+			{
+				"$oid": "634e0b7d52c3058172e81b3d"
+			},
+			{
+				"$oid": "634e0b7d52c3058172e81b3f"
+			},
+			{
+				"$oid": "634e0b7d52c3058172e81b41"
+			},
+			{
+				"$oid": "634e0b7d52c3058172e81b43"
+			},
+			{
+				"$oid": "634e0b7d52c3058172e81b45"
+			},
+			{
+				"$oid": "634e0b7d52c3058172e81b47"
+			}
+		],
+		"note": "The 100 Devs clan name on Codewars is <strong>#100Devs - leonnoel.com/twitch</strong>",
+		"submit": "https://forms.gle/jK41o5QGNdzY8rPk9"
+	},
+	{
+		"_id": {
+			"$oid": "634e147852c3058172e81c10"
+		},
+		"__v": 0,
+		"classNo": [44, 45, 46, 47, 48, 49],
+		"cohort": 2,
+		"dueNo": 50,
+		"extras": [],
+		"items": [
+			{
+				"$oid": "634e147852c3058172e81c08"
+			},
+			{
+				"$oid": "634e147852c3058172e81c0a"
+			},
+			{
+				"$oid": "634e147852c3058172e81c0c"
+			},
+			{
+				"$oid": "634e147852c3058172e81c0e"
+			}
+		],
+		"note": "",
+		"submit": "https://forms.gle/YDt3FP4vRw1nD7Qg6"
+	},
+	{
+		"_id": {
+			"$oid": "634e0e0c52c3058172e81b9a"
+		},
+		"__v": 0,
+		"classNo": [29, 30],
+		"cohort": 2,
+		"dueNo": 32,
+		"extras": [
+			{
+				"$oid": "634e0e0c52c3058172e81b98"
+			}
+		],
+		"items": [
+			{
+				"$oid": "634e0e0c52c3058172e81b94"
+			},
+			{
+				"$oid": "634e0e0c52c3058172e81b96"
+			},
+			{
+				"$oid": "6395861956e90fe0f01b2b39"
+			}
+		],
+		"note": "",
+		"submit": ""
+	},
+	{
+		"_id": {
+			"$oid": "634e048c52c3058172e81ab1"
+		},
+		"__v": 0,
+		"classNo": [4, 5],
+		"cohort": 2,
+		"dueNo": 6,
+		"extras": [],
+		"items": [
+			{
+				"$oid": "634e048c52c3058172e81aa7"
+			},
+			{
+				"$oid": "634e048c52c3058172e81aa9"
+			},
+			{
+				"$oid": "634e048c52c3058172e81aab"
+			},
+			{
+				"$oid": "634e048c52c3058172e81aad"
+			},
+			{
+				"$oid": "634e048c52c3058172e81aaf"
+			}
+		],
+		"note": "Upload your code to <a target=\"_blank\" href=\"https://glitch.com/\">Glitch</a>, <a target=\"_blank\" href=\"https://codepen.io/\">Codepen</a>, or <a target=\"_blank\" href=\"https://replit.com/\">Replit</a>",
+		"submit": "https://forms.gle/rvPhDrbp56DQKgPaA"
+	},
+	{
+		"_id": {
+			"$oid": "634e136a52c3058172e81bea"
+		},
+		"__v": 0,
+		"classNo": [38],
+		"cohort": 2,
+		"dueNo": 39,
+		"extras": [],
+		"items": [
+			{
+				"$oid": "634e136a52c3058172e81be2"
+			},
+			{
+				"$oid": "634e136a52c3058172e81be4"
+			},
+			{
+				"$oid": "634e136a52c3058172e81be6"
+			},
+			{
+				"$oid": "634e136a52c3058172e81be8"
+			}
+		],
+		"note": "",
+		"submit": ""
+	},
+	{
+		"_id": {
+			"$oid": "634e151a52c3058172e81c26"
+		},
+		"__v": 0,
+		"classNo": [50, 51],
+		"cohort": 2,
+		"dueNo": 52,
+		"extras": [
+			{
+				"$oid": "634e151a52c3058172e81c24"
+			}
+		],
+		"items": [
+			{
+				"$oid": "634e151a52c3058172e81c14"
+			},
+			{
+				"$oid": "634e151a52c3058172e81c16"
+			},
+			{
+				"$oid": "634e151a52c3058172e81c18"
+			},
+			{
+				"$oid": "634e151a52c3058172e81c1a"
+			},
+			{
+				"$oid": "634e151a52c3058172e81c1c"
+			},
+			{
+				"$oid": "634e151a52c3058172e81c1e"
+			},
+			{
+				"$oid": "634e151a52c3058172e81c20"
+			},
+			{
+				"$oid": "634e151a52c3058172e81c22"
+			}
+		],
+		"note": "",
+		"submit": "https://forms.gle/jBaRJS1JfpKRZnry8"
+	},
+	{
+		"_id": {
+			"$oid": "634e053152c3058172e81ac9"
+		},
+		"__v": 0,
+		"classNo": [7],
+		"cohort": 2,
+		"dueNo": 9,
+		"extras": [],
+		"items": [
+			{
+				"$oid": "634e053152c3058172e81ac3"
+			},
+			{
+				"$oid": "634e053152c3058172e81ac5"
+			},
+			{
+				"$oid": "634e053152c3058172e81ac7"
+			}
+		],
+		"note": "",
+		"submit": ""
+	},
+	{
+		"_id": {
+			"$oid": "634e076d52c3058172e81afc"
+		},
+		"__v": 0,
+		"classNo": [12, 13, 14],
+		"cohort": 2,
+		"dueNo": 15,
+		"extras": [],
+		"items": [
+			{
+				"$oid": "634e076d52c3058172e81aea"
+			},
+			{
+				"$oid": "634e076d52c3058172e81aec"
+			},
+			{
+				"$oid": "634e076d52c3058172e81aee"
+			},
+			{
+				"$oid": "634e076d52c3058172e81af0"
+			},
+			{
+				"$oid": "634e076d52c3058172e81af2"
+			},
+			{
+				"$oid": "634e076d52c3058172e81af4"
+			},
+			{
+				"$oid": "634e076d52c3058172e81af6"
+			},
+			{
+				"$oid": "634e076d52c3058172e81af8"
+			},
+			{
+				"$oid": "634e076d52c3058172e81afa"
+			}
+		],
+		"note": "Screenshot your work or upload to <a target=\"_blank\" href=\"https://codepen.io/\">Codepen</a> (all tasks)",
+		"submit": "https://forms.gle/i4skrmpk1HiXXg6ZA"
+	},
+	{
+		"_id": {
+			"$oid": "634e139d52c3058172e81bf0"
+		},
+		"__v": 0,
+		"classNo": [39, 40],
+		"cohort": 2,
+		"dueNo": 41,
+		"extras": [],
+		"items": [
+			{
+				"$oid": "634e139d52c3058172e81bee"
+			}
+		],
+		"note": "",
+		"submit": "https://forms.gle/zia8G1FSugXCsVLk9"
+	},
+	{
+		"_id": {
+			"$oid": "634e159c52c3058172e81c3e"
+		},
+		"__v": 0,
+		"classNo": [52, 53, 54],
+		"cohort": 2,
+		"dueNo": 55,
+		"extras": [],
+		"items": [
+			{
+				"$oid": "634e159c52c3058172e81c2a"
+			},
+			{
+				"$oid": "634e159c52c3058172e81c2c"
+			},
+			{
+				"$oid": "634e159c52c3058172e81c2e"
+			},
+			{
+				"$oid": "634e159c52c3058172e81c30"
+			},
+			{
+				"$oid": "634e159c52c3058172e81c32"
+			},
+			{
+				"$oid": "634e159c52c3058172e81c34"
+			},
+			{
+				"$oid": "634e159c52c3058172e81c36"
+			},
+			{
+				"$oid": "634e159c52c3058172e81c38"
+			},
+			{
+				"$oid": "634e159c52c3058172e81c3a"
+			},
+			{
+				"$oid": "634e159c52c3058172e81c3c"
+			}
+		],
+		"note": "",
+		"submit": ""
+	},
+	{
+		"_id": {
+			"$oid": "634e0f9752c3058172e81bbe"
+		},
+		"__v": 0,
+		"classNo": [33, 34],
+		"cohort": 2,
+		"dueNo": 35,
+		"extras": [
+			{
+				"$oid": "634e0f9752c3058172e81bba"
+			},
+			{
+				"$oid": "634e0f9752c3058172e81bbc"
+			}
+		],
+		"items": [
+			{
+				"$oid": "634e0f9652c3058172e81bae"
+			},
+			{
+				"$oid": "634e0f9752c3058172e81bb0"
+			},
+			{
+				"$oid": "634e0f9752c3058172e81bb2"
+			},
+			{
+				"$oid": "634e0f9752c3058172e81bb4"
+			},
+			{
+				"$oid": "634e0f9752c3058172e81bb6"
+			},
+			{
+				"$oid": "634e0f9752c3058172e81bb8"
+			}
+		],
+		"note": "",
+		"submit": ""
+	},
+	{
+		"_id": {
+			"$oid": "634e13e652c3058172e81bfd"
+		},
+		"__v": 0,
+		"classNo": [41, 42, 43],
+		"cohort": 2,
+		"dueNo": 44,
+		"extras": [],
+		"items": [
+			{
+				"$oid": "634e13e652c3058172e81bfb"
+			}
+		],
+		"note": "",
+		"submit": "https://github.com/100devs/todo-list-express/pulls"
+	},
+	{
+		"_id": {
+			"$oid": "634e15e052c3058172e81c4b"
+		},
+		"__v": 0,
+		"classNo": [55],
+		"cohort": 2,
+		"dueNo": 56,
+		"extras": [],
+		"items": [
+			{
+				"$oid": "634e15e052c3058172e81c49"
+			}
+		],
+		"note": "",
+		"submit": "https://github.com/100devs/binary-upload-boom/pulls"
+	},
+	{
+		"_id": {
+			"$oid": "634e03ca52c3058172e81aa3"
+		},
+		"__v": 0,
+		"classNo": [3],
+		"cohort": 2,
+		"dueNo": 5,
+		"extras": [],
+		"items": [
+			{
+				"$oid": "634e03ca52c3058172e81a9f"
+			},
+			{
+				"$oid": "634e03ca52c3058172e81aa1"
+			}
+		],
+		"note": "Upload your code to <a target=\"_blank\" href=\"https://glitch.com/\">Glitch</a>, <a target=\"_blank\" href=\"https://codepen.io/\">Codepen</a>, or <a target=\"_blank\" href=\"https://replit.com/\">Replit</a>",
+		"submit": "https://forms.gle/w9Awq51mxmcYHy4h7"
+	},
+	{
+		"_id": {
+			"$oid": "634e04ea52c3058172e81abf"
+		},
+		"__v": 0,
+		"classNo": [6],
+		"cohort": 2,
+		"dueNo": 8,
+		"extras": [],
+		"items": [
+			{
+				"$oid": "634e04ea52c3058172e81abb"
+			},
+			{
+				"$oid": "634e04ea52c3058172e81abd"
+			}
+		],
+		"note": "Upload your code to <a target=\"_blank\" href=\"https://glitch.com/\">Glitch</a>, <a target=\"_blank\" href=\"https://codepen.io/\">Codepen</a>, or <a target=\"_blank\" href=\"https://replit.com/\">Replit</a>",
+		"submit": "https://forms.gle/AaoHzDEXm3Hjc7JL8"
+	},
+	{
+		"_id": {
+			"$oid": "634e066852c3058172e81adf"
+		},
+		"__v": 0,
+		"classNo": [8, 9, 10, 11],
+		"cohort": 2,
+		"dueNo": 12,
+		"extras": [
+			{
+				"$oid": "634e066852c3058172e81ad5"
+			},
+			{
+				"$oid": "634e066852c3058172e81ad7"
+			},
+			{
+				"$oid": "634e066852c3058172e81ad9"
+			},
+			{
+				"$oid": "634e066852c3058172e81adb"
+			},
+			{
+				"$oid": "634e066852c3058172e81add"
+			}
+		],
+		"items": [
+			{
+				"$oid": "634e066852c3058172e81acd"
+			},
+			{
+				"$oid": "634e066852c3058172e81acf"
+			},
+			{
+				"$oid": "634e066852c3058172e81ad1"
+			},
+			{
+				"$oid": "634e066852c3058172e81ad3"
+			}
+		],
+		"note": "Upload your code to <a target=\"_blank\" href=\"https://glitch.com/\">Glitch</a>, <a target=\"_blank\" href=\"https://codepen.io/\">Codepen</a>, or <a target=\"_blank\" href=\"https://replit.com/\">Replit</a>",
+		"submit": "https://forms.gle/7r1obfquRuih9BEu7"
+	},
+	{
+		"_id": {
+			"$oid": "634e0cd352c3058172e81b68"
+		},
+		"__v": 0,
+		"classNo": [25],
+		"cohort": 2,
+		"dueNo": 38,
+		"extras": [],
+		"items": [
+			{
+				"$oid": "634e0cd352c3058172e81b66"
+			}
+		],
+		"note": "This is due after several other homework assignments because it could take you a while to finish - start early!",
+		"submit": "https://forms.gle/Pt7kwXndftDedcbX8"
+	},
+	{
+		"_id": {
+			"$oid": "634e0d8352c3058172e81b83"
+		},
+		"__v": 0,
+		"classNo": [26, 27],
+		"cohort": 2,
+		"dueNo": 28,
+		"extras": [
+			{
+				"$oid": "634e0d8252c3058172e81b7b"
+			},
+			{
+				"$oid": "634e0d8252c3058172e81b7d"
+			},
+			{
+				"$oid": "634e0d8252c3058172e81b7f"
+			},
+			{
+				"$oid": "634e0d8352c3058172e81b81"
+			}
+		],
+		"items": [
+			{
+				"$oid": "634e0d8252c3058172e81b73"
+			},
+			{
+				"$oid": "634e0d8252c3058172e81b75"
+			},
+			{
+				"$oid": "634e0d8252c3058172e81b77"
+			},
+			{
+				"$oid": "634e0d8252c3058172e81b79"
+			}
+		],
+		"note": "",
+		"submit": "https://forms.gle/mSR6TGf7F6iN54Wy5"
+	},
+	{
+		"_id": {
+			"$oid": "634e0dc852c3058172e81b89"
+		},
+		"__v": 0,
+		"classNo": [28],
+		"cohort": 2,
+		"dueNo": 30,
+		"extras": [],
+		"items": [
+			{
+				"$oid": "634e0dc852c3058172e81b87"
+			}
+		],
+		"note": "There was a break after class 28 so this is expected to take longer than the normal homework",
+		"submit": ""
+	},
+	{
+		"_id": {
+			"$oid": "634e0e8b52c3058172e81baa"
+		},
+		"__v": 0,
+		"classNo": [32],
+		"cohort": 2,
+		"dueNo": 33,
+		"extras": [
+			{
+				"$oid": "639592c756e90fe0f01b2c56"
+			}
+		],
+		"items": [
+			{
+				"$oid": "634e0e8b52c3058172e81ba8"
+			}
+		],
+		"note": "",
+		"submit": ""
+	},
+	{
+		"_id": {
+			"$oid": "634d46b4348624dd481253d4"
+		},
+		"__v": 0,
+		"classNo": [1],
+		"cohort": 2,
+		"dueNo": 3,
+		"extras": [],
+		"items": [
+			{
+				"$oid": "634d46b4348624dd481253d2"
+			},
+			{
+				"$oid": "634d4701348624dd481253e1"
+			},
+			{
+				"$oid": "634d4701348624dd481253e3"
+			}
+		],
+		"note": "Upload your screenshot to <a target=\"_blank\" href=\"https://imgbb.com/\">ImgBB</a> or another image hosting service. ",
+		"submit": "https://forms.gle/9FYrUMFKMk4MpEZG7"
+	},
+	{
+		"_id": {
+			"$oid": "634e0af052c3058172e81b39"
+		},
+		"__v": 0,
+		"classNo": [16, 17, 18],
+		"cohort": 2,
+		"dueNo": 19,
+		"extras": [
+			{
+				"$oid": "634e0af052c3058172e81b37"
+			}
+		],
+		"items": [
+			{
+				"$oid": "634e0af052c3058172e81b29"
+			},
+			{
+				"$oid": "634e0af052c3058172e81b2b"
+			},
+			{
+				"$oid": "634e0af052c3058172e81b2d"
+			},
+			{
+				"$oid": "634e0af052c3058172e81b2f"
+			},
+			{
+				"$oid": "634e0af052c3058172e81b31"
+			},
+			{
+				"$oid": "634e0af052c3058172e81b33"
+			},
+			{
+				"$oid": "634e0af052c3058172e81b35"
+			}
+		],
+		"note": "The portfolio and proposal/contract were assigned in class 15 but are due class 19. ",
+		"submit": "https://forms.gle/PLuuSi7aHeL7wbMQ9"
+	},
+	{
+		"_id": {
+			"$oid": "634e0c4852c3058172e81b5b"
+		},
+		"__v": 0,
+		"classNo": [22, 23, 24],
+		"cohort": 2,
+		"dueNo": 25,
+		"extras": [
+			{
+				"$oid": "634e0c4852c3058172e81b55"
+			},
+			{
+				"$oid": "634e0c4852c3058172e81b57"
+			},
+			{
+				"$oid": "634e0c4852c3058172e81b59"
+			}
+		],
+		"items": [
+			{
+				"$oid": "634e0c4852c3058172e81b4d"
+			},
+			{
+				"$oid": "634e0c4852c3058172e81b4f"
+			},
+			{
+				"$oid": "634e0c4852c3058172e81b51"
+			},
+			{
+				"$oid": "634e0c4852c3058172e81b53"
+			}
+		],
+		"note": "",
+		"submit": ""
+	},
+	{
+		"_id": {
+			"$oid": "634e165d52c3058172e81c61"
+		},
+		"__v": 0,
+		"classNo": [57, 58, 59, 60],
+		"cohort": 2,
+		"dueNo": 61,
+		"extras": [
+			{
+				"$oid": "634e165d52c3058172e81c5f"
+			}
+		],
+		"items": [
+			{
+				"$oid": "634e165d52c3058172e81c57"
+			},
+			{
+				"$oid": "634e165d52c3058172e81c59"
+			},
+			{
+				"$oid": "634e165d52c3058172e81c5b"
+			},
+			{
+				"$oid": "634e165d52c3058172e81c5d"
+			}
+		],
+		"note": "",
+		"submit": ""
+	},
+	{
+		"_id": {
+			"$oid": "634d4a0a3a4fa5132e26a4a6"
+		},
+		"__v": 0,
+		"classNo": [2],
+		"cohort": 2,
+		"dueNo": 4,
+		"extras": [],
+		"items": [
+			{
+				"$oid": "634d4a093a4fa5132e26a4a0"
+			},
+			{
+				"$oid": "634d4a093a4fa5132e26a4a2"
+			},
+			{
+				"$oid": "634d4a0a3a4fa5132e26a4a4"
+			}
+		],
+		"note": "Upload your code to <a target=\"_blank\" href=\"https://glitch.com/\">Glitch</a>, <a target=\"_blank\" href=\"https://codepen.io/\">Codepen</a>, or <a target=\"_blank\" href=\"https://replit.com/\">Replit</a>",
+		"submit": "https://forms.gle/inMYVvbEZt2fmzng9"
+	},
+	{
+		"_id": {
+			"$oid": "634e0e7b52c3058172e81ba4"
+		},
+		"__v": 0,
+		"classNo": [31],
+		"cohort": 2,
+		"dueNo": 36,
+		"extras": [
+			{
+				"$oid": "634e0e7b52c3058172e81ba2"
+			}
+		],
+		"items": [
+			{
+				"$oid": "634e0e7b52c3058172e81b9e"
+			},
+			{
+				"$oid": "634e0e7b52c3058172e81ba0"
+			}
+		],
+		"note": "",
+		"submit": "https://forms.gle/Ha27LvZAJsFiY2Dx7"
+	},
+	{
+		"_id": {
+			"$oid": "634e132152c3058172e81bd7"
+		},
+		"__v": 0,
+		"classNo": [35, 36, 37],
+		"cohort": 2,
+		"dueNo": 38,
+		"extras": [
+			{
+				"$oid": "634e132052c3058172e81bd5"
+			}
+		],
+		"items": [
+			{
+				"$oid": "634e132052c3058172e81bc9"
+			},
+			{
+				"$oid": "634e132052c3058172e81bcb"
+			},
+			{
+				"$oid": "634e132052c3058172e81bcd"
+			},
+			{
+				"$oid": "634e132052c3058172e81bcf"
+			},
+			{
+				"$oid": "634e132052c3058172e81bd1"
+			},
+			{
+				"$oid": "6395941d56e90fe0f01b2c79"
+			}
+		],
+		"note": "",
+		"submit": ""
+	},
+	{
+		"_id": {
+			"$oid": "634e160f52c3058172e81c53"
+		},
+		"__v": 0,
+		"classNo": [56],
+		"cohort": 2,
+		"dueNo": 58,
+		"extras": [],
+		"items": [
+			{
+				"$oid": "634e160f52c3058172e81c4f"
+			},
+			{
+				"$oid": "634e160f52c3058172e81c51"
+			}
+		],
+		"note": "",
+		"submit": ""
+	},
+	{
+		"_id": {
+			"$oid": "634e791765133f8616875f39"
+		},
+		"__v": 0,
+		"classNo": [61, 62],
+		"cohort": 2,
+		"dueNo": 63,
+		"extras": [],
+		"items": [
+			{
+				"$oid": "634e791765133f8616875f31"
+			},
+			{
+				"$oid": "634e791765133f8616875f33"
+			},
+			{
+				"$oid": "634e791765133f8616875f35"
+			},
+			{
+				"$oid": "634e791765133f8616875f37"
+			}
+		],
+		"note": "",
+		"submit": ""
+	},
+	{
+		"_id": {
+			"$oid": "63512aa870f39c8241328e71"
+		},
+		"__v": 0,
+		"classNo": [63, 64, 65, 66, 67, 68],
+		"cohort": 2,
+		"dueNo": 69,
+		"extras": [],
+		"items": [
+			{
+				"$oid": "63512aa870f39c8241328e6f"
+			}
+		],
+		"note": "",
+		"submit": ""
+	}
+]

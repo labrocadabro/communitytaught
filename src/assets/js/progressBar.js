@@ -1,11 +1,10 @@
 const innerMeter = document.querySelector('.meter-inner');
 const checkboxes = document.querySelectorAll('.watched');
-let completed = 0
+let completed = Number(innerMeter.innerText);
 
-for (const checkbox of checkboxes) {
-    checkbox.addEventListener('change', updateProgress);
-    if (checkbox.checked) {
-        completed += 1;
+if (checkboxes) {
+    for (const checkbox of checkboxes) {
+        checkbox.addEventListener('change', updateProgress);
     }
 }
 
@@ -23,8 +22,8 @@ function updateProgress(e) {
     } else {
         completed -= 1;
     }
-    updateWidth()
+    updateWidth();
 }
 
 // Set the progress bar width on page load
-updateWidth()
+updateWidth();

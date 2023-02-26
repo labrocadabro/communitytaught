@@ -23,7 +23,13 @@ export const dashboard = async (req, res) => {
 		currentLesson = await Lesson.findById(req.user.currentClass);
 		currentLesson = await getLessonProgress(req.user.id, currentLesson);
 	}
-	res.render("dashboard", { lesson: currentLesson });
+
+	const totalCount = await LessonProgress.countDocuments();
+	const completedCount = await LessonProgress.countDocuments({
+		user: req.user.id,
+		watched: true,
+	});
+	res.render("dashboard", { lesson: currentLesson, completedCount, totalCount });
 };
 
 export const account = (req, res) => {

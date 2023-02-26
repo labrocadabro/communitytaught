@@ -1,4 +1,4 @@
-const meter = document.querySelector('.meter > span');
+const innerMeter = document.querySelector('.meter-inner');
 const checkboxes = document.querySelectorAll('.watched');
 let completed = 0
 
@@ -10,10 +10,10 @@ for (const checkbox of checkboxes) {
 }
 
 function updateWidth() {
-    meter.style.width = `${completed / checkboxes.length * 100}%`;
-    meter.innerText = `${completed} / ${checkboxes.length}  `;
+    innerMeter.style.width = `${completed / checkboxes.length * 100}%`;
+    innerMeter.innerText = `${completed} / ${checkboxes.length}  `;
     if (completed === checkboxes.length) {
-        meter.innerText = "You are a software engineer.";
+        innerMeter.innerText = "You are a software engineer.";
     }
 }
 

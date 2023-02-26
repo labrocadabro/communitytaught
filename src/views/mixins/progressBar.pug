@@ -1,3 +1,6 @@
-mixin progressBar
+mixin progressBar(completedCount, totalCount)
     div.meter.w-full.h-8.rounded.mb-6.bg-twilight-50.border
-        div.meter-inner.text-center.text-lg.font-medium.h-8.text-twilight-50.bg-pink-800 current progress
+        if totalCount
+            div.meter-inner.text-center.text-lg.font-medium.h-8.text-twilight-50.bg-pink-800(style=`width: ${completedCount / totalCount * 100}%`) #{completedCount} / #{totalCount}
+        else
+            div.meter-inner.text-center.text-lg.font-medium.h-8.text-twilight-50.bg-pink-800 #{completedCount}

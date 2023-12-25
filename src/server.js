@@ -12,7 +12,7 @@ dotenv.config();
 import { default as connectMongoDBSession } from "connect-mongodb-session";
 const MongoDBStore = connectMongoDBSession(session);
 
-import connectDB from "./config/db.js";
+import connectDB, { getDBUri } from "./config/db.js";
 import google from "./config/googleAuth.js";
 import github from "./config/githubAuth.js";
 
@@ -43,12 +43,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "assets")));
 app.use(cors());
 
-const user = process.env.DB_USER;
-const pass = process.env.DB_PASS;
-const cluster = process.env.DB_CLUSTER;
-const dbName = process.env.DB_NAME;
 const store = new MongoDBStore({
-	uri: `mongodb+srv://${user}:${pass}@${cluster}.58qh2.mongodb.net/${dbName}?retryWrites=true&w=majority`,
+	uri: getDBUri(),
 	collection: "sessions",
 });
 

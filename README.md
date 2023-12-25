@@ -22,6 +22,30 @@ I build the website without really taking collaboration into account and the pro
 - rename example.env to .env and add your credentials (.gitignore will ignore the .env so your credentials won't get pushed to Github)
 - Set up mailhog if you are using email and password login
 
+### Setup Local MongoDB using Docker
+
+#### Pre-requisites
+
+1. Install Docker Desktop - https://www.docker.com/products/docker-desktop/
+
+#### Run Docker Image of Mongo
+
+Run this command to create new Docker container for MongoDB.
+
+`docker run --name mongodb -d -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=user -e MONGO_INITDB_ROOT_PASSWORD=pass mongodb/mongodb-community-server:6.0-ubi8`
+
+- `-p 27017:27017` is used to expose the MongoDB port to your host machine - allowing the app to connect to it directly.
+- `-e MONGO_INITDB_ROOT_USERNAME=user` is used to set the root username when creating the MongoDB container
+- `-e MONGO_INITDB_ROOT_PASSWORD=pass` is used to set the root password when creating the MongoDB container.
+
+> [Reference](https://www.mongodb.com/compatibility/docker)
+
+### Summary
+
+After doing this, you will have a local MongoDB running on your computer which is assessible throught this URI - `mongodb://user:pass@localhost:27017/admin?retryWrites=true&w=majority`
+
+> This connects to the default `admin` database. I was not able to figure out how to get a new DB working locally for some reason. Issues with the Authentication outside of `admin`.
+
 ## Optimizations and Improvements
 
 - Tests & refactoring to make unit tests easier.

@@ -38,22 +38,22 @@
 		"dotenv": "^16.0.2",
 		"express": "^4.18.1",
 		"express-session": "^1.17.3",
-		"mongoose": "^6.6.0",
+		"mongoose": "^8.0.3",
 		"morgan": "^1.10.0",
 		"nodemailer": "^6.7.8",
-		"passport": "^0.6.0",
+		"passport": "^0.7.0",
 		"passport-github2": "^0.1.12",
 		"passport-google-oauth20": "^2.0.0",
 		"passport-local": "^1.0.0",
-		"passport-local-mongoose": "^7.1.2",
+		"passport-local-mongoose": "^8.0.0",
 		"pug": "^3.0.2",
 		"validator": "^13.7.0"
 	},
 	"devDependencies": {
 		"@tailwindcss/forms": "^0.5.3",
-		"cypress": "^12.5.1",
+		"cypress": "^13.6.2",
 		"jest": "^29.4.1",
-		"nodemon": "^2.0.19",
+		"nodemon": "^3.0.2",
 		"supertest": "^6.3.3",
 		"tailwindcss": "^3.1.8"
 	}

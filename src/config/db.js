@@ -1,5 +1,5 @@
-import mongoose from 'mongoose';
-import dotenv from 'dotenv';
+import mongoose from "mongoose";
+import dotenv from "dotenv";
 
 dotenv.config();
 
@@ -10,17 +10,15 @@ const dbName = process.env.DB_NAME;
 const url = `mongodb+srv://${user}:${pass}@${cluster}.58qh2.mongodb.net/${dbName}?retryWrites=true&w=majority`;
 
 const connectDB = async () => {
-    try {
-        const conn = await mongoose.connect(url, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-        })
+	try {
+		mongoose.set("strictQuery", true);
+		const conn = await mongoose.connect(url, {});
 
-        console.log(`MongoDB Connected: ${conn.connection.host}`)
-    } catch (err) {
-        console.error(err)
-        process.exit(1)
-    }
-}
+		console.log(`MongoDB Connected: ${conn.connection.host}`);
+	} catch (err) {
+		console.error(err);
+		process.exit(1);
+	}
+};
 
 export default connectDB;

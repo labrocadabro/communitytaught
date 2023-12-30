@@ -6,6 +6,10 @@ A comprehensive tracker for 100Devs classes and homework.
 
 ![Preview of CommunityTaught.org](https://communitytaught.org/img/resources/communitytaught-preview.png)
 
+## CONTRIBUTING
+
+If you'd like to work on this project, please see the contributing guidelines in the [CONTRIBUTING.md](CONTRIBUTING.md) file.
+
 ## How It's Made
 
 **Tech used:** Node.js, Express, MongoDB, Pug, Tailwind CSS

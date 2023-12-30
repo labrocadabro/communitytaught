@@ -18,14 +18,14 @@
 		@apply text-pink-800;
 	}
 	h1 {
-		@apply text-3xl mb-8 font-bold;
+		@apply text-xl mb-8 font-bold;
 	}
 	h2 {
-		@apply text-2xl font-semibold;
+		@apply text-lg font-semibold;
 	}
 
 	h3 {
-		@apply text-xl font-medium;
+		@apply text-base font-medium;
 	}
 }
 @layer components {

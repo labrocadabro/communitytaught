@@ -1,7 +1,7 @@
 import nodemailer from "nodemailer";
-import crypto from "crypto";
 import dotenv from "dotenv";
 import validator from "validator";
+import crypto from "crypto";
 
 import User from "../models/User.js";
 import Token from "../models/Token.js";

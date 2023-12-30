@@ -6,7 +6,7 @@ kill_timeout = 5
 processes = []
 
 [build]
-  builder = "heroku/buildpacks:20"
+  builder = "heroku/builder:22"
 
 [env]
   PORT = "8080"

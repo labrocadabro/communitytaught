@@ -26,8 +26,8 @@ module.exports = {
 					500: "#92C7CF",
 					600: "#92C7CF",
 					700: "#92C7CF",
-					800: "#92C7CF",
-					900: "#92C7CF",
+					800: "#508da1",
+					900: "#3e778a",
 				},
 			},
 			textUnderlineOffset: {

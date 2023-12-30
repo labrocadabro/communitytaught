@@ -15,7 +15,7 @@
 	h1,
 	h2,
 	h3 {
-		@apply text-pink-800;
+		@apply text-twilight-300;
 	}
 	h1 {
 		@apply text-xl mb-8 font-bold;
@@ -34,16 +34,16 @@
 		@apply py-1 px-2 rounded block no-underline mb-2 hover:no-underline w-full text-center;
 	}
 	.btn.secondary {
-		@apply border border-pink-800 hover:bg-pink-700 text-pink-800 hover:text-white;
+		@apply border border-twilight-800 hover:bg-twilight-700 text-twilight-800 hover:text-white;
 	}
 	.btn.primary {
-		@apply border border-pink-800 bg-pink-800 hover:bg-pink-700 hover:border-pink-700 text-white;
+		@apply border border-twilight-800 bg-twilight-800 hover:bg-twilight-700 hover:border-twilight-700 text-white;
 	}
 
 	/*** HEADER LINKS ***/
 	.nav-link,
 	.account-link {
-		@apply hover:no-underline sm:text-base block rounded-md py-2 text-pink-800;
+		@apply hover:no-underline sm:text-base block rounded-md py-2 text-twilight-800;
 	}
 	.nav-link.active,
 	.account-link.active {
@@ -139,7 +139,7 @@
 	}
 
 	dt:after {
-		@apply text-2xl font-bold font-awesome text-pink-800;
+		@apply text-2xl font-bold font-awesome text-twilight-800;
 		content: "\2b"; /* plus sign */
 	}
 

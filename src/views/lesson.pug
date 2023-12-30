@@ -48,11 +48,11 @@ block content
 			if loggedIn
 				if lesson.videoId
 					input.watched.mr-2.mb-1(type="checkbox" id="watched-" + lesson._id autocomplete="off" checked=lesson.watched)
-					label.mr-4.text-pink-800.text-xl.font-medium(for="watched-" + lesson._id) Watched
+					label.mr-4.text-twilight-800.text-xl.font-medium(for="watched-" + lesson._id) Watched
 
 				if lesson.checkin.length
 					input.checkedin.mr-2.mb-1(type="checkbox" id="checkedin-" + lesson._id autocomplete="off" checked=lesson.checkedIn)
-					label.text-pink-800.text-xl.font-medium(for="checkedin-" + lesson._id) Checked In
+					label.text-twilight-800.text-xl.font-medium(for="checkedin-" + lesson._id) Checked In
 
 			.mb-3(class="mt-3")
 				p

@@ -1,15 +1,15 @@
-header.sticky.top-0.z-10.px-5.py-3.bg-stone-50.border-b.border-stone-200(class="sm:px-8 lg:px-14 sm:py-5 shadow-[3px_3px_15px_-12px_rgba(0,0,0,.3)]")
+header.sticky.top-0.z-10.px-5.py-3.bg-stone-50.border-b.border-stone-200(class="sm:px-8 lg:px-14 sm:py-4 shadow-[3px_3px_15px_-12px_rgba(0,0,0,.3)]")
 	nav.flex.items-baseline.justify-between
 
 		h3.m-0
-			a.p-0.m-0.no-underline.text-3xl.font-logo.text-twilight-900(class="sm:text-2xl lg:text-3xl" href="/") #communitytaught
+			a.p-0.m-0.no-underline.font-logo.text-twilight-900(class="sm:text-lg lg:text-xl" href="/") #communitytaught
 			if env === "development"
-				span.text-red-700.font-bold.absolute.top-0.left-10(class="sm:left-12 lg:left-20")  DEVELOPMENT SERVER
+				span.text-red-700.font-bold.absolute.top-0(class="sm:left-12") DEVELOPMENT SERVER
 
 		ul#mobile-menu(class="sm:hidden text-3xl text-pink-800 cursor-pointer")
 			li
 				i.fas.fa-bars
-		ul#desktop-menu(class="hidden sm:flex gap-2 md:gap-4 lg:gap-6 text-xl font-medium")
+		ul#desktop-menu(class="hidden sm:flex gap-2 md:gap-4 lg:gap-6 font-medium")
 			li
 				a.nav-link(href="/" class = active === "Home" ? "active" : "") Home
 			if loggedIn

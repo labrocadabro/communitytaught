@@ -31,7 +31,7 @@
 @layer components {
 	/* BUTTONS */
 	.btn {
-		@apply py-2 px-5 rounded block no-underline mb-2 hover:no-underline w-full text-center;
+		@apply py-1 px-2 rounded block no-underline mb-2 hover:no-underline w-full text-center;
 	}
 	.btn.secondary {
 		@apply border border-pink-800 hover:bg-pink-700 text-pink-800 hover:text-white;
@@ -43,11 +43,11 @@
 	/*** HEADER LINKS ***/
 	.nav-link,
 	.account-link {
-		@apply hover:no-underline text-xl sm:text-base md:text-lg  lg:text-xl block rounded-md py-2 text-pink-800;
+		@apply hover:no-underline sm:text-base block rounded-md py-2 text-pink-800;
 	}
 	.nav-link.active,
 	.account-link.active {
-		@apply decoration-twilight-700 underline decoration-4 underline-offset-6 hover:underline;
+		@apply decoration-twilight-700 underline decoration-2 underline-offset-6;
 	}
 
 	/***  MOBILE MENU  ***/

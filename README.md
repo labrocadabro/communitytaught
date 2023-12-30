@@ -2,13 +2,22 @@
 
 A comprehensive tracker for 100Devs classes and homework.
 
+## CONTRIBUTING
+
+If you'd like to work on this project, please see the contributing guidelines in the [CONTRIBUTING.md](CONTRIBUTING.md) file.****
+
+I built the website without really taking collaboration into account and the project needs some work in terms of both documentation and processes. I am in the process of getting that built out, but in the meantime, here are the basic steps to get the project up and running locally:
+
+- fork the repository
+- create a MongoDB database locally or on Atlas
+- import the class and homework data into your database (see the /data folder)
+- rename example.env to .env and add your credentials (.gitignore will ignore the .env so your credentials won't get pushed to Github)
+- Set up mailhog if you are using email and password login
+
+
 **Live website:** [CommunityTaught.org](https://communitytaught.org/)
 
 ![Preview of CommunityTaught.org](https://communitytaught.org/img/resources/communitytaught-preview.png)
-
-## CONTRIBUTING
-
-If you'd like to work on this project, please see the contributing guidelines in the [CONTRIBUTING.md](CONTRIBUTING.md) file.
 
 ## How It's Made
 
@@ -16,15 +25,6 @@ If you'd like to work on this project, please see the contributing guidelines in
 
 This app was built from scratch using my [authentication boilerplate](https://github.com/labrocadabro/node-mongo-boilerplate/) as the base for the code, and [my previous homework tracker](https://labrocadabro.github.io/100devs-hw-tracker/) as the base for the application design.
 
-## How to Contribute
-
-I build the website without really taking collaboration into account and the project needs some work in terms of both documentation and processes. I am in the process of getting that built out, but in the meantime, here are the basic steps to get the project up and running locally:
-
-- fork the repository
-- create a MongoDB database on your account to store the data
-- import the class and homework data into your database (see the /data folder)
-- rename example.env to .env and add your credentials (.gitignore will ignore the .env so your credentials won't get pushed to Github)
-- Set up mailhog if you are using email and password login
 
 ## Optimizations and Improvements
 

@@ -1,8 +1,8 @@
 include ./classNo.pug
 
 mixin lessonCard(lesson)
-	.lesson-card.border.relative(class=(lesson.watched && lesson.checkedIn) || !lesson.videoId ? "done" : "" id=lesson._id)
-
+	- const hasCheckIn = Boolean(lesson.checkin.length && lesson.checkin[0].length)
+	.lesson-card.border.relative(class=(lesson.watched && (!hasCheckIn || lesson.checkedIn)) || !lesson.videoId ? "done" : "" id=lesson._id)
 		.card-top-banner.bg-twilight-50.px-3.py-2
 			h3.text-twilight-900.text-2xl
 				+classNo(lesson.classNo)
@@ -17,7 +17,7 @@ mixin lessonCard(lesson)
 						else
 							| No stream
 					.lesson-checkedin
-						if lesson.checkin.length && lesson.checkin[0].length
+						if hasCheckin
 							input.checkedin.mr-2(type="checkbox" id="checkedin-" + lesson._id autocomplete="off" checked=lesson.checkedIn data-lesson=lesson._id)
 							label(for="checkedin-" + lesson._id) Checked In
 						else

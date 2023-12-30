@@ -4,7 +4,7 @@ A comprehensive tracker for 100Devs classes and homework.
 
 ## CONTRIBUTING
 
-If you'd like to work on this project, please see the contributing guidelines in the [CONTRIBUTING.md](CONTRIBUTING.md) file.****
+If you'd like to work on this project, please see the contributing guidelines in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 I built the website without really taking collaboration into account and the project needs some work in terms of both documentation and processes. I am in the process of getting that built out, but in the meantime, here are the basic steps to get the project up and running locally:
 

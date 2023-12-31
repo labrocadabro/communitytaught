@@ -43,12 +43,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "assets")));
 app.use(cors());
 
-const user = process.env.DB_USER;
-const pass = process.env.DB_PASS;
-const cluster = process.env.DB_CLUSTER;
-const dbName = process.env.DB_NAME;
 const store = new MongoDBStore({
-	uri: `mongodb+srv://${user}:${pass}@${cluster}.58qh2.mongodb.net/${dbName}?retryWrites=true&w=majority`,
+	uri: process.env.DB_URI,
 	collection: "sessions",
 });
 

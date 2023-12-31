@@ -15,7 +15,7 @@ mixin lessonCard(lesson)
 					.lesson-watched.mr-6
 						if lesson.videoId.length
 							input.watched.mr-2(type="checkbox" id="watched-" + lesson._id autocomplete="off" checked=lesson.watched data-lesson=lesson._id)
-							label(id="watched-" + lesson._id) Watched
+							label(for="watched-" + lesson._id) Watched
 						else
 							| No stream
 					.lesson-checkedin

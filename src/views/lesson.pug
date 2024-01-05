@@ -68,6 +68,15 @@ block content
 						h2 Motivation
 						a(href=lesson.motivationLink) #{lesson.motivationTitle}
 
+			if lesson.tags && lesson.tags.length
+				h2 Tags
+					.tags.flex.flex-wrap.px-3.py-2
+						each tag in lesson.tags
+							.text-xs.mr-2.border
+								= tag
+
+			
+
 	if lesson.videoId && !lesson.twitchVideo
 		h3.mt-8 Feed the algorithm and spread the word!
 		p #[a(href=`https://www.youtube.com/watch?v=${lesson.videoId}` target="_blank") Like, comment and subscribe on Youtube]

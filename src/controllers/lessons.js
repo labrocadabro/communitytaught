@@ -55,6 +55,13 @@ export const addEditLesson = async (req, res) => {
 			motivationTitle: req.body.motivationTitle,
 			cohort: req.body.cohort,
 			note: req.body.note,
+			tags: req.body.tags
+			? req.body.tags
+				.split(",")
+				.map((tag) => tag.trim().toLowerCase())
+				// add space after comma
+				.map((tag) => tag.replace(/,/g, ", "))
+			: [],
 			timestamps: timestamps,
 		};
 		const lesson = await Lesson.findByIdAndUpdate(

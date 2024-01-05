@@ -85,6 +85,8 @@
 		@apply text-right;
 	}
 	#timestamps,
+	#tags, 
+	/* do i need to add this here? */
 	#hw-items,
 	#pw-items {
 		@apply mt-3 w-full border px-5 py-3;

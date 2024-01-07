@@ -38,7 +38,7 @@ mixin lessonCard(lesson)
 				h4.mt-3 Tags
 					.tags.flex.flex-wrap.px-3.py-2
 						each tag in lesson.tags
-							a.text-xs.mr-2(href=`/class?tags=${tag}`)
+							a.text-xs.mr-2(href=`/class/tags?tags=${tag}`)
 								= tag
 
 			a.absolute.bottom-3(href=`/class/${lesson.permalink}`) More Info

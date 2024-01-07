@@ -11,6 +11,7 @@ router.post("/add", lessons.addEditLesson);
 router.post("/edit/:id", lessons.addEditLesson);
 
 router.get("/all", lessons.allLessons);
+router.get("/tags", lessons.filterByTags);
 router.get("/:permalink", lessons.showLesson);
 
 router.put("/watched/:id", lessons.toggleWatched);

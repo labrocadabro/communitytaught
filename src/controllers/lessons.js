@@ -165,11 +165,14 @@ export const showLesson = async (req, res) => {
 export const filterByTags = async (req, res) => {
   try {
     const tags = req.query.tags?.split(",").map((tag) => tag.trim());
-    console.log({ tags });
-    const lessons = await Lesson.find(tags ? { tags: { $in: tags } } : {})
+    let lessons = await Lesson.find(tags ? { tags: { $in: tags } } : {})
       .sort({ _id: 1 })
       .lean();
-    res.render("allLessons", { lessons });
+
+    if (req.isAuthenticated()) {
+      lessons = await getAllLessonsProgress(req.user.id, lessons);
+    }
+    res.render("filteredLessons", { lessons });
   } catch (err) {
     console.log(err);
     res.redirect("/class/all");

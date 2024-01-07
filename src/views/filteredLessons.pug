@@ -1,0 +1,25 @@
+extends layouts/default.pug
+include ./mixins/lessonCard.pug
+
+block variables
+	- title = "Classes"
+	- active = "Classes"
+
+block content
+	if !loggedIn
+		include ./partials/flash-nologin.pug
+
+	h1.mb-4 Filter Results
+
+	
+
+	#lessons.grid.gap-y-12.gap-x-16(class="sm:gap-y-24 grid-cols-[repeat(auto-fill,_minmax(285px,_1fr))]")
+		each lesson in lessons
+			+lessonCard(lesson)
+
+	include ./partials/to-top.pug
+
+append scripts
+	if loggedIn
+		script(src="/js/lessonProgress.js")
+		script(src="/js/lessonDone.js")

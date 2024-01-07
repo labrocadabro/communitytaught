@@ -169,10 +169,18 @@ export const filterByTags = async (req, res) => {
       .sort({ _id: 1 })
       .lean();
 
+	const allTags = await Lesson.aggregate([
+		{ $unwind: "$tags" },
+		{ $group: { _id: "$tags", count: { $sum: 1 } } },
+		{ $sort: { _id: 1 } },
+	]);
+
+	console.log({allTags});
+
     if (req.isAuthenticated()) {
       lessons = await getAllLessonsProgress(req.user.id, lessons);
     }
-    res.render("filteredLessons", { lessons });
+    res.render("filteredLessons", { lessons, allTags });
   } catch (err) {
     console.log(err);
     res.redirect("/class/all");

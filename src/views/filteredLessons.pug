@@ -11,7 +11,11 @@ block content
 
 	h1.mb-4 Filter Results
 
-	
+	h4 Results: #{lessons.length}
+
+	h4 Filters:
+		each tag in allTags || []
+			a.mr-2(href=`/class/tags?tags=${tag._id}`) #{tag._id}
 
 	#lessons.grid.gap-y-12.gap-x-16(class="sm:gap-y-24 grid-cols-[repeat(auto-fill,_minmax(285px,_1fr))]")
 		each lesson in lessons

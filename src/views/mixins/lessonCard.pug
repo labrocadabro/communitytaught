@@ -33,12 +33,12 @@ mixin lessonCard(lesson)
 				img.w-full.mb-2(src=lesson.thumbnail class="group-hover:shadow-[0_0_10px_rgba(0,_0,_0,_0.2)]")
 				h2(class="group-hover:text-pink-900") #{lesson.title}
 
-						//- show tags if there are any
+						
 			if lesson.tags && lesson.tags.length
-				h5.mt-3 Tags
-					.tags.flex.flex-wrap.px-3.py-2.mt-5
+				h4.mt-3 Tags
+					.tags.flex.flex-wrap.px-3.py-2
 						each tag in lesson.tags
-							.text-xs.mr-2.border
+							a.text-xs.mr-2(href=`/class?tags=${tag}`)
 								= tag
 
 			a.absolute.bottom-3(href=`/class/${lesson.permalink}`) More Info

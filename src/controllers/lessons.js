@@ -88,7 +88,7 @@ export const addEditLesson = async (req, res) => {
       message: [`Class not ${!!req.params.id ? "updated" : "added"}`],
     };
   } finally {
-    res.redirect("/class/add");
+    res.redirect(`/class/edit/${req.params.id}`);
   }
 };
 

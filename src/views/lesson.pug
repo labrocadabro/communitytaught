@@ -82,7 +82,7 @@ block content
 		p #[a(href=`https://www.youtube.com/watch?v=${lesson.videoId}` target="_blank") Like, comment and subscribe on Youtube]
 
 	if assigned.length
-		h2.mt-10.mb-3.border-2.border-orange-600.border-dashed Homework Assigned
+		h2.mt-10.mb-3 Homework Assigned
 		each homework in assigned
 			.mb-6(class="shadow-[0_2px_10px_0_rgba(0,0,0,0.1)]")
 				+homework(homework)

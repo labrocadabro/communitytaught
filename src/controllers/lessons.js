@@ -175,12 +175,10 @@ export const filterByTags = async (req, res) => {
 		{ $sort: { _id: 1 } },
 	]);
 
-	console.log({allTags});
-
     if (req.isAuthenticated()) {
       lessons = await getAllLessonsProgress(req.user.id, lessons);
     }
-    res.render("filteredLessons", { lessons, allTags });
+    res.render("filteredLessons", { lessons, allTags, selectedTags: tags });
   } catch (err) {
     console.log(err);
     res.redirect("/class/all");

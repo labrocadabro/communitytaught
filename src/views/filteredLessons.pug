@@ -11,11 +11,26 @@ block content
 
 	h1.mb-4 Filter Results
 
-	h4 Results: #{lessons.length}
+	h4.mt-2 Filters Available:
 
-	h4 Filters:
-		each tag in allTags || []
-			a.mr-2(href=`/class/tags?tags=${tag._id}`) #{tag._id}
+	#tags
+		.flex.flex-wrap.mb-4
+			each tag in allTags || []
+				button.mr-1.text-xs.mb-1(
+					type="button"
+					class=`filter-tag px-2 py-1 rounded ${
+					selectedTags && selectedTags.includes(tag._id) ? "bg-pink-500 text-white" : "bg-pink-200 text-pink-800"
+				}`) #{tag._id}
+		
+		
+		button.mr-1.text-xs.mb-1(
+			type="button"
+			id="filter-tag-clear"
+			class=`px-2 py-1 rounded ${
+			selectedTags && selectedTags.length > 1 ? "bg-pink-500 text-white" : "bg-pink-200 text-pink-800"
+		}`) Clear Filters
+
+	h4.mt-2.mb-2 Results: #{lessons.length}
 
 	#lessons.grid.gap-y-12.gap-x-16(class="sm:gap-y-24 grid-cols-[repeat(auto-fill,_minmax(285px,_1fr))]")
 		each lesson in lessons
@@ -27,3 +42,4 @@ append scripts
 	if loggedIn
 		script(src="/js/lessonProgress.js")
 		script(src="/js/lessonDone.js")
+		script(src="/js/filterTags.js")

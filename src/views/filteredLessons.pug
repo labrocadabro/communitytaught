@@ -11,26 +11,24 @@ block content
 
 	h1.mb-4 Filter Results
 
-	h4.mt-2 Filters Available:
 
 	#tags
+		h3.mt-2.mb-2 Filters Available:
 		.flex.flex-wrap.mb-4
 			each tag in allTags || []
-				button.mr-1.text-xs.mb-1(
+				button.text-xs.m-1(
 					type="button"
 					value=tag._id
 					class=`filter-tag px-2 py-1 rounded ${
-					selectedTags && selectedTags.includes(tag._id) ? "bg-pink-500 text-white" : "bg-pink-200 text-pink-800"
+					selectedTags && selectedTags.includes(tag._id) ? "outline outline-1 outline-pink-800 bg-pink-800 text-white" : "outline outline-1 text-pink-800"
 				}`) #{tag._id} (#{tag.count})
 		
 		button.mr-1.text-xs.mb-1(
 			type="button"
 			id="filter-tag-clear"
-			class=`px-2 py-1 rounded ${
-			selectedTags && selectedTags.length > 1 ? "bg-pink-500 text-white" : "bg-pink-200 text-pink-800"
-		}`) Clear Filters
+			class=`px-2 py-1 rounded bg-pink-800 text-white`) Clear Filters
 
-	h3.mt-2.mb-2 Results: #{lessons.length}
+	h3.mt-2.mb-4 Results: #{lessons.length}
 
 	#lessons.grid.gap-y-12.gap-x-16(class="sm:gap-y-24 grid-cols-[repeat(auto-fill,_minmax(285px,_1fr))]")
 		each lesson in lessons

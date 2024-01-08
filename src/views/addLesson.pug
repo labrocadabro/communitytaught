@@ -56,9 +56,9 @@ block content
 		#tags.col-span-4
 			h2.col-span-4.mb-3 Tags
 			label(for="tags" class="absolute -ml-2 -mt-2 px-1 text-xs bg-white text-gray-500 rounded") Tags (separated by commas. e.g. html, css, job hunt)
-			textarea#tag.col-span-4(type="text", name="tags"
+			textarea.col-span-4(type="text", name="tags"
 			placeholder="html, css, javascript, js, career help,ejs"
-			class="h-24 w-full "
+			class="h-24 w-full"
 			) #{edit? lesson.tags : ""}
 		.col-span-4.mt-3.text-center
 			button(class="btn primary max-w-1/3 mx-auto" type="submit") #{action} Class

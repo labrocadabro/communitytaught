@@ -4,9 +4,11 @@ const clearFilterBtn = document.getElementById("filter-tag-clear");
 // when clicking on a filter tag, add it to the url query string like /class/tags?tags=tag1,tag2
 filterTags.forEach((tag) => {
   tag.addEventListener("click", (e) => {
-    let tag = e.target.innerText;
+    let tag = e.target.value;
+
     //url encode the tag
-    tag = encodeURIComponent(e.target.innerText);
+    tag = encodeURIComponent(tag);
+    
     const tags = new URLSearchParams(window.location.search).get("tags");
 
     // if the tag is already in the query string, remove it

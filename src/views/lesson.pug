@@ -70,9 +70,9 @@ block content
 
 			if lesson.tags && lesson.tags.length
 				h2 Tags
-					.tags.flex.flex-wrap.py-2
+					.flex.flex-wrap.py-2
 						each tag in lesson.tags
-							a.text-sm.mr-2(href=`/class/filter?tags=${tag}`)
+							a.tag-link.text-sm.mr-2(href=`/class/filter?tags=${tag}` data-id=tag)
 								= tag
 
 			

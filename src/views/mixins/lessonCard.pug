@@ -32,9 +32,9 @@ mixin lessonCard(lesson)
 				h2(class="group-hover:text-pink-900") #{lesson.title}
 				
 			if lesson.tags && lesson.tags.length
-					.tags.flex.flex-wrap.py-2
+					.tag-links.flex.flex-wrap.py-2
 						each tag in lesson.tags
-							a.text-xs.mr-2(href=`/class/filter?tags=${tag}`)
+							a.tag-link.text-xs.mr-2(href=`/class/filter?tags=${tag}` data-id=tag)
 								= tag
 
 			a.absolute.bottom-3(href=`/class/${lesson.permalink}`) More Info

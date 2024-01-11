@@ -19,6 +19,7 @@ block content
 				button.text-xs.m-1(
 					type="button"
 					value=tag._id
+					data-id=tag._id
 					class=`filter-tag px-2 py-1 rounded ${
 					selectedTags && selectedTags.includes(tag._id) ? "outline outline-1 outline-pink-800 bg-pink-800 text-white" : "outline outline-1 text-pink-800"
 				}`) #{tag._id} (#{tag.count})
@@ -37,7 +38,7 @@ block content
 	include ./partials/to-top.pug
 
 append scripts
+	script(src="/js/filterTags.js")
 	if loggedIn
 		script(src="/js/lessonProgress.js")
 		script(src="/js/lessonDone.js")
-		script(src="/js/filterTags.js")

@@ -37,7 +37,7 @@ block content
 	include ./partials/to-top.pug
 
 append scripts
+	script(src="/js/filterTags.js")
 	if loggedIn
 		script(src="/js/lessonProgress.js")
 		script(src="/js/lessonDone.js")
-		script(src="/js/filterTags.js")

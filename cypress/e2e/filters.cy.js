@@ -6,7 +6,6 @@ const domain = Cypress.config().baseUrl;
 
 beforeEach(() => {
   cy.visit(domain);
-  // wait for the page to load including js
 });
 
 describe("All class page", () => {
@@ -149,6 +148,53 @@ describe("filter page", () => {
       });
       it("it should clear the url", () => {
         cy.url().should("not.include", "tags=");
+      });
+    });
+  });
+
+  describe("when using the filters", () => {
+    describe("when a single filter is selected", () => {
+      beforeEach(() => {
+        cy.visit(`${domain}/class/filter`);
+        cy.get(".filter-tag").as("filterTags");
+
+        cy.get("@filterTags")
+          .filter((i, el) => !el.value.includes(" "))
+          .then((el) => el[Math.floor(Math.random() * el.length)])
+          .as("firstFilter");
+
+        cy.get("@firstFilter").invoke("data", "id").as("dataId");
+        cy.get("@firstFilter").click({ force: true });
+
+        cy.get("@filterTags")
+          .filter(
+            (i, el) => !el.value.includes(" ") && el.value !== "@firstFilter"
+          )
+          .then((el) => el[Math.floor(Math.random() * el.length)])
+          .as("secondFilter");
+
+        cy.get("@secondFilter").invoke("data", "id").as("secondDataId");
+      });
+      it("it should only show classes with that tag", () => {
+        cy.get(".lesson-card").each((card) => {
+          cy.get("@dataId").then((dataId) => {
+            cy.wrap(card).find(`[data-id="${dataId}"]`).should("exist");
+          });
+        });
+      });
+      describe("when multiple filters are selected", () => {
+        it("it should only show classes with both tags", () => {
+          cy.get("@secondFilter").click({ force: true });
+          cy.get(".lesson-card").each((card) => {
+            cy.get("@dataId").then((dataId) => {
+              cy.get("@secondDataId").then((secondDataId) => {
+                cy.wrap(card)
+                  .find(`[data-id="${dataId}"],[data-id="${secondDataId}"]`)
+                  .should("exist");
+              });
+            });
+          });
+        });
       });
     });
   });

@@ -149,7 +149,9 @@ export const showLesson = async (req, res) => {
       .sort({ _id: 1 })
       .populate(["items", "extras"]);
 
-    lesson?.tags ? lesson.tags.sort() : (lesson.tags = []);
+    if (!lesson?.tags) {
+      lesson.tags = [];
+    }
 
     if (req.isAuthenticated()) {
       lesson = await getLessonProgress(req.user.id, lesson);

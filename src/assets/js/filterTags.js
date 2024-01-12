@@ -9,13 +9,13 @@ filterTags.forEach((tag) => {
     //url encode the tag
     const encodedTag = encodeURIComponent(tag);
 
-    const tags = new URLSearchParams(window.location.search).get("tags");
+    const existTags = new URLSearchParams(window.location.search).get("tags");
 
     // if the tag is already in the query string, remove it
     let newTags = "";
 
-    if (tags) {
-      const tagArr = tags.split(",");
+    if (existTags) {
+      const tagArr = existTags.split(",");
       if (tagArr.includes(tag)) {
         tagArr.splice(tagArr.indexOf(tag), 1);
       } else {

@@ -82,7 +82,7 @@ describe("filter page", () => {
       cy.get("@firstFilter").invoke("data", "id").as("dataId");
       cy.get("@firstFilter")
         .click({ force: true }, { log: true, timeout: 10000 })
-        .then(() => cy.log("clicked"));
+       
     });
 
     it("it adds the filter to the url", { scrollBehavior: false }, () => {
@@ -92,7 +92,7 @@ describe("filter page", () => {
             log: true,
             timeout: 10000,
           })
-          .then(() => cy.log("url"));
+         
       });
     });
 
@@ -104,7 +104,7 @@ describe("filter page", () => {
       });
       it("it should add to the url as a query param of tags", () => {
         cy.get("@dataId").then((dataId) => {
-          console.log(dataId);
+          
           cy.url().should("include", `${encodeURIComponent(dataId)}`);
         });
       });
@@ -167,8 +167,10 @@ describe("filter page", () => {
         cy.get("@firstFilter").click({ force: true });
 
         cy.get("@filterTags")
-          .filter(
-            (i, el) => !el.value.includes(" ") && el.value !== "@firstFilter"
+          .filter((i, el) => !el.value.includes(" "))
+          .filter((i, el) => 
+            // text-white is the class that is added when a filter is selected
+            !Cypress.$(el).hasClass("text-white")
           )
           .then((el) => el[Math.floor(Math.random() * el.length)])
           .as("secondFilter");

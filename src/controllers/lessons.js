@@ -122,6 +122,7 @@ export const getLessonProgress = async (userId, lesson) => {
 
 export const showLesson = async (req, res) => {
 	try {
+		const timeStart = req.query.t || 0;
 		let lesson = await Lesson.findOne({
 			permalink: req.params.permalink,
 		}).lean();
@@ -148,7 +149,7 @@ export const showLesson = async (req, res) => {
 				assigned = await getHwProgress(req.user.id, assigned);
 			if (due.length) due = await getHwProgress(req.user.id, due);
 		}
-		res.render("lesson", { lesson, next, prev, assigned, due });
+		res.render("lesson", { lesson, next, prev, assigned, due, timeStart });
 	} catch (err) {
 		console.log(err);
 		res.redirect("/class/all");

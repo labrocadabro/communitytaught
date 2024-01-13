@@ -71,6 +71,23 @@ block content
 	if lesson.videoId && !lesson.twitchVideo
 		h3.mt-8 Feed the algorithm and spread the word!
 		p #[a(href=`https://www.youtube.com/watch?v=${lesson.videoId}` target="_blank") Like, comment and subscribe on Youtube]
+	
+	if lesson.timestamps && lesson.timestamps.length
+	.flex.justify-start.items-start.flex-col.mr-8
+		h3.mt-10.mb-3.w-96 Timestamps
+		ul.max-h-60.overflow-y-auto.w-96.border-2.border-pink-800.rounded-lg.p-4
+			each timestamp, index in lesson.timestamps
+				li.border-b-2.border-pink-800.p-2.flex.flex-row.items-center
+					button(
+						class="goToTime text-left w-full text-pink-800 hover:text-pink-600"
+						data-time=timestamp.time
+						data-title=timestamp.title
+					) 
+					i.copyLinkTimestamp(id=`ts-title-${index}` data-time=timestamp.time)
+					
+					
+
+
 
 	if assigned.length
 		h2.mt-10.mb-3 Homework Assigned
@@ -85,6 +102,8 @@ block content
 				+homework(homework)
 
 append scripts
+	script(src="/js/copyLink.js")
+	script(src="/js/goToTime.js")
 	if loggedIn
 		script(src="/js/hwDone.js")
 		script(src="/js/hwProgress.js")

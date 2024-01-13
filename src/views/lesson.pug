@@ -87,8 +87,7 @@ block content
 			.mb-6(class="shadow-[0_2px_10px_0_rgba(0,0,0,0.1)]")
 				+homework(homework)
 
-	if timeStart
-		p#timeStart.hidden #{timeStart || 0}
+	
 
 append scripts
 	script(src="/js/copyLink.js")
@@ -96,6 +95,9 @@ append scripts
 		script(src="/js/hwDone.js")
 		script(src="/js/hwProgress.js")
 		script(src="/js/lessonProgress.js")
+
+	script.
+		const timeStart = #{timeStart} || 0;
 	if lesson.videoId && !lesson.twitchVideo
 		
 		script.
@@ -104,7 +106,6 @@ append scripts
 			var firstScriptTag = document.getElementsByTagName('script')[0];
 			firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 			var player;
-			const timeStart = document.getElementById('timeStart')?.innerText || 0;
 			function onYouTubeIframeAPIReady() {
 				player = new YT.Player('player', {
 					videoId: '#{lesson.videoId}' === 'o3IIobN4xR0' ? 'YRemMgGfbKg' : '#{lesson.videoId}',

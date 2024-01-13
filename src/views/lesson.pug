@@ -8,7 +8,6 @@ block variables
 	- active = "Classes"
 	- const watched = lesson.watched ? "checked" : ""
 	- const formattedDates = lesson.dates.map(date => date.toLocaleDateString('en-US', {day: "numeric", month: "short", year: "numeric"})).join(' / ')
-	//- - const timeStart = lesson && lesson.timeStart ? lesson.timeStart : 0
 
 block content
 	if !loggedIn
@@ -45,6 +44,9 @@ block content
 					if next
 						h3
 							a(href="/class/" + next) Next Class
+			button#copyLink.hidden.p-2.border.bg-pink-800.text-white.text-xs.font-medium.mt-4.rounded-md Copy link at current time
+						
+
 		#info
 			if loggedIn
 				if lesson.videoId
@@ -89,6 +91,7 @@ block content
 		p#timeStart.hidden #{timeStart || 0}
 
 append scripts
+	script(src="/js/copyLink.js")
 	if loggedIn
 		script(src="/js/hwDone.js")
 		script(src="/js/hwProgress.js")
@@ -107,15 +110,21 @@ append scripts
 					videoId: '#{lesson.videoId}' === 'o3IIobN4xR0' ? 'YRemMgGfbKg' : '#{lesson.videoId}',
 					playerVars: {
 						// this unfortunately doesn't work if the user is logged in and has 'youtube history' turned on
+						// see https://stackoverflow.com/questions/77691282/youtube-iframe-api-start-time-not-working-when-youtube-history-is-enabled for possible workaround (not implemented yet)
 						start: timeStart
-					},
 
+					},
+					events: {
+						'onReady': onPlayerReady,
+					}
 				});
+
+
 			}
-			//- function setCurrentTime(slideNum) {
-			//- 	var object = [ 0, 320 ];
-			//- 	player.seekTo(object[slideNum]);
-			//- }
+			function onPlayerReady(event) {
+				// this will lazy load the button
+				document.getElementById('copyLink').classList.remove('hidden');
+			}
 
 	else if lesson.twitchVideo
 		script(src="https://player.twitch.tv/js/embed/v1.js")

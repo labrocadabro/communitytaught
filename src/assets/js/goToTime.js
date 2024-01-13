@@ -15,7 +15,6 @@ function formatTimestamp(timeRemaining) {
 }
 
 goToTimeBtns.forEach((btn) => {
-  // add space after so that it looks even like 3:00__ vs 30:00_ vs 3:00:00
   btn.innerHTML = `${formatTimestamp(btn.dataset.time)} - ${btn.dataset.title}`;
   btn.addEventListener("click", () => {
     if (!player) return;

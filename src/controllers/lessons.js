@@ -158,9 +158,8 @@ export const showLesson = async (req, res) => {
 			.lean()
 			.sort({ _id: 1 })
 			.populate(["items", "extras"]);
-		console.log("before",lesson.timestamps);
+	
 		lesson.timestamps = lesson.timestamps.sort((a, b) => a.time - b.time);
-		console.log("after",lesson.timestamps);
 
 		if (req.isAuthenticated()) {
 			lesson = await getLessonProgress(req.user.id, lesson);

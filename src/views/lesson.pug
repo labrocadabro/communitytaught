@@ -106,12 +106,12 @@ append scripts
 				player = new YT.Player('player', {
 					videoId: '#{lesson.videoId}' === 'o3IIobN4xR0' ? 'YRemMgGfbKg' : '#{lesson.videoId}',
 					playerVars: {
+						// this unfortunately doesn't work if the user is logged in and has 'youtube history' turned on
 						start: timeStart
 					},
+
 				});
 			}
-			
-		
 			//- function setCurrentTime(slideNum) {
 			//- 	var object = [ 0, 320 ];
 			//- 	player.seekTo(object[slideNum]);

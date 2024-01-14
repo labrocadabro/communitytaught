@@ -66,6 +66,15 @@ block content
 						h2 Motivation
 						a(href=lesson.motivationLink) #{lesson.motivationTitle}
 
+			if lesson.tags && lesson.tags.length
+				h2 Tags
+					.tags.flex.flex-wrap.py-2
+						each tag in lesson.tags
+							a.text-sm.mr-2(href=`/class/filter?tags=${tag}`)
+								= tag
+
+			
+
 	if lesson.videoId && !lesson.twitchVideo
 		h3.mt-8 Feed the algorithm and spread the word!
 		p #[a(href=`https://www.youtube.com/watch?v=${lesson.videoId}` target="_blank") Like, comment and subscribe on Youtube]
@@ -81,6 +90,7 @@ block content
 		each homework in due
 			.mb-6(class="shadow-[0_2px_10px_0_rgba(0,0,0,0.1)]")
 				+homework(homework)
+
 
 append scripts
 	if loggedIn

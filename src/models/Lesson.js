@@ -49,6 +49,9 @@ const lessonSchema = new Schema({
 	motivationTitle: {
 		type: String
 	},
+	tags: {
+		type: [String]
+	},
 	timestamps: [TimestampSchema],
 	cohort: Number,
 	note: String

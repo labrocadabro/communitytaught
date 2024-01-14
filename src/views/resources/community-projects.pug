@@ -3,18 +3,18 @@ extends ../layouts/default.pug
 block variables
   - title = "100Devs Community Projects"
   - active = "Community Projects"
-  
+
 
 
 block content
   h1 100Devs Community Projects
 
   h3 Projects created by the 100Devs Community for the community.
-  p Note: These projects are not officially endorsed by 100Devs or Leon Noel. They are created by community members for the community. This list is provided as a resource for folx to discover projects that may be helpful to them or that they may want to contribute to. 
-  p If you have a project you'd like to add to this list, please make a pull request in the&nbsp; 
+  p Note: These projects are not officially endorsed by 100Devs or Leon Noel. They are created by community members for the community. This list is provided as a resource for folx to discover projects that may be helpful to them or that they may want to contribute to.
+  p If you have a project you'd like to add to this list, please make a pull request in the&nbsp;
     a(href="https://github.com/labrocadabro/communitytaught") repo.
 
-  
+
     if communityProjects && communityProjects.projects && communityProjects.projects.length
         #card-container
             each project in communityProjects.projects || []
@@ -23,10 +23,4 @@ block content
                     span.text-center #{project.description}
                     a(href=`${project.link}`) Link to app
                     a(href=`${project.repo}`) Link to repository
-                    span.text-center Contact: #{project.pointOfContact}
-
-
-
-          
-    
-
+                    span.text-center #{project.pointOfContact}

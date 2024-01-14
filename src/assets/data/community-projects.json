@@ -1,0 +1,32 @@
+{
+  "projects": [
+    {
+      "title": "Together Calendar",
+      "description": "Group calendar for public events, so you can see what's going on in the 100Devs community!",
+      "link": "https://together.cyclic.app",
+      "repo": "https://github.com/Together-100Devs/Together",
+      "pointOfContact": "Discord: calebcohen"
+    },
+    {
+      "title": "CommunityFocus",
+      "description": "CommunityFocus is a sharable real time tracking pomodoro app for teams. Used by folx in 100Devs #pomodoro-text channel.",
+      "link": "https://communityfocus.app",
+      "repo": "https://github.com/CommunityFocus",
+      "pointOfContact": "Discord: mariojuanaaa"
+    },
+    {
+      "title": "Banki Brunch",
+      "description": "App for Banki Brunch to make hosting and crowd sourcing our answers to interview questions easier.",
+      "link": "https://banki-brunch.vercel.app",
+      "repo": "https://github.com/NickSramcik/banki-brunch",
+      "pointOfContact": "Discord: corkythecactus"
+    },
+    {
+      "title": "100freelancers",
+      "description": "100freelancers is a tool to keep track of potential web development freelance clients.",
+      "link": "https://100freelancers.vercel.app",
+      "repo": "https://github.com/devlarabar/100freelancers",
+      "pointOfContact": "Discord: cultefilm"
+    }
+  ]
+}

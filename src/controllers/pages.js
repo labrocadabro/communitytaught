@@ -8,6 +8,11 @@ import Homework from "../models/Homework.js";
 import { getHwProgress } from "../controllers/homework.js";
 import { getLessonProgress } from "../controllers/lessons.js";
 
+import { createRequire } from 'module'
+const require = createRequire(import.meta.url)
+
+const communityProjects = require('../assets/data/community-projects.json')
+
 export const index = (req, res) => {
 	res.render("index");
 };
@@ -70,5 +75,8 @@ export const resources = (req, res) => {
 };
 
 export const resourcePage = (req, res) => {
+	if(req.params.page === "community-projects") {
+		return res.render("resources/community-projects", { communityProjects: communityProjects });
+	}
 	res.render(`resources/${req.params.page}`);
 };

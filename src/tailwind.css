@@ -191,6 +191,14 @@
 		@apply shadow-[0_2px_10px_0_rgba(0,0,0,0.1)];
 	}
 
+	/*** PROGRESS METER ***/
+	.meter-inner {
+		@apply transition-all duration-500 ease-in-out;
+	}
+	.meter {
+		@apply overflow-hidden;
+	}
+
 	/********* temporary ************/
 	#video {
 		max-width: 960px;

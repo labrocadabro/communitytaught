@@ -104,10 +104,15 @@ export const getAllLessonsProgress = async (userId, lessons) => {
 
 export const allLessons = async (req, res) => {
 	let lessons = await Lesson.find().lean().sort({ _id: 1 });
+	let completedCount = 0
 	if (req.isAuthenticated()) {
 		lessons = await getAllLessonsProgress(req.user.id, lessons);
+		completedCount = await LessonProgress.countDocuments({
+			user: req.user.id,
+			watched: true,
+		});
 	}
-	res.render("allLessons", { lessons });
+	res.render("allLessons", { lessons, completedCount });
 };
 
 export const getLessonProgress = async (userId, lesson) => {

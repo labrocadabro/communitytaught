@@ -1,5 +1,6 @@
 extends layouts/default.pug
 include ./mixins/lessonCard.pug
+include ./mixins/progressBar.pug
 
 block variables
 	- title = "Dashboard"
@@ -11,6 +12,10 @@ block content
 	.flex.justify-center.items-baseline.flex-wrap.flex-wrap-reverse
 		h1.mb-6.mr-auto Your Progress
 		h3.mb-6.text-xl.text-twilight-900.font-medium #{user.username}
+
+	if loggedIn
+		+progressBar(completedCount, totalCount)
+
 	h2.mb-3 Next Class
 	#next-lesson.w-full.max-w-80
 		if lesson

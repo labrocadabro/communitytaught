@@ -45,6 +45,7 @@ export const login = (req, res, next) => {
 	}
 	req.body.username = validator.normalizeEmail(req.body.username, {
 		gmail_remove_dots: false,
+		gmail_remove_subaddress: false
 	});
 
 	passport.authenticate("local", (err, user, info) => {

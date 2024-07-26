@@ -973,7 +973,7 @@
 		"motivationLink": "",
 		"motivationTitle": "",
 		"permalink": "javascript-crash-course-super-review",
-		"slides": [],
+		"slides": ["https://slides.com/leonnoel/js-super-review"],
 		"thumbnail": "https://i3.ytimg.com/vi/1sRJYuaqoiI/maxresdefault.jpg",
 		"timestamps": [],
 		"title": "JavaScript Crash Course (Super Review)",

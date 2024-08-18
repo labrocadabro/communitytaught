@@ -43,6 +43,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "assets")));
 app.use(cors());
 
+// app.use((req, res, next) => {
+// 	res.render("maintenance");
+// });
+
 const store = new MongoDBStore({
 	uri: process.env.DB_URI,
 	collection: "sessions",

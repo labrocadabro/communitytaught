@@ -30,6 +30,12 @@ mixin lessonCard(lesson)
 			a(href=`/class/${lesson.permalink}` class="hover:no-underline")
 				img.w-full.mb-2(src=lesson.thumbnail class="group-hover:shadow-[0_0_10px_rgba(0,_0,_0,_0.2)]")
 				h2(class="group-hover:text-pink-900") #{lesson.title}
+				
+			if lesson.tags && lesson.tags.length
+					.tags.flex.flex-wrap.py-2
+						each tag in lesson.tags
+							a.text-xs.mr-2(href=`/class/filter?tags=${tag}`)
+								= tag
 
 			a.absolute.bottom-3(href=`/class/${lesson.permalink}`) More Info
 			if lesson.videoId && !lesson.twitchVideo

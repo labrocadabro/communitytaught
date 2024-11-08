@@ -902,6 +902,7 @@ h3 {
 }
 
 #timestamps,
+	#tags, 
 	#hw-items,
 	#pw-items {
   margin-top: 0.75rem;
@@ -1243,6 +1244,10 @@ dd ol {
   top: 0px;
 }
 
+.left-10 {
+  left: 2.5rem;
+}
+
 .top-12 {
   top: 3rem;
 }
@@ -1257,34 +1262,6 @@ dd ol {
 
 .right-1 {
   right: 0.25rem;
-}
-
-.top-10 {
-  top: 2.5rem;
-}
-
-.top-8 {
-  top: 2rem;
-}
-
-.-left-20 {
-  left: -5rem;
-}
-
-.left-0 {
-  left: 0px;
-}
-
-.left-10 {
-  left: 2.5rem;
-}
-
-.left-5 {
-  left: 1.25rem;
-}
-
-.left-9 {
-  left: 2.25rem;
 }
 
 .z-10 {
@@ -1313,6 +1290,10 @@ dd ol {
 
 .m-2 {
   margin: 0.5rem;
+}
+
+.m-1 {
+  margin: 0.25rem;
 }
 
 .m-0 {
@@ -1365,12 +1346,24 @@ dd ol {
   margin-top: 0.75rem;
 }
 
+.-ml-2 {
+  margin-left: -0.5rem;
+}
+
+.-mt-2 {
+  margin-top: -0.5rem;
+}
+
 .mb-4 {
   margin-bottom: 1rem;
 }
 
 .mr-auto {
   margin-right: auto;
+}
+
+.mr-1 {
+  margin-right: 0.25rem;
 }
 
 .mb-1 {
@@ -1441,8 +1434,8 @@ dd ol {
   height: auto;
 }
 
-.min-h-screen {
-  min-height: 100vh;
+.h-24 {
+  height: 6rem;
 }
 
 .w-full {
@@ -1566,6 +1559,10 @@ dd ol {
   white-space: nowrap;
 }
 
+.rounded {
+  border-radius: 0.25rem;
+}
+
 .border {
   border-width: 1px;
 }
@@ -1597,6 +1594,11 @@ dd ol {
   border-color: rgb(231 229 228 / var(--tw-border-opacity));
 }
 
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
 .bg-pink-800 {
   --tw-bg-opacity: 1;
   background-color: rgb(157 23 77 / var(--tw-bg-opacity));
@@ -1612,17 +1614,27 @@ dd ol {
   background-color: rgb(250 250 249 / var(--tw-bg-opacity));
 }
 
-.bg-white {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
 .p-6 {
   padding: 1.5rem;
 }
 
 .p-0 {
   padding: 0px;
+}
+
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
 }
 
 .py-2 {
@@ -1689,12 +1701,13 @@ dd ol {
   text-align: right;
 }
 
-.font-main {
-  font-family: Poppins, sans-serif;
-}
-
 .font-logo {
   font-family: Orienta, serif;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
 }
 
 .text-xl {
@@ -1707,11 +1720,6 @@ dd ol {
   line-height: 1.5rem;
 }
 
-.text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-}
-
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -1720,11 +1728,6 @@ dd ol {
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
-}
-
-.text-xs {
-  font-size: 0.75rem;
-  line-height: 1rem;
 }
 
 .text-3xl {
@@ -1766,14 +1769,14 @@ dd ol {
   color: rgb(239 68 68 / var(--tw-text-opacity));
 }
 
+.text-gray-500 {
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+
 .text-twilight-900 {
   --tw-text-opacity: 1;
   color: rgb(21 63 81 / var(--tw-text-opacity));
-}
-
-.text-stone-500 {
-  --tw-text-opacity: 1;
-  color: rgb(120 113 108 / var(--tw-text-opacity));
 }
 
 .text-white {
@@ -1786,14 +1789,14 @@ dd ol {
   color: rgb(157 23 77 / var(--tw-text-opacity));
 }
 
+.text-stone-500 {
+  --tw-text-opacity: 1;
+  color: rgb(120 113 108 / var(--tw-text-opacity));
+}
+
 .text-twilight-800 {
   --tw-text-opacity: 1;
   color: rgb(34 101 129 / var(--tw-text-opacity));
-}
-
-.text-stone-800 {
-  --tw-text-opacity: 1;
-  color: rgb(41 37 36 / var(--tw-text-opacity));
 }
 
 .text-red-800 {
@@ -1805,13 +1808,13 @@ dd ol {
   color: rgb(168 162 158 / 0.8);
 }
 
-.text-pink-800\/80 {
-  color: rgb(157 23 77 / 0.8);
-}
-
 .text-red-700 {
   --tw-text-opacity: 1;
   color: rgb(185 28 28 / var(--tw-text-opacity));
+}
+
+.text-pink-800\/80 {
+  color: rgb(157 23 77 / 0.8);
 }
 
 .no-underline {
@@ -1840,6 +1843,18 @@ dd ol {
   --tw-shadow: 0 0 25px -5px rgba(0,0,0,.3);
   --tw-shadow-colored: 0 0 25px -5px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.outline {
+  outline-style: solid;
+}
+
+.outline-1 {
+  outline-width: 1px;
+}
+
+.outline-pink-800 {
+  outline-color: #9d174d;
 }
 
 .filter {
@@ -1883,10 +1898,6 @@ dd ol {
 }
 
 @media (min-width: 780px) {
-  .sm\:left-8 {
-    left: 2rem;
-  }
-
   .sm\:left-12 {
     left: 3rem;
   }
@@ -1955,14 +1966,6 @@ dd ol {
 }
 
 @media (min-width: 1024px) {
-  .lg\:left-14 {
-    left: 3.5rem;
-  }
-
-  .lg\:left-16 {
-    left: 4rem;
-  }
-
   .lg\:left-20 {
     left: 5rem;
   }

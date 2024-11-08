@@ -85,6 +85,7 @@
 		@apply text-right;
 	}
 	#timestamps,
+	#tags, 
 	#hw-items,
 	#pw-items {
 		@apply mt-3 w-full border px-5 py-3;

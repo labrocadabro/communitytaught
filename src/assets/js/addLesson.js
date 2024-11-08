@@ -11,7 +11,7 @@ addTsButton.addEventListener('click', addTimestamp);
 
 function addPermalink() {
 	const permalink = title.value
-		
+
 		.split('')
 		.map(c => c.toLowerCase())
 		.filter(c => {

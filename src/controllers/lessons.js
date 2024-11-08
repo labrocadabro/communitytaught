@@ -34,11 +34,28 @@ export const addEditLesson = async (req, res) => {
 		}
 		let slides = [];
 		const timestamps = [];
-		for (let i = 0; i < req.body.tsTime.length; i++) {
-			timestamps.push({
-				time: Number(req.body.tsTime[i]),
-				title: req.body.tsTitle[i],
-			});
+		const tsTime = req.body.tsTime 
+		const tsTitle = req.body.tsTitle 
+
+		if (tsTime && tsTitle) {
+			// if there are multiple timestamps, tsTime and tsTitle will be arrays
+			if (Array.isArray(tsTime)) {
+				for (let i = 0; i < tsTime.length; i++) {
+					if (tsTime[i] && tsTitle[i]) {
+						timestamps.push({
+							time: tsTime[i],
+							title: tsTitle[i],
+						});
+					}
+				}
+			}
+			// if there is only one timestamp, tsTime and tsTitle will be strings, and not arrays
+			else {
+				timestamps.push({
+					time: tsTime,
+					title: tsTitle,
+				});
+			}
 		}
 		const lessonData = {
 			videoId: req.body.videoId,
@@ -141,6 +158,8 @@ export const showLesson = async (req, res) => {
 			.lean()
 			.sort({ _id: 1 })
 			.populate(["items", "extras"]);
+	
+		lesson.timestamps = lesson.timestamps.sort((a, b) => a.time - b.time);
 
 		if (req.isAuthenticated()) {
 			lesson = await getLessonProgress(req.user.id, lesson);

@@ -825,7 +825,7 @@
 		},
 		"__v": 0,
 		"class": 22,
-		"description": "Do <a target=\"_blank\" href=\"https://aka.ms/learnwithleon\">Intro to Github</a>",
+		"description": "Do <a target=\"_blank\" href=\"https://learn.microsoft.com/en-us/training/modules/introduction-to-github\">Intro to Github</a>",
 		"due": 25,
 		"required": false
 	},
